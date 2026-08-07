@@ -14,6 +14,16 @@ export const metadata: Metadata = {
     "Zero Trust",
     "Threat Interception",
   ],
+  icons: {
+    icon: [
+      { url: "/images/favicon.png" },
+      { url: "/images/favicon.png", type: "image/png" }
+    ],
+    shortcut: ["/images/favicon.png"],
+    apple: [
+      { url: "/images/favicon.png" }
+    ]
+  }
 };
 
 export default function RootLayout({
