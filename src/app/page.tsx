@@ -670,7 +670,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-zoiko-border group">
               <Image
-                src="/images/f6.png"
+                src="/images/00.png"
                 alt="Northbridge Health"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -682,7 +682,7 @@ export default function HomePage() {
 
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-zoiko-border group">
               <Image
-                src="/images/f7.png"
+                src="/images/02.png"
                 alt="Velocity SaaS"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -694,7 +694,7 @@ export default function HomePage() {
 
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-zoiko-border group">
               <Image
-                src="/images/f8.png"
+                src="/images/01.png"
                 alt="Ashford Capital"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-500"
