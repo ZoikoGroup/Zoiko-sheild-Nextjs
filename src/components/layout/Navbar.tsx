@@ -137,7 +137,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemo }) => {
                         </div>
                       </Link>
 
-                      <Link href="/dashboard" className="bg-[#F6F4EE] hover:bg-[#EFECE3] p-3.5 rounded-2xl border border-zoiko-border/60 transition-all flex items-start gap-3 group/item">
+                      <Link href="/verify-evidence" className="bg-[#F6F4EE] hover:bg-[#EFECE3] p-3.5 rounded-2xl border border-zoiko-border/60 transition-all flex items-start gap-3 group/item">
                         <div className="w-8 h-8 rounded-xl bg-white text-[#2C6E63] border border-zoiko-border/50 flex items-center justify-center shrink-0 group-hover/item:text-[#C53B3B]">
                           <CheckCircle2 className="w-4 h-4" />
                         </div>
@@ -209,14 +209,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemo }) => {
                 <ChevronDown className="w-3.5 h-3.5 opacity-60 group-hover:rotate-180 transition-transform duration-200" />
               </button>
 
-              <div className="absolute top-full left-0 hidden group-hover:block pt-2 w-[680px] -translate-x-16 animate-fadeIn">
+              <div className="absolute top-full left-0 hidden group-hover:block pt-2 w-[900px] -translate-x-16 animate-fadeIn">
                 <div className="bg-white rounded-3xl shadow-2xl border border-zoiko-border p-6 space-y-4">
                   <div className="text-xs font-bold text-[#151B28] pb-3 border-b border-zoiko-border/60">
-                    Two ways to start. One governed operating model.
+                    Three ways to start. One governed operating model.
                   </div>
 
-                  {/* Top 2 Cards Row */}
-                  <div className="grid grid-cols-2 gap-4">
+                  {/* Top 3 Cards Row */}
+                  <div className="grid grid-cols-3 gap-4">
                     {/* Managed Defense */}
                     <div className="bg-[#F6F4EE] p-5 rounded-2xl border border-zoiko-border/60 space-y-3 flex flex-col justify-between">
                       <div className="space-y-2">
@@ -251,6 +251,25 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemo }) => {
                       <Link href="/dashboard">
                         <button className="w-full bg-[#0E2C38] hover:bg-[#153e4f] text-white py-2 px-4 rounded-xl text-xs font-bold transition-colors">
                           Explore Continuous Assurance
+                        </button>
+                      </Link>
+                    </div>
+
+                    {/* vCISO & Advisory */}
+                    <div className="bg-[#F6F4EE] p-5 rounded-2xl border border-zoiko-border/60 space-y-3 flex flex-col justify-between">
+                      <div className="space-y-2">
+                        <div className="w-8 h-8 rounded-xl bg-white text-[#2C6E63] border border-zoiko-border/50 flex items-center justify-center">
+                          <ShieldCheck className="w-4 h-4 text-[#2C6E63]" />
+                        </div>
+                        <h4 className="text-sm font-bold text-[#151B28]">vCISO & Advisory</h4>
+                        <p className="text-xs text-[#151B28]/60 leading-relaxed">
+                          Structured security-leadership support with named scope, cadence, evidence and clear customer authority.
+                        </p>
+                      </div>
+
+                      <Link href="/services/advisory">
+                        <button className="w-full bg-[#0E2C38] hover:bg-[#153e4f] text-white py-2 px-4 rounded-xl text-xs font-bold transition-colors">
+                          Explore vCISO & Advisory
                         </button>
                       </Link>
                     </div>
@@ -392,7 +411,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemo }) => {
                       </div>
                     </Link>
 
-                    <Link href="/about" className="bg-[#F6F4EE] hover:bg-[#EFECE3] p-3.5 rounded-2xl border border-zoiko-border/60 transition-all flex items-start gap-3 group/item">
+                    <Link href="/verify-evidence" className="bg-[#F6F4EE] hover:bg-[#EFECE3] p-3.5 rounded-2xl border border-zoiko-border/60 transition-all flex items-start gap-3 group/item">
                       <div className="w-8 h-8 rounded-xl bg-white text-[#2C6E63] border border-zoiko-border/50 flex items-center justify-center shrink-0 group-hover/item:text-[#C53B3B]">
                         <ShieldCheck className="w-4 h-4" />
                       </div>
