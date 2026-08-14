@@ -617,20 +617,20 @@ export default function RiskIntelligencePage() {
             </div>
 
           {/* ========================================================================= */}
-          {/* MOBILE SECTION 4: METHOD GOVERNANCE (11-ROW MATRIX - EXACT IMAGE 1 MATCH) */}
+          {/* MOBILE SECTION 4: METHOD GOVERNANCE (11-ROW MATRIX - EXACT SCREENSHOT MATCH) */}
           {/* ========================================================================= */}
-          <div className="bg-[#0B1B26] px-4 py-8 text-white space-y-6">
+          <div className="px-4 py-8 space-y-6">
             <div className="space-y-2">
               <div className="flex items-center gap-2">
                 <span className="h-[1.5px] w-5 bg-[#E0533C]" />
-                <span className="text-[11px] font-bold uppercase tracking-widest text-[#E0533C] font-mono">
+                <span className="text-[11px] font-bold uppercase tracking-widest text-gray-500 font-mono">
                   METHOD GOVERNANCE
                 </span>
               </div>
-              <h2 className="text-xl font-extrabold text-white leading-tight">
+              <h2 className="text-xl font-extrabold text-[#151B28] leading-tight">
                 What would have to exist before a number could.
               </h2>
-              <p className="text-xs text-gray-300/90 font-sans leading-relaxed">
+              <p className="text-xs text-gray-600 font-sans leading-relaxed">
                 The source authority defines no risk score, scale, formula, level, benchmark, appetite or threshold. This is the contract that would govern one if it were later authorized &mdash; it is not a claim that any of it exists today.
               </p>
             </div>
@@ -769,6 +769,7 @@ export default function RiskIntelligencePage() {
               </div>
             </div>
           </div>
+
           </div>
 
         {/* ========================================================================= */}
@@ -828,7 +829,7 @@ export default function RiskIntelligencePage() {
             <div className="lg:col-span-5">
               <div className="relative rounded-2xl overflow-hidden border border-gray-800 shadow-2xl bg-black">
                 <Image
-                  src="/images/sa1.png"
+                  src="/images/ri1.png"
                   alt="Risk Intelligence Control Room & Holographic Dashboard"
                   width={560}
                   height={640}
@@ -843,7 +844,7 @@ export default function RiskIntelligencePage() {
         {/* ========================================================================= */}
         {/* SECTION 2: SURFACE DOCTRINE & VOCABULARY HELD BACK */}
         {/* ========================================================================= */}
-        <section id="doctrine" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 border-t border-gray-200/70">
+        <section id="doctrine" className="hidden sm:block max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 border-t border-gray-200/70">
           <div className="space-y-3 mb-10">
             <div className="flex items-center gap-2">
               <span className="h-[1.5px] w-5 bg-[#E0533C]" />
@@ -934,7 +935,7 @@ export default function RiskIntelligencePage() {
         {/* ========================================================================= */}
         {/* SECTION 3: EVIDENCE-LINKED RISK VIEW (#EFECE6 WARM BEIGE BACKGROUND) */}
         {/* ========================================================================= */}
-        <section id="evidence-view" className="w-full bg-[#EFECE6] py-14 sm:py-16">
+        <section id="evidence-view" className="hidden sm:block w-full bg-[#EFECE6] py-14 sm:py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="space-y-3 mb-10">
               <div className="flex items-center gap-2">
@@ -1257,7 +1258,7 @@ export default function RiskIntelligencePage() {
         {/* ========================================================================= */}
         {/* SECTION 4: METHOD RESTRAINT (#0B1B26 DARK OBSIDIAN NAVY BACKGROUND) */}
         {/* ========================================================================= */}
-        <section id="restraint" className="bg-[#0B1B26] text-white py-14 sm:py-16 my-8">
+        <section id="restraint" className="hidden sm:block bg-[#0B1B26] text-white py-14 sm:py-16 my-8">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
             <div className="space-y-3">
               <div className="flex items-center gap-2">
@@ -1277,7 +1278,7 @@ export default function RiskIntelligencePage() {
             {/* Center Holographic Graphic Container */}
             <div className="relative rounded-2xl overflow-hidden border border-gray-800 shadow-2xl bg-black max-w-5xl mx-auto">
               <Image
-                src="/images/sa2.png"
+                src="/images/ri2.png"
                 alt="Risk Intelligence Method Pipeline & Governance Controls"
                 width={1000}
                 height={550}
@@ -2094,7 +2095,7 @@ export default function RiskIntelligencePage() {
         {/* ========================================================================= */}
         {/* SECTION 10: GET STARTED CTA BANNER (DARK RADIAL PLUM AURA) */}
         {/* ========================================================================= */}
-        <section id="get-started" className="w-full bg-[#071829] bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#3D2131] via-[#161B28]/70 to-[#071829] text-white py-16 sm:py-20 mt-12 sm:mt-16 mb-0">
+        <section id="get-started" className="w-full bg-[#071829] bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#3D2131] via-[#161B28]/70 to-[#071829] text-white pt-12 sm:pt-16 pb-8 sm:pb-12 mt-8 sm:mt-12 mb-0">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
             <div className="flex items-center justify-center gap-2">
               <span className="h-[1.5px] w-5 bg-[#E0533C]" />
