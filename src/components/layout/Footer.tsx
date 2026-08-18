@@ -98,7 +98,7 @@ export const Footer: React.FC = () => {
               </h4>
               <ul className="space-y-2 text-gray-300/80">
                 <li><Link href="/dashboard" className="hover:text-white transition-colors">Detection & Response</Link></li>
-                <li><Link href="/dashboard" className="hover:text-white transition-colors">Security analytics</Link></li>
+                <li><Link href="/security-analytics" className="hover:text-white transition-colors">Security analytics</Link></li>
                 <li><Link href="/dashboard" className="hover:text-white transition-colors">Case management</Link></li>
                 <li><Link href="/dashboard" className="hover:text-white transition-colors">Governed response</Link></li>
               </ul>
@@ -110,10 +110,10 @@ export const Footer: React.FC = () => {
                 AI & RISK INTELLIGENCE
               </h4>
               <ul className="space-y-2 text-gray-300/80">
+                <li><Link href="/risk-intelligence" className="hover:text-white transition-colors">Risk Intelligence</Link></li>
                 <li><Link href="/dashboard" className="hover:text-white transition-colors">AI security & Governance</Link></li>
-                <li><Link href="/dashboard" className="hover:text-white transition-colors">Investigation assistant</Link></li>
+                <li><Link href="/responsible-ai" className="hover:text-white transition-colors">Responsible AI</Link></li>
                 <li><Link href="/dashboard" className="hover:text-white transition-colors">AI decision rights</Link></li>
-                <li><Link href="/dashboard" className="hover:text-white transition-colors">Responsible AI</Link></li>
               </ul>
             </div>
           </div>
@@ -132,8 +132,8 @@ export const Footer: React.FC = () => {
               <li><Link href="/about" className="hover:text-white transition-colors">Managed Defense</Link></li>
               <li><Link href="/about" className="hover:text-white transition-colors">Continuous Assurance</Link></li>
               <li><Link href="/about" className="hover:text-white transition-colors">Compare starting paths</Link></li>
-              <li><Link href="/about" className="hover:text-white transition-colors">Incident Response Retainer</Link></li>
-              <li><Link href="/services/advisory" className="hover:text-white transition-colors">vCISO & Advisory</Link></li>
+              <li><Link href="/incident-readiness" className="hover:text-white transition-colors">Incident Response Retainer</Link></li>
+              <li><Link href="/vciso-advisory" className="hover:text-white transition-colors">vCISO & Advisory</Link></li>
             </ul>
           </div>
 
@@ -215,7 +215,7 @@ export const Footer: React.FC = () => {
             <ul className="space-y-2 text-gray-300/80">
               <li><Link href="/about" className="hover:text-white transition-colors">Trust Center</Link></li>
               <li><Link href="/about" className="hover:text-white transition-colors">Security practices</Link></li>
-              <li><Link href="/about" className="hover:text-white transition-colors">Responsible AI</Link></li>
+              <li><Link href="/responsible-ai" className="hover:text-white transition-colors">Responsible AI</Link></li>
               <li><Link href="/about" className="hover:text-white transition-colors">Privacy & data protection</Link></li>
               <li><Link href="/about" className="hover:text-white transition-colors">Vulnerability disclosure</Link></li>
             </ul>
