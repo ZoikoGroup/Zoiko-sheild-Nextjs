@@ -71,10 +71,10 @@ export const Footer: React.FC = () => {
                 PLATFORM
               </h4>
               <ul className="space-y-2 text-gray-300/80">
-                <li><Link href="/dashboard" className="hover:text-white transition-colors">Platform overview</Link></li>
+                <li><Link href="/platform-overview" className="hover:text-white transition-colors">Platform overview</Link></li>
                 <li><Link href="/dashboard" className="hover:text-white transition-colors">How ZoikoShield works</Link></li>
-                <li><Link href="/dashboard" className="hover:text-white transition-colors">Architecture</Link></li>
-                <li><Link href="/dashboard" className="hover:text-white transition-colors">Integrations</Link></li>
+                <li><Link href="/architecture" className="hover:text-white transition-colors">Architecture</Link></li>
+                <li><Link href="/integrations" className="hover:text-white transition-colors">Integrations</Link></li>
               </ul>
             </div>
 

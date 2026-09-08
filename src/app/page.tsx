@@ -3,8 +3,8 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
+// import { Navbar } from "@/components/layout/Navbar";
+// import { Footer } from "@/components/layout/Footer";
 import { DemoModal } from "@/components/ui/DemoModal";
 import {
   CheckCircle2,
@@ -33,8 +33,8 @@ export default function HomePage() {
   const [overrideActive, setOverrideActive] = useState(true);
 
   return (
-    <div className="min-h-screen flex flex-col bg-zoiko-beige text-zoiko-dark relative selection:bg-zoiko-primary selection:text-white overflow-x-hidden w-full max-w-full">
-      <Navbar onOpenDemo={() => setDemoOpen(true)} />
+    <div className="min-h-screen flex flex-col bg-zoiko-beige text-zoiko-dark relative selection:bg-zoiko-primary selection:text-white w-full max-w-full">
+      {/* <Navbar onOpenDemo={() => setDemoOpen(true)} /> */}
 
       <main className="flex-grow w-full space-y-20 lg:space-y-32">
         {/* ============================================ */}
@@ -1080,7 +1080,7 @@ export default function HomePage() {
       {/* ============================================ */}
       {/* SECTION 15: FOOTER */}
       {/* ============================================ */}
-      <Footer />
+      {/* <Footer /> */}
 
       <DemoModal isOpen={demoOpen} onClose={() => setDemoOpen(false)} />
     </div>
