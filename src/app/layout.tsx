@@ -1,6 +1,14 @@
 import type { Metadata } from "next";
+import { Inter, IBM_Plex_Mono } from "next/font/google";
 import "@/styles/globals.css";
 import { SecurityProvider } from "@/context/SecurityContext";
+
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const ibmPlexMono = IBM_Plex_Mono({ 
+  weight: ["400", "500", "600", "700"], 
+  subsets: ["latin"], 
+  variable: "--font-ibm-plex-mono" 
+});
 
 export const metadata: Metadata = {
   title: "Zoiko Shield | Next-Gen Autonomous Cyber Defense Platform",
@@ -32,8 +40,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="light overflow-x-hidden max-w-full">
-      <body className="bg-zoiko-beige text-zoiko-dark min-h-screen selection:bg-zoiko-primary selection:text-white antialiased overflow-x-hidden w-full max-w-full relative">
+    <html lang="en" className={`light overflow-x-hidden max-w-full ${inter.variable} ${ibmPlexMono.variable}`}>
+      <body className="font-sans bg-zoiko-beige text-zoiko-dark min-h-screen selection:bg-zoiko-primary selection:text-white antialiased overflow-x-hidden w-full max-w-full relative">
         <SecurityProvider>{children}</SecurityProvider>
       </body>
     </html>
