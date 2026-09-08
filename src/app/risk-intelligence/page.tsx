@@ -2,8 +2,8 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
+// import { Navbar } from "@/components/layout/Navbar";
+// import { Footer } from "@/components/layout/Footer";
 import { DemoModal } from "@/components/ui/DemoModal";
 
 // Surface Doctrine 8 Cards Data
@@ -72,7 +72,7 @@ export default function RiskIntelligencePage() {
 
   return (
     <div className="bg-[#F4F3EF] min-h-screen text-[#151B28] font-sans antialiased selection:bg-[#E0533C] selection:text-white">
-      <Navbar />
+      {/* <Navbar /> */}
 
       <main>
         {/* ========================================================================= */}
@@ -2142,7 +2142,7 @@ export default function RiskIntelligencePage() {
         </section>
       </main>
 
-      <Footer />
+      {/* <Footer /> */}
 
       {/* Demo Modal */}
       <DemoModal isOpen={isDemoModalOpen} onClose={() => setIsDemoModalOpen(false)} />

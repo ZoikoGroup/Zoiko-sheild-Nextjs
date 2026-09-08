@@ -2,8 +2,8 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
+// import { Navbar } from "@/components/layout/Navbar";
+// import { Footer } from "@/components/layout/Footer";
 import { DemoModal } from "@/components/ui/DemoModal";
 
 // 10 Commitments Data
@@ -400,7 +400,7 @@ export default function ResponsibleAIPage() {
 
   return (
     <div className="min-h-screen bg-[#F4F3EF] text-[#111827] font-sans antialiased">
-      <Navbar />
+      {/* <Navbar /> */}
 
       <main className="pt-24 sm:pt-28 pb-0 overflow-x-hidden">
         {/* ========================================================================= */}
@@ -1828,7 +1828,7 @@ export default function ResponsibleAIPage() {
         </section>
       </main>
 
-      <Footer />
+      {/* <Footer /> */}
 
       {/* Demo Modal */}
       <DemoModal isOpen={isDemoModalOpen} onClose={() => setIsDemoModalOpen(false)} />
