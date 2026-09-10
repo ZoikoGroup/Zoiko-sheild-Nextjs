@@ -1,0 +1,10 @@
+export { default as AIRiskGovernanceSection } from "./AIRiskGovernanceSection";
+export { default as InventoryCoverageSection } from "./InventoryCoverageSection";
+export { default as RiskControlOperatingModelSection } from "./RiskControlOperatingModelSection";
+export { default as EvaluationRecordsSection } from "./EvaluationRecordsSection";
+export { default as DecisionRightsSection } from "./DecisionRightsSection";
+export { default as TransparencySection } from "./TransparencySection";
+export { default as IncidentResponseSection } from "./IncidentResponseSection";
+export { default as ProofRoutesSection } from "./ProofRoutesSection";
+export { default as FAQSection } from "./FAQSection";
+export { default as GovernWithProofHeroSection } from "./GovernWithProofHeroSection";

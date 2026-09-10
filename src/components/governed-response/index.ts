@@ -1,0 +1,11 @@
+export { default as GovernedResponseSection } from "./GovernedResponseSection";
+export { default as AuthorityAtAGlanceSection } from "./AuthorityAtAGlanceSection";
+export { default as ActionContractSection } from "./ActionContractSection";
+export { default as ApprovalSection } from "./ApprovalSection";
+export { default as SigningAttestationSection } from "./SigningAttestationSection";
+export { default as ExecutionSection } from "./ExecutionSection";
+export { default as RollbackRecoverySection } from "./RollbackRecoverySection";
+export { default as HistorySection } from "./HistorySection";
+export { default as ConnectedGovernanceSection } from "./ConnectedGovernanceSection";
+export { default as ProofAndTrustFAQSection } from "./ProofAndTrustFAQSection";
+export { default as CtaSection } from "./CtaSection";
