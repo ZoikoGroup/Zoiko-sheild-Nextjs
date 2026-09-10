@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import Image from "next/image";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -9,8 +9,8 @@ export default function ReportRiskToTheBoardPage() {
       <Navbar />
 
       <main className="flex-grow w-full">
-        <section className="bg-zoiko-beige w-full py-20 relative">
-          <div className="max-w-7xl mx-auto px-[32px] grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-y-12 lg:gap-[52px] items-start">
+        <section className="bg-zoiko-beige w-full py-14 md:py-20 relative">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-y-12 lg:gap-[52px] items-start">
             
             {/* Left Column (Content) */}
             <div className="flex flex-col gap-[11.2px] relative pt-10">
@@ -27,7 +27,7 @@ export default function ReportRiskToTheBoardPage() {
               
               {/* Headline */}
               <div className="flex flex-col pt-[5.975px] relative w-full">
-                <h1 className="font-sans font-bold leading-[55.68px] text-[48px] tracking-[-1.008px] text-[#0b2237] m-0">
+                <h1 className="font-sans font-bold leading-[1.15] text-[36px] sm:text-[40px] md:text-[48px] tracking-[-1.008px] text-[#0b2237] m-0">
                   Report risk to the Board<br />
                   <span className="text-[#e0402f]">with evidence behind<br />every material statement.</span>
                 </h1>
@@ -84,8 +84,8 @@ export default function ReportRiskToTheBoardPage() {
         </section>
 
         {/* Second Section: What Changed */}
-        <section className="bg-zoiko-beige w-full pb-20 relative">
-          <div className="max-w-7xl mx-auto px-[32px] flex flex-col gap-[15.2px] items-start relative w-full">
+        <section className="bg-zoiko-beige w-full pb-14 md:pb-20 relative">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-[15.2px] items-start relative w-full">
             
             {/* Eyebrow */}
             <div className="relative w-full h-[17.59px]">
@@ -99,7 +99,7 @@ export default function ReportRiskToTheBoardPage() {
 
             {/* Headline */}
             <div className="flex flex-col pt-[2.8px] relative w-full">
-              <h2 className="font-sans font-bold leading-[39.44px] text-[34px] tracking-[-0.714px] text-[#0b2237] m-0">
+              <h2 className="font-sans font-bold leading-[1.2] text-[28px] sm:text-[32px] md:text-[34px] tracking-[-0.714px] text-[#0b2237] m-0">
                 Executives need the change first. It still has to be earned.
               </h2>
             </div>
@@ -114,7 +114,8 @@ export default function ReportRiskToTheBoardPage() {
             </div>
 
             {/* Table Container */}
-            <div className="bg-white border border-[#e1ddd8] border-solid rounded-[6px] overflow-hidden relative w-full mt-4 flex flex-col">
+            <div className="bg-white border border-[#e1ddd8] border-solid rounded-[6px] overflow-hidden overflow-x-auto relative w-full mt-4 flex flex-col">
+              <div className="min-w-[800px] flex flex-col w-full">
               
               {/* Header Row */}
               <div className="bg-[#0b2237] grid grid-cols-[130px_minmax(0,1.15fr)_minmax(0,1.25fr)_150px] min-h-[44.8px] w-full">
@@ -253,6 +254,7 @@ export default function ReportRiskToTheBoardPage() {
                   <p className="font-mono font-normal text-[#5c6b79] text-[11.5px] leading-[18.4px] m-0">Reporting owner</p>
                 </div>
               </div>
+              </div>
 
             </div>
 
@@ -269,8 +271,8 @@ export default function ReportRiskToTheBoardPage() {
         </section>
 
         {/* Third Section: Statement Anatomy */}
-        <section className="bg-[#eeebe7] w-full py-[84px] relative border-t border-b border-[#e1ddd8]">
-          <div className="max-w-7xl mx-auto px-[32px] flex flex-col gap-[15.2px] items-start relative w-full">
+        <section className="bg-[#eeebe7] w-full py-[60px] md:py-[84px] relative border-t border-b border-[#e1ddd8]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-[15.2px] items-start relative w-full">
             
             {/* Eyebrow */}
             <div className="relative w-full h-[17.59px]">
@@ -284,7 +286,7 @@ export default function ReportRiskToTheBoardPage() {
 
             {/* Headline */}
             <div className="flex flex-col pt-[2.81px] relative w-full">
-              <h2 className="font-sans font-bold leading-[39.44px] text-[34px] tracking-[-0.714px] text-[#0b2237] m-0">
+              <h2 className="font-sans font-bold leading-[1.2] text-[28px] sm:text-[32px] md:text-[34px] tracking-[-0.714px] text-[#0b2237] m-0">
                 The unit of Board reporting is a statement, not a chart.
               </h2>
             </div>
@@ -305,10 +307,10 @@ export default function ReportRiskToTheBoardPage() {
               <div className="bg-[#eeebe7] border-b border-[#e1ddd8] border-solid p-[26px] flex flex-col gap-[13.2px]">
                 <div className="flex flex-wrap justify-between items-start w-full">
                   <span className="font-mono font-normal text-[#6b7c8c] text-[10.5px] tracking-[1.05px] leading-[16.8px]">
-                    statement_id · ST-2214 · report R-2026Q3 · v3 (synthetic)
+                    statement_id Â· ST-2214 Â· report R-2026Q3 Â· v3 (synthetic)
                   </span>
                   <span className="font-mono font-normal text-[#6b7c8c] text-[10.5px] tracking-[1.05px] leading-[16.8px]">
-                    as-of 04 Aug 2026 · period 01 May – 31 Jul 2026 · UTC
+                    as-of 04 Aug 2026 Â· period 01 May â€“ 31 Jul 2026 Â· UTC
                   </span>
                 </div>
                 
@@ -341,10 +343,10 @@ export default function ReportRiskToTheBoardPage() {
               </div>
 
               {/* Three Columns */}
-              <div className="grid grid-cols-3 w-full items-stretch">
+              <div className="grid grid-cols-1 md:grid-cols-3 w-full items-stretch">
                 
                 {/* Column 1: Basis */}
-                <div className="border-r border-[#e1ddd8] p-[24px] pb-[64.5px] flex flex-col gap-[14px]">
+                <div className="border-b md:border-b-0 md:border-r border-[#e1ddd8] p-[24px] pb-[64.5px] flex flex-col gap-[14px]">
                   <p className="font-mono font-semibold text-[#5c6b79] text-[10px] tracking-[1.3px] uppercase leading-[16px] m-0">Basis</p>
                   <ul className="flex flex-col w-full list-none p-0 m-0">
                     <li className="border-b border-dashed border-[#e1ddd8] py-[9px]">
@@ -387,7 +389,7 @@ export default function ReportRiskToTheBoardPage() {
                 </div>
 
                 {/* Column 2: Limitations */}
-                <div className="bg-[#fcf9f4] border-r border-[#e1ddd8] p-[24px] pb-[50.5px] flex flex-col gap-[14px]">
+                <div className="bg-[#fcf9f4] border-b md:border-b-0 md:border-r border-[#e1ddd8] p-[24px] pb-[50.5px] flex flex-col gap-[14px]">
                   <p className="font-mono font-semibold text-[#95610f] text-[10px] tracking-[1.3px] uppercase leading-[16px] m-0">Limitations carried to the summary</p>
                   <ul className="flex flex-col w-full list-none p-0 m-0">
                     <li className="border-b border-dashed border-[#e1ddd8] py-[9px] relative">
@@ -397,7 +399,7 @@ export default function ReportRiskToTheBoardPage() {
                         <span className="text-[#5c6b79]">outside the method&apos;s freshness window.</span>
                       </p>
                       <span className="inline-flex mt-1 items-center gap-[4px] bg-[#fcf6ea] border border-[#e8d6b4] rounded-[3px] px-[6px] py-[2px]">
-                        <span className="font-mono font-bold text-[#95610f] text-[11px] leading-[11px]">◐</span>
+                        <span className="font-mono font-bold text-[#95610f] text-[11px] leading-[11px]">â—</span>
                         <span className="font-mono font-semibold text-[#95610f] text-[10.5px] uppercase tracking-[0.945px]">Stale</span>
                       </span>
                     </li>
@@ -418,7 +420,7 @@ export default function ReportRiskToTheBoardPage() {
                         <span className="text-[#5c6b79]"> &mdash; two current sources disagree on</span><br />
                         <span className="text-[#5c6b79]">role membership.</span>
                         <span className="inline-flex ml-2 items-center gap-[4px] bg-[#fdf2f0] border border-[#f0ccc5] rounded-[3px] px-[6px] py-[2px]">
-                          <span className="font-mono font-semibold text-[#a63220] text-[11px] leading-[11px]">✕</span>
+                          <span className="font-mono font-semibold text-[#a63220] text-[11px] leading-[11px]">âœ•</span>
                           <span className="font-mono font-semibold text-[#a63220] text-[10.5px] uppercase tracking-[0.945px]">Conflict</span>
                         </span>
                       </p>
@@ -429,7 +431,7 @@ export default function ReportRiskToTheBoardPage() {
                         <span className="text-[#5c6b79]"> &mdash; a third-party listing supports the</span><br />
                         <span className="text-[#5c6b79]">view without being exposed.</span>
                         <span className="inline-flex ml-2 items-center gap-[4px] bg-[#f1f4f7] border border-[#cfd8e0] rounded-[3px] px-[6px] py-[2px]">
-                          <span className="font-mono font-bold text-[#42566b] text-[11px] leading-[11px]">◑</span>
+                          <span className="font-mono font-bold text-[#42566b] text-[11px] leading-[11px]">â—‘</span>
                           <span className="font-mono font-semibold text-[#42566b] text-[10.5px] uppercase tracking-[0.945px]">Restricted</span>
                         </span>
                       </p>
@@ -460,7 +462,7 @@ export default function ReportRiskToTheBoardPage() {
                       <p className="font-sans text-[13.5px] leading-[20.25px] m-0">
                         <span className="font-semibold text-[#0b2237]">Options</span>
                         <span className="text-[#5c6b79]"> &mdash; accept with the two open items</span><br />
-                        <span className="text-[#5c6b79]">recorded · hold pending conflict resolution ·</span><br />
+                        <span className="text-[#5c6b79]">recorded Â· hold pending conflict resolution Â·</span><br />
                         <span className="text-[#5c6b79]">request an interim attestation. No option is pre-</span><br />
                         <span className="text-[#5c6b79]">selected.</span>
                       </p>
@@ -506,8 +508,8 @@ export default function ReportRiskToTheBoardPage() {
           </div>
         </section>
         {/* Fourth Section: Evidence Drill-Down */}
-        <section className="bg-white w-full py-20 relative border-b border-[#e1ddd8]">
-          <div className="max-w-7xl mx-auto px-[32px] flex flex-col gap-[15.2px] items-start relative w-full">
+        <section className="bg-white w-full py-14 md:py-20 relative border-b border-[#e1ddd8]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-[15.2px] items-start relative w-full">
             {/* Eyebrow */}
             <div className="relative w-full h-[17.59px]">
               <div className="absolute left-0 top-1/2 -translate-y-1/2 w-[22px] h-[1px] bg-[#e0402f]" />
@@ -520,7 +522,7 @@ export default function ReportRiskToTheBoardPage() {
 
             {/* Headline */}
             <div className="flex flex-col pt-[2.8px] relative w-full">
-              <h2 className="font-sans font-bold leading-[39.44px] text-[34px] tracking-[-0.714px] text-[#0b2237] m-0">
+              <h2 className="font-sans font-bold leading-[1.2] text-[28px] sm:text-[32px] md:text-[34px] tracking-[-0.714px] text-[#0b2237] m-0">
                 Five levels, each with its own edge.
               </h2>
             </div>
@@ -535,7 +537,8 @@ export default function ReportRiskToTheBoardPage() {
             </div>
 
             {/* Ladder */}
-            <div className="w-full mt-8 flex flex-col border border-[#e1ddd8] rounded-[6px] bg-white overflow-hidden">
+            <div className="w-full mt-8 flex flex-col border border-[#e1ddd8] rounded-[6px] bg-white overflow-hidden overflow-x-auto">
+              <div className="min-w-[700px] flex flex-col w-full">
               
               {/* Level 1 */}
               <div className="grid grid-cols-[48px_minmax(0,1.15fr)_minmax(0,1.2fr)] w-full relative border-b border-[#e1ddd8]">
@@ -625,7 +628,7 @@ export default function ReportRiskToTheBoardPage() {
               {/* Denied */}
               <div className="grid grid-cols-[48px_minmax(0,1.15fr)_minmax(0,1.2fr)] w-full relative">
                 <div className="flex flex-col pt-[24px] pl-[20px]">
-                  <p className="font-mono font-semibold text-[#a63220] text-[11px] leading-[17.6px] m-0">✕</p>
+                  <p className="font-mono font-semibold text-[#a63220] text-[11px] leading-[17.6px] m-0">âœ•</p>
                 </div>
                 <div className="flex flex-col pt-[22px] pb-[24px] pr-[40px] gap-[4px]">
                   <h4 className="font-sans font-bold text-[#0b2237] text-[15px] m-0">When access is denied</h4>
@@ -637,6 +640,7 @@ export default function ReportRiskToTheBoardPage() {
                   <p className="font-mono font-semibold text-[#93a6b8] text-[10.5px] uppercase tracking-[1.365px] m-0">Boundary</p>
                   <p className="font-sans font-normal text-[#5c6b79] text-[14px] leading-[22px] m-0">A link never transfers authority. An external framework or advisory reference stays external.</p>
                 </div>
+              </div>
               </div>
 
             </div>
@@ -678,8 +682,8 @@ export default function ReportRiskToTheBoardPage() {
         </section>
 
         {/* Fifth Section: Uncertainty */}
-        <section className="bg-zoiko-dark w-full py-[84px] relative border-b border-[#1b3b56]">
-          <div className="max-w-7xl mx-auto px-[32px] flex flex-col gap-[15.2px] items-start relative w-full">
+        <section className="bg-zoiko-dark w-full py-[60px] md:py-[84px] relative border-b border-[#1b3b56]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-[15.2px] items-start relative w-full">
             
             {/* Eyebrow */}
             <div className="relative w-full h-[17.59px]">
@@ -693,7 +697,7 @@ export default function ReportRiskToTheBoardPage() {
 
             {/* Headline */}
             <div className="flex flex-col pt-[2.8px] relative w-full">
-              <h2 className="font-sans font-bold leading-[39.44px] text-[34px] tracking-[-0.714px] text-white m-0">
+              <h2 className="font-sans font-bold leading-[1.2] text-[28px] sm:text-[32px] md:text-[34px] tracking-[-0.714px] text-white m-0">
                 When the basis gets weaker, the statement gets more qualified.
               </h2>
             </div>
@@ -770,8 +774,8 @@ export default function ReportRiskToTheBoardPage() {
           </div>
         </section>
         {/* Sixth Section: Method + Prediction Boundaries */}
-        <section className="bg-white w-full py-[84px] relative border-b border-[#e1ddd8]">
-          <div className="max-w-7xl mx-auto px-[32px] flex flex-col gap-[15.2px] items-start relative w-full">
+        <section className="bg-white w-full py-[60px] md:py-[84px] relative border-b border-[#e1ddd8]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-[15.2px] items-start relative w-full">
             
             {/* Eyebrow */}
             <div className="relative w-full h-[17.59px]">
@@ -785,7 +789,7 @@ export default function ReportRiskToTheBoardPage() {
 
             {/* Headline */}
             <div className="flex flex-col pt-[2.8px] relative w-full">
-              <h2 className="font-sans font-bold leading-[39.44px] text-[34px] tracking-[-0.714px] text-[#0b2237] m-0">
+              <h2 className="font-sans font-bold leading-[1.2] text-[28px] sm:text-[32px] md:text-[34px] tracking-[-0.714px] text-[#0b2237] m-0">
                 The page works without numeric scoring &mdash; so it goes without.
               </h2>
             </div>
@@ -837,7 +841,7 @@ export default function ReportRiskToTheBoardPage() {
               <div className="bg-white border border-[#e1ddd8] rounded-[6px] p-[27px] flex flex-col gap-[16px] relative">
                 <div className="absolute top-[-1px] left-[27px] w-[32px] h-[3px] bg-[#e0402f] rounded-b-[2px]" />
                 <div className="w-[32px] h-[32px] flex items-center justify-center bg-[#f4f5f7] rounded-[6px] text-[#e0402f] text-[18px]">
-                  ⊘
+                  âŠ˜
                 </div>
                 <h3 className="font-sans font-bold text-[#0b2237] text-[18px] m-0">Materiality</h3>
                 <p className="font-sans font-normal text-[#5c6b79] text-[14px] leading-[22px] m-0">
@@ -859,7 +863,7 @@ export default function ReportRiskToTheBoardPage() {
               <div className="bg-white border border-[#e1ddd8] rounded-[6px] p-[27px] flex flex-col gap-[16px] relative">
                 <div className="absolute top-[-1px] left-[27px] w-[32px] h-[3px] bg-[#4f46e5] rounded-b-[2px]" />
                 <div className="w-[32px] h-[32px] flex items-center justify-center bg-[#f4f5f7] rounded-[6px] text-[#4f46e5] text-[18px]">
-                  ≏
+                  â‰
                 </div>
                 <h3 className="font-sans font-bold text-[#0b2237] text-[18px] m-0">Probability and forecast</h3>
                 <p className="font-sans font-normal text-[#5c6b79] text-[14px] leading-[22px] m-0">
@@ -872,8 +876,8 @@ export default function ReportRiskToTheBoardPage() {
         </section>
 
         {/* Seventh Section: Trend + Benchmark */}
-        <section className="bg-zoiko-beige w-full py-[84px] relative border-b border-[#e1ddd8]">
-          <div className="max-w-7xl mx-auto px-[32px] flex flex-col gap-[15.2px] items-start relative w-full">
+        <section className="bg-zoiko-beige w-full py-[60px] md:py-[84px] relative border-b border-[#e1ddd8]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-[15.2px] items-start relative w-full">
             
             {/* Eyebrow */}
             <div className="relative w-full h-[17.59px]">
@@ -887,7 +891,7 @@ export default function ReportRiskToTheBoardPage() {
 
             {/* Headline */}
             <div className="flex flex-col pt-[2.8px] relative w-full">
-              <h2 className="font-sans font-bold leading-[39.44px] text-[34px] tracking-[-0.714px] text-[#0b2237] m-0">
+              <h2 className="font-sans font-bold leading-[1.2] text-[28px] sm:text-[32px] md:text-[34px] tracking-[-0.714px] text-[#0b2237] m-0">
                 Comparability is checked before anything is compared.
               </h2>
             </div>
@@ -905,7 +909,7 @@ export default function ReportRiskToTheBoardPage() {
               {/* Card 1 */}
               <div className="bg-white border border-[#e1ddd8] rounded-[6px] flex flex-col p-[27px] gap-[16px]">
                 <div className="w-[32px] h-[32px] flex items-center justify-center bg-[#f4f5f7] rounded-[6px] text-[#5c6b79] text-[18px]">
-                  ◐
+                  â—
                 </div>
                 <h3 className="font-sans font-bold text-[#0b2237] text-[18px] m-0">What gets checked first</h3>
                 <ul className="flex flex-col gap-[12px] m-0 p-0 list-none mt-2">
@@ -953,7 +957,7 @@ export default function ReportRiskToTheBoardPage() {
               {/* Card 2 */}
               <div className="bg-white border-[1.5px] border-[#e0402f] rounded-[6px] p-[27px] flex flex-col gap-[16px]">
                 <div className="w-[32px] h-[32px] flex items-center justify-center bg-[#f4f5f7] rounded-[6px] text-[#5c6b79] text-[18px]">
-                  ⦀
+                  â¦€
                 </div>
                 <h3 className="font-sans font-bold text-[#0b2237] text-[18px] m-0">On peer benchmarks</h3>
                 <p className="font-sans font-normal text-[#5c6b79] text-[14px] leading-[22px] m-0">
@@ -969,8 +973,8 @@ export default function ReportRiskToTheBoardPage() {
           </div>
         </section>
         {/* Eighth Section: AI + Related */}
-        <section className="bg-white w-full py-[84px] relative border-b border-[#e1ddd8]">
-          <div className="max-w-7xl mx-auto px-[32px] flex flex-col gap-[15.2px] items-start relative w-full">
+        <section className="bg-white w-full py-[60px] md:py-[84px] relative border-b border-[#e1ddd8]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-[15.2px] items-start relative w-full">
             
             {/* Eyebrow */}
             <div className="relative w-full h-[17.59px]">
@@ -984,7 +988,7 @@ export default function ReportRiskToTheBoardPage() {
 
             {/* Headline */}
             <div className="flex flex-col pt-[2.8px] relative w-full">
-              <h2 className="font-sans font-bold leading-[39.44px] text-[34px] tracking-[-0.714px] text-[#0b2237] m-0">
+              <h2 className="font-sans font-bold leading-[1.2] text-[28px] sm:text-[32px] md:text-[34px] tracking-[-0.714px] text-[#0b2237] m-0">
                 Help with the writing. Not with the deciding.
               </h2>
             </div>
@@ -999,10 +1003,10 @@ export default function ReportRiskToTheBoardPage() {
             {/* Table */}
             <div className="w-full mt-8 border border-[#e1ddd8] rounded-[6px] overflow-hidden bg-white flex flex-col">
               <div className="grid grid-cols-[245px_minmax(0,1.2fr)_minmax(0,1.3fr)] bg-[#fcfbfa] border-b border-[#e1ddd8] min-h-[46px]">
-                <div className="px-[20px] py-[14px] flex flex-col justify-center border-r border-[#e1ddd8]">
+                <div className="px-[20px] py-[14px] flex flex-col justify-center border-b md:border-b-0 md:border-r border-[#e1ddd8]">
                   <p className="font-mono font-semibold text-[#5c6b79] text-[10.5px] tracking-[1.365px] uppercase leading-[16.8px] m-0">Function</p>
                 </div>
-                <div className="px-[20px] py-[14px] flex flex-col justify-center border-r border-[#e1ddd8]">
+                <div className="px-[20px] py-[14px] flex flex-col justify-center border-b md:border-b-0 md:border-r border-[#e1ddd8]">
                   <p className="font-mono font-semibold text-[#5c6b79] text-[10.5px] tracking-[1.365px] uppercase leading-[16.8px] m-0">Allowed</p>
                 </div>
                 <div className="px-[20px] py-[14px] flex flex-col justify-center">
@@ -1022,10 +1026,10 @@ export default function ReportRiskToTheBoardPage() {
                 ["Detection & cases", "Contribute incident and investigation context.", "Case correlation does not become root cause or severity."]
               ].map(([func, allowed, bound], i) => (
                 <div key={i} className="grid grid-cols-[245px_minmax(0,1.2fr)_minmax(0,1.3fr)] border-b border-[#e1ddd8] last:border-b-0 w-full hover:bg-gray-50 transition-colors">
-                  <div className="px-[20px] py-[16px] flex flex-col justify-center border-r border-[#e1ddd8]">
+                  <div className="px-[20px] py-[16px] flex flex-col justify-center border-b md:border-b-0 md:border-r border-[#e1ddd8]">
                     <p className="font-sans font-medium text-[#0b2237] text-[13.5px] leading-[20px] m-0">{func}</p>
                   </div>
-                  <div className="px-[20px] py-[16px] flex flex-col justify-center border-r border-[#e1ddd8]">
+                  <div className="px-[20px] py-[16px] flex flex-col justify-center border-b md:border-b-0 md:border-r border-[#e1ddd8]">
                     <p className="font-sans font-normal text-[#5c6b79] text-[13.5px] leading-[20px] m-0">{allowed}</p>
                   </div>
                   <div className="px-[20px] py-[16px] flex flex-col justify-center">
@@ -1042,7 +1046,7 @@ export default function ReportRiskToTheBoardPage() {
                   <h3 className="font-sans font-bold text-[#0b2237] text-[18px] m-0 flex items-center gap-[8px]">
                     Evidence ledger 
                     <span className="inline-flex items-center gap-[4px] bg-[#eef7f1] border border-[#d2eadc] rounded-[3px] px-[6px] py-[2px] ml-1">
-                      <span className="font-mono font-bold text-[#20663f] text-[11px] leading-[11px]">●</span>
+                      <span className="font-mono font-bold text-[#20663f] text-[11px] leading-[11px]">â—</span>
                       <span className="font-mono font-semibold text-[#20663f] text-[10.5px] tracking-[0.945px]">Active</span>
                     </span>
                   </h3>
@@ -1062,7 +1066,7 @@ export default function ReportRiskToTheBoardPage() {
                   <h3 className="font-sans font-bold text-[#0b2237] text-[18px] m-0 flex items-start flex-col gap-[8px]">
                     Executive Risk Intelligence
                     <span className="inline-flex items-center gap-[4px] bg-[#f1f4f7] border border-[#cfd8e0] rounded-[3px] px-[6px] py-[2px]">
-                      <span className="font-mono font-bold text-[#42566b] text-[11px] leading-[11px]">◐</span>
+                      <span className="font-mono font-bold text-[#42566b] text-[11px] leading-[11px]">â—</span>
                       <span className="font-mono font-semibold text-[#42566b] text-[10.5px] uppercase tracking-[0.945px]">When public</span>
                     </span>
                   </h3>
@@ -1077,7 +1081,7 @@ export default function ReportRiskToTheBoardPage() {
                   <h3 className="font-sans font-bold text-[#0b2237] text-[18px] m-0 flex items-start flex-col gap-[8px]">
                     vCISO &amp; Advisory 
                     <span className="inline-flex items-center gap-[4px] bg-[#f1f4f7] border border-[#cfd8e0] rounded-[3px] px-[6px] py-[2px]">
-                      <span className="font-mono font-bold text-[#42566b] text-[11px] leading-[11px]">◐</span>
+                      <span className="font-mono font-bold text-[#42566b] text-[11px] leading-[11px]">â—</span>
                       <span className="font-mono font-semibold text-[#42566b] text-[10.5px] uppercase tracking-[0.945px]">When public</span>
                     </span>
                   </h3>
@@ -1092,8 +1096,8 @@ export default function ReportRiskToTheBoardPage() {
         </section>
 
         {/* Ninth Section: Pack + Confidentiality */}
-        <section className="bg-zoiko-dark w-full py-[84px] relative border-b border-[#1b3b56]">
-          <div className="max-w-7xl mx-auto px-[32px] flex flex-col gap-[15.2px] items-start relative w-full">
+        <section className="bg-zoiko-dark w-full py-[60px] md:py-[84px] relative border-b border-[#1b3b56]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-[15.2px] items-start relative w-full">
             
             {/* Eyebrow */}
             <div className="relative w-full h-[17.59px]">
@@ -1107,7 +1111,7 @@ export default function ReportRiskToTheBoardPage() {
 
             {/* Headline */}
             <div className="flex flex-col pt-[2.8px] relative w-full">
-              <h2 className="font-sans font-bold leading-[39.44px] text-[34px] tracking-[-0.714px] text-white m-0">
+              <h2 className="font-sans font-bold leading-[1.2] text-[28px] sm:text-[32px] md:text-[34px] tracking-[-0.714px] text-white m-0">
                 Changing the format cannot change the meaning.
               </h2>
             </div>
@@ -1193,8 +1197,8 @@ export default function ReportRiskToTheBoardPage() {
         </section>
         
         {/* Tenth Section: FAQ */}
-        <section className="bg-[#fcfbfa] w-full py-[84px] relative border-b border-[#e1ddd8]">
-          <div className="max-w-7xl mx-auto px-[32px] flex flex-col items-start text-left relative w-full">
+        <section className="bg-[#fcfbfa] w-full py-[60px] md:py-[84px] relative border-b border-[#e1ddd8]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-start text-left relative w-full">
             <div className="w-full flex flex-col gap-[15.2px]">
             
             {/* Eyebrow */}
@@ -1207,7 +1211,7 @@ export default function ReportRiskToTheBoardPage() {
 
             {/* Headline */}
             <div className="flex flex-col pt-[2.8px] relative w-full">
-              <h2 className="font-sans font-bold leading-[39.44px] text-[34px] tracking-[-0.714px] text-[#0b2237] m-0">
+              <h2 className="font-sans font-bold leading-[1.2] text-[28px] sm:text-[32px] md:text-[34px] tracking-[-0.714px] text-[#0b2237] m-0">
                 What a Board and its advisors will ask.
               </h2>
             </div>
@@ -1270,7 +1274,7 @@ export default function ReportRiskToTheBoardPage() {
                       {faq.q}
                     </h4>
                     <span className="text-[#e0402f] text-[20px] font-light leading-none">
-                      {index === 0 ? "−" : "+"}
+                      {index === 0 ? "âˆ’" : "+"}
                     </span>
                   </div>
                   {index === 0 && (
@@ -1287,7 +1291,7 @@ export default function ReportRiskToTheBoardPage() {
 
         {/* Conversion Section */}
         <section className="bg-zoiko-dark w-full py-[100px] relative">
-          <div className="max-w-4xl mx-auto px-[32px] flex flex-col items-center text-center gap-[24px] relative w-full">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center gap-[24px] relative w-full">
             
             {/* Eyebrow */}
             <p className="font-mono font-semibold text-[11px] text-[#e0402f] tracking-[1.76px] uppercase leading-[17.6px] m-0">
@@ -1330,3 +1334,4 @@ export default function ReportRiskToTheBoardPage() {
     </div>
   );
 }
+
