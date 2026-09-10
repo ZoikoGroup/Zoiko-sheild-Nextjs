@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import Image from "next/image";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -802,7 +802,8 @@ export default function ReportRiskToTheBoardPage() {
             </div>
 
             {/* Table */}
-            <div className="w-full mt-8 border border-[#e1ddd8] rounded-[6px] overflow-hidden bg-white flex flex-col">
+            <div className="w-full mt-8 border border-[#e1ddd8] rounded-[6px] overflow-hidden overflow-x-auto bg-white flex flex-col">
+              <div className="min-w-[800px] flex flex-col w-full">
               <div className="grid grid-cols-[260px_minmax(0,1fr)] bg-[#fcfbfa] border-b border-[#e1ddd8] min-h-[46px]">
                 <div className="px-[24px] py-[16px] flex flex-col justify-center">
                   <p className="font-mono font-semibold text-[#5c6b79] text-[10.5px] tracking-[1.365px] uppercase leading-[16.8px] m-0">Construct</p>
@@ -841,7 +842,7 @@ export default function ReportRiskToTheBoardPage() {
               <div className="bg-white border border-[#e1ddd8] rounded-[6px] p-[27px] flex flex-col gap-[16px] relative">
                 <div className="absolute top-[-1px] left-[27px] w-[32px] h-[3px] bg-[#e0402f] rounded-b-[2px]" />
                 <div className="w-[32px] h-[32px] flex items-center justify-center bg-[#f4f5f7] rounded-[6px] text-[#e0402f] text-[18px]">
-                  âŠ˜
+                  §
                 </div>
                 <h3 className="font-sans font-bold text-[#0b2237] text-[18px] m-0">Materiality</h3>
                 <p className="font-sans font-normal text-[#5c6b79] text-[14px] leading-[22px] m-0">
@@ -852,7 +853,7 @@ export default function ReportRiskToTheBoardPage() {
               <div className="bg-white border border-[#e1ddd8] rounded-[6px] p-[27px] flex flex-col gap-[16px] relative">
                 <div className="absolute top-[-1px] left-[27px] w-[32px] h-[3px] bg-[#d97706] rounded-b-[2px]" />
                 <div className="w-[32px] h-[32px] flex items-center justify-center bg-[#f4f5f7] rounded-[6px] text-[#d97706] text-[18px]">
-                  &ne;
+                  ≠
                 </div>
                 <h3 className="font-sans font-bold text-[#0b2237] text-[18px] m-0">Causality and root cause</h3>
                 <p className="font-sans font-normal text-[#5c6b79] text-[14px] leading-[22px] m-0">
@@ -863,7 +864,7 @@ export default function ReportRiskToTheBoardPage() {
               <div className="bg-white border border-[#e1ddd8] rounded-[6px] p-[27px] flex flex-col gap-[16px] relative">
                 <div className="absolute top-[-1px] left-[27px] w-[32px] h-[3px] bg-[#4f46e5] rounded-b-[2px]" />
                 <div className="w-[32px] h-[32px] flex items-center justify-center bg-[#f4f5f7] rounded-[6px] text-[#4f46e5] text-[18px]">
-                  â‰
+                  ≅
                 </div>
                 <h3 className="font-sans font-bold text-[#0b2237] text-[18px] m-0">Probability and forecast</h3>
                 <p className="font-sans font-normal text-[#5c6b79] text-[14px] leading-[22px] m-0">
@@ -871,7 +872,7 @@ export default function ReportRiskToTheBoardPage() {
                 </p>
               </div>
             </div>
-
+            </div>
           </div>
         </section>
 
@@ -1001,7 +1002,8 @@ export default function ReportRiskToTheBoardPage() {
             </div>
 
             {/* Table */}
-            <div className="w-full mt-8 border border-[#e1ddd8] rounded-[6px] overflow-hidden bg-white flex flex-col">
+            <div className="w-full mt-8 border border-[#e1ddd8] rounded-[6px] overflow-hidden overflow-x-auto bg-white flex flex-col">
+              <div className="min-w-[800px] flex flex-col w-full">
               <div className="grid grid-cols-[245px_minmax(0,1.2fr)_minmax(0,1.3fr)] bg-[#fcfbfa] border-b border-[#e1ddd8] min-h-[46px]">
                 <div className="px-[20px] py-[14px] flex flex-col justify-center border-b md:border-b-0 md:border-r border-[#e1ddd8]">
                   <p className="font-mono font-semibold text-[#5c6b79] text-[10.5px] tracking-[1.365px] uppercase leading-[16.8px] m-0">Function</p>
@@ -1037,6 +1039,7 @@ export default function ReportRiskToTheBoardPage() {
                   </div>
                 </div>
               ))}
+              </div>
             </div>
 
             {/* Grid 3 Cards */}
