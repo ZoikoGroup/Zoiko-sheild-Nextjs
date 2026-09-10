@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
+// import { Navbar } from "@/components/layout/Navbar";
+// import { Footer } from "@/components/layout/Footer";
 import { MetricsGrid } from "@/components/ui/MetricsGrid";
 import { ThreatStream } from "@/components/ui/ThreatStream";
 import { Badge } from "@/components/common/Badge";
@@ -16,7 +16,7 @@ export default function DashboardPage() {
 
   return (
     <div className="min-h-screen flex flex-col bg-zoiko-beige text-zoiko-dark relative">
-      <Navbar />
+      {/* <Navbar /> */}
 
       <main className="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-20 space-y-8 w-full">
         {/* Console Header */}
@@ -123,7 +123,7 @@ export default function DashboardPage() {
         )}
       </main>
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

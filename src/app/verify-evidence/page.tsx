@@ -3,8 +3,8 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
+// import { Navbar } from "@/components/layout/Navbar";
+// import { Footer } from "@/components/layout/Footer";
 import { DemoModal } from "@/components/ui/DemoModal";
 import {
   AlertTriangle
@@ -175,7 +175,7 @@ export default function VerifyEvidencePage() {
 
   return (
     <div className="min-h-screen bg-[#F5F2EB] text-[#151B28] font-sans antialiased selection:bg-[#C53B3B] selection:text-white">
-      <Navbar onOpenDemo={() => setDemoOpen(true)} />
+      {/* <Navbar onOpenDemo={() => setDemoOpen(true)} /> */}
 
 
       <main className="pt-8 sm:pt-14 pb-0 overflow-x-hidden">
@@ -1307,7 +1307,7 @@ claim_set_version: <pending>`}
         </section>
       </main>
 
-      <Footer />
+      {/* <Footer /> */}
 
       {/* Demo Modal */}
       <DemoModal isOpen={demoOpen} onClose={() => setDemoOpen(false)} />
