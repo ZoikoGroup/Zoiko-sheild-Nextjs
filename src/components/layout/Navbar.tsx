@@ -327,7 +327,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemo }) => {
                         </p>
                       </div>
 
-                      <Link href="/about" onClick={closeMenu}>
+                      <Link href="/managed-defense" onClick={closeMenu}>
                         <button className="w-full bg-[#0E2C38] hover:bg-[#153e4f] text-white py-2 px-4 rounded-xl text-xs font-bold transition-colors">
                           Explore Managed Defense
                         </button>
@@ -517,7 +517,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemo }) => {
                       </Link>
 
                       <Link
-                        href="/about"
+                        href="/payments-insurance"
                         onClick={closeMenu}
                         className="bg-[#F6F4EE] hover:bg-[#EFECE3] p-3.5 rounded-2xl border border-[#00000000] transition-all flex items-start gap-3 group/item block"
                       >
