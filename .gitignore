@@ -46,3 +46,17 @@ Thumbs.db
 
 # Misc
 *.pem
+
+# Temporary Scripts & Data
+build_how_it_works.py
+download_figma_images.py
+download_figma.js
+fix.js
+fix2.js
+fix3.js
+refactor_prepare.py
+refactor_report.py
+remove_unused.py
+replace_fonts.py
+update_padding.py
+response.json
