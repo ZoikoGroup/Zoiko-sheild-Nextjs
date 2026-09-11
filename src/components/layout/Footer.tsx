@@ -129,10 +129,10 @@ export const Footer: React.FC = () => {
               SERVICES
             </h4>
             <ul className="space-y-2 text-gray-300/80">
-              <li><Link href="/about" className="hover:text-white transition-colors">Managed Defense</Link></li>
+              <li><Link href="/managed-defense" className="hover:text-white transition-colors">Managed Defense</Link></li>
               <li><Link href="/about" className="hover:text-white transition-colors">Continuous Assurance</Link></li>
               <li><Link href="/about" className="hover:text-white transition-colors">Compare starting paths</Link></li>
-              <li><Link href="/incident-readiness-service" className="hover:text-white transition-colors">Incident Response Retainer</Link></li>
+              <li><Link href="/ir-retainer" className="hover:text-white transition-colors">Incident Response Retainer</Link></li>
               <li><Link href="/vciso-advisory" className="hover:text-white transition-colors">vCISO & Advisory</Link></li>
             </ul>
           </div>
@@ -157,7 +157,7 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-2 text-gray-300/80">
               <li><Link href="/about" className="hover:text-white transition-colors">Financial services & fintech</Link></li>
-              <li><Link href="/about" className="hover:text-white transition-colors">Payment & Insurance</Link></li>
+              <li><Link href="/payments-insurance" className="hover:text-white transition-colors">Payment & Insurance</Link></li>
               <li><Link href="/about" className="hover:text-white transition-colors">B2B SaaS, Cloud & AI</Link></li>
             </ul>
           </div>

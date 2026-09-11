@@ -1,0 +1,9 @@
+export { default as PaymentsAndInsuranceHeroSection } from "./PaymentsAndInsuranceHeroSection";
+export { default as OperatingScopeTableSection } from "./OperatingScopeTableSection";
+export { default as OperatingChainsSection } from "./OperatingChainsSection";
+export { default as StateSemanticsSection } from "./StateSemanticsSection";
+export { default as FraudAndFinancialCrimeSection } from "./FraudAndFinancialCrimeSection";
+export { default as HighAssuranceOperationsSection } from "./HighAssuranceOperationsSection";
+export { default as EvidenceControlsAndReviewSection } from "./EvidenceControlsAndReviewSection";
+export { default as RiskReportingAndAiSection } from "./RiskReportingAndAiSection";
+export { default as GetStartedSection } from "./GetStartedSection";
