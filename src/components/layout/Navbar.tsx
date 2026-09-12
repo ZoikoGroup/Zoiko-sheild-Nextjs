@@ -218,7 +218,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemo }) => {
                       </Link>
 
                       <Link
-                        href="/dashboard"
+                        href="/detection-and-response"
                         onClick={closeMenu}
                         className="bg-[#F6F4EE] hover:bg-[#EFECE3] p-3.5 rounded-2xl border border-[#00000000] transition-all flex items-start gap-3 group/item"
                       >
@@ -349,7 +349,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemo }) => {
                         </p>
                       </div>
 
-                      <Link href="/dashboard" onClick={closeMenu}>
+                      <Link href="/continues-assurance" onClick={closeMenu}>
                         <button className="w-full bg-[#0E2C38] hover:bg-[#153e4f] text-white py-2 px-4 rounded-xl text-xs font-bold transition-colors">
                           Explore Continuous Assurance
                         </button>
@@ -381,7 +381,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemo }) => {
 
                   {/* Bottom Full-Width Card */}
                   <Link
-                    href="/about"
+                    href="/compare-starting-paths"
                     onClick={closeMenu}
                     className="block bg-[#F6F4EE] hover:bg-[#EFECE3] p-4 rounded-2xl border border-[#00000000] transition-all group/item"
                   >
@@ -456,7 +456,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemo }) => {
                       </Link>
 
                       <Link
-                        href="/about"
+                        href="/consolidate-security-operations"
                         onClick={closeMenu}
                         className="bg-[#F6F4EE] hover:bg-[#EFECE3] p-3.5 rounded-2xl border border-[#00000000] transition-all flex items-start gap-3 group/item block"
                       >
