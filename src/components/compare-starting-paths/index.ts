@@ -1,0 +1,12 @@
+export { default as CompareStartingPaths } from "./CompareStartingPaths";
+export { default as CompareServices } from "./CompareServices";
+export { default as WhatJobAreYouTryingToSolve } from "./WhatJobAreYouTryingToSolve";
+export { default as ComparisonMatrix } from "./ComparisonMatrix";
+export { default as ParallelPaths } from "./ParallelPaths";
+export { default as ManagedDefenseSummary } from "./ManagedDefenseSummary";
+export { default as ContinuousAssuranceSummary } from "./ContinuousAssuranceSummary";
+export { default as PrepareOwners } from "./PrepareOwners";
+export { default as FindTheRightRoute } from "./FindTheRightRoute";
+export { default as TrustAndProcurement } from "./TrustAndProcurement";
+export { default as FAQ } from "./FAQ";
+export { default as ExploreServicePage } from "./ExploreServicePage";
