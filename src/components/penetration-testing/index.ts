@@ -1,0 +1,10 @@
+export { default as PenetrationTestingHero } from "./PenetrationTestingHero";
+export { default as RightAssessmentTabs } from "./RightAssessmentTabs";
+export { default as AuthorizationAndRulesSection } from "./AuthorizationAndRulesSection";
+export { default as ScopeInventorySection } from "./ScopeInventorySection";
+export { default as HowTestingWorksSection } from "./HowTestingWorksSection";
+export { default as SafetyBoundarySection } from "./SafetyBoundarySection";
+export { default as FindingsAndEvidenceSection } from "./FindingsAndEvidenceSection";
+export { default as RemediationAndRetestSection } from "./RemediationAndRetestSection";
+export { default as ThirdPartiesAndDataSection } from "./ThirdPartiesAndDataSection";
+export { default as GetStartedSection } from "./GetStartedSection";
