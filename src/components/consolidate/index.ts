@@ -1,0 +1,11 @@
+export { default as ConnectSecurityOperations } from "./ConnectSecurityOperations";
+export { default as FragmentationMapSection } from "./FragmentationMapSection";
+export { default as ConnectExistingToolsSection } from "./ConnectExistingToolsSection";
+export { default as NormalizeAndCorrelate } from "./NormalizeAndCorrelate";
+export { default as TriageAndInvestigateSection } from "./TriageAndInvestigateSection";
+export { default as CasesAndWorkflowSyncSection } from "./CasesAndWorkflowSyncSection";
+export { default as GovernResponse } from "./GovernResponse";
+export { default as EvidenceAndInvestigationSection } from "./EvidenceAndInvestigationSection";
+export { default as OperatingModelAndServicesSection } from "./OperatingModelAndServicesSection";
+export { default as TrustAndFaqSection } from "./TrustAndFaqSection";
+export { default as SecurityOperationsSection } from "./SecurityOperationsSection";
