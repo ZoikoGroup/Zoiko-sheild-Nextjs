@@ -85,7 +85,7 @@ export const Footer: React.FC = () => {
               </h4>
               <ul className="space-y-2 text-gray-300/80">
                 <li><Link href="/verify-evidence" className="hover:text-white transition-colors">Evidence ledger & Verification</Link></li>
-                <li><Link href="/dashboard" className="hover:text-white transition-colors">Compliance control plane</Link></li>
+                <li><Link href="/compliance-control-plane" className="hover:text-white transition-colors">Compliance control plane</Link></li>
                 <li><Link href="/verify-evidence" className="hover:text-white transition-colors">Verify evidence</Link></li>
                 <li><Link href="/dashboard" className="hover:text-white transition-colors">Continuous Assurance</Link></li>
               </ul>

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, IBM_Plex_Mono } from "next/font/google";
+import { Inter, IBM_Plex_Mono, Manrope, Hanken_Grotesk, JetBrains_Mono } from "next/font/google";
 import "@/styles/globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -11,6 +11,9 @@ const ibmPlexMono = IBM_Plex_Mono({
   subsets: ["latin"], 
   variable: "--font-ibm-plex-mono" 
 });
+const manrope = Manrope({ subsets: ["latin"], variable: "--font-manrope" });
+const hankenGrotesk = Hanken_Grotesk({ subsets: ["latin"], variable: "--font-hanken-grotesk" });
+const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jetbrains-mono" });
 
 export const metadata: Metadata = {
   title: "Zoiko Shield | Next-Gen Autonomous Cyber Defense Platform",
@@ -40,7 +43,7 @@ export const metadata: Metadata = {
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`light overflow-x-hidden max-w-full ${inter.variable} ${ibmPlexMono.variable}`}>
+    <html lang="en" className={`light overflow-x-hidden max-w-full ${inter.variable} ${ibmPlexMono.variable} ${manrope.variable} ${hankenGrotesk.variable} ${jetbrainsMono.variable}`}>
       <body className="font-sans bg-zoiko-beige text-zoiko-dark min-h-screen selection:bg-zoiko-primary selection:text-white antialiased overflow-x-hidden w-full max-w-full relative">
         <Navbar />
         
