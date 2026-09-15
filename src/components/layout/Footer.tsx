@@ -97,7 +97,7 @@ export const Footer: React.FC = () => {
                 DETECTION & RESPONSE
               </h4>
               <ul className="space-y-2 text-gray-300/80">
-                <li><Link href="/dashboard" className="hover:text-white transition-colors">Detection & Response</Link></li>
+                <li><Link href="/detection-and-response" className="hover:text-white transition-colors">Detection & Response</Link></li>
                 <li><Link href="/security-analytics" className="hover:text-white transition-colors">Security analytics</Link></li>
                 <li><Link href="/dashboard" className="hover:text-white transition-colors">Case management</Link></li>
                 <li><Link href="/governed-response" className="hover:text-white transition-colors">Governed response</Link></li>
@@ -131,7 +131,7 @@ export const Footer: React.FC = () => {
             <ul className="space-y-2 text-gray-300/80">
               <li><Link href="/managed-defense" className="hover:text-white transition-colors">Managed Defense</Link></li>
               <li><Link href="/about" className="hover:text-white transition-colors">Continuous Assurance</Link></li>
-              <li><Link href="/about" className="hover:text-white transition-colors">Compare starting paths</Link></li>
+              <li><Link href="/compare-starting-paths" className="hover:text-white transition-colors">Compare starting paths</Link></li>
               <li><Link href="/ir-retainer" className="hover:text-white transition-colors">Incident Response Retainer</Link></li>
               <li><Link href="/penetration-testing" className="hover:text-white transition-colors">Penetration Testing</Link></li>
               <li><Link href="/vciso-advisory" className="hover:text-white transition-colors">vCISO & Advisory</Link></li>
@@ -145,7 +145,7 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-2 text-gray-300/80">
               <li><Link href="/about" className="hover:text-white transition-colors">Prove controls continuously</Link></li>
-              <li><Link href="/about" className="hover:text-white transition-colors">Consolidate security operations</Link></li>
+              <li><Link href="/consolidate-security-operations" className="hover:text-white transition-colors">Consolidate security operations</Link></li>
               <li><Link href="/about" className="hover:text-white transition-colors">Prepare for audits</Link></li>
               <li><Link href="/about" className="hover:text-white transition-colors">Report risk to the Board</Link></li>
             </ul>
