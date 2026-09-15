@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function PenetrationTestingHero() {
@@ -34,12 +35,12 @@ export default function PenetrationTestingHero() {
           </p>
 
           <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
-            <a
-              href="#"
+            <Link
+              href="/contact"
               className="rounded-lg bg-[#E0402F] px-6 py-3.5 text-center text-sm font-semibold text-white shadow-sm transition-colors hover:bg-[#c43722]"
             >
               Book a Demo
-            </a>
+            </Link>
             <a
               href="#"
               className="rounded-lg border border-[#D9D4CA] px-6 py-3.5 text-center text-sm font-semibold text-[#0B1B26] transition-colors hover:bg-black/5"
