@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function GetStartedSection() {
@@ -31,12 +32,12 @@ export default function GetStartedSection() {
         </p>
 
         <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:flex-wrap sm:items-center sm:justify-center sm:gap-4">
-          <a
-            href="#"
+          <Link
+            href="/contact"
             className="rounded-lg bg-[#E0402F] px-6 py-3.5 text-center text-sm font-semibold text-white shadow-sm transition-colors hover:bg-[#c43722]"
           >
             Book a Demo
-          </a>
+          </Link>
           <a
             href="#"
             className="rounded-lg border border-white/20 px-6 py-3.5 text-center text-sm font-semibold text-white transition-colors hover:bg-white/10"

@@ -45,7 +45,7 @@ const actionButtons: ActionButton[] = [
 
 export default function InspectProofSection() {
   return (
-    <div className="relative w-full min-h-[450px] bg-[#0A2029] flex items-center justify-center px-6 md:px-12 py-24 overflow-x-hidden">
+    <div className="relative w-full min-h-[450px] bg-[#0A2029] flex items-center justify-center px-6 md:px-12 py-16 sm:py-20 lg:py-24 overflow-x-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -75,7 +75,7 @@ export default function InspectProofSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-          className="text-4xl sm:text-[44px] font-bold text-white tracking-tight max-w-3xl mb-6 leading-[1.1]"
+          className="text-[28px] sm:text-4xl md:text-[44px] font-bold text-white tracking-tight max-w-3xl mb-6 leading-[1.1]"
         >
           Inspect the proof before you make the decision.
         </motion.h2>
