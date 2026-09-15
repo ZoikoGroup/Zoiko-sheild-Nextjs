@@ -42,7 +42,7 @@ const stepsData: StepItem[] = [
 
 export default function PublicVerifierGate() {
   return (
-    <div className="relative w-full min-h-screen bg-[#0B2732E5] flex items-center justify-center px-6 md:px-12 py-20 overflow-x-hidden">
+    <div className="relative w-full min-h-screen bg-[#0B2732E5] flex items-center justify-center px-6 md:px-12 py-14 sm:py-16 lg:py-20 overflow-x-hidden">
       {/* Background Image & Overlay */}
       <div className="absolute inset-0 z-0 bg-[#0B2732E5]">
         <Image
@@ -71,7 +71,7 @@ export default function PublicVerifierGate() {
           </div>
 
           {/* Main Title */}
-          <h2 className="text-4xl lg:text-[44px] font-bold text-white tracking-tight mb-4 leading-[1.1]">
+          <h2 className="text-[28px] sm:text-4xl lg:text-[44px] font-bold text-white tracking-tight mb-4 leading-[1.1]">
             Public only after readiness is proven.
           </h2>
 

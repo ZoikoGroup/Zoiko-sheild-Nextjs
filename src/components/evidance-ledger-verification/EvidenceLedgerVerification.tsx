@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 export default function EvidenceLedgerVerification() {
   return (
-    <div className="relative w-full min-h-screen bg-[#F6F4EE] flex items-center justify-center px-6 md:px-16 lg:px-24 py-16 overflow-x-hidden">
+    <div className="relative w-full min-h-screen bg-[#F6F4EE] flex items-center justify-center px-6 md:px-16 lg:px-24 py-12 sm:py-14 lg:py-16 overflow-x-hidden">
       {/* Background blur/shadow element positioned outside on the right */}
       <div className="absolute -right-32 md:-right-20 lg:-right-10 top-1/2 -translate-y-1/2 pointer-events-none z-0">
         <Image
@@ -43,7 +43,7 @@ export default function EvidenceLedgerVerification() {
           </div>
 
           {/* Main Title */}
-          <h1 className="text-4xl sm:text-[44px] lg:text-[44px] font-bold text-[#111A1E] leading-[1.1] tracking-tight mb-6">
+          <h1 className="text-[28px] sm:text-4xl lg:text-[44px] font-bold text-[#111A1E] leading-[1.1] tracking-tight mb-6">
             Evidence Ledger &amp; Verification
           </h1>
 

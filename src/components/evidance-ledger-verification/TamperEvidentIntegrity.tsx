@@ -25,7 +25,7 @@ const bottomRowItems: IntegrityItem[] = [
 
 export default function TamperEvidentIntegrity() {
   return (
-    <div className="relative w-full bg-[#0B2732CC] flex items-center justify-center px-6 md:px-12 py-20 overflow-x-hidden">
+    <div className="relative w-full bg-[#0B2732CC] flex items-center justify-center px-6 md:px-12 py-14 sm:py-16 lg:py-20 overflow-x-hidden">
       {/* Background Image & Overlay */}
       <div className="absolute inset-0 z-0 bg-[#0B2732CC]">
         <Image
@@ -55,7 +55,7 @@ export default function TamperEvidentIntegrity() {
           </div>
 
           {/* Main Title */}
-          <h2 className="text-4xl lg:text-[44px] font-bold text-white tracking-tight mb-4 leading-[1.1]">
+          <h2 className="text-[28px] sm:text-4xl lg:text-[44px] font-bold text-white tracking-tight mb-4 leading-[1.1]">
             Integrity metadata, with the claim boundary attached.
           </h2>
 
