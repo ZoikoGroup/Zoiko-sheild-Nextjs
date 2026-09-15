@@ -52,7 +52,7 @@ const relationshipsData: RelationshipCard[] = [
 
 export default function RelationshipsSection() {
   return (
-    <div className="relative w-full bg-[#F7F5F0] flex items-center justify-center px-6 md:px-12 py-20 overflow-x-hidden">
+    <div className="relative w-full bg-[#F7F5F0] flex items-center justify-center px-6 md:px-12 py-14 sm:py-16 lg:py-20 overflow-x-hidden">
       <div className="relative z-10 max-w-6xl w-full flex flex-col items-start">
         {/* Header Section */}
         <motion.div
@@ -70,7 +70,7 @@ export default function RelationshipsSection() {
           </div>
 
           {/* Main Title */}
-          <h2 className="text-4xl lg:text-[40px] font-bold text-[#111A1E] tracking-tight mb-3 leading-[1.1]">
+          <h2 className="text-[28px] sm:text-4xl lg:text-[40px] font-bold text-[#111A1E] tracking-tight mb-3 leading-[1.1]">
             Evidence connects domains without replacing their authority.
           </h2>
 

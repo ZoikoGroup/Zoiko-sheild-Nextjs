@@ -43,7 +43,7 @@ const stepsData: StepItem[] = [
 
 export default function VerificationSection() {
   return (
-    <div className="relative w-full bg-[#F0EDE6] flex items-center justify-center px-6 md:px-12 py-20 overflow-x-hidden">
+    <div className="relative w-full bg-[#F0EDE6] flex items-center justify-center px-6 md:px-12 py-14 sm:py-16 lg:py-20 overflow-x-hidden">
       <div className="relative z-10 max-w-6xl w-full flex flex-col items-start">
         {/* Header Section */}
         <motion.div
@@ -61,7 +61,7 @@ export default function VerificationSection() {
           </div>
 
           {/* Main Title */}
-          <h2 className="text-4xl lg:text-[40px] font-bold text-[#111A1E] tracking-tight mb-3 leading-[1.1]">
+          <h2 className="text-[28px] sm:text-4xl lg:text-[40px] font-bold text-[#111A1E] tracking-tight mb-3 leading-[1.1]">
             A scoped result, explained from input to next proof.
           </h2>
 

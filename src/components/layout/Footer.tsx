@@ -84,10 +84,10 @@ export const Footer: React.FC = () => {
                 EVIDENCE & ASSURANCE
               </h4>
               <ul className="space-y-2 text-gray-300/80">
-                <li><Link href="/verify-evidence" className="hover:text-white transition-colors">Evidence ledger & Verification</Link></li>
+                <li><Link href="/evidence-ledger-verification" className="hover:text-white transition-colors">Evidence ledger & Verification</Link></li>
                 <li><Link href="/compliance-control-plane" className="hover:text-white transition-colors">Compliance control plane</Link></li>
                 <li><Link href="/verify-evidence" className="hover:text-white transition-colors">Verify evidence</Link></li>
-                <li><Link href="/dashboard" className="hover:text-white transition-colors">Continuous Assurance</Link></li>
+                <li><Link href="/continuous-assurance" className="hover:text-white transition-colors">Continuous Assurance</Link></li>
               </ul>
             </div>
 
@@ -130,7 +130,7 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-2 text-gray-300/80">
               <li><Link href="/managed-defense" className="hover:text-white transition-colors">Managed Defense</Link></li>
-              <li><Link href="/about" className="hover:text-white transition-colors">Continuous Assurance</Link></li>
+              <li><Link href="/continuous-assurance" className="hover:text-white transition-colors">Continuous Assurance</Link></li>
               <li><Link href="/about" className="hover:text-white transition-colors">Compare starting paths</Link></li>
               <li><Link href="/ir-retainer" className="hover:text-white transition-colors">Incident Response Retainer</Link></li>
               <li><Link href="/penetration-testing" className="hover:text-white transition-colors">Penetration Testing</Link></li>
