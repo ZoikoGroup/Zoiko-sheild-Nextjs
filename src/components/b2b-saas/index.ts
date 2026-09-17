@@ -1,0 +1,11 @@
+export { default as B2bSaasCloudAi } from "./B2bSaasCloudAi";
+export { default as BuyerPressures } from "./BuyerPressures";
+export { default as SaasTenantAndSharedResponsibility } from "./SaasTenantAndSharedResponsibility";
+export { default as GovernedIntelligenceSection } from "./GovernedIntelligenceSection";
+export { default as AiGovernance } from "./AiGovernance";
+export { default as SecurityOperations } from "./SecurityOperations";
+export { default as ReviewableAssuranceSection } from "./ReviewableAssuranceSection";
+export { default as EnterpriseProofRoute } from "./EnterpriseProofRoute";
+export { default as EvidenceLinkedRiskReview } from "./EvidenceLinkedRiskReview";
+export { default as FrequentlyAskedQuestions } from "./FrequentlyAskedQuestions";
+export { default as StartWithDeclaredScopeSection } from "./StartWithDeclaredScopeSection";

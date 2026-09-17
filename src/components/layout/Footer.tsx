@@ -111,9 +111,9 @@ export const Footer: React.FC = () => {
               </h4>
               <ul className="space-y-2 text-gray-300/80">
                 <li><Link href="/risk-intelligence" className="hover:text-white transition-colors">Risk Intelligence</Link></li>
-                <li><Link href="/govern-ai-risk" className="hover:text-white transition-colors">AI security & Governance</Link></li>
+                <li><Link href="/ai-security-governance" className="hover:text-white transition-colors">AI security & Governance</Link></li>
                 <li><Link href="/responsible-ai" className="hover:text-white transition-colors">Responsible AI</Link></li>
-                <li><Link href="/dashboard" className="hover:text-white transition-colors">AI decision rights</Link></li>
+                <li><Link href="/ai-decision-rights" className="hover:text-white transition-colors">AI decision rights</Link></li>
               </ul>
             </div>
           </div>
@@ -159,7 +159,7 @@ export const Footer: React.FC = () => {
             <ul className="space-y-2 text-gray-300/80">
               <li><Link href="/about" className="hover:text-white transition-colors">Financial services & fintech</Link></li>
               <li><Link href="/payments-insurance" className="hover:text-white transition-colors">Payment & Insurance</Link></li>
-              <li><Link href="/about" className="hover:text-white transition-colors">B2B SaaS, Cloud & AI</Link></li>
+              <li><Link href="/b2b-saas" className="hover:text-white transition-colors">B2B SaaS, Cloud & AI</Link></li>
             </ul>
           </div>
 
