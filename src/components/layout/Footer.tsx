@@ -113,7 +113,7 @@ export const Footer: React.FC = () => {
                 <li><Link href="/risk-intelligence" className="hover:text-white transition-colors">Risk Intelligence</Link></li>
                 <li><Link href="/govern-ai-risk" className="hover:text-white transition-colors">AI security & Governance</Link></li>
                 <li><Link href="/responsible-ai" className="hover:text-white transition-colors">Responsible AI</Link></li>
-                <li><Link href="/dashboard" className="hover:text-white transition-colors">AI decision rights</Link></li>
+                <li><Link href="/ai-decision-rights" className="hover:text-white transition-colors">AI decision rights</Link></li>
               </ul>
             </div>
           </div>
