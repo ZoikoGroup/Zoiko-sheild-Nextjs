@@ -25,7 +25,6 @@ import {
   Sparkles,
   UserCheck,
   BarChart3,
-  ArrowDown
 } from "lucide-react";
 
 export default function HomePage() {
@@ -46,7 +45,7 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative">
             {/* Left Column */}
-            <div className="lg:col-span-6 space-y-6 text-left">
+            <div className="lg:col-span-6 space-y-6">
               <div className="flex items-center gap-2">
                 <span className="h-[1.5px] w-5 bg-[#C53B3B]" />
                 <span className="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-[#C53B3B] font-mono">
@@ -61,8 +60,10 @@ export default function HomePage() {
                 operations.
               </h1>
 
-              <p className="text-sm sm:text-base lg:text-lg text-[#151B28]/70 max-w-xl leading-relaxed">
-                Threat defense, control assurance, and evidence you can trace to its source — connected across the security tools you already run.
+              <p className="text-sm sm:text-base lg:text-lg text-[#151B28]/70 max-w-[505px] leading-relaxed">
+                Threat defense, control assurance, and evidence you can trace to
+                its source — connected across the security tools you already
+                run.
               </p>
 
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-1 max-w-md sm:max-w-none">
@@ -79,27 +80,16 @@ export default function HomePage() {
                   </button>
                 </Link>
               </div>
-
-              {/* Mobile Sub-link */}
-              <div className="pt-2 text-center sm:text-left">
-                <a
-                  href="#how-it-works"
-                  className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-[#2C6E63] hover:text-[#C53B3B] transition-colors"
-                >
-                  <span>SEE HOW EVIDENCE WORKS</span>
-                  <ArrowDown className="w-3.5 h-3.5" />
-                </a>
-              </div>
             </div>
 
             {/* Right Visual Image Desktop Only */}
             <div className="hidden lg:flex lg:col-span-6 relative w-full justify-center">
-              <div className="relative w-full max-w-lg aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border border-zoiko-border bg-white group">
+              <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border border-zoiko-border bg-white group">
                 <Image
                   src="/images/hero.png"
                   alt="ZoikoShield Governed AI Security Platform"
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="object-cover"
                   priority
                 />
               </div>
@@ -125,8 +115,12 @@ export default function HomePage() {
                       <Activity className="w-4 h-4" />
                     </div>
                     <div>
-                      <div className="font-bold text-white text-xs">Threat Signals</div>
-                      <div className="text-[10px] text-gray-400">Telemetry ingested from your existing stack</div>
+                      <div className="font-bold text-white text-xs">
+                        Threat Signals
+                      </div>
+                      <div className="text-[10px] text-gray-400">
+                        Telemetry ingested from your existing stack
+                      </div>
                     </div>
                   </div>
 
@@ -136,8 +130,12 @@ export default function HomePage() {
                       <Sparkles className="w-4 h-4" />
                     </div>
                     <div>
-                      <div className="font-bold text-white text-xs">AI Intelligence</div>
-                      <div className="text-[10px] text-gray-400">Correlated, scored, and prioritized</div>
+                      <div className="font-bold text-white text-xs">
+                        AI Intelligence
+                      </div>
+                      <div className="text-[10px] text-gray-400">
+                        Correlated, scored, and prioritized
+                      </div>
                     </div>
                   </div>
 
@@ -147,8 +145,12 @@ export default function HomePage() {
                       <UserCheck className="w-4 h-4" />
                     </div>
                     <div>
-                      <div className="font-bold text-white text-xs">Human Approval</div>
-                      <div className="text-[10px] text-gray-400">Analyst authorizes remediation action</div>
+                      <div className="font-bold text-white text-xs">
+                        Human Approval
+                      </div>
+                      <div className="text-[10px] text-gray-400">
+                        Analyst authorizes remediation action
+                      </div>
                     </div>
                   </div>
 
@@ -158,8 +160,12 @@ export default function HomePage() {
                       <FileText className="w-4 h-4" />
                     </div>
                     <div>
-                      <div className="font-bold text-white text-xs">Evidence</div>
-                      <div className="text-[10px] text-gray-400">Immutable, cryptographically hashed</div>
+                      <div className="font-bold text-white text-xs">
+                        Evidence
+                      </div>
+                      <div className="text-[10px] text-gray-400">
+                        Immutable, cryptographically hashed
+                      </div>
                     </div>
                   </div>
 
@@ -169,8 +175,12 @@ export default function HomePage() {
                       <Shield className="w-4 h-4" />
                     </div>
                     <div>
-                      <div className="font-bold text-white text-xs">Compliance</div>
-                      <div className="text-[10px] text-gray-400">Mapped to SOC 2, ISO 27001, HIPAA</div>
+                      <div className="font-bold text-white text-xs">
+                        Compliance
+                      </div>
+                      <div className="text-[10px] text-gray-400">
+                        Mapped to SOC 2, ISO 27001, HIPAA
+                      </div>
                     </div>
                   </div>
 
@@ -180,14 +190,22 @@ export default function HomePage() {
                       <BarChart3 className="w-4 h-4" />
                     </div>
                     <div>
-                      <div className="font-bold text-white text-xs">Executive Reporting</div>
-                      <div className="text-[10px] text-gray-400">Board-ready, defensible proof</div>
+                      <div className="font-bold text-white text-xs">
+                        Executive Reporting
+                      </div>
+                      <div className="text-[10px] text-gray-400">
+                        Board-ready, defensible proof
+                      </div>
                     </div>
                   </div>
                 </div>
 
                 <div className="pt-2 border-t border-gray-800/80 text-[10px] font-mono text-emerald-400 text-center tracking-tight">
-                  AUDIT_EVENT <span className="text-white font-bold">0xA89F2B</span> · CONTROL <span className="text-white font-bold">AC-2</span> · STATUS <span className="text-emerald-400 font-bold">VERIFIED_</span>
+                  AUDIT_EVENT{" "}
+                  <span className="text-white font-bold">0xA89F2B</span> ·
+                  CONTROL <span className="text-white font-bold">AC-2</span> ·
+                  STATUS{" "}
+                  <span className="text-emerald-400 font-bold">VERIFIED_</span>
                 </div>
               </div>
             </div>
@@ -244,42 +262,54 @@ export default function HomePage() {
           <div className="bg-white rounded-3xl border border-zoiko-border shadow-sm overflow-hidden p-6 sm:p-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 divide-y md:divide-y-0 lg:divide-x divide-zoiko-border">
               <div className="space-y-3 pt-4 first:pt-0 md:pt-0 lg:px-4 first:lg:pl-0">
-                <div className="w-10 h-10 rounded-xl bg-[#E8F3F1] text-[#2C6E63] flex items-center justify-center">
+                <div className="w-10 h-10 rounded-xl bg-[#123B4C33] text-[#123B4C] flex items-center justify-center">
                   <CheckCircle2 className="w-5 h-5" />
                 </div>
-                <h4 className="text-base font-bold text-[#151B28]">Mathematical Certainty</h4>
+                <h4 className="text-base font-bold text-[#151B28]">
+                  Mathematical Certainty
+                </h4>
                 <p className="text-xs text-[#151B28]/60 leading-relaxed">
-                  Cryptographic proof that controls are active and effective — not a screenshot, a hash.
+                  Cryptographic proof that controls are active and effective —
+                  not a screenshot, a hash.
                 </p>
               </div>
 
               <div className="space-y-3 pt-6 md:pt-0 lg:px-4">
-                <div className="w-10 h-10 rounded-xl bg-[#E8F3F1] text-[#2C6E63] flex items-center justify-center">
+                <div className="w-10 h-10 rounded-xl bg-[#123B4C33] text-[#123B4C] flex items-center justify-center">
                   <LayoutGrid className="w-5 h-5" />
                 </div>
-                <h4 className="text-base font-bold text-[#151B28]">Unified Stack</h4>
+                <h4 className="text-base font-bold text-[#151B28]">
+                  Unified Stack
+                </h4>
                 <p className="text-xs text-[#151B28]/60 leading-relaxed">
-                  Ingest telemetry from your existing security investments — seamlessly, no rip-and-replace.
+                  Ingest telemetry from your existing security investments —
+                  seamlessly, no rip-and-replace.
                 </p>
               </div>
 
               <div className="space-y-3 pt-6 md:pt-0 lg:px-4">
-                <div className="w-10 h-10 rounded-xl bg-[#E8F3F1] text-[#2C6E63] flex items-center justify-center">
+                <div className="w-10 h-10 rounded-xl bg-[#123B4C33] text-[#123B4C] flex items-center justify-center">
                   <Shield className="w-5 h-5" />
                 </div>
-                <h4 className="text-base font-bold text-[#151B28]">Continuous Compliance</h4>
+                <h4 className="text-base font-bold text-[#151B28]">
+                  Continuous Compliance
+                </h4>
                 <p className="text-xs text-[#151B28]/60 leading-relaxed">
-                  Automated mapping to SOC 2, ISO 27001, and HIPAA mandates — updated as controls change.
+                  Automated mapping to SOC 2, ISO 27001, and HIPAA mandates —
+                  updated as controls change.
                 </p>
               </div>
 
               <div className="space-y-3 pt-6 md:pt-0 lg:px-4 last:lg:pr-0">
-                <div className="w-10 h-10 rounded-xl bg-[#E8F3F1] text-[#2C6E63] flex items-center justify-center">
+                <div className="w-10 h-10 rounded-xl bg-[#123B4C33] text-[#123B4C] flex items-center justify-center">
                   <FileText className="w-5 h-5" />
                 </div>
-                <h4 className="text-base font-bold text-[#151B28]">Defensible Evidence</h4>
+                <h4 className="text-base font-bold text-[#151B28]">
+                  Defensible Evidence
+                </h4>
                 <p className="text-xs text-[#151B28]/60 leading-relaxed">
-                  Immutable ledgers that auditors trust and boards rely on, exportable in one click.
+                  Immutable ledgers that auditors trust and boards rely on,
+                  exportable in one click.
                 </p>
               </div>
             </div>
@@ -290,11 +320,9 @@ export default function HomePage() {
         {/* SECTION 4: PLATFORM OVERVIEW */}
         {/* ============================================ */}
 
-
         {/* ============================================ */}
         {/* SECTION 5: STATS */}
         {/* ============================================ */}
-
 
         {/* ============================================ */}
         {/* SECTION 6: BENTO FEATURE GRID */}
@@ -311,7 +339,8 @@ export default function HomePage() {
               Flexible defense for every environment.
             </h2>
             <p className="text-sm sm:text-base text-[#151B28]/60 max-w-2xl">
-              A comprehensive set of security and compliance tools — designed to work individually or together.
+              A comprehensive set of security and compliance tools — designed to
+              work individually or together.
             </p>
           </div>
 
@@ -319,17 +348,29 @@ export default function HomePage() {
             <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="md:col-span-2 bg-white rounded-3xl p-6 sm:p-8 border border-zoiko-border space-y-4 shadow-sm">
                 <div>
-                  <h3 className="text-xl font-bold text-[#151B28]">Real-time control monitoring</h3>
-                  <p className="text-xs text-[#151B28]/60 mt-1">Every control, continuously verified against live telemetry.</p>
+                  <h3 className="text-xl font-bold text-[#151B28]">
+                    Real-time control monitoring
+                  </h3>
+                  <p className="text-xs text-[#151B28]/60 mt-1">
+                    Every control, continuously verified against live telemetry.
+                  </p>
                 </div>
                 <div className="bg-[#F6F4EE] rounded-2xl p-4 border border-zoiko-border space-y-2.5 font-mono text-xs">
                   <div className="bg-white p-3 rounded-xl border border-zoiko-border flex items-center justify-between">
-                    <span className="text-[#151B28] font-semibold">AC-2 · Identity Access Management</span>
-                    <span className="text-emerald-600 font-bold flex items-center gap-1">● Active</span>
+                    <span className="text-[#151B28] font-semibold">
+                      AC-2 · Identity Access Management
+                    </span>
+                    <span className="text-emerald-600 font-bold flex items-center gap-1">
+                      ● Active
+                    </span>
                   </div>
                   <div className="bg-white p-3 rounded-xl border border-zoiko-border flex items-center justify-between">
-                    <span className="text-[#151B28] font-semibold">CC7.2 · Continuous Monitoring</span>
-                    <span className="text-emerald-600 font-bold flex items-center gap-1">● Active</span>
+                    <span className="text-[#151B28] font-semibold">
+                      CC7.2 · Continuous Monitoring
+                    </span>
+                    <span className="text-emerald-600 font-bold flex items-center gap-1">
+                      ● Active
+                    </span>
                   </div>
                 </div>
               </div>
@@ -343,14 +384,20 @@ export default function HomePage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent p-6 flex flex-col justify-end text-white">
                   <h4 className="text-lg font-bold">Analyst-ready workflows</h4>
-                  <p className="text-xs text-gray-300">Built for the teams who triage every day.</p>
+                  <p className="text-xs text-gray-300">
+                    Built for the teams who triage every day.
+                  </p>
                 </div>
               </div>
 
               <div className="bg-white rounded-3xl p-6 border border-zoiko-border space-y-4 shadow-sm flex flex-col justify-between">
                 <div>
-                  <h4 className="text-lg font-bold text-[#151B28]">Correlated risk scoring</h4>
-                  <p className="text-xs text-[#151B28]/60 mt-0.5">Signals ranked by real business impact.</p>
+                  <h4 className="text-lg font-bold text-[#151B28]">
+                    Correlated risk scoring
+                  </h4>
+                  <p className="text-xs text-[#151B28]/60 mt-0.5">
+                    Signals ranked by real business impact.
+                  </p>
                 </div>
                 <div className="bg-[#F6F4EE] rounded-2xl p-4 border border-zoiko-border h-28 flex items-end justify-between gap-2">
                   <div className="w-full bg-[#2C6E63]/70 h-[35%] rounded-md" />
@@ -372,9 +419,12 @@ export default function HomePage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent p-6 sm:p-8 flex flex-col justify-end text-white">
                   <div className="max-w-xl">
-                    <h4 className="text-xl font-bold">Built for the whole team</h4>
-                    <p className="text-xs text-gray-300 leading-relaxed mt-1">
-                      Security, compliance, and leadership — one shared source of truth.
+                    <h4 className="text-xl font-bold">
+                      Built for the whole team
+                    </h4>
+                    <p className="text-xs text-gray-300 max-w-64 leading-relaxed mt-1">
+                      Security, compliance, and leadership — one shared source
+                      of truth.
                     </p>
                   </div>
                 </div>
@@ -398,14 +448,48 @@ export default function HomePage() {
           </div>
         </section>
 
-                <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative py-12 overflow-hidden">
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative py-12 overflow-hidden">
           <div className="absolute inset-0 pointer-events-none flex items-center justify-center opacity-15">
             <svg width="600" height="300" viewBox="0 0 600 300" fill="none">
-              <circle cx="300" cy="300" r="120" stroke="#C53B3B" strokeWidth="1" strokeDasharray="3 3" />
-              <circle cx="300" cy="300" r="200" stroke="#151B28" strokeWidth="1" />
-              <circle cx="300" cy="300" r="280" stroke="#151B28" strokeWidth="1" strokeDasharray="4 4" />
-              <line x1="300" y1="0" x2="300" y2="300" stroke="#C53B3B" strokeWidth="1" />
-              <line x1="0" y1="300" x2="600" y2="300" stroke="#151B28" strokeWidth="1" />
+              <circle
+                cx="300"
+                cy="300"
+                r="120"
+                stroke="#C53B3B"
+                strokeWidth="1"
+                strokeDasharray="3 3"
+              />
+              <circle
+                cx="300"
+                cy="300"
+                r="200"
+                stroke="#151B28"
+                strokeWidth="1"
+              />
+              <circle
+                cx="300"
+                cy="300"
+                r="280"
+                stroke="#151B28"
+                strokeWidth="1"
+                strokeDasharray="4 4"
+              />
+              <line
+                x1="300"
+                y1="0"
+                x2="300"
+                y2="300"
+                stroke="#C53B3B"
+                strokeWidth="1"
+              />
+              <line
+                x1="0"
+                y1="300"
+                x2="600"
+                y2="300"
+                stroke="#151B28"
+                strokeWidth="1"
+              />
             </svg>
           </div>
 
@@ -416,45 +500,65 @@ export default function HomePage() {
 
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 font-mono">
               <div className="space-y-2">
-                <div className="text-4xl sm:text-5xl font-extrabold text-[#151B28]">500+</div>
-                <div className="text-xs text-[#151B28]/70 font-sans font-medium">Enterprises Protected</div>
+                <div className="text-4xl sm:text-5xl font-extrabold text-[#151B28]">
+                  500+
+                </div>
+                <div className="text-xs text-[#151B28]/70 font-sans font-medium">
+                  Enterprises Protected
+                </div>
               </div>
 
               <div className="space-y-2">
-                <div className="text-4xl sm:text-5xl font-extrabold text-[#151B28]">99.99%</div>
-                <div className="text-xs text-[#151B28]/70 font-sans font-medium">Platform Uptime SLA</div>
+                <div className="text-4xl sm:text-5xl font-extrabold text-[#151B28]">
+                  99.99%
+                </div>
+                <div className="text-xs text-[#151B28]/70 font-sans font-medium">
+                  Platform Uptime SLA
+                </div>
               </div>
 
               <div className="space-y-2">
-                <div className="text-4xl sm:text-5xl font-extrabold text-[#151B28]">40+</div>
-                <div className="text-xs text-[#151B28]/70 font-sans font-medium">Native Integrations</div>
+                <div className="text-4xl sm:text-5xl font-extrabold text-[#151B28]">
+                  40+
+                </div>
+                <div className="text-xs text-[#151B28]/70 font-sans font-medium">
+                  Native Integrations
+                </div>
               </div>
 
               <div className="space-y-2">
-                <div className="text-4xl sm:text-5xl font-extrabold text-[#151B28]">12M+</div>
-                <div className="text-xs text-[#151B28]/70 font-sans font-medium">Evidence Records Verified</div>
+                <div className="text-4xl sm:text-5xl font-extrabold text-[#151B28]">
+                  12M+
+                </div>
+                <div className="text-xs text-[#151B28]/70 font-sans font-medium">
+                  Evidence Records Verified
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="bg-[#0B181E] text-white py-20">
+        <section className="bg-gradient-to-r from-[#0A2029] to-[#0B2732] text-white py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
               <div className="lg:col-span-6 space-y-6">
                 <div className="flex items-center gap-2">
                   <span className="h-[1.5px] w-5 bg-[#C53B3B]" />
-                  <span className="text-xs font-bold uppercase tracking-widest text-[#C53B3B] font-mono">
+                  <span className="text-xs font-bold uppercase tracking-widest text-[#E0967D] font-mono">
                     WHAT IS ZOIKOSHIELD?
                   </span>
                 </div>
 
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight">
-                  A unified security and compliance platform, built for mathematical proof.
+                  A unified security and compliance platform, built for
+                  mathematical proof.
                 </h2>
 
                 <p className="text-sm sm:text-base text-gray-300 leading-relaxed max-w-xl">
-                  ZoikoShield ingests telemetry from your existing stack, correlates threats with compliance mandates, and generates immutable evidence ledgers to prove your controls are effective — in real time.
+                  ZoikoShield ingests telemetry from your existing stack,
+                  correlates threats with compliance mandates, and generates
+                  immutable evidence ledgers to prove your controls are
+                  effective — in real time.
                 </p>
 
                 <div className="pt-2">
@@ -475,9 +579,9 @@ export default function HomePage() {
                   fill
                   className="object-cover"
                 />
-                <div className="absolute bottom-5 left-5 bg-black/70 backdrop-blur-md px-4 py-2 rounded-xl border border-white/10 font-mono text-xs text-gray-300 flex items-center gap-2 shadow-lg">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-                  <span>● VERIFIED_ACTIVE · 42 controls monitored</span>
+                <div className="absolute bottom-5 left-5 bg-black/70 backdrop-blur-md px-4 py-2 rounded-xl border border-white/10 font-mono text-xs text-[#8FD9C8] flex items-center gap-2 shadow-lg">
+                  <span className="w-2 h-2 rounded-full bg-[#8FD9C8] animate-ping" />
+                  <span>VERIFIED_ACTIVE · 42 controls monitored</span>
                 </div>
               </div>
             </div>
@@ -488,7 +592,7 @@ export default function HomePage() {
         {/* SECTION 7: EVIDENCE PLATFORM */}
         {/* ============================================ */}
 
-               <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           <div className="text-center space-y-2 max-w-2xl mx-auto">
             <div className="flex items-center justify-center gap-2">
               <span className="h-[1.5px] w-5 bg-[#C53B3B]" />
@@ -500,7 +604,8 @@ export default function HomePage() {
               Choose your path to defense.
             </h2>
             <p className="text-sm text-[#151B28]/60">
-              Two ways to work with ZoikoShield — fully managed, or self-directed on our platform.
+              Two ways to work with ZoikoShield — fully managed, or
+              self-directed on our platform.
             </p>
           </div>
 
@@ -510,19 +615,28 @@ export default function HomePage() {
                 <span className="inline-block bg-[#E8F3F1] text-[#2C6E63] text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full font-mono">
                   FULLY MANAGED
                 </span>
-                <h3 className="text-2xl font-bold text-[#151B28]">Managed Defense</h3>
+                <h3 className="text-2xl font-bold text-[#151B28]">
+                  Managed Defense
+                </h3>
                 <p className="text-xs text-[#151B28]/60 leading-relaxed">
-                  Outsource your operational security to our expert analysts, backed by the ZoikoShield platform.
+                  Outsource your operational security to our expert analysts,
+                  backed by the ZoikoShield platform.
                 </p>
 
                 <div className="grid grid-cols-2 gap-4 pt-4 border-t border-zoiko-border font-mono">
                   <div>
                     <div className="text-xl font-bold text-[#151B28]">24/7</div>
-                    <div className="text-[10px] text-[#151B28]/50 uppercase">ANALYST COVERAGE</div>
+                    <div className="text-[10px] text-[#151B28]/50 uppercase">
+                      ANALYST COVERAGE
+                    </div>
                   </div>
                   <div>
-                    <div className="text-xl font-bold text-[#151B28]">&lt;15m</div>
-                    <div className="text-[10px] text-[#151B28]/50 uppercase">AVG. TRIAGE TIME</div>
+                    <div className="text-xl font-bold text-[#151B28]">
+                      &lt;15m
+                    </div>
+                    <div className="text-[10px] text-[#151B28]/50 uppercase">
+                      AVG. TRIAGE TIME
+                    </div>
                   </div>
                 </div>
               </div>
@@ -540,19 +654,26 @@ export default function HomePage() {
                 <span className="inline-block bg-white/10 text-cyan-300 text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full font-mono">
                   SELF-DIRECTED
                 </span>
-                <h3 className="text-2xl font-bold text-white">Continuous Assurance</h3>
+                <h3 className="text-2xl font-bold text-white">
+                  Continuous Assurance
+                </h3>
                 <p className="text-xs text-gray-300 leading-relaxed">
-                  Deploy our platform to unify your existing team's visibility and automate evidence collection across every control.
+                  Deploy our platform to unify your existing team's visibility
+                  and automate evidence collection across every control.
                 </p>
 
                 <div className="grid grid-cols-2 gap-4 pt-4 border-t border-gray-800 font-mono">
                   <div>
                     <div className="text-xl font-bold text-white">40+</div>
-                    <div className="text-[10px] text-gray-400 uppercase">NATIVE INTEGRATIONS</div>
+                    <div className="text-[10px] text-gray-400 uppercase">
+                      NATIVE INTEGRATIONS
+                    </div>
                   </div>
                   <div>
                     <div className="text-xl font-bold text-white">100%</div>
-                    <div className="text-[10px] text-gray-400 uppercase">EVIDENCE AUTOMATED</div>
+                    <div className="text-[10px] text-gray-400 uppercase">
+                      EVIDENCE AUTOMATED
+                    </div>
                   </div>
                 </div>
               </div>
@@ -578,7 +699,9 @@ export default function HomePage() {
                 THE PROCESS
               </span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#151B28]">How it works.</h2>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#151B28]">
+              How it works.
+            </h2>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-left">
@@ -588,7 +711,8 @@ export default function HomePage() {
               </div>
               <h4 className="text-lg font-bold text-[#151B28]">Connect</h4>
               <p className="text-xs text-[#151B28]/60 leading-relaxed">
-                Ingest data from across your stack — no agents to rebuild, no workflows to replace.
+                Ingest data from across your stack — no agents to rebuild, no
+                workflows to replace.
               </p>
             </div>
 
@@ -598,7 +722,8 @@ export default function HomePage() {
               </div>
               <h4 className="text-lg font-bold text-[#151B28]">Analyze</h4>
               <p className="text-xs text-[#151B28]/60 leading-relaxed">
-                Correlate signals and detect threats with AI models tuned for regulated environments.
+                Correlate signals and detect threats with AI models tuned for
+                regulated environments.
               </p>
             </div>
 
@@ -608,7 +733,8 @@ export default function HomePage() {
               </div>
               <h4 className="text-lg font-bold text-[#151B28]">Govern</h4>
               <p className="text-xs text-[#151B28]/60 leading-relaxed">
-                Map findings to compliance frameworks automatically, with full human oversight.
+                Map findings to compliance frameworks automatically, with full
+                human oversight.
               </p>
             </div>
 
@@ -618,7 +744,8 @@ export default function HomePage() {
               </div>
               <h4 className="text-lg font-bold text-[#151B28]">Prove</h4>
               <p className="text-xs text-[#151B28]/60 leading-relaxed">
-                Generate immutable evidence ledgers your auditors and board can rely on.
+                Generate immutable evidence ledgers your auditors and board can
+                rely on.
               </p>
             </div>
           </div>
@@ -627,7 +754,6 @@ export default function HomePage() {
         {/* ============================================ */}
         {/* SECTION 9: TWO PATHS */}
         {/* ============================================ */}
- 
 
         {/* ============================================ */}
         {/* SECTION 10: CASE STUDY */}
@@ -644,7 +770,8 @@ export default function HomePage() {
               Trusted for critical infrastructure.
             </h2>
             <p className="text-sm text-[#151B28]/60 max-w-xl">
-              From transit networks to trading floors — ZoikoShield secures the systems regulated industries can't afford to get wrong.
+              From transit networks to trading floors — ZoikoShield secures the
+              systems regulated industries can't afford to get wrong.
             </p>
           </div>
 
@@ -661,7 +788,8 @@ export default function HomePage() {
                   Meridian Financial unifies real-time risk across 40 systems
                 </h3>
                 <p className="text-xs sm:text-sm text-gray-300 mt-2">
-                  Read the story of how a Tier-1 bank cut audit prep from six weeks to three days.
+                  Read the story of how a Tier-1 bank cut audit prep from six
+                  weeks to three days.
                 </p>
               </div>
             </div>
@@ -709,7 +837,7 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-                <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
             <div className="lg:col-span-6 space-y-6">
               <div className="flex items-center gap-2">
@@ -724,7 +852,9 @@ export default function HomePage() {
               </h2>
 
               <p className="text-sm sm:text-base text-[#151B28]/70 leading-relaxed">
-                Cryptographically verified logs that auditors trust and engineers can easily trace. Stop chasing screenshots and start proving compliance mathematically.
+                Cryptographically verified logs that auditors trust and
+                engineers can easily trace. Stop chasing screenshots and start
+                proving compliance mathematically.
               </p>
 
               <div className="space-y-3 pt-2">
@@ -756,20 +886,28 @@ export default function HomePage() {
               </div>
 
               <div className="font-mono text-xs space-y-2 text-gray-300">
-                <div className="text-gray-500 text-[10px] uppercase">EVIDENTIARY RECORD</div>
+                <div className="text-gray-500 text-[10px] uppercase">
+                  EVIDENTIARY RECORD
+                </div>
                 <div className="text-lg font-bold text-white">SHA-256</div>
-                
+
                 <div className="grid grid-cols-3 gap-2 pt-2 text-gray-400">
                   <span>Audit Event</span>
-                  <span className="col-span-2 text-white font-semibold">0xA89F2B</span>
+                  <span className="col-span-2 text-white font-semibold">
+                    0xA89F2B
+                  </span>
                 </div>
                 <div className="grid grid-cols-3 gap-2 text-gray-400">
                   <span>Timestamp</span>
-                  <span className="col-span-2 text-white">2026-08-04T08:42:11Z</span>
+                  <span className="col-span-2 text-white">
+                    2026-08-04T08:42:11Z
+                  </span>
                 </div>
                 <div className="grid grid-cols-3 gap-2 text-gray-400">
                   <span>Control ID</span>
-                  <span className="col-span-2 text-white">AC-2 (Identity Access Mgmt)</span>
+                  <span className="col-span-2 text-white">
+                    AC-2 (Identity Access Mgmt)
+                  </span>
                 </div>
 
                 <div className="mt-4 bg-[#11242C] p-3 rounded-xl border border-gray-800 text-[11px] text-cyan-400 break-all">
@@ -793,7 +931,6 @@ export default function HomePage() {
           </div>
         </section>
 
-
         {/* ============================================ */}
         {/* NEW SECTION 11: SYSTEM ARCHITECTURE (5 Stepper Nodes) */}
         {/* ============================================ */}
@@ -811,7 +948,7 @@ export default function HomePage() {
 
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
             {/* Header */}
-            <div className="text-center space-y-3 max-w-3xl mx-auto">
+            <div className="text-center space-y-3">
               <div className="flex items-center justify-center gap-2">
                 <span className="h-[1.5px] w-5 bg-[#C53B3B]" />
                 <span className="text-xs font-bold uppercase tracking-widest text-[#C53B3B] font-mono">
@@ -822,7 +959,8 @@ export default function HomePage() {
                 The complete defense architecture.
               </h2>
               <p className="text-sm sm:text-base text-gray-300 max-w-xl mx-auto">
-                One continuous pipeline — from raw signal to boardroom-ready proof.
+                One continuous pipeline — from raw signal to boardroom-ready
+                proof.
               </p>
             </div>
 
@@ -830,13 +968,18 @@ export default function HomePage() {
             <div className="grid grid-cols-2 lg:grid-cols-5 gap-x-4 gap-y-8 lg:gap-4 items-start font-sans">
               {/* Step 01 */}
               <div className="relative flex flex-col items-center text-center space-y-2.5 group">
-                <span className="text-[11px] font-mono text-gray-400 font-semibold">01</span>
-<div className="w-16 h-16 rounded-2xl bg-black/40 border border-white/15 flex items-center justify-center text-[#3BB49E] sm:text-[#C53B3B] group-hover:bg-[#3BB49E]/10 sm:group-hover:bg-[#C53B3B]/10  transition-all duration-300 shadow-xl backdrop-blur-md">
+                <span className="text-[11px] font-mono text-gray-400 font-semibold">
+                  01
+                </span>
+                <div className="w-16 h-16 rounded-2xl bg-[#FFFFFF0D] border border-[#FFFFFF24] flex items-center justify-center text-[#3BB49E] sm:text-[#C53B3B] group-hover:bg-[#3BB49E]/10 sm:group-hover:bg-[#C53B3B]/10  transition-all duration-300 shadow-xl backdrop-blur-md">
                   <Activity className="w-6 h-6 stroke-[1.8]" />
                 </div>
-                <h4 className="text-sm font-bold text-white pt-1">Data Ingestion</h4>
-                <p className="text-xs text-gray-300/80 leading-relaxed max-w-[150px]">
-                  Pulls telemetry from your existing security stack in real time.
+                <h4 className="text-sm font-bold text-white pt-1">
+                  Data Ingestion
+                </h4>
+                <p className="text-xs text-gray-300/80 leading-relaxed max-w-[250px]">
+                  Pulls telemetry from your existing security stack in real
+                  time.
                 </p>
                 {/* Desktop Connecting Arrow */}
                 <div className="hidden lg:block absolute -right-3 top-9 text-gray-500/70 font-mono text-sm pointer-events-none">
@@ -846,12 +989,16 @@ export default function HomePage() {
 
               {/* Step 02 */}
               <div className="relative flex flex-col items-center text-center space-y-2.5 group">
-                <span className="text-[11px] font-mono text-gray-400 font-semibold">02</span>
-                <div className="w-16 h-16 rounded-2xl bg-black/40 border border-white/15 flex items-center justify-center text-[#3BB49E] sm:text-[#C53B3B] sm:group-hover:border-[#3BB49E]/10 group-hover:border-[#3BB49E]/60 group-hover:bg-[#3BB49E]/10 transition-all duration-300 shadow-xl backdrop-blur-md">
+                <span className="text-[11px] font-mono text-gray-400 font-semibold">
+                  02
+                </span>
+                <div className="w-16 h-16 rounded-2xl bg-[#FFFFFF0D] border border-[#FFFFFF24] flex items-center justify-center text-[#3BB49E] sm:text-[#C53B3B] sm:group-hover:border-[#3BB49E]/10 group-hover:border-[#3BB49E]/60 group-hover:bg-[#3BB49E]/10 transition-all duration-300 shadow-xl backdrop-blur-md">
                   <Search className="w-6 h-6 stroke-[1.8]" />
                 </div>
-                <h4 className="text-sm font-bold text-white pt-1">Threat Detection</h4>
-                <p className="text-xs text-gray-300/80 leading-relaxed max-w-[150px]">
+                <h4 className="text-sm font-bold text-white pt-1">
+                  Threat Detection
+                </h4>
+                <p className="text-xs text-gray-300/80 leading-relaxed max-w-[250px]">
                   AI models correlate signals and surface true risk, not noise.
                 </p>
                 {/* Desktop Connecting Arrow */}
@@ -862,12 +1009,16 @@ export default function HomePage() {
 
               {/* Step 03 */}
               <div className="relative flex flex-col items-center text-center space-y-2.5 group">
-                <span className="text-[11px] font-mono text-gray-400 font-semibold">03</span>
-                <div className="w-16 h-16 rounded-2xl bg-black/40 border border-white/15 flex items-center justify-center sm:text-[#C53B3B] sm:group-hover:border-[#3BB49E]/10 text-[#3BB49E] group-hover:border-[#3BB49E]/60 group-hover:bg-[#3BB49E]/10 transition-all duration-300 shadow-xl backdrop-blur-md">
+                <span className="text-[11px] font-mono text-gray-400 font-semibold">
+                  03
+                </span>
+                <div className="w-16 h-16 rounded-2xl bg-[#FFFFFF0D] border border-[#FFFFFF24] flex items-center justify-center sm:text-[#C53B3B] sm:group-hover:border-[#3BB49E]/10 text-[#3BB49E] group-hover:border-[#3BB49E]/60 group-hover:bg-[#3BB49E]/10 transition-all duration-300 shadow-xl backdrop-blur-md">
                   <Zap className="w-6 h-6 stroke-[1.8]" />
                 </div>
-                <h4 className="text-sm font-bold text-white pt-1">Incident Response</h4>
-                <p className="text-xs text-gray-300/80 leading-relaxed max-w-[150px]">
+                <h4 className="text-sm font-bold text-white pt-1">
+                  Incident Response
+                </h4>
+                <p className="text-xs text-gray-300/80 leading-relaxed max-w-[250px]">
                   Human-approved remediation, executed and logged automatically.
                 </p>
                 {/* Desktop Connecting Arrow */}
@@ -878,12 +1029,16 @@ export default function HomePage() {
 
               {/* Step 04 */}
               <div className="relative flex flex-col items-center text-center space-y-2.5 group">
-                <span className="text-[11px] font-mono text-gray-400 font-semibold">04</span>
-                <div className="w-16 h-16 rounded-2xl bg-black/40 border border-white/15 flex items-center justify-center sm:text-[#C53B3B] sm:group-hover:border-[#3BB49E]/10 text-[#3BB49E] group-hover:border-[#3BB49E]/60 group-hover:bg-[#3BB49E]/10 transition-all duration-300 shadow-xl backdrop-blur-md">
+                <span className="text-[11px] font-mono text-gray-400 font-semibold">
+                  04
+                </span>
+                <div className="w-16 h-16 rounded-2xl bg-[#FFFFFF0D] border border-[#FFFFFF24] flex items-center justify-center sm:text-[#C53B3B] sm:group-hover:border-[#3BB49E]/10 text-[#3BB49E] group-hover:border-[#3BB49E]/60 group-hover:bg-[#3BB49E]/10 transition-all duration-300 shadow-xl backdrop-blur-md">
                   <Shield className="w-6 h-6 stroke-[1.8]" />
                 </div>
-                <h4 className="text-sm font-bold text-white pt-1">Compliance Mapping</h4>
-                <p className="text-xs text-gray-300/80 leading-relaxed max-w-[150px]">
+                <h4 className="text-sm font-bold text-white pt-1">
+                  Compliance Mapping
+                </h4>
+                <p className="text-xs text-gray-300/80 leading-relaxed max-w-[250px]">
                   Every action mapped to the framework controls it satisfies.
                 </p>
                 {/* Desktop Connecting Arrow */}
@@ -894,12 +1049,16 @@ export default function HomePage() {
 
               {/* Step 05 */}
               <div className="col-span-2 lg:col-span-1 relative flex flex-col items-center text-center space-y-2.5 group">
-                <span className="text-[11px] font-mono text-gray-400 font-semibold">05</span>
-                <div className="w-16 h-16 rounded-2xl bg-black/40 border border-white/15 flex items-center justify-center sm:text-[#C53B3B] sm:group-hover:border-[#3BB49E]/60 text-[#3BB49E] group-hover:border-[#3BB49E]/10 group-hover:bg-[#3BB49E]/10 transition-all duration-300 shadow-xl backdrop-blur-md">
+                <span className="text-[11px] font-mono text-gray-400 font-semibold">
+                  05
+                </span>
+                <div className="w-16 h-16 rounded-2xl bg-[#FFFFFF0D] border border-[#FFFFFF24] flex items-center justify-center sm:text-[#C53B3B] sm:group-hover:border-[#3BB49E]/60 text-[#3BB49E] group-hover:border-[#3BB49E]/10 group-hover:bg-[#3BB49E]/10 transition-all duration-300 shadow-xl backdrop-blur-md">
                   <FileText className="w-6 h-6 stroke-[1.8]" />
                 </div>
-                <h4 className="text-sm font-bold text-white pt-1">Evidence Generation</h4>
-                <p className="text-xs text-gray-300/80 leading-relaxed max-w-[150px]">
+                <h4 className="text-sm font-bold text-white pt-1">
+                  Evidence Generation
+                </h4>
+                <p className="text-xs text-gray-300/80 leading-relaxed max-w-[250px]">
                   Immutable, hashed, and ready for auditors on demand.
                 </p>
               </div>
@@ -919,26 +1078,31 @@ export default function HomePage() {
                 <div className="bg-[#FDF2F2] rounded-2xl p-4 border border-[#FAD4D4] space-y-2">
                   <div className="flex items-center justify-between">
                     <span className="text-xs font-bold text-[#C53B3B] flex items-center gap-1.5 font-mono">
-                      <AlertTriangle className="w-4 h-4" /> AI Alert: Isolate Host
+                      <AlertTriangle className="w-4 h-4" /> AI Alert: Isolate
+                      Host
                     </span>
-                    <span className="bg-[#FAD4D4] text-[#C53B3B] text-[10px] font-mono font-bold px-2 py-0.5 rounded">
+                    <span className="bg-white text-[#C53B3B] text-[10px] font-mono font-bold px-2 py-0.5 rounded-full">
                       Confidence: 94%
                     </span>
                   </div>
                   <p className="text-xs text-[#151B28]/70 leading-relaxed">
-                    Anomalous lateral movement detected on host WEB-PROD-04. Recommended action requires authorization.
+                    Anomalous lateral movement detected on host WEB-PROD-04.
+                    Recommended action requires authorization.
                   </p>
                 </div>
 
                 {/* Override Control Box */}
                 <div className="bg-[#E8F3F1] rounded-2xl p-4 border border-[#C5E3DF] flex items-center justify-between">
                   <span className="text-xs font-bold text-[#2C6E63] flex items-center gap-2 font-mono">
-                    <CheckCircle2 className="w-4 h-4" /> Human Authority Override
+                    <CheckCircle2 className="w-4 h-4" /> Human Authority
+                    Override
                   </span>
                   <button
                     onClick={() => setOverrideActive(!overrideActive)}
                     className={`w-11 h-6 rounded-full transition-colors p-0.5 flex items-center ${
-                      overrideActive ? "bg-[#2C6E63] justify-end" : "bg-gray-300 justify-start"
+                      overrideActive
+                        ? "bg-[#2C6E63] justify-end"
+                        : "bg-gray-300 justify-start"
                     }`}
                   >
                     <span className="w-5 h-5 rounded-full bg-white shadow-md block" />
@@ -946,7 +1110,8 @@ export default function HomePage() {
                 </div>
 
                 <p className="text-[11px] text-[#151B28]/50 italic">
-                  Every high-impact action waits for a named approver — and logs who, when, and why.
+                  Every high-impact action waits for a named approver — and logs
+                  who, when, and why.
                 </p>
               </div>
             </div>
@@ -965,27 +1130,35 @@ export default function HomePage() {
               </h2>
 
               <p className="text-sm sm:text-base text-[#151B28]/70 leading-relaxed">
-                Leverage advanced machine learning for rapid threat detection, heavily constrained by human-in-the-loop authorization for critical remediation actions.
+                Leverage advanced machine learning for rapid threat detection,
+                heavily constrained by human-in-the-loop authorization for
+                critical remediation actions.
               </p>
 
               {/* 3 Stats Columns */}
               <div className="grid grid-cols-3 gap-4 pt-4 border-t border-zoiko-border font-mono">
                 <div>
-                  <div className="text-2xl sm:text-3xl font-extrabold text-[#151B28]">94%</div>
+                  <div className="text-2xl sm:text-3xl font-extrabold text-[#151B28]">
+                    94%
+                  </div>
                   <div className="text-[10px] text-[#151B28]/60 font-sans font-medium uppercase mt-1">
                     DETECTION CONFIDENCE
                   </div>
                 </div>
 
                 <div>
-                  <div className="text-2xl sm:text-3xl font-extrabold text-[#151B28]">100%</div>
+                  <div className="text-2xl sm:text-3xl font-extrabold text-[#151B28]">
+                    100%
+                  </div>
                   <div className="text-[10px] text-[#151B28]/60 font-sans font-medium uppercase mt-1">
                     ACTIONS HUMAN-APPROVED
                   </div>
                 </div>
 
                 <div>
-                  <div className="text-2xl sm:text-3xl font-extrabold text-[#151B28]">0</div>
+                  <div className="text-2xl sm:text-3xl font-extrabold text-[#151B28]">
+                    0
+                  </div>
                   <div className="text-[10px] text-[#151B28]/60 font-sans font-medium uppercase mt-1">
                     AUTONOMOUS OVERRIDES
                   </div>
@@ -999,9 +1172,10 @@ export default function HomePage() {
         {/* SECTION 13: TESTIMONIAL CARD (KARA MENDOZA) */}
         {/* ============================================ */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-3xl border border-zoiko-border shadow-md overflow-hidden p-6 sm:p-10">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              <div className="lg:col-span-5 relative aspect-[4/3] rounded-2xl overflow-hidden border border-zoiko-border">
+          <div className="bg-white rounded-3xl border border-zoiko-border shadow-md overflow-hidden">
+            <div className="grid grid-cols-1 lg:grid-cols-12 items-center">
+              {/* Left Image: Flush to the edge, no padding/margin */}
+              <div className="lg:col-span-5 relative h-full min-h-[320px] lg:min-h-[400px] w-full overflow-hidden">
                 <Image
                   src="/images/f2.png"
                   alt="Kara Mendoza - CISO"
@@ -1010,10 +1184,15 @@ export default function HomePage() {
                 />
               </div>
 
-              <div className="lg:col-span-7 space-y-6">
-                <span className="text-5xl font-serif text-[#C53B3B]/40 leading-none select-none block">“</span>
+              {/* Right Content: Has its own padding so it aligns nicely next to the full-bleed image */}
+              <div className="lg:col-span-7 space-y-6 p-6 sm:p-10 lg:pl-12">
+                <span className="text-5xl font-serif text-[#C53B3B]/40 leading-none select-none block">
+                  “
+                </span>
                 <p className="text-xl sm:text-2xl font-bold text-[#151B28] leading-relaxed tracking-tight">
-                  "With ZoikoShield, our audit cycle went from weeks of screenshots to a single exportable ledger our auditors trust on sight."
+                  "With ZoikoShield, our audit cycle went from weeks of
+                  screenshots to a single exportable ledger our auditors trust
+                  on sight."
                 </p>
 
                 <div className="flex items-center gap-3 pt-2">
@@ -1021,8 +1200,12 @@ export default function HomePage() {
                     KM
                   </div>
                   <div>
-                    <h5 className="font-bold text-[#151B28] text-sm">Kara Mendoza</h5>
-                    <p className="text-xs text-[#151B28]/60 font-mono">CISO, Meridian Financial</p>
+                    <h5 className="font-bold text-[#151B28] text-sm">
+                      Kara Mendoza
+                    </h5>
+                    <p className="text-xs text-[#151B28]/60 font-mono">
+                      CISO, Meridian Financial
+                    </p>
                   </div>
                 </div>
               </div>
@@ -1045,8 +1228,8 @@ export default function HomePage() {
 
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
             <div className="flex items-center justify-center gap-2">
-              <span className="h-[1.5px] w-5 bg-[#C53B3B]" />
-              <span className="text-xs font-bold uppercase tracking-widest text-[#C53B3B] font-mono">
+              <span className="h-[1.5px] w-5 bg-[#FFFFFF]" />
+              <span className="text-xs font-bold uppercase tracking-widest text-white font-mono">
                 GET STARTED
               </span>
             </div>
@@ -1056,7 +1239,8 @@ export default function HomePage() {
             </h2>
 
             <p className="text-sm sm:text-base text-gray-300 max-w-xl mx-auto leading-relaxed">
-              Join industry leaders who trust ZoikoShield to protect their critical infrastructure and automate their compliance evidence.
+              Join industry leaders who trust ZoikoShield to protect their
+              critical infrastructure and automate their compliance evidence.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
