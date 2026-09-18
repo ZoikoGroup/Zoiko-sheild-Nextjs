@@ -99,7 +99,7 @@ export const Footer: React.FC = () => {
               <ul className="space-y-2 text-gray-300/80">
                 <li><Link href="/detection-and-response" className="hover:text-white transition-colors">Detection & Response</Link></li>
                 <li><Link href="/security-analytics" className="hover:text-white transition-colors">Security analytics</Link></li>
-                <li><Link href="/dashboard" className="hover:text-white transition-colors">Case management</Link></li>
+                <li><Link href="/case-management" className="hover:text-white transition-colors">Case management</Link></li>
                 <li><Link href="/governed-response" className="hover:text-white transition-colors">Governed response</Link></li>
               </ul>
             </div>
@@ -169,8 +169,8 @@ export const Footer: React.FC = () => {
               INTEGRATIONS
             </h4>
             <ul className="space-y-2 text-gray-300/80">
-              <li><Link href="/about" className="hover:text-white transition-colors">Integration catalog</Link></li>
-              <li><Link href="/about" className="hover:text-white transition-colors">Microsoft ecosystem</Link></li>
+              <li><Link href="/integration-catalog" className="hover:text-white transition-colors">Integration catalog</Link></li>
+              <li><Link href="/microsoft-ecosystem" className="hover:text-white transition-colors">Microsoft ecosystem</Link></li>
               <li><Link href="/about" className="hover:text-white transition-colors">Cloud platform</Link></li>
               <li><Link href="/about" className="hover:text-white transition-colors">Endpoint & Identity</Link></li>
               <li><Link href="/about" className="hover:text-white transition-colors">Request an integration</Link></li>
