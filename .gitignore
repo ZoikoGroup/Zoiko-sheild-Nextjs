@@ -46,6 +46,7 @@ Thumbs.db
 
 # Misc
 *.pem
+.mcp.json
 
 # Temporary Scripts & Data
 build_how_it_works.py
