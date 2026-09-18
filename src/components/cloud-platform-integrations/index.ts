@@ -1,0 +1,17 @@
+export { default as HeroSection } from "./HeroSection";
+export { default as CoverageStrip } from "./CoverageStrip";
+export { default as WhyMatters } from "./WhyMatters";
+export { default as IntegrationMatrix } from "./IntegrationMatrix";
+export { default as AwsSection } from "./AwsSection";
+export { default as AzureSection } from "./AzureSection";
+export { default as GcpSection } from "./GcpSection";
+export { default as KubernetesSection } from "./KubernetesSection";
+export { default as ServerlessSection } from "./ServerlessSection";
+export { default as ResourceGraph } from "./ResourceGraph";
+export { default as EvidenceSection } from "./EvidenceSection";
+export { default as PermissionsSection } from "./PermissionsSection";
+export { default as SetupSection } from "./SetupSection";
+export { default as CoverageHealthSection } from "./CoverageHealthSection";
+export { default as TrustSection } from "./TrustSection";
+export { default as ConversionSection } from "./ConversionSection";
+export { default as FaqSection } from "./FaqSection";
