@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { HelpCircle, Eye, GitBranch, AlertCircle, FileCheck, History, Search, FileText, Lightbulb, GitCompare, Lock, Clock } from "lucide-react";
+import { Search, FileText, Lightbulb, GitCompare, Lock, Clock } from "lucide-react";
 
 export const InvestigationSection: React.FC = () => {
   const cards = [

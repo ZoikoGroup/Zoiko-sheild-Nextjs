@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { Shield, CheckCircle2, Lock, ArrowRight, CircleX } from "lucide-react";
+import { CircleX } from "lucide-react";
 
 export const FeaturedConnectorDetailSection: React.FC = () => {
   return (

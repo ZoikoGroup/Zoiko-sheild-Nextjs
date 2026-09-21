@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { ChevronDown, Plus } from "lucide-react";
+import { Plus } from "lucide-react";
 
 export const IntegrationCatalogFaqSection: React.FC = () => {
   const [openIdx, setOpenIdx] = useState<number | null>(0);

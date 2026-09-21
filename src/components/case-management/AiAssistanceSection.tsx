@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { Sparkles, AlertCircle } from "lucide-react";
 
 export const AiAssistanceSection: React.FC = () => {
   return (

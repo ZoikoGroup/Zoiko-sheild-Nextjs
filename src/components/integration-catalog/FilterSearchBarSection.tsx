@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { Search, ChevronDown, RotateCcw } from "lucide-react";
 
 interface FilterSearchBarSectionProps {
@@ -14,8 +14,6 @@ interface FilterSearchBarSectionProps {
 export const FilterSearchBarSection: React.FC<FilterSearchBarSectionProps> = ({
   searchQuery,
   setSearchQuery,
-  selectedCategory,
-  setSelectedCategory,
   onReset,
 }) => {
   return (

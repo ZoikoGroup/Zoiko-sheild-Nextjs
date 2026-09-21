@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { UserCheck, ShieldAlert, Lock } from "lucide-react";
 
 export const CommunicationsSection: React.FC = () => {
   return (
