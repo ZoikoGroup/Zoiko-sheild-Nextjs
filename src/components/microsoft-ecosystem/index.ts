@@ -1,0 +1,16 @@
+export { default as HeroSection } from "./HeroSection";
+export { default as IntegrationChannelsSection } from "./IntegrationChannelsSection";
+export { default as AugmentSection } from "./AugmentSection";
+export { default as RegistryMatrixSection } from "./RegistryMatrixSection";
+export { default as IdentitySection } from "./IdentitySection";
+export { default as IncidentCorrelationSection } from "./IncidentCorrelationSection";
+export { default as EndpointComplianceSection } from "./EndpointComplianceSection";
+export { default as AzureVisibilitySection } from "./AzureVisibilitySection";
+export { default as ComplianceEvidenceSection } from "./ComplianceEvidenceSection";
+export { default as EvidencePipelineSection } from "./EvidencePipelineSection";
+export { default as ResponsibilitySection } from "./ResponsibilitySection";
+export { default as SetupJourneySection } from "./SetupJourneySection";
+export { default as AuditGapSection } from "./AuditGapSection";
+export { default as ProcurementFaqSection } from "./ProcurementFaqSection";
+export { default as CtaSection } from "./CtaSection";
+export { default as FaqSection } from "./FaqSection";

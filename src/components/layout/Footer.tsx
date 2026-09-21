@@ -172,7 +172,7 @@ export const Footer: React.FC = () => {
               <li><Link href="/integration-catalog" className="hover:text-white transition-colors">Integration catalog</Link></li>
               <li><Link href="/microsoft-ecosystem" className="hover:text-white transition-colors">Microsoft ecosystem</Link></li>
               <li><Link href="/about" className="hover:text-white transition-colors">Cloud platform</Link></li>
-              <li><Link href="/about" className="hover:text-white transition-colors">Endpoint & Identity</Link></li>
+              <li><Link href="/endpoint-identity-integrations" className="hover:text-white transition-colors">Endpoint & Identity</Link></li>
               <li><Link href="/about" className="hover:text-white transition-colors">Request an integration</Link></li>
             </ul>
           </div>
@@ -185,7 +185,7 @@ export const Footer: React.FC = () => {
             <ul className="space-y-2 text-gray-300/80">
               <li><Link href="/about" className="hover:text-white transition-colors">Documentation</Link></li>
               <li><Link href="/about" className="hover:text-white transition-colors">API reference</Link></li>
-              <li><Link href="/about" className="hover:text-white transition-colors">Webhooks</Link></li>
+              <li><Link href="/developers-webhooks" className="hover:text-white transition-colors">Webhooks</Link></li>
               <li><Link href="/about" className="hover:text-white transition-colors">Release notes</Link></li>
             </ul>
           </div>
