@@ -1,0 +1,12 @@
+export { HeroSection } from "./HeroSection";
+export { FeaturedInvestigationsSection } from "./FeaturedInvestigationsSection";
+export { SearchFilterBarSection } from "./SearchFilterBarSection";
+export { TypeTopicPillsSection } from "./TypeTopicPillsSection";
+export { LatestPublicationsSection } from "./LatestPublicationsSection";
+export { CuratedStudyRunsSection } from "./CuratedStudyRunsSection";
+export { OpenSourceArtifactsSection } from "./OpenSourceArtifactsSection";
+export { PublicationProtocolsSection } from "./PublicationProtocolsSection";
+export { SubscribeRegistrySection } from "./SubscribeRegistrySection";
+export { PublishingTeamsSection } from "./PublishingTeamsSection";
+export { RelatedLiteratureSection } from "./RelatedLiteratureSection";
+export { ResearchCtaBannerSection } from "./ResearchCtaBannerSection";
