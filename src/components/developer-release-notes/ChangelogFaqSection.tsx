@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { ChevronDown, HelpCircle } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 
 export const ChangelogFaqSection: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);

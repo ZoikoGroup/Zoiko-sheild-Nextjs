@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import { Check } from "lucide-react";
 
 const INCLUSIONS = [
   "Secure multi-region cloud tenant allocation",

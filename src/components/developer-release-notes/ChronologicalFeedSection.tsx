@@ -1,16 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import {
-  AlertTriangle,
-  ArrowRight,
-  ShieldAlert,
-  Calendar,
-  Layers,
-  Sparkles,
-  ExternalLink,
-  ChevronRight,
-} from "lucide-react";
+import { AlertTriangle, ArrowRight } from "lucide-react";
 
 interface ChronologicalFeedProps {
   onOpenPlaybook?: (releaseId: string) => void;

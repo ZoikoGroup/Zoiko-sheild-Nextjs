@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { BookOpen, FileCode2, Terminal, Shield, Code } from "lucide-react";
+import { BookOpen, Terminal, Shield, Code } from "lucide-react";
 
 export const RelatedResourcesSection: React.FC = () => {
   const resources = [

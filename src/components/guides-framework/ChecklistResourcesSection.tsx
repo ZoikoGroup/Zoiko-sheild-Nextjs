@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { FileSpreadsheet, FileText, Download, CheckSquare } from "lucide-react";
+import { FileText, Download } from "lucide-react";
 
 interface ChecklistItem {
   id: string;

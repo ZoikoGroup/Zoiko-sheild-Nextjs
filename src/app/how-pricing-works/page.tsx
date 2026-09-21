@@ -82,7 +82,6 @@ export default function HowPricingWorksPage() {
       <DemoModal
         isOpen={isDemoOpen}
         onClose={() => setIsDemoOpen(false)}
-        title="Schedule Architecture Scoping Session"
       />
     </main>
   );

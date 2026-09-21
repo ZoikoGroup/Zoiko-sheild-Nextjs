@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useMemo } from "react";
-import { X, ChevronDown, Check, Dot,  CircleX} from "lucide-react";
+import { X, ChevronDown, CircleX } from "lucide-react";
 
 interface TermsDirectoryProps {
   searchQuery: string;

@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { CheckCircle2, ArrowRight, Rss, Code2 } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 
 interface HeroSectionProps {
   onBrowseLatest?: () => void;

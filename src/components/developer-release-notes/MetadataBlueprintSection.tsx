@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { FileCode2, ShieldCheck, History, ArrowRight } from "lucide-react";
+
 
 export const MetadataBlueprintSection: React.FC = () => {
   return (

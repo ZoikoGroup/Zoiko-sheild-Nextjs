@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { FileText, Sparkles, Code2, AlertTriangle } from "lucide-react";
+import { FileText, Code2, AlertTriangle } from "lucide-react";
 
 interface LatestPublicationsProps {
   onOpenPaper?: (id: string) => void;

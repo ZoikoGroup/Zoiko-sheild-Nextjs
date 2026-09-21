@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Clock,  ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 interface GovernanceCtaProps {
   onOpenDemo?: () => void;

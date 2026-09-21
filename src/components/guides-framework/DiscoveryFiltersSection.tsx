@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Filter, Check, Sliders } from "lucide-react";
+import { Check, Sliders } from "lucide-react";
 
 interface DiscoveryFiltersProps {
   selectedFilter: string;

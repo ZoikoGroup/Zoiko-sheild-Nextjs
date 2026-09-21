@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Clock, Ban, AlertCircle } from "lucide-react";
+
 
 export const DeprecationTimelineSection: React.FC = () => {
   return (

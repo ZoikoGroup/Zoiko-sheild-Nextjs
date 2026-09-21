@@ -1,11 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
-import { Search } from "lucide-react";
+import React from "react";
 
 export const AcronymAliasRegistrySection: React.FC = () => {
-  const [filterQuery, setFilterQuery] = useState("");
-
   const registryRows = [
     {
       acronym: "EDR",
@@ -44,12 +41,7 @@ export const AcronymAliasRegistrySection: React.FC = () => {
     },
   ];
 
-  const filtered = registryRows.filter(
-    (row) =>
-      row.acronym.toLowerCase().includes(filterQuery.toLowerCase()) ||
-      row.resolution.toLowerCase().includes(filterQuery.toLowerCase()) ||
-      row.aliases.toLowerCase().includes(filterQuery.toLowerCase())
-  );
+  const filtered = registryRows;
 
   return (
     <section className="w-full bg-[#F0EDE6] border-b border-cyan-950/10 py-16 sm:py-20 px-4 sm:px-8 lg:px-28">

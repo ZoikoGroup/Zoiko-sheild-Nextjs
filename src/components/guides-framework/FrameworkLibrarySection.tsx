@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { ArrowRight, Shield, CheckCircle2, XCircle, Star } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 interface FrameworkItem {
   id: string;

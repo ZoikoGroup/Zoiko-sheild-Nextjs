@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { ArrowRight, Clock, FileCode2, ShieldAlert } from "lucide-react";
+
 
 interface FeaturedInvestigationsProps {
   onSelectInvestigation?: (id: string) => void;

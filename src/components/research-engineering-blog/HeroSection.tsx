@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Info, ArrowRight } from "lucide-react";
+import { Info } from "lucide-react";
 
 interface HeroSectionProps {
   onExplore?: () => void;

@@ -44,7 +44,7 @@ export default function ResearchEngineeringBlogPage() {
       {/* 2. Featured Investigations (Peer-Reviewed Analysis & Core Systems Work) */}
       <div id="featured-investigations">
         <FeaturedInvestigationsSection
-          onSelectInvestigation={(id) => setIsDemoOpen(true)}
+          onSelectInvestigation={(_id) => setIsDemoOpen(true)}
         />
       </div>
 
@@ -69,10 +69,10 @@ export default function ResearchEngineeringBlogPage() {
       />
 
       {/* 5. Latest Publications */}
-      <LatestPublicationsSection onOpenPaper={(id) => setIsDemoOpen(true)} />
+      <LatestPublicationsSection onOpenPaper={(_id) => setIsDemoOpen(true)} />
 
       {/* 6. Curated Study Runs (Deep-Dive Systems Curations) */}
-      <CuratedStudyRunsSection onSelectSeries={(title) => setIsDemoOpen(true)} />
+      <CuratedStudyRunsSection onSelectSeries={(_title) => setIsDemoOpen(true)} />
 
       {/* 7. Open Source & Verifiable Code Tooling */}
       <OpenSourceArtifactsSection />

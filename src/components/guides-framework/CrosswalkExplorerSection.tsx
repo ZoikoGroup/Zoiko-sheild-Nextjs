@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { ArrowRight, Search, CheckCircle2, ChevronDown, RefreshCw } from "lucide-react";
+import { ArrowRight, Search, ChevronDown } from "lucide-react";
 
 interface CrosswalkRow {
   sourceControl: string;
@@ -46,8 +46,8 @@ const MAPPINGS_DATA: CrosswalkRow[] = [
 
 export const CrosswalkExplorerSection: React.FC = () => {
   const [searchControl, setSearchControl] = useState("");
-  const [sourceFramework, setSourceFramework] = useState("NIST SP 800-207 Zero Trust");
-  const [targetFramework, setTargetFramework] = useState("CIS Controls v8.1 Safeguards");
+  const sourceFramework = "NIST SP 800-207 Zero Trust";
+  const targetFramework = "CIS Controls v8.1 Safeguards";
 
   const filteredMappings = MAPPINGS_DATA.filter(
     (row) =>

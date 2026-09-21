@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Search, ChevronDown, Link2, RotateCcw, Check } from "lucide-react";
+
 
 interface FilterSearchBarProps {
   searchQuery: string;
@@ -150,12 +150,15 @@ export const FilterSearchBarSection: React.FC<FilterSearchBarProps> = ({
             className="flex items-center gap-1.5 hover:text-slate-800 transition-colors cursor-pointer"
             title="Click to copy shareable URL"
           >
-            
             <span className="truncate">
               Shareable filter URL: /changelog?impact={impactFilter.toLowerCase().replace(/\s+/g, "_")}&amp;type={changeType.toLowerCase().replace(/\s+/g, "_")}
             </span>
+            {copiedUrl && (
+              <span className="text-emerald-700 font-bold bg-emerald-100 px-1.5 py-0.5 rounded text-[11px]">
+                Copied!
+              </span>
+            )}
           </button>
-         
         </div>
       </div>
     </section>

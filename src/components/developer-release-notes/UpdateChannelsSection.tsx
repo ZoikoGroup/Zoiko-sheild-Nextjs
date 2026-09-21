@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Check, CheckCircle2, AlertCircle, Terminal, Rss, Mail } from "lucide-react";
+
 
 export const UpdateChannelsSection: React.FC = () => {
   const [email, setEmail] = useState("");

@@ -21,11 +21,11 @@ export default function GuidesFrameworkPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedFilter, setSelectedFilter] = useState("all");
 
-  const handleDownload = (id: string) => {
+  const handleDownload = (_id: string) => {
     setIsDemoOpen(true);
   };
 
-  const handleSelectFramework = (id: string) => {
+  const handleSelectFramework = (_id: string) => {
     const el = document.getElementById("crosswalk-explorer");
     if (el) {
       el.scrollIntoView({ behavior: "smooth", block: "start" });

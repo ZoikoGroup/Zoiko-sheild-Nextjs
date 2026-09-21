@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { UserCheck, Shield, Cpu, Code2, ArrowRight, User } from "lucide-react";
+import { User } from "lucide-react";
 
 interface RolePath {
   title: string;

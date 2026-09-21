@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { ShieldCheck, Calendar, ArrowRight, UserCheck, CheckCircle2, Link2 } from "lucide-react";
+import { Link2 } from "lucide-react";
 
 interface FeaturedGuidesProps {
   onOpenDemo?: () => void;

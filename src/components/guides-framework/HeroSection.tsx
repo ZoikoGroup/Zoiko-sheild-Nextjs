@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
-import { Search, AlertTriangle, ArrowRight, CircleAlert } from "lucide-react";
+import { Search, CircleAlert } from "lucide-react";
 
 interface HeroSectionProps {
   searchQuery: string;

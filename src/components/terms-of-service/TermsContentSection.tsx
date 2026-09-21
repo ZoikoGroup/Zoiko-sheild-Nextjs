@@ -1,18 +1,12 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   Search,
   Link as LinkIcon,
   Printer,
-  CheckCircle2,
-  AlertCircle,
-  Mail,
-  Shield,
-  FileCheck2,
   ChevronRight,
   ShieldAlert,
-  Hash,
 } from "lucide-react";
 
 interface ClauseItem {

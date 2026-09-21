@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { FileText, Shield, FileCheck } from "lucide-react";
 
 interface AgreementCard {
   id: string;

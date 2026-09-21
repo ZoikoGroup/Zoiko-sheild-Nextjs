@@ -90,7 +90,9 @@ export const QuickPathsSection: React.FC = () => {
               >
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
-                    
+                    <div className="w-8 h-8 rounded-lg bg-[#A91D22]/10 flex items-center justify-center text-[#A91D22]">
+                      <Icon className="w-4 h-4" />
+                    </div>
                   </div>
 
                   <h3 className="text-base font-extrabold text-[#0B1B26] font-sans group-hover:text-[#A91D22] transition-colors">

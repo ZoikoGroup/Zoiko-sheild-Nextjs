@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { ChevronDown, Check } from "lucide-react";
 
+
 interface IndicativeEstimatorSectionProps {
   onOpenDemo?: () => void;
 }
@@ -143,9 +144,30 @@ export const IndicativeEstimatorSection: React.FC<IndicativeEstimatorSectionProp
                       className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-stone-100 hover:bg-stone-200 border border-stone-300/80 text-[11px] font-semibold text-slate-700 font-['JetBrains_Mono'] transition-colors"
                     >
                       <span>{val}</span>
+                      <ChevronDown className="w-3 h-3 text-slate-500" />
                     </button>
 
-                   
+                    {isOpen && (
+                      <div className="absolute right-0 top-full mt-1.5 w-60 bg-white rounded-xl shadow-xl border border-stone-200 py-1.5 z-20">
+                        {step.options.map((opt) => (
+                          <button
+                            key={opt}
+                            type="button"
+                            onClick={() => handleSelect(step.id, opt)}
+                            className={`w-full text-left px-3.5 py-2 text-xs font-['Manrope'] transition-colors flex items-center justify-between ${
+                              val === opt
+                                ? "bg-red-50 text-red-700 font-bold"
+                                : "text-slate-700 hover:bg-stone-50"
+                            }`}
+                          >
+                            <span>{opt}</span>
+                            {val === opt && (
+                              <Check className="w-3.5 h-3.5 text-red-600 shrink-0" />
+                            )}
+                          </button>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 </div>
               );
