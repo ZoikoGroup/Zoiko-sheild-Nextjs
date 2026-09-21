@@ -60,7 +60,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemo }) => {
 
           <div className="flex items-center gap-3 lg:gap-6 text-[11px] lg:text-xs">
             <Link
-              href="/about"
+              href="/trust-center"
               onClick={closeMenu}
               className="hover:text-zoiko-primary transition-colors flex items-center gap-1"
             >
@@ -745,7 +745,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemo }) => {
                     </Link>
 
                     <Link
-                      href="/about"
+                      href="/trust-center"
                       onClick={closeMenu}
                       className="bg-[#F6F4EE] hover:bg-[#EFECE3] p-3.5 rounded-2xl border border-[#00000000] transition-all flex items-start gap-3 group/item"
                     >
