@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Shield, Cloud, Smartphone, Activity, MessageSquare, Database, Code, CircleX, ShieldXIcon, UserCheck } from "lucide-react";
+import { Cloud, Activity, MessageSquare, Database, Code, CircleX, UserCheck } from "lucide-react";
 
 interface SystemTiersSectionProps {
   selectedTier: string;

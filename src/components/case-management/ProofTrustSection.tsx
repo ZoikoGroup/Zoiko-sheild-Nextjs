@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { Shield, FileText, CheckCircle2, Activity, Plug, Sparkles, Cpu } from "lucide-react";
+import { Shield, FileText, Activity, Plug, Cpu } from "lucide-react";
 
 export const ProofTrustSection: React.FC = () => {
   const routes = [

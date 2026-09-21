@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { ShieldCheck, ArrowRight, AlertTriangle } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export const EvidenceSection: React.FC = () => {
   return (
