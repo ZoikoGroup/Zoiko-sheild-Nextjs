@@ -214,8 +214,8 @@ export const Footer: React.FC = () => {
               TRUST & SECURITY
             </h4>
             <ul className="space-y-2 text-gray-300/80">
-              <li><Link href="/about" className="hover:text-white transition-colors">Trust Center</Link></li>
-              <li><Link href="/about" className="hover:text-white transition-colors">Security practices</Link></li>
+              <li><Link href="/security-trust-center" className="hover:text-white transition-colors">Trust Center</Link></li>
+              <li><Link href="/security-trust-center" className="hover:text-white transition-colors">Security practices</Link></li>
               <li><Link href="/responsible-ai" className="hover:text-white transition-colors">Responsible AI</Link></li>
               <li><Link href="/about" className="hover:text-white transition-colors">Privacy & data protection</Link></li>
               <li><Link href="/about" className="hover:text-white transition-colors">Vulnerability disclosure</Link></li>
