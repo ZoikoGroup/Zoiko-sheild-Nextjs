@@ -183,10 +183,10 @@ export const Footer: React.FC = () => {
               DEVELOPERS & DOCS
             </h4>
             <ul className="space-y-2 text-gray-300/80">
-              <li><Link href="/about" className="hover:text-white transition-colors">Documentation</Link></li>
+              <li><Link href="/developers-documentation" className="hover:text-white transition-colors">Documentation</Link></li>
               <li><Link href="/about" className="hover:text-white transition-colors">API reference</Link></li>
               <li><Link href="/developers-webhooks" className="hover:text-white transition-colors">Webhooks</Link></li>
-              <li><Link href="/about" className="hover:text-white transition-colors">Release notes</Link></li>
+              <li><Link href="/developer-release-notes" className="hover:text-white transition-colors">Release notes</Link></li>
             </ul>
           </div>
         </div>
@@ -201,10 +201,10 @@ export const Footer: React.FC = () => {
               RESOURCES & EDUCATION
             </h4>
             <ul className="space-y-2 text-gray-300/80">
-              <li><Link href="/about" className="hover:text-white transition-colors">Guides & frameworks</Link></li>
-              <li><Link href="/about" className="hover:text-white transition-colors">Research & Engineering blog</Link></li>
-              <li><Link href="/about" className="hover:text-white transition-colors">Security & Compliance glossary</Link></li>
-              <li><Link href="/about" className="hover:text-white transition-colors">How pricing works</Link></li>
+              <li><Link href="/guides-framework" className="hover:text-white transition-colors">Guides & frameworks</Link></li>
+              <li><Link href="/research-engineering-blog" className="hover:text-white transition-colors">Research & Engineering blog</Link></li>
+              <li><Link href="/security-compliance-glossary" className="hover:text-white transition-colors">Security & Compliance glossary</Link></li>
+              <li><Link href="/how-pricing-works" className="hover:text-white transition-colors">How pricing works</Link></li>
             </ul>
           </div>
 
@@ -214,8 +214,8 @@ export const Footer: React.FC = () => {
               TRUST & SECURITY
             </h4>
             <ul className="space-y-2 text-gray-300/80">
-              <li><Link href="/about" className="hover:text-white transition-colors">Trust Center</Link></li>
-              <li><Link href="/about" className="hover:text-white transition-colors">Security practices</Link></li>
+              <li><Link href="/security-trust-center" className="hover:text-white transition-colors">Trust Center</Link></li>
+              <li><Link href="/security-trust-center" className="hover:text-white transition-colors">Security practices</Link></li>
               <li><Link href="/responsible-ai" className="hover:text-white transition-colors">Responsible AI</Link></li>
               <li><Link href="/about" className="hover:text-white transition-colors">Privacy & data protection</Link></li>
               <li><Link href="/about" className="hover:text-white transition-colors">Vulnerability disclosure</Link></li>
@@ -254,11 +254,11 @@ export const Footer: React.FC = () => {
               LEGAL & GOVERNANCE
             </h4>
             <ul className="space-y-2 text-gray-300/80">
-              <li><Link href="/about" className="hover:text-white transition-colors">Legal notices</Link></li>
-              <li><Link href="/about" className="hover:text-white transition-colors">Privacy notice</Link></li>
-              <li><Link href="/about" className="hover:text-white transition-colors">Terms of service</Link></li>
-              <li><Link href="/about" className="hover:text-white transition-colors">Cookie notice</Link></li>
-              <li><Link href="/about" className="hover:text-white transition-colors">Accessibility statement</Link></li>
+              <li><Link href="/legal-notices" className="hover:text-white transition-colors">Legal notices</Link></li>
+              <li><Link href="/privacy-notice" className="hover:text-white transition-colors">Privacy notice</Link></li>
+              <li><Link href="/terms-of-service" className="hover:text-white transition-colors">Terms of service</Link></li>
+              <li><Link href="/cookie-notice" className="hover:text-white transition-colors">Cookie notice</Link></li>
+              <li><Link href="/accessibility-statement" className="hover:text-white transition-colors">Accessibility statement</Link></li>
             </ul>
           </div>
         </div>
@@ -307,15 +307,15 @@ export const Footer: React.FC = () => {
 
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex flex-wrap items-center justify-center sm:justify-start gap-4 text-gray-400">
-              <Link href="/about" className="hover:text-white transition-colors">Privacy Policy</Link>
+              <Link href="/privacy-notice" className="hover:text-white transition-colors">Privacy Policy</Link>
               <span>&middot;</span>
-              <Link href="/about" className="hover:text-white transition-colors">Website Terms</Link>
+              <Link href="/terms-of-service" className="hover:text-white transition-colors">Website Terms</Link>
               <span>&middot;</span>
-              <Link href="/about" className="hover:text-white transition-colors">Cookie Policy</Link>
+              <Link href="/cookie-notice" className="hover:text-white transition-colors">Cookie Policy</Link>
               <span>&middot;</span>
-              <Link href="/about" className="hover:text-white transition-colors">Cookie Settings</Link>
+              <Link href="/cookie-notice" className="hover:text-white transition-colors">Cookie Settings</Link>
               <span>&middot;</span>
-              <Link href="/about" className="hover:text-white transition-colors">Accessibility</Link>
+              <Link href="/accessibility-statement" className="hover:text-white transition-colors">Accessibility</Link>
             </div>
 
             <div className="flex items-center gap-2 text-xs">
