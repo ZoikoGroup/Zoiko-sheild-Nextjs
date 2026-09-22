@@ -64,3 +64,4 @@ project/
    npm run build
    ```
 # CI/CD verification 2026-09-22T08:03:39Z
+# CI/CD verification after VM resize to e2-small 2026-09-22T09:24:23Z
