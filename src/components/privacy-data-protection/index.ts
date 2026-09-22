@@ -1,0 +1,17 @@
+export { default as PrivacyHeroSection } from "./PrivacyHeroSection";
+export { default as PrivacyAssuranceSnapshotSection } from "./PrivacyAssuranceSnapshotSection";
+export { default as PrivacyByDesignSection } from "./PrivacyByDesignSection";
+export { default as PrivacyDataLifecycleSection } from "./PrivacyDataLifecycleSection";
+export { default as PrivacyCategoriesPurposesSection } from "./PrivacyCategoriesPurposesSection";
+export { default as PrivacyAccessIsolationSection } from "./PrivacyAccessIsolationSection";
+export { default as PrivacySecurityIntegritySection } from "./PrivacySecurityIntegritySection";
+export { default as PrivacyRetentionSection } from "./PrivacyRetentionSection";
+export { default as PrivacyResidencySection } from "./PrivacyResidencySection";
+export { default as PrivacyVendorsSection } from "./PrivacyVendorsSection";
+export { default as PrivacyRightsSection } from "./PrivacyRightsSection";
+export { default as PrivacyAiGovernanceSection } from "./PrivacyAiGovernanceSection";
+export { default as PrivacyCustomerControlsSection } from "./PrivacyCustomerControlsSection";
+export { default as PrivacyEvidenceSection } from "./PrivacyEvidenceSection";
+export { default as PrivacyIncidentSupportSection } from "./PrivacyIncidentSupportSection";
+export { default as PrivacyDueDiligenceSection } from "./PrivacyDueDiligenceSection";
+export { default as PrivacyFaqSection } from "./PrivacyFaqSection";

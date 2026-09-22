@@ -781,6 +781,24 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemo }) => {
                     </Link>
 
                     <Link
+                      href="/partners"
+                      onClick={closeMenu}
+                      className="bg-[#F6F4EE] hover:bg-[#EFECE3] p-3.5 rounded-2xl border border-[#00000000] transition-all flex items-start gap-3 group/item"
+                    >
+                      <div className="w-8 h-8 rounded-xl bg-white text-[#2C6E63] border border-zoiko-border/50 flex items-center justify-center shrink-0 group-hover/item:text-[#C53B3B]">
+                        <Plug className="w-4 h-4" />
+                      </div>
+                      <div>
+                        <div className="text-xs font-bold text-[#151B28] group-hover/item:text-[#C53B3B]">
+                          Partners
+                        </div>
+                        <p className="text-[11px] text-[#151B28]/60 mt-0.5 leading-tight">
+                          Ecosystem alliance and technical integration.
+                        </p>
+                      </div>
+                    </Link>
+
+                    <Link
                       href="/contact"
                       onClick={closeMenu}
                       className="bg-[#F6F4EE] hover:bg-[#EFECE3] p-3.5 rounded-2xl border border-[#00000000] transition-all flex items-start gap-3 group/item"
