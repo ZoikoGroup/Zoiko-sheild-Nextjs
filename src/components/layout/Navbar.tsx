@@ -499,7 +499,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemo }) => {
                       </span>
 
                       <Link
-                        href="/about"
+                        href="/financial-service-fintech"
                         onClick={closeMenu}
                         className="bg-[#F6F4EE] hover:bg-[#EFECE3] p-3.5 rounded-2xl border border-[#00000000] transition-all flex items-start gap-3 group/item block"
                       >
@@ -727,7 +727,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemo }) => {
 
                   <div className="grid grid-cols-2 gap-3.5">
                     <Link
-                      href="/about"
+                      href="/about-zoiko-tech"
                       onClick={closeMenu}
                       className="bg-[#F6F4EE] hover:bg-[#EFECE3] p-3.5 rounded-2xl border border-[#00000000] transition-all flex items-start gap-3 group/item"
                     >
