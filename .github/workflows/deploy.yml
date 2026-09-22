@@ -1,0 +1,28 @@
+name: Deploy Zoiko Shield Website
+
+concurrency:
+  group: deploy-zoiko-shield
+  cancel-in-progress: false
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: SSH and deploy
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.GCP_SSH_HOST }}
+          username: ${{ secrets.GCP_SSH_USER }}
+          key: ${{ secrets.GCP_SSH_KEY }}
+          script: |
+            set -e
+            cd /var/www/zoiko-shield/app
+            git pull origin main
+            npm install
+            npm run build
+            pm2 restart zoiko-shield
+            pm2 save
