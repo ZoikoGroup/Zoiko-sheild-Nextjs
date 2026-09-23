@@ -157,7 +157,7 @@ export const Footer: React.FC = () => {
               INDUSTRIES & SECTOR PACKS
             </h4>
             <ul className="space-y-2 text-gray-300/80">
-              <li><Link href="/about" className="hover:text-white transition-colors">Financial services & fintech</Link></li>
+              <li><Link href="/financial-service-fintech" className="hover:text-white transition-colors">Financial services & fintech</Link></li>
               <li><Link href="/payments-insurance" className="hover:text-white transition-colors">Payment & Insurance</Link></li>
               <li><Link href="/b2b-saas" className="hover:text-white transition-colors">B2B SaaS, Cloud & AI</Link></li>
             </ul>
@@ -218,7 +218,7 @@ export const Footer: React.FC = () => {
               <li><Link href="/security-trust-center" className="hover:text-white transition-colors">Security practices</Link></li>
               <li><Link href="/responsible-ai" className="hover:text-white transition-colors">Responsible AI</Link></li>
               <li><Link href="/about" className="hover:text-white transition-colors">Privacy & data protection</Link></li>
-              <li><Link href="/about" className="hover:text-white transition-colors">Vulnerability disclosure</Link></li>
+              <li><Link href="/vulnerability-disclosure" className="hover:text-white transition-colors">Vulnerability disclosure</Link></li>
             </ul>
           </div>
 
@@ -228,9 +228,9 @@ export const Footer: React.FC = () => {
               SUPPORT & STATUS
             </h4>
             <ul className="space-y-2 text-gray-300/80">
-              <li><Link href="/contact" className="hover:text-white transition-colors">Support Center</Link></li>
-              <li><Link href="/dashboard" className="hover:text-white transition-colors">System Status</Link></li>
-              <li><Link href="/contact" className="hover:text-white transition-colors">Contact support</Link></li>
+              <li><Link href="/support-center" className="hover:text-white transition-colors">Support Center</Link></li>
+              <li><Link href="/system-status" className="hover:text-white transition-colors">System Status</Link></li>
+              <li><Link href="/contact-support" className="hover:text-white transition-colors">Contact support</Link></li>
               <li><Link href="/planned-maintenance" className="hover:text-white transition-colors">Planned maintenance</Link></li>
             </ul>
           </div>
@@ -241,7 +241,7 @@ export const Footer: React.FC = () => {
               COMPANY
             </h4>
             <ul className="space-y-2 text-gray-300/80">
-              <li><Link href="/about" className="hover:text-white transition-colors">About Zoiko Tech</Link></li>
+              <li><Link href="/about-zoiko-tech" className="hover:text-white transition-colors">About Zoiko Tech</Link></li>
               <li><Link href="/about" className="hover:text-white transition-colors">Leadership</Link></li>
               <li><Link href="/partners" className="hover:text-white transition-colors">Partners</Link></li>
               <li><Link href="/contact" className="hover:text-white transition-colors">Contact</Link></li>

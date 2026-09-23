@@ -1,27 +1,76 @@
 import React from "react";
-// import { Navbar } from "@/components/layout/Navbar";
-// import { Footer } from "@/components/layout/Footer";
-import { ContactForm } from "@/components/forms/ContactForm";
-import { Badge } from "@/components/common/Badge";
+import type { Metadata } from "next";
+import {
+  ContactHeroSection,
+  SecureDispatcherSection,
+  EvaluateSection,
+  ArchitectureVettingSection,
+  CustomerSupportSection,
+  VulnerabilityDisclosureSection,
+  PrivacyRightsSection,
+  LegalProcurementSection,
+  PartnershipsSection,
+  MediaAnalystSection,
+  CareersSection,
+  FallbackInquirySection,
+  VerifiedLocationsSection,
+  DispatchTransparencySection,
+  ContactFaqSection,
+} from "@/components/contact";
+
+export const metadata: Metadata = {
+  title: "Contact Zoiko Shield | Sales, Support, Security & Legal",
+  description:
+    "Reach the right Zoiko Shield team: sales evaluation, security architecture vetting, customer support, vulnerability disclosure, privacy requests, and legal compliance.",
+};
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen flex flex-col bg-zoiko-beige text-zoiko-dark relative">
-      {/* <Navbar /> */}
+    <main className="w-full min-h-screen bg-stone-100 text-slate-900 antialiased selection:bg-red-500 selection:text-white">
+      {/* Hero */}
+      <ContactHeroSection />
 
-      <main className="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-24 space-y-12 w-full">
-        <div className="text-center max-w-2xl mx-auto space-y-3">
-          <Badge variant="cyan">ENTERPRISE DEFENSE</Badge>
-          <h1 className="text-4xl font-extrabold text-zoiko-dark">Contact Security Architecture</h1>
-          <p className="text-sm text-zoiko-dark/60">
-            Provision dedicated Zoiko Shield clusters or request a custom threat vulnerability audit for your organization.
-          </p>
-        </div>
+      {/* Secure Dispatcher (intent routing grid) */}
+      <SecureDispatcherSection />
 
-        <ContactForm />
-      </main>
+      {/* 01. Evaluate Zoiko Shield */}
+      <EvaluateSection />
 
-      {/* <Footer /> */}
-    </div>
+      {/* 02. Architecture & Security Vetting */}
+      <ArchitectureVettingSection />
+
+      {/* 03. Existing Customer Support */}
+      <CustomerSupportSection />
+
+      {/* 04. Security Vulnerability Disclosure */}
+      <VulnerabilityDisclosureSection />
+
+      {/* 05. Privacy & Data Subject Rights */}
+      <PrivacyRightsSection />
+
+      {/* 06. Legal & Procurement Guidelines */}
+      <LegalProcurementSection />
+
+      {/* 07. Partnership Development */}
+      <PartnershipsSection />
+
+      {/* 08. Media & Analyst Engagement */}
+      <MediaAnalystSection />
+
+      {/* 09. Careers & Talent */}
+      <CareersSection />
+
+      {/* 10. Fallback General Inquiry */}
+      <FallbackInquirySection />
+
+      {/* 11. Verified Locations */}
+      <VerifiedLocationsSection />
+
+      {/* 12. Routing Workflow & Real-Time Monitoring */}
+      <DispatchTransparencySection />
+
+      {/* 13. Architecture & Routing FAQ */}
+      <ContactFaqSection />
+    </main>
   );
 }
