@@ -69,7 +69,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemo }) => {
             </Link>
 
             <Link
-              href="/dashboard"
+              href="/system-status"
               onClick={closeMenu}
               className="hover:text-zoiko-primary transition-colors flex items-center gap-0.5"
             >
@@ -78,7 +78,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemo }) => {
             </Link>
 
             <Link
-              href="/contact"
+              href="/support-center"
               onClick={closeMenu}
               className="hover:text-zoiko-primary transition-colors"
             >

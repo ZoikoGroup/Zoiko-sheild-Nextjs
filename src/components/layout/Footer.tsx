@@ -228,9 +228,9 @@ export const Footer: React.FC = () => {
               SUPPORT & STATUS
             </h4>
             <ul className="space-y-2 text-gray-300/80">
-              <li><Link href="/contact" className="hover:text-white transition-colors">Support Center</Link></li>
-              <li><Link href="/dashboard" className="hover:text-white transition-colors">System Status</Link></li>
-              <li><Link href="/contact" className="hover:text-white transition-colors">Contact support</Link></li>
+              <li><Link href="/support-center" className="hover:text-white transition-colors">Support Center</Link></li>
+              <li><Link href="/system-status" className="hover:text-white transition-colors">System Status</Link></li>
+              <li><Link href="/contact-support" className="hover:text-white transition-colors">Contact support</Link></li>
               <li><Link href="/dashboard" className="hover:text-white transition-colors">Planned maintenance</Link></li>
             </ul>
           </div>
