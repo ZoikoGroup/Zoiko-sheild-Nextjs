@@ -144,7 +144,7 @@ export const Footer: React.FC = () => {
               SOLUTIONS BY NEED
             </h4>
             <ul className="space-y-2 text-gray-300/80">
-              <li><Link href="/about" className="hover:text-white transition-colors">Prove controls continuously</Link></li>
+              <li><Link href="/prove-controls-continuously" className="hover:text-white transition-colors">Prove controls continuously</Link></li>
               <li><Link href="/consolidate-security-operations" className="hover:text-white transition-colors">Consolidate security operations</Link></li>
               <li><Link href="/prepare-for-audit" className="hover:text-white transition-colors">Prepare for audits</Link></li>
               <li><Link href="/report-risk-to-the-board" className="hover:text-white transition-colors">Report risk to the Board</Link></li>
@@ -231,7 +231,7 @@ export const Footer: React.FC = () => {
               <li><Link href="/contact" className="hover:text-white transition-colors">Support Center</Link></li>
               <li><Link href="/dashboard" className="hover:text-white transition-colors">System Status</Link></li>
               <li><Link href="/contact" className="hover:text-white transition-colors">Contact support</Link></li>
-              <li><Link href="/dashboard" className="hover:text-white transition-colors">Planned maintenance</Link></li>
+              <li><Link href="/planned-maintenance" className="hover:text-white transition-colors">Planned maintenance</Link></li>
             </ul>
           </div>
 
