@@ -3,8 +3,11 @@
 import React, { useState } from "react";
 import { Minus, Plus } from "lucide-react";
 import { Reveal, Section, SectionHeader, cardClass } from "./shared";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { answerBlocks, faqPageSchema, schemaGraph } from "@/lib/seo/aeo";
 
 const faqs = [
+  ...answerBlocks,
   {
     q: "Is write access required for directory integrations?",
     a: "No. You can configure Zoiko Shield in a completely Read-Only posture to automatically compile assurance reports. Write permissions are solely requested for active containment rules.",
@@ -26,6 +29,7 @@ export default function FaqSection() {
 
   return (
     <Section tone="alt">
+      <JsonLd data={schemaGraph(faqPageSchema(faqs, "/trust-center"))} />
       <SectionHeader eyebrow="Architectural Constraints" title="Frequently Asked Questions" />
 
       <div className="flex flex-col gap-4 w-full">

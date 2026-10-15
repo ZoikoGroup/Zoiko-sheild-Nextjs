@@ -6,6 +6,20 @@ import Image from "next/image";
 // import { Navbar } from "@/components/layout/Navbar";
 // import { Footer } from "@/components/layout/Footer";
 import { DemoModal } from "@/components/ui/DemoModal";
+import { JsonLd } from "@/components/seo/JsonLd";
+import {
+  answerBlocks,
+  platformFaqs,
+  softwareApplicationSchema,
+  faqPageSchema,
+  schemaGraph,
+} from "@/lib/seo/aeo";
+
+const homeFaqs = [...answerBlocks, ...platformFaqs];
+const homeSchema = schemaGraph(
+  softwareApplicationSchema,
+  faqPageSchema(homeFaqs, "/")
+);
 import {
   CheckCircle2,
   LayoutGrid,
@@ -34,6 +48,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen flex flex-col bg-zoiko-beige text-zoiko-dark relative selection:bg-zoiko-primary selection:text-white w-full max-w-full">
       {/* <Navbar onOpenDemo={() => setDemoOpen(true)} /> */}
+      <JsonLd data={homeSchema} />
 
       <main className="flex-grow w-full space-y-20 lg:space-y-32">
         {/* ============================================ */}
@@ -1210,6 +1225,40 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* ============================================ */}
+        {/* SECTION 13B: FAQ (GEO/AEO ANSWER-BLOCKS) */}
+        {/* ============================================ */}
+        <section
+          id="faq"
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10"
+        >
+          <div className="space-y-2 text-left">
+            <div className="flex items-center gap-2">
+              <span className="h-[1.5px] w-5 bg-[#C53B3B]" />
+              <span className="text-xs font-bold uppercase tracking-widest text-[#C53B3B] font-mono">
+                FAQ
+              </span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#151B28]">
+              Frequently asked questions.
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {homeFaqs.map((faq) => (
+              <div
+                key={faq.q}
+                className="bg-white rounded-3xl p-6 sm:p-8 border border-zoiko-border shadow-sm space-y-3"
+              >
+                <h3 className="text-lg font-bold text-[#151B28]">{faq.q}</h3>
+                <p className="text-sm text-[#151B28]/70 leading-relaxed">
+                  {faq.a}
+                </p>
+              </div>
+            ))}
           </div>
         </section>
 
