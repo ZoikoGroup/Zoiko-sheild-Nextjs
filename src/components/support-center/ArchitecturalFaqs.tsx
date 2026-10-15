@@ -1,6 +1,9 @@
 import React from "react";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { answerBlocks, faqPageSchema, schemaGraph } from "@/lib/seo/aeo";
 
 const faqItems = [
+  ...answerBlocks.map(({ q, a }) => ({ question: q, answer: a })),
   {
     question: "How do I troubleshoot an 'unhealthy' EDR agent state?",
     answer:
@@ -21,6 +24,14 @@ const faqItems = [
 export default function ArchitecturalFaqs() {
   return (
     <div className="bg-[#F0EDE6] text-[#111827] px-6 py-16 md:px-12 font-sans antialiased flex flex-col items-center justify-center">
+      <JsonLd
+        data={schemaGraph(
+          faqPageSchema(
+            faqItems.map(({ question, answer }) => ({ q: question, a: answer })),
+            "/support-center"
+          )
+        )}
+      />
       <div className="w-full max-w-6xl">
         {/* Header Section */}
         <div className="mb-6">

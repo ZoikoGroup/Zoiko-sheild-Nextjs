@@ -3,8 +3,11 @@
 import React, { useState } from "react";
 import { Minus, Plus } from "lucide-react";
 import { Reveal, Section, SectionHeader, cardClass } from "./shared";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { answerBlocks, faqPageSchema, schemaGraph } from "@/lib/seo/aeo";
 
 const faqs = [
+  ...answerBlocks,
   {
     q: "What endpoint and identity providers are supported out-of-the-box?",
     a: "Currently, we fully support CrowdStrike Falcon, Microsoft Defender, Okta, Microsoft Entra ID (Azure AD), Jamf Pro, and Microsoft Intune. Production validation is ongoing.",
@@ -26,6 +29,7 @@ export default function FaqSection() {
 
   return (
     <Section>
+      <JsonLd data={schemaGraph(faqPageSchema(faqs, "/security-trust-center"))} />
       <SectionHeader eyebrow="FAQ" title="Detailed architecture and integration constraints" />
 
       <div className="flex flex-col gap-4 w-full">
