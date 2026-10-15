@@ -1,0 +1,26 @@
+<svg width="1511" height="902" viewBox="0 0 1511 902" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g opacity="0.79" filter="url(#filter0_f_1331_24099)">
+<path d="M794.786 554.568C997.285 554.568 1161.44 461.773 1161.44 347.305C1161.44 232.837 997.285 140.042 794.786 140.042C592.287 140.042 428.129 232.837 428.129 347.305C428.129 461.773 592.287 554.568 794.786 554.568Z" fill="url(#paint0_radial_1331_24099)"/>
+<path d="M480.509 658.202C668.543 658.202 820.976 572.036 820.976 465.744C820.976 359.452 668.543 273.286 480.509 273.286C292.474 273.286 140.042 359.452 140.042 465.744C140.042 572.036 292.474 658.202 480.509 658.202Z" fill="url(#paint1_radial_1331_24099)"/>
+<path d="M978.113 761.832C1195.08 761.832 1370.96 662.409 1370.96 539.765C1370.96 417.121 1195.08 317.698 978.113 317.698C761.15 317.698 585.267 417.121 585.267 539.765C585.267 662.409 761.15 761.832 978.113 761.832Z" fill="url(#paint2_radial_1331_24099)"/>
+</g>
+<defs>
+<filter id="filter0_f_1331_24099" x="0" y="0" width="1511" height="901.874" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="70" result="effect1_foregroundBlur_1331_24099"/>
+</filter>
+<radialGradient id="paint0_radial_1331_24099" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(794.786 347.305) scale(366.656 207.263)">
+<stop stop-color="#C44242" stop-opacity="0.55"/>
+<stop offset="1" stop-color="#C44242" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="paint1_radial_1331_24099" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(480.509 465.744) scale(340.467 192.458)">
+<stop stop-color="#1F7A6C" stop-opacity="0.5"/>
+<stop offset="1" stop-color="#1F7A6C" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="paint2_radial_1331_24099" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(978.113 539.765) scale(392.846 222.067)">
+<stop stop-color="#123B4C" stop-opacity="0.55"/>
+<stop offset="1" stop-color="#123B4C" stop-opacity="0"/>
+</radialGradient>
+</defs>
+</svg>
