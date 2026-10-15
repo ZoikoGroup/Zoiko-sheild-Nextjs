@@ -1,16 +1,22 @@
+# Place at: Zoiko-sheild-Nextjs/.github/workflows/deploy.yml   (REPLACES the existing file: old paths/PM2 name no longer exist)
 name: Deploy Zoiko Shield Website
 
 concurrency:
-  group: deploy-zoiko-shield
+  group: deploy-zoiko-shield-website
   cancel-in-progress: false
 
 on:
   push:
     branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - name: SSH and deploy
         uses: appleboy/ssh-action@v1.0.3
@@ -18,12 +24,28 @@ jobs:
           host: ${{ secrets.GCP_SSH_HOST }}
           username: ${{ secrets.GCP_SSH_USER }}
           key: ${{ secrets.GCP_SSH_KEY }}
-          command_timeout: 20m
+          command_timeout: 25m
           script: |
-            set -e
-            cd /var/www/zoiko-shield/app
-            git pull origin main
-            npm install
-            npm run build
-            pm2 restart zoiko-shield
-            pm2 save
+            set -Eeuo pipefail
+            # same lock as the platform deploy: never build both at once on the 4 GB VM
+            exec 9>/tmp/zoikoshield-deploy.lock
+            flock -w 2400 9
+            cd /var/www/zoikoshield-website/app
+            git fetch --quiet origin main
+            git reset --hard origin/main
+            rm -rf .next.prev; [ -d .next ] && cp -a .next .next.prev || true
+            npm install --no-audit --no-fund
+            if NODE_OPTIONS="--max-old-space-size=1536" npm run build; then
+              pm2 restart zoikoshield-website --update-env
+              pm2 save
+              for i in 1 2 3 4 5 6; do
+                code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 10 http://127.0.0.1:3000/ || true)
+                case "$code" in 2??|3??) echo "website up (HTTP $code)"; rm -rf .next.prev; exit 0;; esac
+                sleep 5
+              done
+              echo "website not answering after restart (HTTP $code)"; exit 1
+            else
+              echo "BUILD FAILED: restoring previous .next"
+              rm -rf .next; [ -d .next.prev ] && mv .next.prev .next
+              exit 1
+            fi
