@@ -12,6 +12,7 @@ interface DemoModalProps {
 export const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
   const [step, setStep] = useState<"video" | "form" | "success">("video");
   const [email, setEmail] = useState("");
+  const [isPlaying, setIsPlaying] = useState(false); // Track video play state
 
   if (!isOpen) return null;
 
@@ -22,11 +23,16 @@ export const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
     }
   };
 
+  const handleClose = () => {
+    setIsPlaying(false); // Reset video state on close
+    onClose();
+  };
+
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-md">
       <div className="bg-white max-w-xl w-full rounded-2xl p-6 border border-zoiko-border relative shadow-2xl">
         <button
-          onClick={onClose}
+          onClick={handleClose}
           className="absolute top-4 right-4 text-zoiko-dark/40 hover:text-zoiko-primary p-1 rounded-lg hover:bg-zoiko-beige transition-colors"
         >
           <X className="w-5 h-5" />
@@ -40,14 +46,28 @@ export const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
             </div>
             <h3 className="text-2xl font-bold text-zoiko-dark mb-4">Autonomous Threat Neutralization in Action</h3>
 
-            <div className="relative rounded-xl overflow-hidden bg-zoiko-dark border border-zoiko-border aspect-video flex items-center justify-center mb-6 group cursor-pointer">
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
-              <div className="w-16 h-16 rounded-full bg-zoiko-primary text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 z-10">
-                <Play className="w-7 h-7 fill-current ml-1" />
-              </div>
-              <div className="absolute bottom-4 left-4 z-10 text-xs font-mono text-gray-300">
-                Zoiko Shield v4.2 Defense Simulation • 1080p 60fps
-              </div>
+            <div className="relative rounded-xl overflow-hidden bg-zoiko-dark border border-zoiko-border aspect-video flex items-center justify-center mb-6">
+              {isPlaying ? (
+                <video
+                  src="/videos/demo.mp4"
+                  controls
+                  autoPlay
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <div
+                  onClick={() => setIsPlaying(true)}
+                  className="absolute inset-0 flex items-center justify-center cursor-pointer group w-full h-full"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
+                  <div className="w-16 h-16 rounded-full bg-zoiko-primary text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 z-10">
+                    <Play className="w-7 h-7 fill-current ml-1" />
+                  </div>
+                  <div className="absolute bottom-4 left-4 z-10 text-xs font-mono text-gray-300">
+                    Zoiko Shield v4.2 Defense Simulation • 1080p 60fps
+                  </div>
+                </div>
+              )}
             </div>
 
             <div className="flex items-center justify-between">
@@ -98,7 +118,7 @@ export const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
             <p className="text-sm text-zoiko-dark/60 mb-6">
               Access instructions and JWT API keys sent to <span className="text-zoiko-cyan font-semibold">{email}</span>.
             </p>
-            <Button size="md" variant="primary" onClick={onClose}>
+            <Button size="md" variant="primary" onClick={handleClose}>
               Close & Return to Dashboard
             </Button>
           </div>
