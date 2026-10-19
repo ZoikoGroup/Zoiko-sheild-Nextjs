@@ -29,13 +29,9 @@ import {
   Mail,
 } from "lucide-react";
 
-interface NavbarProps {
-  onOpenDemo?: () => void;
-}
-
 type MenuKey = "platform" | "services" | "solutions" | "resources" | "company";
 
-export const Navbar: React.FC<NavbarProps> = ({ onOpenDemo }) => {
+export const Navbar: React.FC = () => {
   const [openMenu, setOpenMenu] = useState<MenuKey | null>(null);
   const pathname = usePathname();
 
@@ -99,18 +95,17 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemo }) => {
           {/* Mobile Right Action Bar: Sign In + Book a Demo Button */}
           <div className="flex lg:hidden items-center gap-4">
             <Link
-              href="/dashboard"
-              onClick={closeMenu}
+              href="/sign-in"
               className="text-sm font-semibold text-[#151B28] hover:text-[#C53B3B] transition-colors"
             >
               Sign In
             </Link>
-            <button
-              onClick={onOpenDemo}
+            <Link
+              href="/book-a-demo"
               className="bg-[#C53B3B] hover:bg-[#A91D22] text-white px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold shadow-md hover:shadow-lg transition-all"
             >
               Book a Demo
-            </button>
+            </Link>
           </div>
 
           {/* Navigation Links with Mega-Menu Dropdowns */}
@@ -833,19 +828,19 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemo }) => {
             </Link>
 
             <Link
-              href="/dashboard"
+              href="/sign-in"
               onClick={closeMenu}
               className="hover:text-zoiko-primary transition-colors"
             >
               Sign in
             </Link>
 
-            <button
-              onClick={onOpenDemo}
+            <Link
+              href="/book-a-demo"
               className="bg-[#C53B3B] hover:bg-[#A91D22] text-white px-5 py-2 rounded-xl text-sm font-semibold shadow-sm transition-all duration-200 hover:shadow-md hover:scale-[1.02] active:scale-[0.98]"
             >
               Book a Demo
-            </button>
+            </Link>
           </div>
         </div>
       </div>
