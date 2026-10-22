@@ -27,9 +27,25 @@ import {
   Tag,
   User,
   Mail,
+  Scale,
+  LayoutGrid,
+  SlidersVertical,
+  TrendingUp,
+  Calculator,
+  HelpCircle,
+  Users,
+  Warehouse,
+  Settings,
+  Landmark,
 } from "lucide-react";
 
-type MenuKey = "platform" | "services" | "solutions" | "resources" | "company";
+type MenuKey =
+  | "platform"
+  | "services"
+  | "solutions"
+  | "pricing"
+  | "resources"
+  | "company";
 
 export const Navbar: React.FC = () => {
   const [openMenu, setOpenMenu] = useState<MenuKey | null>(null);
@@ -46,7 +62,7 @@ export const Navbar: React.FC = () => {
   return (
     <header className="fixed top-0 z-50 w-full shadow-sm">
       {/* 1. Top Utility Header Bar */}
-      <div className="bg-[#0B181E] lg:bg-[#F5F2EB] border-b border-gray-800 lg:border-zoiko-border/70 text-xs text-gray-300 lg:text-zoiko-dark/70 py-1.5 px-3 sm:px-6 lg:px-8">
+      <div className="bg-[#0B181E] lg:bg-[#F5F2EB] border-b border-gray-800 lg:border-[#F3F4F6] text-xs text-gray-300 lg:text-zoiko-dark/70 py-1.5 px-3 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto flex items-center justify-between lg:justify-end gap-2 lg:gap-6 font-medium">
           {/* Mobile Only Compliance Badges */}
           <div className="lg:hidden text-[10px] font-mono text-cyan-400 font-bold flex items-center gap-1">
@@ -553,7 +569,314 @@ export const Navbar: React.FC = () => {
             </div>
 
             {/* ========================================= */}
-            {/* 4. RESOURCES DROPDOWN */}
+            {/* 4. PLANS & PRICING DROPDOWN (NEW) */}
+            {/* ========================================= */}
+            <div
+              className="relative"
+              onMouseEnter={() => setOpenMenu("pricing")}
+              onMouseLeave={() => setOpenMenu(null)}
+            >
+              <button
+                className={`flex items-center gap-1 py-[14px] border-b-2 transition-colors focus:outline-none font-semibold ${
+                  openMenu === "pricing"
+                    ? "text-[#C53B3B] border-[#C53B3B]"
+                    : "border-transparent hover:text-zoiko-primary"
+                }`}
+              >
+                <span>Plans & Pricing</span>
+                <ChevronDown
+                  className={`w-3.5 h-3.5 opacity-60 transition-transform duration-200 ${
+                    openMenu === "pricing" ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+
+              <div
+                className={`absolute top-full left-0 pt-2 w-[1000px] -translate-x-[380px] animate-fadeIn ${
+                  openMenu === "pricing" ? "block" : "hidden"
+                }`}
+              >
+                <div className="bg-white rounded-3xl shadow-2xl border border-zoiko-border p-6">
+                  <div className="grid grid-cols-3">
+                    {/* Column 1: PLANS & PRICING */}
+                    <div className="space-y-3 pr-6">
+                      <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest block mb-3">
+                        PLANS & PRICING
+                      </span>
+
+                      <Link
+                        href="/pricing"
+                        onClick={closeMenu}
+                        className="bg-[#EFECE3] hover:bg-[#E8E4D8] p-3.5 rounded-2xl border border-[#00000000] transition-all flex items-start gap-3 group/item"
+                      >
+                        <div className="w-8 h-8 rounded-lg bg-[#DEDFDA] text-[#151B28] flex items-center justify-center shrink-0 group-hover/item:text-[#C53B3B]">
+                          <FileText className="w-4 h-4" />
+                        </div>
+                        <div>
+                          <div className="text-xs font-bold text-[#151B28] group-hover/item:text-[#C53B3B]">
+                            Overview
+                          </div>
+                          <p className="text-[11px] text-[#151B28]/60 mt-0.5 leading-tight">
+                            Understand our plans and approach.
+                          </p>
+                        </div>
+                      </Link>
+
+                      <Link
+                        href="/compare-plans"
+                        onClick={closeMenu}
+                        className="bg-[#EFECE3] hover:bg-[#E8E4D8] p-3.5 rounded-2xl border border-[#00000000] transition-all flex items-start gap-3 group/item"
+                      >
+                        <div className="w-8 h-8 rounded-lg bg-[#DEDFDA] text-[#151B28] flex items-center justify-center shrink-0 group-hover/item:text-[#C53B3B]">
+                          <Scale className="w-4 h-4" />
+                        </div>
+                        <div>
+                          <div className="text-xs font-bold text-[#151B28] group-hover/item:text-[#C53B3B]">
+                            Compare Plans
+                          </div>
+                          <p className="text-[11px] text-[#151B28]/60 mt-0.5 leading-tight">
+                            See what&apos;s included across all plans.
+                          </p>
+                        </div>
+                      </Link>
+
+                      <Link
+                        href="/pricing-features"
+                        onClick={closeMenu}
+                        className="bg-[#EFECE3] hover:bg-[#E8E4D8] p-3.5 rounded-2xl border border-[#00000000] transition-all flex items-start gap-3 group/item"
+                      >
+                        <div className="w-8 h-8 rounded-lg bg-[#DEDFDA] text-[#151B28] flex items-center justify-center shrink-0 group-hover/item:text-[#C53B3B]">
+                          <LayoutGrid className="w-4 h-4" />
+                        </div>
+                        <div>
+                          <div className="text-xs font-bold text-[#151B28] group-hover/item:text-[#C53B3B]">
+                            Features
+                          </div>
+                          <p className="text-[11px] text-[#151B28]/60 mt-0.5 leading-tight">
+                            Explore platform capabilities by plan.
+                          </p>
+                        </div>
+                      </Link>
+
+                      <Link
+                        href="/pricing-add-ons"
+                        onClick={closeMenu}
+                        className="bg-[#EFECE3] hover:bg-[#E8E4D8] p-3.5 rounded-2xl border border-[#00000000] transition-all flex items-start gap-3 group/item"
+                      >
+                        <div className="w-8 h-8 rounded-lg bg-[#DEDFDA] text-[#151B28] flex items-center justify-center shrink-0 group-hover/item:text-[#C53B3B]">
+                          <SlidersVertical className="w-4 h-4" />
+                        </div>
+                        <div>
+                          <div className="text-xs font-bold text-[#151B28] group-hover/item:text-[#C53B3B]">
+                            Add-ons
+                          </div>
+                          <p className="text-[11px] text-[#151B28]/60 mt-0.5 leading-tight">
+                            Extend your security program with optional add-ons.
+                          </p>
+                        </div>
+                      </Link>
+
+                      <Link
+                        href="/pricing-enterprise"
+                        onClick={closeMenu}
+                        className="bg-[#EFECE3] hover:bg-[#E8E4D8] p-3.5 rounded-2xl border border-[#00000000] transition-all flex items-start gap-3 group/item"
+                      >
+                        <div className="w-8 h-8 rounded-lg bg-[#DEDFDA] text-[#151B28] flex items-center justify-center shrink-0 group-hover/item:text-[#C53B3B]">
+                          <Building2 className="w-4 h-4" />
+                        </div>
+                        <div>
+                          <div className="text-xs font-bold text-[#151B28] group-hover/item:text-[#C53B3B]">
+                            Enterprise
+                          </div>
+                          <p className="text-[11px] text-[#151B28]/60 mt-0.5 leading-tight">
+                            Custom solutions for complex requirements.
+                          </p>
+                        </div>
+                      </Link>
+                    </div>
+
+                    {/* Column 2: PRICING TOOLS */}
+                    <div className="space-y-3 px-6 border-l border-[#F3F4F6]">
+                      <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest block mb-3">
+                        PRICING TOOLS
+                      </span>
+
+                      <Link
+                        href="/roi-calculator"
+                        onClick={closeMenu}
+                        className="bg-[#EFECE3] hover:bg-[#E8E4D8] p-3.5 rounded-2xl border border-[#00000000] transition-all flex items-start gap-3 group/item"
+                      >
+                        <div className="w-8 h-8 rounded-lg bg-[#DEDFDA] text-[#151B28] flex items-center justify-center shrink-0 group-hover/item:text-[#C53B3B]">
+                          <TrendingUp className="w-4 h-4" />
+                        </div>
+                        <div>
+                          <div className="text-xs font-bold text-[#151B28] group-hover/item:text-[#C53B3B]">
+                            ROI Calculator
+                          </div>
+                          <p className="text-[11px] text-[#151B28]/60 mt-0.5 leading-tight">
+                            Quantify the value of Zoiko Shield.
+                          </p>
+                        </div>
+                      </Link>
+
+                      <Link
+                        href="/estimate-your-cost"
+                        onClick={closeMenu}
+                        className="bg-[#EFECE3] hover:bg-[#E8E4D8] p-3.5 rounded-2xl border border-[#00000000] transition-all flex items-start gap-3 group/item"
+                      >
+                        <div className="w-8 h-8 rounded-lg bg-[#DEDFDA] text-[#151B28] flex items-center justify-center shrink-0 group-hover/item:text-[#C53B3B]">
+                          <Calculator className="w-4 h-4" />
+                        </div>
+                        <div>
+                          <div className="text-xs font-bold text-[#151B28] group-hover/item:text-[#C53B3B]">
+                            Estimate Your Cost
+                          </div>
+                          <p className="text-[11px] text-[#151B28]/60 mt-0.5 leading-tight">
+                            Get a tailored estimate in minutes.
+                          </p>
+                        </div>
+                      </Link>
+
+                      <Link
+                        href="/total-cost-of-ownership"
+                        onClick={closeMenu}
+                        className="bg-[#EFECE3] hover:bg-[#E8E4D8] p-3.5 rounded-2xl border border-[#00000000] transition-all flex items-start gap-3 group/item"
+                      >
+                        <div className="w-8 h-8 rounded-lg bg-[#DEDFDA] text-[#151B28] flex items-center justify-center shrink-0 group-hover/item:text-[#C53B3B]">
+                          <Clock className="w-4 h-4" />
+                        </div>
+                        <div>
+                          <div className="text-xs font-bold text-[#151B28] group-hover/item:text-[#C53B3B]">
+                            Total Cost of Ownership
+                          </div>
+                          <p className="text-[11px] text-[#151B28]/60 mt-0.5 leading-tight">
+                            See the long-term value and cost savings.
+                          </p>
+                        </div>
+                      </Link>
+
+                      <Link
+                        href="/pricing-faq"
+                        onClick={closeMenu}
+                        className="bg-[#EFECE3] hover:bg-[#E8E4D8] p-3.5 rounded-2xl border border-[#00000000] transition-all flex items-start gap-3 group/item"
+                      >
+                        <div className="w-8 h-8 rounded-lg bg-[#DEDFDA] text-[#151B28] flex items-center justify-center shrink-0 group-hover/item:text-[#C53B3B]">
+                          <HelpCircle className="w-4 h-4" />
+                        </div>
+                        <div>
+                          <div className="text-xs font-bold text-[#151B28] group-hover/item:text-[#C53B3B]">
+                            Pricing FAQ
+                          </div>
+                          <p className="text-[11px] text-[#151B28]/60 mt-0.5 leading-tight">
+                            Answers to common pricing questions.
+                          </p>
+                        </div>
+                      </Link>
+                    </div>
+
+                    {/* Column 3: FOR DIFFERENT TEAMS */}
+                    <div className="space-y-3 pl-6 border-l border-[#F3F4F6]">
+                      <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest block mb-3">
+                        FOR DIFFERENT TEAMS
+                      </span>
+
+                      <Link
+                        href="/pricing/smb-growth"
+                        onClick={closeMenu}
+                        className="bg-[#EFECE3] hover:bg-[#E8E4D8] p-3.5 rounded-2xl border border-[#00000000] transition-all flex items-start gap-3 group/item"
+                      >
+                        <div className="w-8 h-8 rounded-lg bg-[#DEDFDA] text-[#151B28] flex items-center justify-center shrink-0 group-hover/item:text-[#C53B3B]">
+                          <Users className="w-4 h-4" />
+                        </div>
+                        <div>
+                          <div className="text-xs font-bold text-[#151B28] group-hover/item:text-[#C53B3B]">
+                            SMB & Growth
+                          </div>
+                          <p className="text-[11px] text-[#151B28]/60 mt-0.5 leading-tight">
+                            Scalable security for growing businesses.
+                          </p>
+                        </div>
+                      </Link>
+
+                      <Link
+                        href="/pricing/mid-market"
+                        onClick={closeMenu}
+                        className="bg-[#EFECE3] hover:bg-[#E8E4D8] p-3.5 rounded-2xl border border-[#00000000] transition-all flex items-start gap-3 group/item"
+                      >
+                        <div className="w-8 h-8 rounded-lg bg-[#DEDFDA] text-[#151B28] flex items-center justify-center shrink-0 group-hover/item:text-[#C53B3B]">
+                          <Building2 className="w-4 h-4" />
+                        </div>
+                        <div>
+                          <div className="text-xs font-bold text-[#151B28] group-hover/item:text-[#C53B3B]">
+                            Mid-Market
+                          </div>
+                          <p className="text-[11px] text-[#151B28]/60 mt-0.5 leading-tight">
+                            Built for expanding organizations.
+                          </p>
+                        </div>
+                      </Link>
+
+                      <Link
+                        href="/pricing/enterprise"
+                        onClick={closeMenu}
+                        className="bg-[#EFECE3] hover:bg-[#E8E4D8] p-3.5 rounded-2xl border border-[#00000000] transition-all flex items-start gap-3 group/item"
+                      >
+                        <div className="w-8 h-8 rounded-lg bg-[#DEDFDA] text-[#151B28] flex items-center justify-center shrink-0 group-hover/item:text-[#C53B3B]">
+                          <Warehouse className="w-4 h-4" />
+                        </div>
+                        <div>
+                          <div className="text-xs font-bold text-[#151B28] group-hover/item:text-[#C53B3B]">
+                            Enterprise
+                          </div>
+                          <p className="text-[11px] text-[#151B28]/60 mt-0.5 leading-tight">
+                            Advanced control and scale for global enterprises.
+                          </p>
+                        </div>
+                      </Link>
+
+                      <Link
+                        href="/pricing/managed-service-providers"
+                        onClick={closeMenu}
+                        className="bg-[#EFECE3] hover:bg-[#E8E4D8] p-3.5 rounded-2xl border border-[#00000000] transition-all flex items-start gap-3 group/item"
+                      >
+                        <div className="w-8 h-8 rounded-lg bg-[#DEDFDA] text-[#151B28] flex items-center justify-center shrink-0 group-hover/item:text-[#C53B3B]">
+                          <Settings className="w-4 h-4" />
+                        </div>
+                        <div>
+                          <div className="text-xs font-bold text-[#151B28] group-hover/item:text-[#C53B3B]">
+                            Managed Service Providers
+                          </div>
+                          <p className="text-[11px] text-[#151B28]/60 mt-0.5 leading-tight">
+                            Deliver greater value to your clients.
+                          </p>
+                        </div>
+                      </Link>
+
+                      <Link
+                        href="/pricing/government-regulated"
+                        onClick={closeMenu}
+                        className="bg-[#EFECE3] hover:bg-[#E8E4D8] p-3.5 rounded-2xl border border-[#00000000] transition-all flex items-start gap-3 group/item"
+                      >
+                        <div className="w-8 h-8 rounded-lg bg-[#DEDFDA] text-[#151B28] flex items-center justify-center shrink-0 group-hover/item:text-[#C53B3B]">
+                          <Landmark className="w-4 h-4" />
+                        </div>
+                        <div>
+                          <div className="text-xs font-bold text-[#151B28] group-hover/item:text-[#C53B3B]">
+                            Government & Regulated
+                          </div>
+                          <p className="text-[11px] text-[#151B28]/60 mt-0.5 leading-tight">
+                            Meet strict compliance and mission requirements.
+                          </p>
+                        </div>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* ========================================= */}
+            {/* 5. RESOURCES DROPDOWN */}
             {/* ========================================= */}
             <div
               className="relative"
@@ -694,7 +1017,7 @@ export const Navbar: React.FC = () => {
             </div>
 
             {/* ========================================= */}
-            {/* 5. COMPANY DROPDOWN */}
+            {/* 6. COMPANY DROPDOWN */}
             {/* ========================================= */}
             <div
               className="relative"
