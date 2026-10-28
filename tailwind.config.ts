@@ -35,6 +35,11 @@ const config: Config = {
         "pulse-slow": "pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite",
         "shield-glow": "shieldGlow 3s ease-in-out infinite alternate",
         "scan-line": "scanLine 2.5s linear infinite",
+        // Public assistant: launcher hover, and the "searching" indicator while an answer is prepared.
+        "zs-tilt": "zsTilt 0.6s ease-in-out",
+        "zs-ring": "zsRing 1.2s ease-out infinite",
+        "zs-scan": "zsScan 1.6s ease-in-out infinite",
+        "zs-shimmer": "zsShimmer 2s linear infinite",
       },
       keyframes: {
         shieldGlow: {
@@ -44,6 +49,24 @@ const config: Config = {
         scanLine: {
           "0%": { transform: "translateY(-100%)" },
           "100%": { transform: "translateY(1000%)" },
+        },
+        zsTilt: {
+          "0%, 100%": { transform: "rotate(0deg) scale(1)" },
+          "30%": { transform: "rotate(-10deg) scale(1.1)" },
+          "60%": { transform: "rotate(8deg) scale(1.1)" },
+        },
+        zsRing: {
+          "0%": { transform: "scale(1)", opacity: "0.55" },
+          "100%": { transform: "scale(1.45)", opacity: "0" },
+        },
+        zsScan: {
+          "0%": { transform: "translateY(-120%)", opacity: "0" },
+          "15%, 85%": { opacity: "1" },
+          "100%": { transform: "translateY(120%)", opacity: "0" },
+        },
+        zsShimmer: {
+          "0%": { backgroundPosition: "200% 0" },
+          "100%": { backgroundPosition: "-200% 0" },
         },
       },
     },

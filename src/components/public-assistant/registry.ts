@@ -1,0 +1,38 @@
+// ZS-ID registry mapping wireframe ZS IDs to components
+// ZS025–ZS032 are reserved and not built.
+
+export const ZS_REGISTRY: Record<string, string> = {
+  ZS001: "Launcher",
+  ZS002: "Panel",
+  ZS003: "Header",
+  ZS004: "Welcome",
+  ZS005: "MessageList",
+  ZS006: "Composer",
+  ZS007: "CitationCard",
+  ZS008: "SettingsPanel",
+  ZS009: "FeedbackControl",
+  ZS010: "HistoryPanel",
+  ZS011: "HelpHome",
+  ZS012: "ArticleView",
+  ZS013: "GuideView",
+  ZS014: "DiscoveryFlow",
+  ZS015: "PlansView",
+  ZS016: "TrustView",
+  ZS017: "IntegrationsView",
+  ZS018: "OnboardingView",
+  ZS019: "IntakeForm",
+  ZS020: "SubmissionReceipt",
+  ZS021: "StatusBanner",
+  ZS022: "UncertainOutcome",
+  ZS023: "FollowUpChips",
+  ZS024: "TranscriptExport",
+  // Reserved (not built)
+  ZS025: "reserved",
+  ZS026: "reserved",
+  ZS027: "reserved",
+  ZS028: "reserved",
+  ZS029: "reserved",
+  ZS030: "reserved",
+  ZS031: "reserved",
+  ZS032: "reserved",
+};

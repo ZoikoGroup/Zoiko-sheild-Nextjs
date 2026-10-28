@@ -104,6 +104,7 @@ export default function HomePage() {
                   src="/images/hero.png"
                   alt="ZoikoShield Governed AI Security Platform"
                   fill
+                  sizes="(min-width: 1024px) 50vw, 100vw"
                   className="object-cover"
                   priority
                 />
@@ -395,6 +396,7 @@ export default function HomePage() {
                   src="/images/33.jpg"
                   alt="Analyst Workflows"
                   fill
+                  sizes="(min-width: 1024px) 33vw, 100vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent p-6 flex flex-col justify-end text-white">
@@ -451,6 +453,7 @@ export default function HomePage() {
                 src="/images/3.png"
                 alt="Infrastructure-native"
                 fill
+                sizes="(min-width: 1024px) 33vw, 100vw"
                 className="object-cover group-hover:scale-105 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-6 sm:p-8 flex flex-col justify-end text-white">

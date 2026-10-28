@@ -61,3 +61,5 @@ remove_unused.py
 replace_fonts.py
 update_padding.py
 response.json
+# Public assistant intake store (local/dev)
+/.data/
