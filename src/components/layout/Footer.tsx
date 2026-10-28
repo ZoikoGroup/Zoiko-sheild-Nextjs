@@ -14,7 +14,7 @@ export const Footer: React.FC = () => {
             <Image
               src="/images/kk.png"
               alt="Zoiko Shield Logo"
-              width={160}
+              width={82}
               height={36}
               className="h-9 w-auto object-contain"
               priority

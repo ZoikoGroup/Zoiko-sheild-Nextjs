@@ -4,6 +4,7 @@ import "@/styles/globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { SecurityProvider } from "@/context/SecurityContext";
+import { PublicAssistantMount } from "@/components/public-assistant/PublicAssistantMount";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const ibmPlexMono = IBM_Plex_Mono({ 
@@ -55,6 +56,7 @@ export const metadata: Metadata = {
         </SecurityProvider>
         
         <Footer />
+        <PublicAssistantMount />
       </body>
     </html>
   );

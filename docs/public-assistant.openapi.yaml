@@ -1,0 +1,1235 @@
+openapi: 3.0.3
+info:
+  title: ZoikoShield Public Assistant API v1
+  description: Public BFF for anonymous visitors (no tenant/auth context)
+  version: 1.0.0
+servers:
+  - url: /api/public/chat/v1
+tags:
+  - name: public
+    description: Public endpoints (no auth)
+paths:
+  /config:
+    get:
+      tags: [public]
+      summary: Get assistant config, flags, route registry
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConfigBody'
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorBody'
+  /status:
+    get:
+      tags: [public]
+      summary: Get assistant status
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StatusBody'
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorBody'
+  /sessions:
+    post:
+      tags: [public]
+      summary: Create guest session (only on first submitted message/flow action)
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SessionCreated'
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SessionCreated'
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorBody'
+  /sessions/clear:
+    post:
+      tags: [public]
+      summary: Clear session / bump epoch
+      security: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [epoch]
+                properties:
+                  epoch:
+                    type: integer
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorBody'
+  /messages:
+    post:
+      tags: [public]
+      summary: Send message
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MessageRequest'
+      responses:
+        '202':
+          description: Accepted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageAccepted'
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResult'
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorBody'
+  /messages/{id}/events:
+    get:
+      tags: [public]
+      summary: SSE events
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: SSE stream (text/event-stream)
+          content:
+            text/event-stream:
+              schema:
+                type: string
+                description: Server-Sent Events stream with SSE event objects
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorBody'
+  /messages/{id}/cancel:
+    post:
+      tags: [public]
+      summary: Cancel message
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  cancelled:
+                    type: boolean
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorBody'
+  /sources/{id}:
+    get:
+      tags: [public]
+      summary: Get citation metadata
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [source]
+                properties:
+                  source:
+                    $ref: '#/components/schemas/CitationSource'
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorBody'
+  /help/home:
+    get:
+      tags: [public]
+      summary: Help home tiles
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorBody'
+  /help/search:
+    post:
+      tags: [public]
+      summary: Help search
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/HelpSearchRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorBody'
+  /help/articles/{id}:
+    get:
+      tags: [public]
+      summary: Help article
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorBody'
+  /help/guides/{id}/steps:
+    post:
+      tags: [public]
+      summary: Guide step
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GuideStepRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorBody'
+  /discovery/catalog:
+    get:
+      tags: [public]
+      summary: Discovery catalog
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorBody'
+  /discovery/matches:
+    post:
+      tags: [public]
+      summary: Discovery matches
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DiscoveryMatchesRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorBody'
+  /commercial/plans:
+    get:
+      tags: [public]
+      summary: Plans
+      parameters:
+        - name: market
+          in: query
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorBody'
+  /commercial/fit:
+    post:
+      tags: [public]
+      summary: Fit check
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CommercialFitRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorBody'
+  /trust/topics:
+    get:
+      tags: [public]
+      summary: Trust topics
+      parameters:
+        - name: market
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: locale
+          in: query
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorBody'
+  /trust/sources/{id}:
+    get:
+      tags: [public]
+      summary: Trust source
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [source]
+                properties:
+                  source:
+                    $ref: '#/components/schemas/Citation'
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorBody'
+  /integrations/catalog:
+    get:
+      tags: [public]
+      summary: Integrations catalog
+      parameters:
+        - name: market
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: category
+          in: query
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorBody'
+  /integrations/deployment-guide:
+    post:
+      tags: [public]
+      summary: Deployment guide topics
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeploymentGuideRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorBody'
+  /onboarding/questions:
+    get:
+      tags: [public]
+      summary: Onboarding questions
+      parameters:
+        - name: persona
+          in: query
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorBody'
+  /onboarding/checklists:
+    post:
+      tags: [public]
+      summary: Onboarding checklist
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OnboardingChecklistRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorBody'
+  /feedback:
+    post:
+      tags: [public]
+      summary: Feedback
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FeedbackRequest'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [recorded]
+                properties:
+                  recorded:
+                    type: boolean
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [recorded]
+                properties:
+                  recorded:
+                    type: boolean
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorBody'
+  /submissions/keys:
+    post:
+      tags: [public]
+      summary: Get idempotency key
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SubmissionKeyRequest'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SubmissionKeyBody'
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorBody'
+  /demo-requests:
+    post:
+      tags: [public]
+      summary: Demo request
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IntakeSubmitRequest'
+      responses:
+        '202':
+          description: Accepted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Receipt'
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorBody'
+  /support/requests:
+    post:
+      tags: [public]
+      summary: Support request
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IntakeSubmitRequest'
+      responses:
+        '202':
+          description: Accepted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Receipt'
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorBody'
+  /support/summary-preview:
+    post:
+      tags: [public]
+      summary: Support transcript preview
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorBody'
+  /commercial/inquiries:
+    post:
+      tags: [public]
+      summary: Commercial inquiry
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IntakeSubmitRequest'
+      responses:
+        '202':
+          description: Accepted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Receipt'
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorBody'
+  /trust/access-requests:
+    post:
+      tags: [public]
+      summary: Trust access request
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IntakeSubmitRequest'
+      responses:
+        '202':
+          description: Accepted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Receipt'
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorBody'
+  /technical-reviews:
+    post:
+      tags: [public]
+      summary: Technical review
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IntakeSubmitRequest'
+      responses:
+        '202':
+          description: Accepted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Receipt'
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorBody'
+  /onboarding/requests:
+    post:
+      tags: [public]
+      summary: Onboarding request
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IntakeSubmitRequest'
+      responses:
+        '202':
+          description: Accepted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Receipt'
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorBody'
+  /privacy/requests:
+    post:
+      tags: [public]
+      summary: Privacy request
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IntakeSubmitRequest'
+      responses:
+        '202':
+          description: Accepted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Receipt'
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorBody'
+  /submissions/status:
+    post:
+      tags: [public]
+      summary: Submission status (optional)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [public_reference, status_token]
+              properties:
+                public_reference:
+                  type: string
+                status_token:
+                  type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorBody'
+
+components:
+  schemas:
+    ErrorBody:
+      type: object
+      required: [error_code, user_safe_message, correlation_id]
+      additionalProperties: true
+      properties:
+        error_code:
+          type: string
+        user_safe_message:
+          type: string
+        field_errors:
+          type: object
+          additionalProperties:
+            type: string
+        retry_after:
+          type: number
+        correlation_id:
+          type: string
+
+    Option:
+      type: object
+      required: [id, label]
+      properties:
+        id:
+          type: string
+        label:
+          type: string
+
+    RouteLink:
+      type: object
+      required: [route_key, label, url]
+      properties:
+        route_key:
+          type: string
+        label:
+          type: string
+        url:
+          type: string
+
+    Citation:
+      type: object
+      required: [source_id, title, url, summary]
+      properties:
+        source_id:
+          type: string
+        title:
+          type: string
+        url:
+          type: string
+        summary:
+          type: string
+
+    AnswerBlock:
+      oneOf:
+        - type: object
+          required: [type, text]
+          properties:
+            type:
+              type: string
+              enum: [paragraph]
+            text:
+              type: string
+        - type: object
+          required: [type, items]
+          properties:
+            type:
+              type: string
+              enum: [bullets]
+            items:
+              type: array
+              items:
+                type: string
+
+    FollowUp:
+      type: object
+      required: [intent_key, label]
+      properties:
+        intent_key:
+          type: string
+        label:
+          type: string
+
+    Answer:
+      type: object
+      required: [outcome, blocks, citations, follow_ups]
+      properties:
+        outcome:
+          type: string
+          enum: [ANSWERED, LIMITED, ABSTAINED, PENDING, REJECTED, ERROR]
+        blocks:
+          type: array
+          items:
+            $ref: '#/components/schemas/AnswerBlock'
+        citations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Citation'
+        follow_ups:
+          type: array
+          items:
+            $ref: '#/components/schemas/FollowUp'
+        route:
+          $ref: '#/components/schemas/RouteLink'
+
+    SSEData:
+      type: object
+      additionalProperties: true
+      properties:
+        text:
+          type: string
+        block_index:
+          type: number
+        answer:
+          $ref: '#/components/schemas/Answer'
+        error_code:
+          type: string
+        message:
+          type: string
+
+    SseEvent:
+      type: object
+      required: [seq, type, epoch, data]
+      additionalProperties: true
+      properties:
+        seq:
+          type: integer
+        type:
+          type: string
+          enum: [acknowledged, progress, delta, final, safety_limited, error]
+        epoch:
+          type: integer
+        data:
+          $ref: '#/components/schemas/SSEData'
+
+    StatusBody:
+      type: object
+      required: [state, mode, fallback_links]
+      properties:
+        state:
+          type: string
+          enum: [enabled, degraded, disabled]
+        mode:
+          type: string
+          enum: [ai, static]
+        fallback_links:
+          type: array
+          items:
+            $ref: '#/components/schemas/RouteLink'
+
+    Flags:
+      type: object
+      required:
+        - assistant_launcher
+        - assistant_ai_answers
+        - assistant_lead_submit
+        - assistant_support_submit
+        - assistant_trust_gated
+        - assistant_public_pricing
+        - assistant_connector_claims
+        - assistant_privacy_write
+        - assistant_kill
+      additionalProperties: false
+      properties:
+        assistant_launcher:
+          type: boolean
+        assistant_ai_answers:
+          type: boolean
+        assistant_lead_submit:
+          type: boolean
+        assistant_support_submit:
+          type: boolean
+        assistant_trust_gated:
+          type: boolean
+        assistant_public_pricing:
+          type: boolean
+        assistant_connector_claims:
+          type: boolean
+        assistant_privacy_write:
+          type: boolean
+        assistant_kill:
+          type: boolean
+
+    ConfigBody:
+      type: object
+      required: [display_name, clearance, flags, routes, markets, intake, policy_versions]
+      properties:
+        display_name:
+          type: string
+        clearance:
+          type: string
+          enum: [public]
+        flags:
+          $ref: '#/components/schemas/Flags'
+        routes:
+          type: array
+          items:
+            $ref: '#/components/schemas/RouteLink'
+        markets:
+          type: array
+          items:
+            $ref: '#/components/schemas/Option'
+        intake:
+          type: object
+          additionalProperties:
+            type: boolean
+        policy_versions:
+          type: object
+          required: [answer_policy]
+          properties:
+            notice:
+              type: string
+              nullable: true
+            answer_policy:
+              type: string
+
+    SessionCreated:
+      type: object
+      required: [expires_at, ttl_seconds, epoch]
+      properties:
+        expires_at:
+          type: string
+          format: date-time
+        ttl_seconds:
+          type: number
+        epoch:
+          type: integer
+
+    MessageRequest:
+      type: object
+      required: [client_message_id, content]
+      properties:
+        client_message_id:
+          type: string
+        content:
+          type: string
+        locale:
+          type: string
+        intent_key:
+          type: string
+        consent_snapshot_id:
+          type: string
+
+    MessageAccepted:
+      type: object
+      required: [message_id]
+      properties:
+        message_id:
+          type: string
+
+    MessageResult:
+      type: object
+      required: [answer, citations]
+      properties:
+        answer:
+          $ref: '#/components/schemas/Answer'
+        citations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Citation'
+
+    CitationSource:
+      type: object
+      required: [source_id, title, url, summary, kind, revision]
+      properties:
+        source_id:
+          type: string
+        title:
+          type: string
+        url:
+          type: string
+        summary:
+          type: string
+        kind:
+          type: string
+        revision:
+          type: integer
+
+    HelpSearchRequest:
+      type: object
+      required: [query]
+      properties:
+        query:
+          type: string
+          maxLength: 200
+        locale:
+          type: string
+        market:
+          type: string
+        cursor:
+          type: string
+
+    GuideStepRequest:
+      type: object
+      required: [step_id, choice]
+      properties:
+        step_id:
+          type: string
+        choice:
+          type: string
+
+    DiscoveryMatchesRequest:
+      type: object
+      properties:
+        priority:
+          type: string
+        role:
+          type: string
+        environment:
+          type: string
+        market:
+          type: string
+
+    CommercialFitRequest:
+      type: object
+      required: [market]
+      properties:
+        market:
+          type: string
+        asset_band:
+          type: string
+        ingestion_band:
+          type: string
+
+    DeploymentGuideRequest:
+      type: object
+      properties: {}
+
+    OnboardingChecklistRequest:
+      type: object
+      properties: {}
+
+    FeedbackRequest:
+      type: object
+      required: [target_type, target_id, rating]
+      properties:
+        target_type:
+          type: string
+          enum: [message, flow, discovery]
+        target_id:
+          type: string
+        rating:
+          type: string
+          enum: [helpful, not_helpful]
+        reason_code:
+          type: string
+
+    SubmissionKeyRequest:
+      type: object
+      required: [journey]
+      properties:
+        journey:
+          type: string
+
+    FieldSpec:
+      type: object
+      required: [name, label, type, required, max]
+      properties:
+        name:
+          type: string
+        label:
+          type: string
+        type:
+          type: string
+          enum: [text, email, textarea, select]
+        required:
+          type: boolean
+        min:
+          type: number
+        max:
+          type: number
+        options_from:
+          type: string
+        free_text:
+          type: boolean
+        hint:
+          type: string
+
+    ResolvedForm:
+      type: object
+      required: [kind, fields]
+      properties:
+        kind:
+          type: string
+          enum: [DEMO, SUPPORT, QUOTE, TRUST_ACCESS, TECH_EVAL, ONBOARDING, PRIVACY]
+        fields:
+          type: array
+          items:
+            allOf:
+              - $ref: '#/components/schemas/FieldSpec'
+              - type: object
+                properties:
+                  options:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Option'
+
+    SubmissionKeyBody:
+      type: object
+      required: [idempotency_key, expires_at, notice_version, notice_url, form]
+      properties:
+        idempotency_key:
+          type: string
+        expires_at:
+          type: string
+          format: date-time
+        notice_version:
+          type: string
+        notice_url:
+          type: string
+        form:
+          $ref: '#/components/schemas/ResolvedForm'
+
+    IntakeSubmitRequest:
+      type: object
+      required: [idempotency_key, values]
+      properties:
+        idempotency_key:
+          type: string
+        values:
+          type: object
+          additionalProperties: true
+
+    Receipt:
+      type: object
+      required: [status, public_reference, submission_id]
+      properties:
+        status:
+          type: string
+          enum: [ACCEPTED, PENDING_CONFIRMATION]
+        public_reference:
+          type: string
+        submission_id:
+          type: string
+  securitySchemes: {}

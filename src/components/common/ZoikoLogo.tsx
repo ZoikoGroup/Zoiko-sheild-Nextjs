@@ -13,7 +13,8 @@ export const ZoikoLogo: React.FC<ZoikoLogoProps> = ({ variant = "light", classNa
       <Image
         src="/images/logo.png"
         alt="Zoiko Shield Logo"
-        width={160}
+        // logo.png is 105×32; keep the attributes in that ratio so next/image doesn't warn.
+        width={Math.round((height * 105) / 32)}
         height={height}
         className={`h-9 w-auto object-contain ${variant === "dark" ? "brightness-110 contrast-125" : ""}`}
         priority
