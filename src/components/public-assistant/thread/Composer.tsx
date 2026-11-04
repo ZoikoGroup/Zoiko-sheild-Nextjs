@@ -1,14 +1,15 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { Mic, SendHorizontal, Square } from "lucide-react";
+import { Mic, Paperclip, Send, Shield, Square } from "lucide-react";
 import { COMPOSER_COUNTER_FROM, COMPOSER_MAX, codePointLength } from "@/lib/public-assistant/contract";
 import { useAssistant } from "../state/AssistantContext";
 import { useDictation } from "../shared/speech";
 import { copy } from "../copy/en-US";
 
 export function Composer() {
-  const { submit, state } = useAssistant();
+  const { submit, state, route } = useAssistant();
+  const privacy = route("privacy_notice");
   const [value, setValue] = useState("");
   // Text already in the box when dictation started; speech is appended after it.
   const base = useRef("");
@@ -46,17 +47,30 @@ export function Composer() {
   const hintVisible = tooLong || dictation.listening || !!dictation.error || showCounter;
 
   return (
-    <form
-      className="border-t border-zoiko-border dark:border-white/10 bg-white dark:bg-[#111d28] p-3"
-      onSubmit={(e) => {
-        e.preventDefault();
-        send();
-      }}
-    >
-      <div className="flex items-end gap-2">
+    <div className="p-3 sm:p-4 bg-transparent shrink-0">
+      <form
+        className="relative flex items-center gap-2 rounded-full border border-gray-200/90 dark:border-white/10 bg-white dark:bg-[#162231] shadow-md px-3.5 py-1.5 transition-all focus-within:border-zoiko-primary/60 focus-within:ring-2 focus-within:ring-zoiko-primary/10"
+        onSubmit={(e) => {
+          e.preventDefault();
+          send();
+        }}
+      >
         <label htmlFor="zs-composer" className="sr-only">
           {copy.composer.label}
         </label>
+
+        {/* Paperclip attachment icon button matching design */}
+        <button
+          type="button"
+          onClick={() => alert("Attachments are not supported in guest mode.")}
+          className="rounded-full p-1.5 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 transition focus:outline-none"
+          title="Attach file"
+          aria-label="Attach file"
+        >
+          <Paperclip className="h-4 w-4" aria-hidden />
+        </button>
+
+        {/* Text input */}
         <textarea
           id="zs-composer"
           rows={1}
@@ -71,8 +85,10 @@ export function Composer() {
           placeholder={dictation.listening ? copy.composer.listening : copy.composer.placeholder}
           aria-invalid={tooLong}
           aria-describedby="zs-composer-hint"
-          className="max-h-32 min-h-[42px] flex-1 resize-none rounded-xl border border-zoiko-border dark:border-white/10 bg-zoiko-beige/40 dark:bg-white/5 px-3 py-2.5 text-sm focus:border-zoiko-primary focus:bg-white dark:focus:bg-white/10 focus:outline-none focus:ring-2 focus:ring-zoiko-primary/20 aria-[invalid=true]:border-red-600"
+          className="flex-1 resize-none bg-transparent py-1.5 text-xs sm:text-sm text-gray-800 dark:text-gray-100 placeholder:text-gray-400 focus:outline-none max-h-24 min-h-[36px]"
         />
+
+        {/* Voice dictation button */}
         {dictation.supported && (
           <button
             type="button"
@@ -80,29 +96,56 @@ export function Composer() {
             aria-label={dictation.listening ? copy.composer.micStop : copy.composer.micStart}
             aria-pressed={dictation.listening}
             title={dictation.listening ? copy.composer.micStop : copy.composer.micStart}
-            className={`rounded-xl border p-2.5 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-zoiko-primary focus-visible:ring-offset-1 ${
-              dictation.listening ? "animate-pulse border-zoiko-primary bg-zoiko-primary/10 text-zoiko-primary dark:text-[#ff8a8d]" : "border-zoiko-border dark:border-white/10 text-zoiko-dark/70 dark:text-gray-300 hover:bg-zoiko-beige dark:hover:bg-white/10"
+            className={`rounded-full p-2 transition focus:outline-none ${
+              dictation.listening
+                ? "animate-pulse bg-red-100 dark:bg-red-950/60 text-[#c5221f]"
+                : "text-gray-400 hover:text-gray-700 dark:hover:text-gray-200"
             }`}
           >
-            {dictation.listening ? <Square className="h-5 w-5" aria-hidden /> : <Mic className="h-5 w-5" aria-hidden />}
+            {dictation.listening ? <Square className="h-4 w-4" aria-hidden /> : <Mic className="h-4 w-4" aria-hidden />}
           </button>
         )}
+
+        {/* Circular red send button with paper plane icon */}
         <button
           type="submit"
           disabled={!value.trim() || tooLong || busy}
           aria-label={copy.composer.send}
-          className="rounded-xl bg-zoiko-primary p-2.5 text-white transition hover:bg-[#8f181c] disabled:bg-zoiko-primary/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-zoiko-primary focus-visible:ring-offset-1"
+          className="flex h-9 w-9 items-center justify-center rounded-full bg-[#c5221f] text-white shadow-sm transition hover:bg-[#a51b18] hover:scale-105 active:scale-95 disabled:bg-gray-300 dark:disabled:bg-gray-700 disabled:cursor-not-allowed disabled:transform-none focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-zoiko-primary shrink-0"
         >
-          <SendHorizontal className="h-5 w-5" aria-hidden />
+          <Send className="h-4 w-4" aria-hidden />
         </button>
+      </form>
+
+      {/* Error / counter hint */}
+      {hintVisible && (
+        <p
+          id="zs-composer-hint"
+          aria-live="polite"
+          className={`mt-1 text-right text-[11px] ${
+            tooLong || dictation.error ? "text-red-600 dark:text-red-400" : "text-gray-400"
+          }`}
+        >
+          {hint}
+        </p>
+      )}
+
+      {/* ── Footer Disclaimer matching the design mockup ─────────── */}
+      <div className="mt-2.5 flex items-center justify-center gap-1.5 text-center text-[10.5px] text-gray-400 dark:text-gray-500 leading-tight px-2">
+        <Shield className="h-3.5 w-3.5 shrink-0 text-gray-400/80" aria-hidden />
+        <p>
+          The Zoiko Shield AI Assistant provides general information about our products and services.
+          It does not have access to your organization&apos;s data or any customer environments.
+          {privacy && (
+            <>
+              {" "}
+              <a href={privacy.url} className="underline hover:text-gray-600 dark:hover:text-gray-300">
+                Privacy notice
+              </a>
+            </>
+          )}
+        </p>
       </div>
-      <p
-        id="zs-composer-hint"
-        aria-live="polite"
-        className={`mt-1 text-right text-[11px] ${tooLong || dictation.error ? "text-red-700 dark:text-red-300" : dictation.listening ? "text-zoiko-primary dark:text-[#ff8a8d]" : "text-zoiko-dark/50 dark:text-gray-400"} ${hintVisible ? "" : "sr-only"}`}
-      >
-        {hint}
-      </p>
-    </form>
+    </div>
   );
 }

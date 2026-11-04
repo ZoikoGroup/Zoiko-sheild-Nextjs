@@ -38,7 +38,7 @@ export const copy = {
     { view: "onboarding", label: "Onboarding checklist" },
   ],
   composer: {
-    placeholder: "Ask a question or say hi…",
+    placeholder: "Ask a question about Zoiko Shield…",
     label: "Message",
     send: "Send",
     micStart: "Speak your message",

@@ -112,7 +112,8 @@ const STOPWORDS = new Set(
 );
 
 export function tokenize(text: string): string[] {
-  return (text.toLowerCase().normalize("NFKC").match(/[a-z0-9]+/g) || [])
+  // Visitors type "Zoiko Shield"; the published copy says "ZoikoShield".
+  return (text.toLowerCase().normalize("NFKC").replace(/zoiko[\s-]+shield/g, "zoikoshield").match(/[a-z0-9]+/g) || [])
     .filter((t) => !STOPWORDS.has(t) && t.length > 1)
     .map((t) => t.replace(/(ing|ed|es|s)$/, (m) => (t.length - m.length >= 4 ? "" : m)));
 }

@@ -40,6 +40,9 @@ const config: Config = {
         "zs-ring": "zsRing 1.2s ease-out infinite",
         "zs-scan": "zsScan 1.6s ease-in-out infinite",
         "zs-shimmer": "zsShimmer 2s linear infinite",
+        "zs-fade-up": "zsFadeUp 0.45s cubic-bezier(0.22, 1, 0.36, 1) both",
+        "zs-pop": "zsPop 0.22s cubic-bezier(0.22, 1, 0.36, 1) both",
+        "zs-panel": "zsPanel 0.35s cubic-bezier(0.22, 1, 0.36, 1) both",
       },
       keyframes: {
         shieldGlow: {
@@ -63,6 +66,18 @@ const config: Config = {
           "0%": { transform: "translateY(-120%)", opacity: "0" },
           "15%, 85%": { opacity: "1" },
           "100%": { transform: "translateY(120%)", opacity: "0" },
+        },
+        zsFadeUp: {
+          "0%": { opacity: "0", transform: "translateY(10px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        zsPop: {
+          "0%": { opacity: "0", transform: "scale(0.92) translateY(-4px)" },
+          "100%": { opacity: "1", transform: "scale(1) translateY(0)" },
+        },
+        zsPanel: {
+          "0%": { opacity: "0", transform: "translateY(16px) scale(0.98)" },
+          "100%": { opacity: "1", transform: "translateY(0) scale(1)" },
         },
         zsShimmer: {
           "0%": { backgroundPosition: "200% 0" },
