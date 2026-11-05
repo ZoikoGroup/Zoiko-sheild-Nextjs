@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "test:win": "powershell -NoProfile -Command \"Set-ExecutionPolicy Bypass -Scope Process -Force; npm test\"",
+    "openapi-validate": "npx openapi-validator docs/public-assistant.openapi.yaml",
+    "api-smoke-test": "node scripts/api-smoke-test.js",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",

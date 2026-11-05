@@ -54,15 +54,29 @@ function LauncherButton() {
         aria-controls="zs-assistant-panel"
         aria-label={state.open ? copy.launcher.close : copy.launcher.open}
         title={state.open ? copy.launcher.close : copy.launcher.label}
-        className={`group fixed bottom-5 right-5 z-[60] flex h-14 w-14 items-center justify-center rounded-full bg-zoiko-primary text-white shadow-lg shadow-zoiko-primary/30 transition duration-300 hover:bg-[#8f181c] hover:shadow-xl hover:shadow-zoiko-primary/40 motion-safe:hover:-translate-y-0.5 focus:outline-none focus-visible:ring-4 focus-visible:ring-zoiko-primary/40 ${state.open ? "max-sm:hidden" : ""}`}
+        className={`group fixed bottom-5 right-5 z-[60] flex items-center gap-2.5 rounded-full bg-[#0c1524] border border-[#ff3b3f]/70 px-4 py-2 text-white shadow-xl shadow-red-950/40 transition duration-300 hover:border-[#ff3b3f] hover:shadow-[0_0_22px_rgba(255,59,63,0.45)] motion-safe:hover:-translate-y-0.5 focus:outline-none focus-visible:ring-4 focus-visible:ring-[#ff3b3f]/40 ${
+          state.open ? "ring-2 ring-[#ff3b3f]" : ""
+        }`}
       >
-        {!state.open && (
-          <span className="pointer-events-none absolute inset-0 rounded-full border-2 border-zoiko-primary opacity-0 motion-safe:group-hover:animate-zs-ring" aria-hidden />
-        )}
+        {/* Pulsing notification dot in top right corner */}
+        <span className="absolute -top-1 -right-0.5 flex h-3.5 w-3.5" aria-hidden>
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75" />
+          <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-[#ff3b3f] ring-2 ring-[#0c1524]" />
+        </span>
+
+        {/* Red squircle avatar with circuit shield mark */}
+        <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-br from-[#c5221f] to-[#7f1311] shadow-inner p-1 shrink-0" aria-hidden>
+          <ShieldMark className="h-5 w-5 text-white" />
+        </span>
+
+        <span className="text-sm font-semibold tracking-wide text-white whitespace-nowrap">
+          {state.open ? "Close Assistant" : "Ask Zoiko Shield"}
+        </span>
+
         {state.open ? (
-          <X className="h-6 w-6 transition-transform duration-300 motion-safe:group-hover:rotate-90" aria-hidden />
+          <X className="h-4 w-4 text-white/80 transition-transform duration-300 group-hover:rotate-90 shrink-0" aria-hidden />
         ) : (
-          <ShieldMark className="h-7 w-7 motion-safe:group-hover:animate-zs-tilt motion-safe:group-focus-visible:animate-zs-tilt" />
+          <span className="text-white/70 text-sm font-bold transition-transform group-hover:translate-x-0.5" aria-hidden>&gt;</span>
         )}
       </button>
       {state.open && <Panel />}

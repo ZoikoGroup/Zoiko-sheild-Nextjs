@@ -63,6 +63,9 @@ const INCIDENT = [
   /\bransomware (?:on|in|hit|has hit|encrypted|is encrypting) (?:our|my)\b/,
   /\b(?:we|i) (?:are|am) under attack\b/,
   /\bransom (?:note|demand)\b/,
+  // "We are under a ransomware attack right now", "dealing with a breach".
+  /\b(?:we|i)(?:'re| are| am) (?:currently |right now |now )?(?:under|facing|experiencing|dealing with|getting hit by|being hit by) (?:an? )?(?:active |ongoing |live )?(?:ransomware|cyber ?attack|attack|breach|intrusion|ddos)\b/,
+  /\bunder (?:an? )?(?:ransomware |cyber ?|active )?attack\b/,
   // Terse reports: "production ransomware active", "ransomware spreading on prod".
   /\bransomware (?:is |currently |now |still )?(?:active|running|spreading|detected|encrypting|outbreak)\b/,
   /\b(?:active|ongoing|live) ransomware (?:attack|incident|infection|outbreak)\b/,

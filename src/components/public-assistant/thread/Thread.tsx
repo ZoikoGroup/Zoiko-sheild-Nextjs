@@ -33,7 +33,7 @@ export function Thread({ scrollRoot }: { scrollRoot: RefObject<HTMLDivElement | 
       <div role="log" aria-live="polite" aria-relevant="additions" aria-label="Conversation" className="space-y-4">
         {state.thread.map((t) =>
           t.role === "user" ? (
-            <div key={t.id} className="flex justify-end">
+            <div key={t.id} className="motion-safe:animate-zs-fade-up flex justify-end">
               <p className="max-w-[85%] whitespace-pre-wrap break-words rounded-2xl rounded-br-sm bg-zoiko-dark dark:bg-[#1b2b39] px-3.5 py-2 text-sm text-white">
                 <span className="sr-only">{copy.thread.you}: </span>
                 {t.text}
@@ -66,7 +66,7 @@ function AssistantTurn({ turn }: { turn: Turn }) {
   const answer = turn.answer;
 
   return (
-    <div className="max-w-[92%] space-y-2">
+    <div className="motion-safe:animate-zs-fade-up max-w-[92%] space-y-2">
       <span className="sr-only">{copy.thread.assistant}: </span>
       {busy && (
         <div className="rounded-2xl rounded-bl-sm bg-zoiko-beige/80 dark:bg-white/5 px-3.5 py-2.5">
@@ -125,17 +125,22 @@ function AssistantTurn({ turn }: { turn: Turn }) {
       {answer?.route && <RouteButton link={answer.route} />}
 
       {answer && answer.follow_ups.length > 0 && (
-        <div className="flex flex-wrap gap-1.5">
-          {answer.follow_ups.map((f) => (
-            <button
-              key={f.intent_key}
-              type="button"
-              onClick={() => (f.intent_key.startsWith("ask:") ? submit(f.label) : openJourney(f.intent_key.replace(/^flow:/, "")))}
-              className="rounded-full border border-zoiko-primary/30 dark:border-[#ff8a8d]/40 px-3 py-1 text-xs font-medium text-zoiko-primary dark:text-[#ff8a8d] hover:bg-zoiko-primary/5 dark:hover:bg-white/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-zoiko-primary"
-            >
-              {f.label}
-            </button>
-          ))}
+        <div className="space-y-2">
+          {answer.follow_ups.some((f) => f.intent_key.startsWith("ask:")) && (
+            <p className="text-[11px] font-semibold uppercase tracking-wide text-zoiko-dark/50 dark:text-gray-400">Related questions</p>
+          )}
+          <div className="flex flex-wrap gap-1.5">
+            {answer.follow_ups.map((f) => (
+              <button
+                key={f.intent_key}
+                type="button"
+                onClick={() => (f.intent_key.startsWith("ask:") ? submit(f.label) : openJourney(f.intent_key.replace(/^flow:/, "")))}
+                className="motion-safe:animate-zs-fade-up rounded-full active:scale-95 transition-transform border border-zoiko-primary/30 dark:border-[#ff8a8d]/40 px-3 py-1 text-xs font-medium text-zoiko-primary dark:text-[#ff8a8d] hover:bg-zoiko-primary/5 dark:hover:bg-white/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-zoiko-primary"
+              >
+                {f.label}
+              </button>
+            ))}
+          </div>
         </div>
       )}
 

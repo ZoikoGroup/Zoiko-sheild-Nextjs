@@ -2,7 +2,7 @@
 
 Source: ZoikoShield_Public_Chatbot_Master_Engineering_Implementation_Reconciliation_v1.0.docx and wireframes WF01–WF12 (extracted to temp outside repo).
 
-| AT ID | One-line requirement (from spec) | Wireframe | Status | Notes/Test |
+| AT ID | One-line requirement (from spec) | Wireframe | Status | Notes/Test | Implementation Ref |
 |---|---|---|---|---|
 | AT001 | POST /sessions only on first submitted message/flow action (not on page load) | WF01 | automated | `src/server/public-assistant/__tests__/conversation.test.ts` (session reuse) |
 | AT002 | Launcher mounts only on allowlisted routes | WF01 | manual | Widget mount logic; needs route allowlist verification |
