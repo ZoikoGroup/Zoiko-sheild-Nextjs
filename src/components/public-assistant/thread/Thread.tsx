@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, type RefObject } from "react";
-import { ArrowDown, FileText, RotateCcw, Square, Volume2, VolumeX } from "lucide-react";
+import { ArrowDown, ChevronRight, FileText, RotateCcw, Square, Volume2, VolumeX } from "lucide-react";
 import { useAssistant } from "../state/AssistantContext";
 import type { AssistantTurn as Turn } from "../state/machine";
 import { Blocks, RouteButton } from "../shared/ui";
@@ -104,9 +104,12 @@ function AssistantTurn({ turn }: { turn: Turn }) {
       )}
 
       {answer && answer.citations.length > 0 && (
-        <div>
-          <p className="mb-1 text-[11px] font-semibold uppercase tracking-wide text-zoiko-dark/50 dark:text-gray-400">{copy.thread.sources}</p>
-          <ul className="space-y-1.5">
+        <details className="group">
+          <summary className="flex w-fit cursor-pointer list-none items-center gap-1 rounded text-[11px] font-semibold uppercase tracking-wide text-zoiko-dark/50 dark:text-gray-400 hover:text-zoiko-dark dark:hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-zoiko-primary [&::-webkit-details-marker]:hidden">
+            <ChevronRight className="h-3 w-3 transition-transform group-open:rotate-90" aria-hidden />
+            {copy.thread.sources} ({answer.citations.length})
+          </summary>
+          <ul className="mt-1.5 space-y-1.5">
             {answer.citations.map((c) => (
               <li key={c.source_id}>
                 <a href={c.url} className="flex gap-2 rounded-lg border border-zoiko-border dark:border-white/10 bg-white dark:bg-[#111d28] p-2 text-xs hover:border-zoiko-primary/40">
@@ -119,7 +122,7 @@ function AssistantTurn({ turn }: { turn: Turn }) {
               </li>
             ))}
           </ul>
-        </div>
+        </details>
       )}
 
       {answer?.route && <RouteButton link={answer.route} />}

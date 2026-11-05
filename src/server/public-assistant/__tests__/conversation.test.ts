@@ -83,8 +83,10 @@ describe("Phase C answers", () => {
   it("never cites connector sources while connector claims are off", async () => {
     const cookie = await session();
     const connector = corpus.connectors[0]!;
-    const { events } = await ask(cookie, `Does ZoikoShield integrate with ${connector.name}?`);
-    const cited = events.at(-1).data.answer.citations.map((c: { source_id: string }) => c.source_id);
+    const { posted, events } = await ask(cookie, `Does ZoikoShield integrate with ${connector.name}?`);
+    // A named product gets a fixed reply that defers to the integration catalog (synchronous, no model).
+    const answer = posted.body.answer ?? events.at(-1).data.answer;
+    const cited = answer.citations.map((c: { source_id: string }) => c.source_id);
     expect(cited.some((id: string) => corpus.connectors.some((c) => c.id === id))).toBe(false);
   });
 

@@ -11,6 +11,7 @@ export function normalize(text: string): string {
 
 const SECRET_PATTERNS: [string, RegExp][] = [
   ["private_key", /-----BEGIN (?:[A-Z]+ )?PRIVATE KEY-----/],
+  ["ssh_key", /\b(?:ssh-(?:rsa|ed25519|dss)|ecdsa-sha2-nistp\d+)\s+AAAA[0-9A-Za-z+/]{20,}/],
   ["aws_access_key", /\b(?:AKIA|ASIA)[0-9A-Z]{16}\b/],
   ["github_token", /\bgh[pousr]_[A-Za-z0-9]{30,}\b/],
   ["slack_token", /\bxox[abprs]-[A-Za-z0-9-]{10,}\b/],
