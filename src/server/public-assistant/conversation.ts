@@ -5,7 +5,7 @@ import { isOn } from "./flags";
 import type { GuestSession } from "./session";
 import { take } from "./rate-limit";
 import { classify } from "./safety/classifier";
-import { abstain, ProviderFailure, runPipeline, shortCircuit, staticAnswer } from "./ai/pipeline";
+import { fallbackAnswer, ProviderFailure, runPipeline, shortCircuit, staticAnswer } from "./ai/pipeline";
 import { logEvent } from "./metrics";
 
 // Messages, validate-then-stream SSE, cancel, budgets and the circuit breaker.
@@ -113,7 +113,8 @@ export async function postMessage(session: GuestSession, body: Record<string, un
 
   // AI off, killed, or breaker open: same chat, answered without a model (synchronous).
   if (!isOn("assistant_ai_answers") || breakerOpen()) {
-    const answer = staticAnswer(content, { market, locale });
+    // An open breaker still answers from the approved text; with AI switched off it's source cards only.
+    const answer = isOn("assistant_ai_answers") ? await fallbackAnswer(content, { market, locale }) : staticAnswer(content, { market, locale });
     logEvent("answer", { outcome: answer.outcome, mode: "static", sync: true });
     return { status: 200, body: { message_id: null, answer } };
   }
@@ -137,11 +138,13 @@ export async function postMessage(session: GuestSession, body: Record<string, un
       logEvent("answer", { outcome: r.answer.outcome, intent: r.intent, latency_ms: Date.now() - started, sources: r.answer.citations.length });
       return r.answer;
     })
-    .catch((error): Answer => {
+    .catch(async (error): Promise<Answer> => {
       if (error instanceof ProviderFailure || (error as Error)?.name === "TimeoutError" || controller.signal.reason?.name === "TimeoutError") {
         recordFailure();
-        logEvent("answer", { outcome: "ERROR", latency_ms: Date.now() - started });
-        return { outcome: "ERROR", blocks: [], citations: [], follow_ups: abstain({ market }).follow_ups };
+        // The visitor still gets the best-matching published pages, as when AI is off.
+        const fallback = await fallbackAnswer(content, { market, locale });
+        logEvent("answer", { outcome: fallback.outcome, mode: "static_fallback", latency_ms: Date.now() - started });
+        return fallback;
       }
       if (controller.signal.aborted) return { outcome: "ERROR", blocks: [], citations: [], follow_ups: [] };
       throw error;

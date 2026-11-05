@@ -5,7 +5,7 @@ import { detectSecrets, normalize } from "./detectors";
 // conversational (greeting, identity, …) > off-topic > discovery > info.
 // Educational questions ("what is malware?", "do you do pen testing?") must stay `info`.
 
-export type Conversational = "greeting" | "identity" | "capabilities" | "thanks" | "goodbye" | "how_are_you";
+export type Conversational = "greeting" | "identity" | "capabilities" | "limits" | "thanks" | "goodbye" | "how_are_you";
 
 export type Intent =
   | { kind: "incident" }
@@ -14,6 +14,10 @@ export type Intent =
   | { kind: "credential_abuse" }
   | { kind: "privileged" }
   | { kind: "privacy" }
+  | { kind: "assistant_privacy" }
+  | { kind: "commercial_terms"; topic?: "trial" }
+  | { kind: "data_residency" }
+  | { kind: "integration"; vendors: string[]; microsoft: boolean }
   | { kind: "write"; journey: "demo" | "support" | "quote" }
   | { kind: "conversational"; act: Conversational }
   | { kind: "off_topic" }
@@ -29,6 +33,7 @@ const CONVERSATIONAL: [RegExp, Conversational][] = [
   [/^(?:how are you|how(?:'s| is) it going|how do you do|what'?s up|sup)(?: today)?[\s!?.]*$/, "how_are_you"],
   [/^(?:thanks?(?: you)?(?: so much| a lot| very much)?|thx|ty|cheers|much appreciated|great|awesome|perfect|cool|nice|ok(?:ay)?|got it|that helps|helpful)[\s!.]*$/, "thanks"],
   [/^(?:bye|goodbye|good bye|see you(?: later)?|see ya|that'?s all|that is all|nothing else|i'?m done|no thanks?)[\s!.]*$/, "goodbye"],
+  [/\bwhat (?:can'?t|cannot|can not|won'?t|are you not able to|aren'?t you able to)(?: you)? (?:do|help|answer)\b|\bwhat (?:can|do|could) you not (?:do|help|answer)\b|\b(?:your|the assistant'?s) (?:limits|limitations|restrictions)\b|\bwhat you (?:can'?t|cannot|can not) (?:do|help|answer)\b|\bwhat are you not (?:able|allowed)\b/, "limits"],
   [/\b(?:who|what) are you\b|\bare you (?:a |an )?(?:bot|robot|human|person|real|machine|ai|chatbot|chatgpt|gpt|live agent)\b|\b(?:what(?:'s| is) )?your name\b|\bwho (?:made|built|created|developed|trained) you\b|\bintroduce yourself\b/, "identity"],
   [/\bwhat (?:can|do|could) you (?:do|help(?: me)? with|answer)\b|\bhow (?:can|do) you help\b|\bwhat (?:can|should|could) i ask\b|\bhow does this (?:chat|assistant|bot|work)\b|^(?:help|menu|options|start|\?)[\s!?.]*$/, "capabilities"],
 ];
@@ -45,6 +50,8 @@ const OFF_TOPIC = [
   /\b(?:recipe|cook(?:ing)?|bake|restaurant|movie|film|tv show|song lyrics|lyrics|horoscope|zodiac|dating|girlfriend|boyfriend)\b/,
   /\b(?:football|soccer|cricket|basketball|baseball|nba|nfl|ipl|world cup|olympics)\b/,
   /\b(?:stock price|share price|bitcoin price|crypto price|exchange rate)\b/,
+  /\bwho (?:won|wins|is winning|scored|plays)\b|\b(?:match|game|score)s? (?:yesterday|tonight|today|last night)\b/,
+  /\b(?:write|give|show) me (?:a |some )?(?:python|javascript|java|c\+\+|sql|bash|html|css) (?:script|code|function|program|snippet|query)\b|\b(?:sort|reverse) a list\b/,
   /\b(?:capital of|population of|president of|prime minister of)\b/,
   /^\s*(?:what is |calculate |solve )?[\d\s.]+(?:[-+*/x^][\d\s.]+)+=?\s*\??\s*$/,
 ];
@@ -89,9 +96,11 @@ const INJECTION = [
   /<\/?(?:system|assistant|instructions?|tool)>/,
   /\b(?:begin|end) (?:system|prompt|instructions)\b/,
   /\bdisregard (?:all |the |your )?(?:above|previous|safety)/,
+  /\b(?:exfiltrat\w*|steal|dump|leak) (?:the |all |any )?(?:secrets?|credentials|passwords?|api keys?|tokens?|database)\b/,
 ];
 
 const PRIVILEGED = [
+  /\b(?:other|another|different|all) (?:customers?|tenants?|clients?)(?:'s|s')?\b.{0,30}\b(?:data|alerts?|cases?|logs?|information|details|environments?|accounts?)\b|\b(?:data|alerts?|cases?|logs?|information|details|accounts?)\b.{0,30}\b(?:of|from|for|about) (?:other|another|different|all|any) (?:customers?|tenants?|clients?)\b/,
   /\b(?:my|our) (?:tenant|alerts?|cases?|incident queue|logs?|dashboard|console|account data|detections?|playbooks?|workspace|findings|evidence ledger)\b/,
   /\b(?:run|execute|trigger|launch) (?:a |the |my |our )?(?:playbook|soar|response action|scan)\b/,
   /\b(?:isolate|quarantine|block|unblock|contain) (?:a |the |this |that |our |my )?(?:host|endpoint|device|ip|user|account)\b/,
@@ -105,6 +114,48 @@ const PRIVACY = [
   /\b(?:dsar|right to be forgotten|right to erasure)\b/,
   /\b(?:gdpr|ccpa|cpra|data subject|subject access)\b.{0,24}\brequest\b/,
   /\bunsubscribe\b|\bopt (?:me )?out\b/,
+];
+
+// Questions about what this chat itself keeps (not a data-rights request, which is PRIVACY above).
+const ASSISTANT_PRIVACY = [
+  /\b(?:chat ?bot|assistant|this chat|this bot|you)\b.{0,40}\b(?:stor(?:e|es|ing)|sav(?:e|es|ing)|record(?:s|ing)?|log(?:s|ging)?|track(?:s|ing)?|keep(?:s|ing)?|retain(?:s|ing)?|read(?:s|ing)?)\b.{0,40}\b(?:messages?|conversations?|questions?|chats?|data|what i (?:type|say|write|ask)|my (?:input|answers?))\b/,
+  /\b(?:are|is) (?:my|our) (?:messages?|conversations?|chats?|questions?) (?:private|confidential|stored|saved|recorded|logged|kept|tracked)\b/,
+  /\b(?:messages?|conversations?|chats?)\b.{0,30}\b(?:sent to|shared with) (?:analytics|third part\w+|anyone)\b/,
+  /\b(?:is|are) (?:this|the) (?:chat|assistant|chatbot|bot) (?:private|confidential|secure|safe)\b/,
+];
+
+// Discounts and special terms are the commercial team's call, never the chat's.
+const COMMERCIAL_TERMS = [
+  /\b(?:discounts?|negotiat\w*|cheaper|promo(?:tion|tional)?(?: code)?|coupon|special (?:price|rate|offer|deal)|price match|lower (?:the |your )?price|best price|price break|volume pricing)\b/,
+];
+
+// Free trials and pilots: the site offers a scheduled demo, not a self-serve trial.
+const TRIAL = [/\b(?:free )?trials?\b|\bpilot\b|\bproof of concept\b|\bpoc\b|\bsandbox\b|\btry (?:it|zoikoshield|the product|before (?:i|we) buy)\b/];
+
+// Where data lives. The site publishes no residency commitment: region is confirmed per contract.
+const DATA_RESIDENCY = [
+  /\bdata (?:residency|sovereignty|localisation|localization|location|centre|center)s?\b|\b(?:residency|sovereignty)\b/,
+  /\bwhere (?:is|are|will|would|does|do) (?:my|our|the|customer) (?:data|logs?|telemetry|evidence)\b.{0,20}\b(?:stored|hosted|located|kept|processed|reside)\b/,
+  /\b(?:keep|stay|remain|store[ds]?|host(?:ed)?|located|processed|reside)\b.{0,30}\b(?:in|within|inside|to)(?: the)? (?:eu|europe|european union|uk|united kingdom|us|usa|united states|india|canada|australia|germany|apac|region|country)\b/,
+  /\b(?:eu|europe|uk|us|india|canada|australia|germany|apac)\b.{0,25}\b(?:data (?:centre|center|region|hosting)|hosting|region)\b/,
+];
+
+// Named third-party tools. The chat can't confirm integration support for them: the integration
+// catalog is the source of truth, and connector sources are gated by assistant_connector_claims.
+const VENDORS: [RegExp, string][] = [
+  [/\bsplunk\b/, "Splunk"], [/\bcrowd ?strike\b|\bfalcon\b/, "CrowdStrike"], [/\bokta\b/, "Okta"], [/\bservice ?now\b/, "ServiceNow"],
+  [/\bjira\b|\batlassian\b/, "Jira"], [/\bslack\b/, "Slack"], [/\bguard ?duty\b/, "AWS GuardDuty"], [/\baws\b|\bamazon web services\b/, "AWS"],
+  [/\bgcp\b|\bgoogle cloud\b/, "Google Cloud"], [/\bpalo alto\b|\bcortex\b/, "Palo Alto Networks"], [/\bfortinet\b|\bfortigate\b/, "Fortinet"],
+  [/\bsentinel ?one\b/, "SentinelOne"], [/\bq ?radar\b/, "QRadar"], [/\belastic\b|\belk\b/, "Elastic"], [/\bdatadog\b/, "Datadog"],
+  [/\bpagerduty\b/, "PagerDuty"], [/\bgithub\b/, "GitHub"], [/\bjamf\b/, "Jamf"], [/\bcarbon black\b/, "Carbon Black"], [/\bcisco\b/, "Cisco"],
+  [/\bzscaler\b/, "Zscaler"], [/\bproofpoint\b/, "Proofpoint"], [/\btenable\b|\bnessus\b/, "Tenable"], [/\bqualys\b/, "Qualys"],
+  [/\brapid7\b/, "Rapid7"], [/\bsumo ?logic\b/, "Sumo Logic"], [/\bchronicle\b/, "Chronicle"], [/\bazure ad\b/, "Azure AD"],
+];
+const INTEGRATION_VERB = /\b(?:integrat\w*|connect\w*|support\w*|work(?:s)? with|compatib\w*|plug\w*|ingest\w*|supports?)\b/;
+const INTEGRATION_GENERIC = [
+  /\b(?:which|what) (?:integrations?|connectors?|tools|systems|products|vendors|platforms|technolog\w+) (?:do(?:es)? )?(?:you|zoikoshield|it|the platform)?\s?(?:support|integrate|connect|work)\w*/,
+  /\b(?:list|show|tell me) (?:of |me )?(?:all )?(?:the |your |supported )?(?:integrations?|connectors?)\b/,
+  /\b(?:what|which) integrations\b/,
 ];
 
 const WRITE: [RegExp, "demo" | "support" | "quote"][] = [
@@ -132,8 +183,17 @@ export function classify(text: string): Intent {
   if (CREDENTIAL_ABUSE.some((re) => re.test(n))) return { kind: "credential_abuse" };
   if (PRIVILEGED.some((re) => re.test(n))) return { kind: "privileged" };
   if (PRIVACY.some((re) => re.test(n))) return { kind: "privacy" };
+  if (ASSISTANT_PRIVACY.some((re) => re.test(n))) return { kind: "assistant_privacy" };
   const write = WRITE.find(([re]) => re.test(n));
   if (write) return { kind: "write", journey: write[1] };
+  if (COMMERCIAL_TERMS.some((re) => re.test(n))) return { kind: "commercial_terms" };
+  if (TRIAL.some((re) => re.test(n))) return { kind: "commercial_terms", topic: "trial" };
+  if (DATA_RESIDENCY.some((re) => re.test(n))) return { kind: "data_residency" };
+  const vendors = VENDORS.filter(([re]) => re.test(n)).map(([, name]) => name);
+  const microsoft = /\b(?:microsoft|sentinel|defender|entra|intune|purview|azure|office 365|m365)\b/.test(n);
+  if ((vendors.length && INTEGRATION_VERB.test(n)) || INTEGRATION_GENERIC.some((re) => re.test(n))) {
+    return { kind: "integration", vendors: [...new Set(vendors)], microsoft };
+  }
   const social = CONVERSATIONAL.find(([re]) => re.test(n));
   if (social) return { kind: "conversational", act: social[1] };
   // "hi, who are you?" → judge the part after the greeting.

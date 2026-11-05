@@ -57,7 +57,8 @@ describe("WF12 intent classifier", () => {
   it.each(["hi, how does pricing work?", "hello what integrations do you support", "Do you help with threat detection?", "What is your risk score methodology?"])(
     "a greeting or product word doesn't swallow a real question: %s",
     (text) => {
-      expect(["info", "discovery"]).toContain(classify(text).kind);
+      // A catalog question ("what integrations do you support") gets a fixed, cited reply.
+      expect(["info", "discovery", "integration"]).toContain(classify(text).kind);
     },
   );
 
