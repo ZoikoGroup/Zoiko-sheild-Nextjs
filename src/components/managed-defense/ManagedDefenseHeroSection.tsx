@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 
 export default function ManagedDefenseHeroSection() {
   return (
@@ -34,19 +35,19 @@ export default function ManagedDefenseHeroSection() {
 
             {/* Buttons */}
             <div className="flex flex-wrap items-center gap-4">
-              <button
-                type="button"
+              <Link
+                href="/book-a-demo"
                 className="px-6 py-3 rounded-xl bg-[#E04F2E] hover:bg-[#c94324] text-white text-xs sm:text-sm font-bold transition-colors shadow-sm"
               >
                 Book a Demo
-              </button>
+              </Link>
 
-              <button
-                type="button"
+              <Link
+                href="/trust-center"
                 className="px-6 py-3 rounded-xl hover:bg-[#F1F0EB] border border-[#CBD5E1] text-[#0F172A] text-xs sm:text-sm font-bold transition-colors shadow-sm"
               >
                 Visit Trust Center
-              </button>
+              </Link>
             </div>
           </div>
 

@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function PlatformHero() {
@@ -87,18 +88,18 @@ export default function PlatformHero() {
             variants={itemVariants}
             className="flex flex-wrap items-center gap-4 mb-8"
           >
-            <a
-              href="#"
+            <Link
+              href="/book-a-demo"
               className="px-6 py-3.5 bg-[#E0402F] hover:bg-[#c93525] text-white font-semibold text-sm rounded-lg transition-colors duration-200 shadow-sm inline-flex items-center justify-center"
             >
               Book a Demo
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              href="/how-zoikoshield-works"
               className="px-6 py-3.5 hover:bg-[#e4e3dd] text-[#0B192C] border border-[#E2E1DC] font-semibold text-sm rounded-lg transition-colors duration-200 inline-flex items-center justify-center"
             >
               See how ZoikoShield works
-            </a>
+            </Link>
           </motion.div>
 
           {/* Footer Note */}

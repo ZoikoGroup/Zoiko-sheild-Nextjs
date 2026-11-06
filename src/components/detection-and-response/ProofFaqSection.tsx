@@ -27,25 +27,25 @@ export default function ProofFaqSection() {
           {/* Action Link Buttons */}
           <div className="flex flex-wrap items-center gap-3">
             <a
-              href="#trust-center"
+              href="/trust-center"
               className="inline-flex items-center gap-2 bg-[#E4F0EC] hover:bg-[#E2DDD3] text-[#071829] font-mono text-xs px-4 py-2 rounded-xl border border-[#DCD5C9] transition-colors"
             >
               Trust Center &nearr;
             </a>
             <a
-              href="#evidence"
+              href="/evidence-ledger-verification"
               className="inline-flex items-center gap-2 bg-[#E4F0EC] hover:bg-[#E2DDD3] text-[#071829] font-mono text-xs px-4 py-2 rounded-xl border border-[#DCD5C9] transition-colors"
             >
               Evidence &nearr;
             </a>
             <a
-              href="#docs"
+              href="/developers-documentation"
               className="inline-flex items-center gap-2 bg-[#E4F0EC] hover:bg-[#E2DDD3] text-[#071829] font-mono text-xs px-4 py-2 rounded-xl border border-[#DCD5C9] transition-colors"
             >
               Docs &nearr;
             </a>
             <a
-              href="#system-status"
+              href="/system-status"
               className="inline-flex items-center gap-2 bg-[#E4F0EC] hover:bg-[#E2DDD3] text-[#071829] font-mono text-xs px-4 py-2 rounded-xl border border-[#DCD5C9] transition-colors"
             >
               System Status &nearr;

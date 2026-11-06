@@ -61,14 +61,14 @@ export default function DetectionAndResponse() {
           {/* Buttons Container */}
           <div className="flex flex-wrap items-center gap-4 mb-8">
             <a
-              href="#"
+              href="/book-a-demo"
               className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#C8382C] text-white text-sm font-medium tracking-wide shadow-sm hover:bg-[#b53026] transition-colors"
             >
               Book a Demo
             </a>
 
             <a
-              href="#"
+              href="/platform-overview"
               className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white text-black text-sm font-medium tracking-wide hover:bg-[#223038] hover:text-white transition-colors"
             >
               Explore the Platform

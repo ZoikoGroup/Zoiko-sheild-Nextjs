@@ -105,13 +105,13 @@ export default function PlatformIntegrations() {
             className="flex flex-wrap items-center gap-3 mb-8"
           >
             <a
-              href="#"
+              href="/book-a-demo"
               className="px-5 py-3 bg-[#E0402F] hover:bg-[#c93525] text-white font-semibold text-xs sm:text-sm rounded-lg transition-colors duration-200 inline-flex items-center justify-center shadow-xs"
             >
               Book a Demo
             </a>
             <a
-              href="#"
+              href="/request-an-integration"
               className="px-5 py-3 hover:bg-[#e4e3dd] text-[#0B192C] border border-[#E2E1DC] font-semibold text-xs sm:text-sm rounded-lg transition-colors duration-200 inline-flex items-center justify-center"
             >
               Request an integration
@@ -123,13 +123,13 @@ export default function PlatformIntegrations() {
             variants={itemVariants}
             className="flex items-center gap-6 text-xs font-semibold text-[#0B192C] mb-8"
           >
-            <a href="#" className="hover:underline">
+            <a href="/developers-documentation" className="hover:underline">
               Documentation
             </a>
-            <a href="#" className="hover:underline">
+            <a href="/trust-center" className="hover:underline">
               Trust Center
             </a>
-            <a href="#" className="hover:underline">
+            <a href="/system-status" className="hover:underline">
               System Status
             </a>
           </motion.div>

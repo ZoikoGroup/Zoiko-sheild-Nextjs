@@ -281,7 +281,7 @@ export const Navbar: React.FC = () => {
                       </div>
 
                       <Link
-                        href="/about"
+                        href="/evidence-ledger-verification"
                         onClick={closeMenu}
                         className="text-xs font-bold text-[#2C6E63] hover:text-[#C53B3B] transition-colors flex items-center gap-1"
                       >
@@ -485,7 +485,7 @@ export const Navbar: React.FC = () => {
                       </Link>
 
                       <Link
-                        href="/about"
+                        href="/report-risk-to-the-board"
                         onClick={closeMenu}
                         className="bg-[#F6F4EE] hover:bg-[#EFECE3] p-3.5 rounded-2xl border border-[#00000000] transition-all flex items-start gap-3 group/item block"
                       >
@@ -546,7 +546,7 @@ export const Navbar: React.FC = () => {
                       </Link>
 
                       <Link
-                        href="/about"
+                        href="/b2b-saas"
                         onClick={closeMenu}
                         className="bg-[#F6F4EE] hover:bg-[#EFECE3] p-3.5 rounded-2xl border border-[#00000000] transition-all flex items-start gap-3 group/item block"
                       >
@@ -1142,7 +1142,7 @@ export const Navbar: React.FC = () => {
           {/* Right Action Items */}
           <div className="hidden lg:flex items-center gap-5 text-sm font-medium text-zoiko-dark">
             <Link
-              href="/about"
+              href="/developers-documentation"
               onClick={closeMenu}
               className="hover:text-zoiko-primary transition-colors flex items-center gap-1"
             >

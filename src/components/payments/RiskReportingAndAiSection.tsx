@@ -80,12 +80,18 @@ export default function RiskReportingAndAiSection() {
             </div>
 
             <div className="flex flex-wrap gap-3 pt-4 border-t border-[#E2E8F0]">
-              <span className="px-4 py-2 rounded-full border border-[#CBD5E1] text-xs font-mono font-semibold text-[#0F172A] bg-white">
+              <a
+                href="/ai-decision-rights"
+                className="px-4 py-2 rounded-full border border-[#CBD5E1] text-xs font-mono font-semibold text-[#0F172A] bg-white hover:bg-[#F7F5F0] transition-colors"
+              >
                 AI decision rights
-              </span>
-              <span className="px-4 py-2 rounded-full border border-[#CBD5E1] text-xs font-mono font-semibold text-[#0F172A] bg-white">
+              </a>
+              <a
+                href="/responsible-ai"
+                className="px-4 py-2 rounded-full border border-[#CBD5E1] text-xs font-mono font-semibold text-[#0F172A] bg-white hover:bg-[#F7F5F0] transition-colors"
+              >
                 Responsible AI
-              </span>
+              </a>
             </div>
           </div>
 
@@ -118,7 +124,7 @@ export default function RiskReportingAndAiSection() {
 
             <div>
               <a
-                href="#report"
+                href="/report-risk-to-the-board"
                 className="inline-flex items-center justify-center px-5 py-3 rounded-xl border border-[#CBD5E1] text-xs font-mono font-bold text-[#0F172A] hover:bg-[#F7F5F0] transition-colors"
               >
                 Report risk to the Board

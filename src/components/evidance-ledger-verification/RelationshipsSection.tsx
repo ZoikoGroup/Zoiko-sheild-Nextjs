@@ -8,11 +8,13 @@ interface RelationshipCard {
   title: string;
   allowedText: string;
   boundaryText: string;
+  href: string;
 }
 
 const relationshipsData: RelationshipCard[] = [
   {
     id: "1",
+    href: "/detection-and-response",
     title: "Detection & Response",
     allowedText: "Allowed: alert, incident and response evidence.",
     boundaryText:
@@ -20,30 +22,35 @@ const relationshipsData: RelationshipCard[] = [
   },
   {
     id: "2",
+    href: "/risk-intelligence",
     title: "Risk Intelligence",
     allowedText: "Allowed: evidence-informed risk signals.",
     boundaryText: "Boundary: evidence is not a risk decision.",
   },
   {
     id: "3",
+    href: "/ai-security-governance",
     title: "AI Security & Governance",
     allowedText: "Allowed: model, review and decision lineage.",
     boundaryText: "Boundary: integrity does not prove model safety.",
   },
   {
     id: "4",
+    href: "/architecture",
     title: "Platform Architecture",
     allowedText: "Allowed: service, key and method context.",
     boundaryText: "Boundary: architecture remains authoritative here.",
   },
   {
     id: "5",
+    href: "/integration-catalog",
     title: "Integrations",
     allowedText: "Allowed: source authority and ingestion state.",
     boundaryText: "Boundary: connection does not prove source truth.",
   },
   {
     id: "6",
+    href: "/integration-catalog",
     title: "Integrations",
     allowedText: "Allowed: source authority and ingestion state.",
     boundaryText: "Boundary: connection does not prove source truth.",
@@ -110,7 +117,7 @@ export default function RelationshipsSection() {
 
               <div>
                 <a
-                  href="#"
+                  href={card.href}
                   className="inline-flex items-center justify-center px-5 py-3 rounded-xl bg-white border border-[#D5CFC7] text-[#111A1E] text-xs font-bold tracking-wide hover:bg-[#EAE6DD] transition-colors shadow-sm"
                 >
                   Open Authoritative Destination

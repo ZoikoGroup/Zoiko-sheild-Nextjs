@@ -32,7 +32,7 @@ export default function DeveloperDocsCards() {
       title: "Documentation",
       desc: "The primary technical proof route, ungated wherever it is current and substantive.",
       linkText: "Open docs →",
-      linkUrl: "#",
+      linkUrl: "/developers-documentation",
       icon: (
         <svg
           className="w-4 h-4 text-[#0B192C]"

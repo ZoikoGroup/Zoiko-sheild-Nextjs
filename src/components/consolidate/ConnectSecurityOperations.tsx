@@ -49,14 +49,14 @@ export default function ConnectSecurityOperations() {
           {/* Buttons Container */}
           <div className="flex flex-wrap items-center gap-4 mb-6">
             <a
-              href="#"
+              href="/book-a-demo"
               className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#C8382C] text-white text-sm font-medium tracking-wide shadow-sm hover:bg-[#b53026] transition-colors"
             >
               Book a Demo
             </a>
 
             <a
-              href="#"
+              href="/detection-and-response"
               className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-transparent border border-[#111A1E30] text-[#111A1E] text-sm font-medium tracking-wide hover:bg-[#111A1E08] transition-colors"
             >
               Explore Detection &amp; Response

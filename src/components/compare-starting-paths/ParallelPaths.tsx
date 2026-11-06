@@ -62,7 +62,7 @@ export default function ParallelPaths() {
           {/* Button */}
           <div>
             <a
-              href="#"
+              href="#path-detail"
               className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl border border-[#2A3B45] bg-[#111A1E]/80 text-white text-sm font-bold tracking-wide hover:bg-[#1A262C] transition-colors group"
             >
               <span>Explore both</span>

@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import {
   Database,
   ShieldCheck,
@@ -34,9 +35,12 @@ export default function SourceSignalsSection() {
               telemetry moves into investigation.
             </p>
 
-            <button className="px-6 py-3 rounded-full bg-white border border-[#CBD5E1] text-xs font-mono font-bold text-[#0F172A] hover:bg-[#FAF8F5] transition-colors shadow-sm mb-12">
+            <Link
+              href="/integration-catalog"
+              className="inline-block px-6 py-3 rounded-full bg-white border border-[#CBD5E1] text-xs font-mono font-bold text-[#0F172A] hover:bg-[#FAF8F5] transition-colors shadow-sm mb-12"
+            >
               Explore Integrations
-            </button>
+            </Link>
 
             {/* Code/Field Tags */}
             <div className="flex flex-wrap gap-x-3 gap-y-2 font-mono text-[11px] text-[#2E7D32] leading-relaxed">

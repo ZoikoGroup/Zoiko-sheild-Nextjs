@@ -37,7 +37,7 @@ export default function BringBoundedCitedAndOverridableAi() {
 
         {/* Action Button */}
         <a
-          href="#"
+          href="/book-a-demo"
           className="bg-[#D9534F] hover:bg-[#C53030] text-white font-semibold px-8 py-3.5 rounded-xl text-sm transition-all shadow-[0_4px_20px_rgba(217,83,79,0.4)] inline-block"
         >
           Book a Demo

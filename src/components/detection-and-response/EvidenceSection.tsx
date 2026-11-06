@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { ShieldCheck } from "lucide-react";
 
 export default function EvidenceSection() {
@@ -40,9 +41,12 @@ export default function EvidenceSection() {
             </div>
 
             {/* Button */}
-            <button className="px-6 py-3 rounded-full bg-white border border-[#CBD5E1] text-xs font-mono font-bold text-[#0F172A] hover:bg-[#FAF8F5] transition-colors shadow-sm flex items-center gap-2">
+            <Link
+              href="/evidence-ledger-verification"
+              className="px-6 py-3 rounded-full bg-white border border-[#CBD5E1] text-xs font-mono font-bold text-[#0F172A] hover:bg-[#FAF8F5] transition-colors shadow-sm flex items-center gap-2"
+            >
               Open Evidence &rarr;
-            </button>
+            </Link>
           </div>
 
           {/* Right Column: Dark Evidence Records Card */}

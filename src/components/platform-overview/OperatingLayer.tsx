@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
@@ -204,19 +205,19 @@ export default function OperatingLayer() {
           variants={itemVariants}
           className="flex flex-wrap items-center justify-center gap-4"
         >
-          <a
-            href="#"
+          <Link
+            href="/integration-catalog"
             className="px-6 py-3 hover:bg-[#e4e3dd] text-[#0B192C] border border-[#E2E1DC] font-semibold text-xs sm:text-sm rounded-lg transition-colors duration-200 inline-flex items-center gap-2"
           >
             <span>Explore the integration catalog</span>
             <ArrowRight className="w-4 h-4 text-[#0B192C]" />
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            href="/request-an-integration"
             className="px-6 py-3 hover:bg-[#e4e3dd] text-[#0B192C] border border-[#E2E1DC] font-semibold text-xs sm:text-sm rounded-lg transition-colors duration-200 inline-flex items-center justify-center"
           >
             Request an integration
-          </a>
+          </Link>
         </motion.div>
       </motion.div>
     </section>

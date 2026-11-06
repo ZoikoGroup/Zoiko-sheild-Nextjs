@@ -5,7 +5,7 @@ const links = [
   {
     title: "Trust Center →",
     desc: "Operating practices, security and assurance context.",
-    href: "/trust",
+    href: "/trust-center",
   },
   {
     title: "Evidence →",
@@ -15,9 +15,9 @@ const links = [
 ];
 
 const mobileLinks: { title: string; href: string }[] = [
-  { title: "Trust Center →", href: "/trust" },
+  { title: "Trust Center →", href: "/trust-center" },
   { title: "Evidence Ledger →", href: "/verify-evidence" },
-  { title: "Security Practices →", href: "/trust" },
+  { title: "Security Practices →", href: "/trust-center" },
 ];
 
 export function ProofLinksSection() {

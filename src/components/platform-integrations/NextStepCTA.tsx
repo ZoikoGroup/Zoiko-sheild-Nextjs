@@ -81,7 +81,7 @@ export default function NextStepCTA() {
         >
           {/* Primary Button */}
           <a
-            href="#"
+            href="/book-a-demo"
             className="w-full sm:w-auto px-6 py-3 bg-[#E0402F] hover:bg-[#C83424] text-white text-sm font-semibold rounded-lg transition-colors duration-200 text-center shadow-xs"
           >
             Book a Demo
@@ -89,7 +89,7 @@ export default function NextStepCTA() {
 
           {/* Secondary Button */}
           <a
-            href="#"
+            href="/request-an-integration"
             className="w-full sm:w-auto px-6 py-3 hover:bg-[#13375B] text-white text-sm font-semibold border border-[#FFFFFF24] rounded-lg transition-colors duration-200 text-center shadow-xs"
           >
             Request an integration

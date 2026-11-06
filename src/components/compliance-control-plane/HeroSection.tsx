@@ -23,11 +23,11 @@ export function HeroSection() {
         </div>
 
         <div className="flex flex-col gap-[12px] items-start w-full">
-          <button className="bg-[#c44242] border border-[#c44242] flex items-center justify-center h-[53px] px-[20px] rounded-[10px] w-full cursor-pointer hover:bg-[#b23636] transition-colors">
+          <Link href="/book-a-demo" className="bg-[#c44242] border border-[#c44242] flex items-center justify-center h-[53px] px-[20px] rounded-[10px] w-full cursor-pointer hover:bg-[#b23636] transition-colors">
             <span className="font-manrope font-bold text-[15px] text-white whitespace-nowrap">
               Book a Demo
             </span>
-          </button>
+          </Link>
           <Link
             href="/platform-overview"
             className="bg-white border border-[#123b4c] flex items-center justify-center h-[53px] px-[20px] rounded-[10px] w-full cursor-pointer hover:bg-gray-50 transition-colors"
@@ -74,11 +74,11 @@ export function HeroSection() {
             </p>
 
             <div className="flex flex-wrap gap-[14px] items-center">
-              <button className="bg-[#c44242] border border-[#c44242] flex items-center justify-center h-[52px] px-[24px] rounded-[8px] cursor-pointer hover:bg-[#b23636] transition-colors">
+              <Link href="/book-a-demo" className="bg-[#c44242] border border-[#c44242] flex items-center justify-center h-[52px] px-[24px] rounded-[8px] cursor-pointer hover:bg-[#b23636] transition-colors">
                 <span className="font-manrope font-bold text-[14px] text-white whitespace-nowrap">
                   Book a Demo
                 </span>
-              </button>
+              </Link>
               <Link
                 href="/platform-overview"
                 className="bg-white border border-[#123b4c] flex items-center justify-center h-[52px] px-[24px] rounded-[8px] cursor-pointer hover:bg-gray-50 transition-colors"

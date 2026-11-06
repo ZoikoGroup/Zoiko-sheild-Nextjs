@@ -14,22 +14,22 @@ const evidenceItems: EvidenceItem[] = [
   {
     id: "security-practices",
     title: "Security practices",
-    href: "#",
+    href: "/security-trust-center",
   },
   {
     id: "responsible-ai",
     title: "Responsible AI",
-    href: "#",
+    href: "/responsible-ai",
   },
   {
     id: "subprocessors",
     title: "Subprocessors",
-    href: "#",
+    href: "/privacy-data-protection",
   },
   {
     id: "privacy-notice",
     title: "Privacy notice",
-    href: "#",
+    href: "/privacy-notice",
   },
 ];
 
@@ -107,7 +107,7 @@ export default function TrustAndProcurement() {
           {/* Button */}
           <div>
             <a
-              href="#"
+              href="/trust-center"
               className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#C8382C] text-white text-sm font-bold tracking-wide hover:bg-[#B53227] transition-colors group shadow-sm"
             >
               <span>Visit Trust Center</span>

@@ -40,13 +40,13 @@ export default function GetStartedSection() {
         {/* Action Buttons */}
         <div className="flex flex-wrap items-center justify-center gap-4">
           <a
-            href="#demo"
+            href="/book-a-demo"
             className="px-6 py-3.5 rounded-xl bg-[#E04F2E] hover:bg-[#D04323] transition-colors text-xs font-bold text-white shadow-sm"
           >
             Book a Demo
           </a>
           <a
-            href="#trust-center"
+            href="/trust-center"
             className="px-6 py-3.5 rounded-xl hover:bg-[#143454] border border-[#1E3A5F] transition-colors text-xs font-bold text-white shadow-sm"
           >
             Visit Trust Center

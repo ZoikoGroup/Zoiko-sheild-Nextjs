@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
@@ -133,13 +134,13 @@ export default function OperatingSequence() {
 
         {/* Action Button */}
         <motion.div variants={itemVariants} className="flex justify-center">
-          <a
-            href="#"
+          <Link
+            href="/how-zoikoshield-works"
             className="px-6 py-3.5 hover:bg-[#e4e3dd] text-[#0B192C] border border-[#E2E1DC] font-semibold text-sm rounded-lg transition-colors duration-200 inline-flex items-center gap-2"
           >
             <span>Read the full explanation</span>
             <ArrowRight className="w-4 h-4 text-[#0B192C]" />
-          </a>
+          </Link>
         </motion.div>
       </motion.div>
     </section>

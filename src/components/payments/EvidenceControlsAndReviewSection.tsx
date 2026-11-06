@@ -16,6 +16,7 @@ interface CardItem {
   description: string;
   boundary: string;
   linkText: string;
+  href: string;
 }
 
 const CARDS_DATA: CardItem[] = [
@@ -27,6 +28,7 @@ const CARDS_DATA: CardItem[] = [
     boundary:
       "Verification is not settlement truth, claim validity or compliance.",
     linkText: "Evidence & verification",
+    href: "/evidence-ledger-verification",
   },
   {
     icon: <ShieldAlert className="w-5 h-5 text-[#0F172A]" />,
@@ -36,6 +38,7 @@ const CARDS_DATA: CardItem[] = [
     boundary:
       "No automatic PCI, insurance or financial-crime conclusion. A mapping is not a certification.",
     linkText: "Control plane",
+    href: "/compliance-control-plane",
   },
   {
     icon: <FileText className="w-5 h-5 text-[#0F172A]" />,
@@ -45,6 +48,7 @@ const CARDS_DATA: CardItem[] = [
     boundary:
       "External reviewer, examiner and regulator acceptance remains entirely independent.",
     linkText: "Prepare for audits",
+    href: "/prepare-for-audit",
   },
   {
     icon: <Search className="w-5 h-5 text-[#0F172A]" />,
@@ -54,6 +58,7 @@ const CARDS_DATA: CardItem[] = [
     boundary:
       "No fraud adjudication, transaction reversal or claims authority.",
     linkText: "Detection & response",
+    href: "/detection-and-response",
   },
   {
     icon: <RefreshCw className="w-5 h-5 text-[#0F172A]" />,
@@ -63,6 +68,7 @@ const CARDS_DATA: CardItem[] = [
     boundary:
       "No 24/7 responder entitlement, guaranteed recovery or insurer coverage.",
     linkText: "Incident readiness",
+    href: "/incident-readiness",
   },
   {
     icon: <Layers className="w-5 h-5 text-[#0F172A]" />,
@@ -71,6 +77,7 @@ const CARDS_DATA: CardItem[] = [
       "An independent service for ongoing control and evidence assurance. Not bundled, not a prerequisite.",
     boundary: "Assurance activity is not an audit opinion or a certification.",
     linkText: "Continuous Assurance",
+    href: "/continuous-assurance",
   },
 ];
 
@@ -130,7 +137,7 @@ export default function EvidenceControlsAndReviewSection() {
 
               <div>
                 <a
-                  href="#link"
+                  href={card.href}
                   className="inline-flex items-center gap-2 text-xs font-mono font-bold text-[#E04F2E] hover:underline"
                 >
                   {card.linkText}

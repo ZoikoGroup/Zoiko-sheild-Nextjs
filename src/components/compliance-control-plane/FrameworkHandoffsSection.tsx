@@ -15,9 +15,9 @@ const referenceFields = [
 ];
 
 const handoffs: { title: string; route: string; label: string }[] = [
-  { title: "Framework library", route: "/resources/frameworks", label: "/resources/frameworks · conditional" },
+  { title: "Framework library", route: "/framework-coverage", label: "/framework-coverage · conditional" },
   { title: "Continuous Assurance", route: "/continuous-assurance", label: "/continuous-assurance · optional peer" },
-  { title: "Trust Center", route: "/trust", label: "/trust · operating trust" },
+  { title: "Trust Center", route: "/trust-center", label: "/trust-center · operating trust" },
 ];
 
 const mobileExample: [string, string][] = [

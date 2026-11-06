@@ -131,7 +131,7 @@ export const Footer: React.FC = () => {
             <ul className="space-y-2 text-gray-300/80">
               <li><Link href="/managed-defense" className="hover:text-white transition-colors">Managed Defense</Link></li>
               <li><Link href="/continuous-assurance" className="hover:text-white transition-colors">Continuous Assurance</Link></li>
-              <li><Link href="/about" className="hover:text-white transition-colors">Compare starting paths</Link></li>
+              <li><Link href="/compare-starting-paths" className="hover:text-white transition-colors">Compare starting paths</Link></li>
               <li><Link href="/ir-retainer" className="hover:text-white transition-colors">Incident Response Retainer</Link></li>
               <li><Link href="/penetration-testing" className="hover:text-white transition-colors">Penetration Testing</Link></li>
               <li><Link href="/vciso-advisory" className="hover:text-white transition-colors">vCISO & Advisory</Link></li>
@@ -171,9 +171,9 @@ export const Footer: React.FC = () => {
             <ul className="space-y-2 text-gray-300/80">
               <li><Link href="/integration-catalog" className="hover:text-white transition-colors">Integration catalog</Link></li>
               <li><Link href="/microsoft-ecosystem" className="hover:text-white transition-colors">Microsoft ecosystem</Link></li>
-              <li><Link href="/about" className="hover:text-white transition-colors">Cloud platform</Link></li>
+              <li><Link href="/cloud-platform-integrations" className="hover:text-white transition-colors">Cloud platform</Link></li>
               <li><Link href="/endpoint-identity-integrations" className="hover:text-white transition-colors">Endpoint & Identity</Link></li>
-              <li><Link href="/about" className="hover:text-white transition-colors">Request an integration</Link></li>
+              <li><Link href="/request-an-integration" className="hover:text-white transition-colors">Request an integration</Link></li>
             </ul>
           </div>
 
@@ -184,7 +184,7 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-2 text-gray-300/80">
               <li><Link href="/developers-documentation" className="hover:text-white transition-colors">Documentation</Link></li>
-              <li><Link href="/about" className="hover:text-white transition-colors">API reference</Link></li>
+              <li><Link href="/developers-documentation" className="hover:text-white transition-colors">API reference</Link></li>
               <li><Link href="/developers-webhooks" className="hover:text-white transition-colors">Webhooks</Link></li>
               <li><Link href="/developer-release-notes" className="hover:text-white transition-colors">Release notes</Link></li>
             </ul>
@@ -217,7 +217,7 @@ export const Footer: React.FC = () => {
               <li><Link href="/security-trust-center" className="hover:text-white transition-colors">Trust Center</Link></li>
               <li><Link href="/security-trust-center" className="hover:text-white transition-colors">Security practices</Link></li>
               <li><Link href="/responsible-ai" className="hover:text-white transition-colors">Responsible AI</Link></li>
-              <li><Link href="/about" className="hover:text-white transition-colors">Privacy & data protection</Link></li>
+              <li><Link href="/privacy-data-protection" className="hover:text-white transition-colors">Privacy & data protection</Link></li>
               <li><Link href="/vulnerability-disclosure" className="hover:text-white transition-colors">Vulnerability disclosure</Link></li>
             </ul>
           </div>
