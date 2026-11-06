@@ -64,7 +64,7 @@ export default function HealthAndFreshness() {
       desc: (
         <>
           Not shown here at all.{" "}
-          <a href="#" className="text-[#E0402F] font-semibold hover:underline">
+          <a href="/system-status" className="text-[#E0402F] font-semibold hover:underline">
             System Status
           </a>{" "}
           is authoritative for public service health.

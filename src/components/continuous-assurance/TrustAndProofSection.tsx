@@ -27,7 +27,7 @@ const ROUTES: Route[] = [
   {
     title: "Trust Center",
     description: "Security and privacy posture",
-    href: null,
+    href: "/trust-center",
     icon: (
       <svg {...iconProps}>
         <path d="M12 2.5 4.5 5.5v5.2c0 4.6 3.1 8.9 7.5 10.3 4.4-1.4 7.5-5.7 7.5-10.3V5.5L12 2.5Z" />
@@ -51,7 +51,7 @@ const ROUTES: Route[] = [
   {
     title: "Docs",
     description: "Service and platform guidance",
-    href: null,
+    href: "/developers-documentation",
     icon: (
       <svg {...iconProps}>
         <path d="M14 3H7a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V7l-4-4Z" />
@@ -63,7 +63,7 @@ const ROUTES: Route[] = [
   {
     title: "System Status",
     description: "Live availability history",
-    href: null,
+    href: "/system-status",
     icon: (
       <svg {...iconProps}>
         <path d="M3 12h3.5l2-6 3.5 12 2.5-8 1.8 2h4.7" />

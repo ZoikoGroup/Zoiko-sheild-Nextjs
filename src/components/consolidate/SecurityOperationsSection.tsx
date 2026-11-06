@@ -15,13 +15,13 @@ const actionButtons: ActionButton[] = [
   {
     id: "book-demo",
     text: "Book a Demo",
-    href: "#",
+    href: "/book-a-demo",
     variant: "primary",
   },
   {
     id: "explore-detection-response",
     text: "Explore Detection & Response",
-    href: "#",
+    href: "/detection-and-response",
     variant: "secondary",
   },
 ];

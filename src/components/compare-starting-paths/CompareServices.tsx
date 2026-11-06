@@ -6,7 +6,7 @@ import { ArrowRight, GitFork, ShieldAlert } from "lucide-react";
 
 export default function CompareServices() {
   return (
-    <div className="relative w-full bg-[#F6F4EE] flex items-center justify-center px-6 md:px-12 py-16 overflow-x-hidden">
+    <div id="compare-services" className="scroll-mt-28 relative w-full bg-[#F6F4EE] flex items-center justify-center px-6 md:px-12 py-16 overflow-x-hidden">
       <div className="relative z-10 max-w-6xl w-full flex flex-col items-start">
         {/* Header Section */}
         <motion.div
@@ -94,7 +94,7 @@ export default function CompareServices() {
             {/* Button */}
             <div>
               <a
-                href="#"
+                href="/managed-defense"
                 className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl border border-[#7C8890]/40 text-[#111A1E] text-sm font-bold tracking-wide hover:bg-[#F6F4EE] transition-colors group"
               >
                 <span>Explore Managed Defense</span>
@@ -160,7 +160,7 @@ export default function CompareServices() {
             {/* Button */}
             <div>
               <a
-                href="#"
+                href="/continuous-assurance"
                 className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl border border-[#7C8890]/40 text-[#111A1E] text-sm font-bold tracking-wide hover:bg-[#F6F4EE] transition-colors group"
               >
                 <span>Explore Continuous Assurance</span>

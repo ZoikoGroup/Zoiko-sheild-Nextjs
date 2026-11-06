@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function TwoWaysToStart() {
@@ -91,13 +92,13 @@ export default function TwoWaysToStart() {
             </div>
 
             <div>
-              <a
-                href="#"
+              <Link
+                href="/managed-defense"
                 className="px-5 py-3 hover:bg-[#F3F4F6] text-[#0B192C] border border-[#E5E7EB] font-semibold text-xs sm:text-sm rounded-lg transition-colors duration-200 inline-flex items-center gap-2"
               >
                 <span>Explore Managed Defense</span>
                 <span className="text-sm">→</span>
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -118,25 +119,25 @@ export default function TwoWaysToStart() {
             </div>
 
             <div>
-              <a
-                href="#"
+              <Link
+                href="/continuous-assurance"
                 className="px-5 py-3 hover:bg-[#F3F4F6] text-[#0B192C] border border-[#E5E7EB] font-semibold text-xs sm:text-sm rounded-lg transition-colors duration-200 inline-flex items-center gap-2"
               >
                 <span>Explore Continuous Assurance</span>
                 <span className="text-sm">→</span>
-              </a>
+              </Link>
             </div>
           </div>
         </motion.div>
 
         {/* Bottom Neutral Compare Button */}
         <motion.div variants={itemVariants}>
-          <a
-            href="#"
+          <Link
+            href="/compare-starting-paths"
             className="px-6 py-3.5 hover:bg-[#e4e3dd] text-[#0B192C] border border-[#E2E1DC] font-semibold text-xs sm:text-sm rounded-lg transition-colors duration-200 inline-flex items-center justify-center"
           >
             Compare the two neutrally
-          </a>
+          </Link>
         </motion.div>
       </motion.div>
     </section>

@@ -45,13 +45,13 @@ export default function GetStarted() {
         {/* Buttons */}
         <div className="flex flex-row items-center justify-center space-x-4">
           <a
-            href="#"
+            href="/book-a-demo"
             className="px-6 py-2.5 rounded-[4px] bg-[#E0402F] text-white text-xs font-semibold shadow-sm hover:bg-[#D93828] transition-colors"
           >
             Book a Demo
           </a>
           <a
-            href="#"
+            href="/trust-center"
             className="px-6 py-2.5 rounded-[4px] border border-[#FFFFFF24] text-[#F8FAFC] text-xs font-semibold shadow-sm hover:bg-[#133554] transition-colors"
           >
             Visit Trust Center

@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function NextStepCTA() {
@@ -79,18 +80,18 @@ export default function NextStepCTA() {
           variants={itemVariants}
           className="flex flex-wrap items-center justify-center gap-4"
         >
-          <a
-            href="#"
+          <Link
+            href="/book-a-demo"
             className="px-6 py-3.5 bg-[#E0402F] hover:bg-[#c93525] text-white font-semibold text-xs sm:text-sm rounded-lg transition-colors duration-200 inline-flex items-center justify-center shadow-md"
           >
             Book a Demo
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            href="/how-zoikoshield-works"
             className="px-6 py-3.5 bg-transparent hover:bg-white/5 text-white border border-[#1E293B] font-semibold text-xs sm:text-sm rounded-lg transition-colors duration-200 inline-flex items-center justify-center"
           >
             See how ZoikoShield works
-          </a>
+          </Link>
         </motion.div>
       </motion.div>
     </section>

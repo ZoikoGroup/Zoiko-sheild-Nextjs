@@ -359,12 +359,12 @@ export default function VCISOAdvisoryPage() {
 
               {/* Action Buttons: Vertical stack on mobile, horizontal row on desktop */}
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
-                <button
-                  onClick={() => setIsDemoModalOpen(true)}
+                <Link
+                  href="/book-a-demo"
                   className="w-full sm:w-auto px-6 py-3 bg-[#E0533C] hover:bg-[#c94530] text-white font-bold text-sm rounded-lg transition-all shadow-md text-center"
                 >
                   Book a Demo
-                </button>
+                </Link>
                 <a
                   href="#scope"
                   className="w-full sm:w-auto px-5 py-3 bg-[#EFECE6] hover:bg-gray-200 text-[#151B28] font-semibold text-sm rounded-lg border border-gray-300/80 transition-all shadow-sm text-center"
@@ -372,7 +372,7 @@ export default function VCISOAdvisoryPage() {
                   Review Advisory Scope
                 </a>
                 <a
-                  href="#trust"
+                  href="/trust-center"
                   className="w-full sm:w-auto px-5 py-3 bg-[#EFECE6] hover:bg-gray-200 text-[#151B28] font-semibold text-sm rounded-lg border border-gray-300/80 transition-all shadow-sm text-center"
                 >
                   Visit Trust Center
@@ -812,7 +812,7 @@ export default function VCISOAdvisoryPage() {
                       If the gap is ongoing control evidence rather than structure:
                     </p>
                     <Link
-                      href="/services"
+                      href="/continuous-assurance"
                       className="text-[#E0533C] font-mono text-xs font-bold hover:underline inline-block pt-1"
                     >
                       Continuous Assurance &rarr;
@@ -1294,25 +1294,25 @@ export default function VCISOAdvisoryPage() {
             {/* 4 Pill Navigation Buttons */}
             <div className="flex flex-wrap gap-3">
               <Link
-                href="/services/advisory"
+                href="/compare-starting-paths"
                 className="px-4 py-2.5 bg-[#EFECE6] hover:bg-gray-200 text-[#151B28] text-xs font-semibold rounded-lg border border-gray-200 transition-colors shadow-sm"
               >
                 Compare starting paths
               </Link>
               <Link
-                href="/services"
+                href="/managed-defense"
                 className="px-4 py-2.5 bg-[#EFECE6] hover:bg-gray-200 text-[#151B28] text-xs font-semibold rounded-lg border border-gray-200 transition-colors shadow-sm"
               >
                 Managed Defense
               </Link>
               <Link
-                href="/services"
+                href="/continuous-assurance"
                 className="px-4 py-2.5 bg-[#EFECE6] hover:bg-gray-200 text-[#151B28] text-xs font-semibold rounded-lg border border-gray-200 transition-colors shadow-sm"
               >
                 Continuous Assurance
               </Link>
               <Link
-                href="/services"
+                href="/ir-retainer"
                 className="px-4 py-2.5 bg-[#EFECE6] hover:bg-gray-200 text-[#151B28] text-xs font-semibold rounded-lg border border-gray-200 transition-colors shadow-sm"
               >
                 IR Retainer
@@ -1406,13 +1406,13 @@ export default function VCISOAdvisoryPage() {
 
             <div className="flex flex-wrap items-center gap-3">
               <a
-                href="#trust"
+                href="/trust-center"
                 className="px-5 py-2.5 bg-[#0B1B26]/90 hover:bg-[#11242C] text-white text-xs font-semibold rounded-lg border border-gray-700/80 hover:border-gray-500 transition-colors shadow-sm"
               >
                 Visit Trust Center
               </a>
               <a
-                href="#trust"
+                href="/privacy-data-protection"
                 className="px-5 py-2.5 bg-[#0B1B26]/90 hover:bg-[#11242C] text-white text-xs font-semibold rounded-lg border border-gray-700/80 hover:border-gray-500 transition-colors shadow-sm"
               >
                 Data processing agreement
@@ -1452,7 +1452,7 @@ export default function VCISOAdvisoryPage() {
                   Urgency outranks sales and advisory intake. Do not qualify through this page.
                 </div>
                 <div className="sm:w-1/5 text-left sm:text-right">
-                  <a href="#routing" className="text-[#E0533C] font-mono text-xs font-bold hover:underline">
+                  <a href="/ir-retainer" className="text-[#E0533C] font-mono text-xs font-bold hover:underline">
                     Incident activation &rarr;
                   </a>
                 </div>
@@ -1467,9 +1467,9 @@ export default function VCISOAdvisoryPage() {
                   Share declared needs — not confidential security detail — and we'll scope from there.
                 </div>
                 <div className="sm:w-1/5 text-left sm:text-right">
-                  <button onClick={() => setIsDemoModalOpen(true)} className="text-[#E0533C] font-mono text-xs font-bold hover:underline">
+                  <Link href="/book-a-demo" className="text-[#E0533C] font-mono text-xs font-bold hover:underline">
                     Book a Demo &rarr;
-                  </button>
+                  </Link>
                 </div>
               </div>
 
@@ -1482,7 +1482,7 @@ export default function VCISOAdvisoryPage() {
                   Goes to your account team with context preserved. It is not treated as a new lead.
                 </div>
                 <div className="sm:w-1/5 text-left sm:text-right">
-                  <a href="#routing" className="text-[#E0533C] font-mono text-xs font-bold hover:underline">
+                  <a href="/contact" className="text-[#E0533C] font-mono text-xs font-bold hover:underline">
                     Contact account team &rarr;
                   </a>
                 </div>
@@ -1497,7 +1497,7 @@ export default function VCISOAdvisoryPage() {
                   Current authoritative units and engagement state live in the portal.
                 </div>
                 <div className="sm:w-1/5 text-left sm:text-right">
-                  <a href="#routing" className="text-[#E0533C] font-mono text-xs font-bold hover:underline">
+                  <a href="/contact-support" className="text-[#E0533C] font-mono text-xs font-bold hover:underline">
                     Engagement operations &rarr;
                   </a>
                 </div>
@@ -1512,7 +1512,7 @@ export default function VCISOAdvisoryPage() {
                   Handled as a change request. No advisor makes a commercial commitment alone.
                 </div>
                 <div className="sm:w-1/5 text-left sm:text-right">
-                  <a href="#routing" className="text-[#E0533C] font-mono text-xs font-bold hover:underline">
+                  <a href="/contact-support" className="text-[#E0533C] font-mono text-xs font-bold hover:underline">
                     Raise a change request &rarr;
                   </a>
                 </div>
@@ -1527,7 +1527,7 @@ export default function VCISOAdvisoryPage() {
                   Goes to coordinated disclosure — never to advisory sales.
                 </div>
                 <div className="sm:w-1/5 text-left sm:text-right">
-                  <a href="#routing" className="text-[#E0533C] font-mono text-xs font-bold hover:underline">
+                  <a href="/vulnerability-disclosure" className="text-[#E0533C] font-mono text-xs font-bold hover:underline">
                     Vulnerability disclosure &rarr;
                   </a>
                 </div>
@@ -1542,7 +1542,7 @@ export default function VCISOAdvisoryPage() {
                   This page does not invent live service status.
                 </div>
                 <div className="sm:w-1/5 text-left sm:text-right">
-                  <a href="#routing" className="text-[#E0533C] font-mono text-xs font-bold hover:underline">
+                  <a href="/system-status" className="text-[#E0533C] font-mono text-xs font-bold hover:underline">
                     System Status &rarr;
                   </a>
                 </div>
@@ -1621,12 +1621,12 @@ export default function VCISOAdvisoryPage() {
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
-              <button
-                onClick={() => setIsDemoModalOpen(true)}
+              <Link
+                href="/book-a-demo"
                 className="px-6 py-3 bg-[#E0533C] hover:bg-[#c94530] text-white font-bold text-sm rounded-lg shadow-lg hover:shadow-xl transition-all"
               >
                 Book a Demo
-              </button>
+              </Link>
 
               <a
                 href="#scope"
@@ -1636,7 +1636,7 @@ export default function VCISOAdvisoryPage() {
               </a>
 
               <Link
-                href="/services/advisory"
+                href="/compare-starting-paths"
                 className="px-6 py-3 bg-[#0B1B26]/80 hover:bg-[#11242C] text-white font-semibold text-sm rounded-lg border border-gray-700 hover:border-gray-500 transition-all shadow-sm"
               >
                 Compare starting paths

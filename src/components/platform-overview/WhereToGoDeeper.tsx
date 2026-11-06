@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function WhereToGoDeeper() {
@@ -35,6 +36,7 @@ export default function WhereToGoDeeper() {
         </div>
       ),
       title: "Evidence ledger & verification",
+      href: "/evidence-ledger-verification",
       badge: "ACTIVE",
       badgeType: "green",
       description:
@@ -49,6 +51,7 @@ export default function WhereToGoDeeper() {
         </div>
       ),
       title: "Compliance control plane",
+      href: "/compliance-control-plane",
       badge: "ACTIVE",
       badgeType: "green",
       description:
@@ -62,6 +65,7 @@ export default function WhereToGoDeeper() {
         </div>
       ),
       title: "Detection & response",
+      href: "/detection-and-response",
       badge: "ACTIVE",
       badgeType: "green",
       description:
@@ -76,6 +80,7 @@ export default function WhereToGoDeeper() {
         </div>
       ),
       title: "AI security & governance",
+      href: "/ai-security-governance",
       badge: "ACTIVE",
       badgeType: "green",
       description:
@@ -90,6 +95,7 @@ export default function WhereToGoDeeper() {
         </div>
       ),
       title: "Platform architecture",
+      href: "/architecture",
       badge: "SUBSTANCE GATE",
       badgeType: "yellow",
       description:
@@ -190,12 +196,12 @@ export default function WhereToGoDeeper() {
 
                 {/* Link */}
                 <div className="mb-6">
-                  <a
-                    href="#"
+                  <Link
+                    href={card.href}
                     className="text-xs font-semibold text-[#E0402F] hover:underline inline-flex items-center gap-1"
                   >
                     Open <span className="text-sm">→</span>
-                  </a>
+                  </Link>
                 </div>
               </div>
 

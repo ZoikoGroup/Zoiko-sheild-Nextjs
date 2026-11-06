@@ -166,13 +166,13 @@ export default function PublicVerifierGate() {
           className="flex flex-wrap items-center gap-4"
         >
           <a
-            href="#"
+            href="/verify-evidence"
             className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-[#C8382C] text-white text-sm font-bold tracking-wide hover:bg-[#B53227] transition-colors shadow-sm"
           >
             Open Verifier
           </a>
           <a
-            href="#"
+            href="/developers-documentation"
             className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-white text-[#111A1E] text-sm font-bold tracking-wide hover:bg-[#EAE6DD] transition-colors shadow-sm border border-[#D5CFC7]"
           >
             View Docs

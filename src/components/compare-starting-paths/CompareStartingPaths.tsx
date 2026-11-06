@@ -50,7 +50,7 @@ export default function CompareStartingPaths() {
           {/* Buttons Container */}
           <div className="flex flex-wrap items-center gap-4 mb-8">
             <a 
-              href="#" 
+              href="#compare-services" 
               className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-[#C8382C] text-white text-sm font-medium tracking-wide shadow-sm hover:bg-[#b53026] transition-colors"
             >
               Compare the paths
@@ -58,7 +58,7 @@ export default function CompareStartingPaths() {
             </a>
             
             <a 
-              href="#" 
+              href="/book-a-demo" 
               className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-transparent border border-[#7C8890] text-[#111A1E] text-sm font-medium tracking-wide hover:bg-[#EFECE4] transition-colors"
             >
               Book a Demo
@@ -98,17 +98,17 @@ export default function CompareStartingPaths() {
 
             {/* Bottom Floating Action Cards / Buttons inside the graphic */}
             <div className="absolute bottom-6 left-6 right-6 grid grid-cols-2 gap-3 z-10">
-              <div className="bg-[#0B1318]/80 backdrop-blur-md border border-[#232F36]/80 rounded-xl p-4 flex flex-col justify-between hover:border-[#4A555B] transition-colors cursor-pointer">
+              <a href="/managed-defense" className="bg-[#0B1318]/80 backdrop-blur-md border border-[#232F36]/80 rounded-xl p-4 flex flex-col justify-between hover:border-[#4A555B] transition-colors cursor-pointer">
                 <span className="text-white text-sm font-medium leading-snug">
                   Managed Defense
                 </span>
-              </div>
+              </a>
 
-              <div className="bg-[#0B1318]/80 backdrop-blur-md border border-[#232F36]/80 rounded-xl p-4 flex flex-col justify-between hover:border-[#4A555B] transition-colors cursor-pointer">
+              <a href="/continuous-assurance" className="bg-[#0B1318]/80 backdrop-blur-md border border-[#232F36]/80 rounded-xl p-4 flex flex-col justify-between hover:border-[#4A555B] transition-colors cursor-pointer">
                 <span className="text-white text-sm font-medium leading-snug">
                   Continuous Assurance
                 </span>
-              </div>
+              </a>
             </div>
 
           </div>

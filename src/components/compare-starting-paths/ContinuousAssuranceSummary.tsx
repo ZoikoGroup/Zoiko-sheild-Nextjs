@@ -124,7 +124,7 @@ export default function ContinuousAssuranceSummary() {
           {/* Button */}
           <div>
             <a
-              href="#"
+              href="/continuous-assurance"
               className="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-[#7C8890]/40 text-[#111A1E] text-sm font-bold tracking-wide hover:bg-[#F6F4EE] transition-colors group w-fit"
             >
               <span>Explore Continuous Assurance</span>

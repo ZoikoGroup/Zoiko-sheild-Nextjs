@@ -166,7 +166,7 @@ export default function PermissionsAndLeastPrivilege() {
                   publishing them loosely would be its own risk.
                 </p>
                 <a
-                  href="#"
+                  href="/security-trust-center"
                   className="px-5 py-3 hover:bg-[#13375B] text-white border border-[#FFFFFF24] font-semibold text-xs rounded-lg transition-colors duration-200 inline-flex items-center justify-center shadow-xs"
                 >
                   Security Practices

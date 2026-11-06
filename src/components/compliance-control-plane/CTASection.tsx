@@ -26,11 +26,11 @@ export function CTASection() {
         <p className="font-manrope font-normal leading-[1.55] text-[16px] text-[rgba(255,255,255,0.68)] text-center m-0">
           Bring controls, evidence, exceptions and attributable review into one governed operating model.
         </p>
-        <button className="bg-[#c44242] border border-[#c44242] flex items-center justify-center h-[53px] px-[20px] rounded-[10px] w-full cursor-pointer hover:bg-[#b23636] transition-colors">
+        <Link href="/book-a-demo" className="bg-[#c44242] border border-[#c44242] flex items-center justify-center h-[53px] px-[20px] rounded-[10px] w-full cursor-pointer hover:bg-[#b23636] transition-colors">
           <span className="font-manrope font-bold text-[15px] text-white whitespace-nowrap">
             Book a Demo
           </span>
-        </button>
+        </Link>
         <Link
           href="/platform-overview"
           className="bg-[#0a2029] border border-[rgba(255,255,255,0.5)] flex items-center justify-center h-[53px] px-[20px] rounded-[10px] w-full cursor-pointer hover:bg-[#123b4c] transition-colors"
@@ -60,11 +60,11 @@ export function CTASection() {
           </p>
 
           <div className="flex flex-wrap gap-[14px] items-center justify-center">
-            <button className="bg-[#c44242] border border-[#c44242] flex items-center justify-center h-[52px] px-[24px] rounded-[8px] cursor-pointer hover:bg-[#b23636] transition-colors">
+            <Link href="/book-a-demo" className="bg-[#c44242] border border-[#c44242] flex items-center justify-center h-[52px] px-[24px] rounded-[8px] cursor-pointer hover:bg-[#b23636] transition-colors">
               <span className="font-manrope font-bold text-[14px] text-white whitespace-nowrap">
                 Book a Demo
               </span>
-            </button>
+            </Link>
             <Link
               href="/platform-overview"
               className="bg-white border border-[#123b4c] flex items-center justify-center h-[52px] px-[24px] rounded-[8px] cursor-pointer hover:bg-gray-50 transition-colors"

@@ -110,7 +110,7 @@ export default function EvidenceAnatomy() {
           transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
         >
           <a
-            href="#"
+            href="/developers-documentation"
             className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-white border border-[#D5CFC7] text-[#111A1E] text-sm font-bold tracking-wide hover:bg-[#EAE6DD] transition-colors shadow-sm"
           >
             Inspect Example Schema

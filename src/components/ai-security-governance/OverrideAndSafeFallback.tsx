@@ -62,7 +62,7 @@ export default function OverrideAndSafeFallback() {
           {fallbackItems.map((item, index) => (
             <a
               key={index}
-              href="#"
+              href="/ai-decision-rights"
               className="group relative flex items-center px-6 py-4 rounded-xl bg-[#FFFFFF0D] hover:bg-[#162533]/80 border border-[#FFFFFF24] hover:border-[#10b981]/40 transition-all duration-300 shadow-lg"
             >
               {/* Number Prefix */}

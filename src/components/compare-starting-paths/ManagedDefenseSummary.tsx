@@ -47,7 +47,7 @@ const serviceDetails: ServiceDetail[] = [
 
 export default function ManagedDefenseSummary() {
   return (
-    <div className="relative w-full bg-[#F6F4EE] flex items-center justify-center px-6 md:px-12 py-20 overflow-x-hidden">
+    <div id="path-detail" className="scroll-mt-28 relative w-full bg-[#F6F4EE] flex items-center justify-center px-6 md:px-12 py-20 overflow-x-hidden">
       <div className="relative z-10 max-w-6xl w-full flex flex-col items-start">
         {/* Header Section */}
         <motion.div
@@ -122,7 +122,7 @@ export default function ManagedDefenseSummary() {
           {/* Button */}
           <div>
             <a
-              href="#"
+              href="/managed-defense"
               className="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-[#7C8890]/40 text-[#111A1E] text-sm font-bold tracking-wide hover:bg-[#F6F4EE] transition-colors group w-fit"
             >
               <span>Explore Managed Defense</span>

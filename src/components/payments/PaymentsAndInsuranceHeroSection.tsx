@@ -32,14 +32,14 @@ export default function PaymentsAndInsuranceHeroSection() {
 
             <div className="flex flex-wrap items-center gap-4">
               <a
-                href="#demo"
+                href="/book-a-demo"
                 className="py-3 px-6 rounded-[8px] bg-[#E04F2E] hover:bg-[#C94222] text-white font-bold text-xs transition-colors shadow-sm inline-flex items-center"
               >
                 Book a Demo
               </a>
 
               <a
-                href="#detection-response"
+                href="/detection-and-response"
                 className="py-3 px-6 rounded-[8px] hover:bg-[#E2E0D8] border border-[#CBD5E1] text-[#0F172A] font-bold text-xs transition-colors inline-flex items-center"
               >
                 Explore Detection & Response
