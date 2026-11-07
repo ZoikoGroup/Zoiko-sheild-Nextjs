@@ -26,23 +26,13 @@ export default function ResearchEngineeringBlogPage() {
   const [selectedType, setSelectedType] = useState("All");
   const [selectedTopic, setSelectedTopic] = useState("");
 
-  const scrollToSection = (id: string) => {
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  };
-
   return (
     <main className="w-full min-h-screen bg-stone-100 text-slate-900 antialiased selection:bg-red-500 selection:text-white">
       {/* 1. Hero Section */}
-      <HeroSection
-        onExplore={() => scrollToSection("featured-investigations")}
-        onSubscribe={() => scrollToSection("subscribe-registry")}
-      />
+      <HeroSection />
 
       {/* 2. Featured Investigations (Peer-Reviewed Analysis & Core Systems Work) */}
-      <div id="featured-investigations">
+      <div id="featured-investigations" className="scroll-mt-28 sm:scroll-mt-24">
         <FeaturedInvestigationsSection
           onSelectInvestigation={(_id) => setIsDemoOpen(true)}
         />

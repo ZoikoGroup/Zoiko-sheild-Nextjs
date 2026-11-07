@@ -76,7 +76,7 @@ export default function ArchitecturalDeploymentCTA() {
             Talk to a Security Architect
           </Link>
           <Link
-            href="#sandbox"
+            href="/book-a-demo"
             className="bg-transparent hover:bg-white/10 border border-gray-400/80 text-white text-[13.5px] font-semibold px-6 py-3 rounded-lg transition-colors duration-150 inline-flex items-center justify-center"
           >
             Access Sandbox

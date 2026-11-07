@@ -25,13 +25,6 @@ export default function GuidesFrameworkPage() {
     setIsDemoOpen(true);
   };
 
-  const handleSelectFramework = (_id: string) => {
-    const el = document.getElementById("crosswalk-explorer");
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  };
-
   return (
     <main className="w-full min-h-screen bg-[#F5F2EB] text-slate-900 antialiased selection:bg-red-500 selection:text-white">
       <HeroSection
@@ -50,7 +43,7 @@ export default function GuidesFrameworkPage() {
         setSelectedFilter={setSelectedFilter}
       />
       <FeaturedGuidesSection onOpenDemo={() => setIsDemoOpen(true)} />
-      <FrameworkLibrarySection onSelectFramework={handleSelectFramework} />
+      <FrameworkLibrarySection />
       <SpotlightDeepDiveSection />
       <CrosswalkExplorerSection />
       <LearningPathsSection />

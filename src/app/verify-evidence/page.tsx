@@ -342,7 +342,7 @@ export default function VerifyEvidencePage() {
           </div>
 
           {/* Stepper Card: Five Visible Steps (Exactly matching section1-des.png) */}
-          <div id="method" className="mt-16 pt-12 border-t border-gray-200/70">
+          <div id="method" className="scroll-mt-28 sm:scroll-mt-24 mt-16 pt-12 border-t border-gray-200/70">
             <div className="space-y-2 mb-8">
               <div className="flex items-center gap-2">
                 <span className="h-[1.5px] w-5 bg-[#E0533C]" />
@@ -698,13 +698,13 @@ claim_set_version: <pending>`}
                 Verify a package
               </a>
               <Link
-                href="/dashboard"
+                href="/evidence-ledger-verification"
                 className="bg-white hover:bg-gray-50 text-[#151B28] border border-gray-300 px-5 py-2.5 rounded-lg text-xs font-semibold transition-colors shadow-sm"
               >
                 See how evidence is produced
               </Link>
               <Link
-                href="/about"
+                href="/security-trust-center"
                 className="bg-white hover:bg-gray-50 text-[#151B28] border border-gray-300 px-5 py-2.5 rounded-lg text-xs font-semibold transition-colors shadow-sm"
               >
                 Trust Center
@@ -720,13 +720,13 @@ claim_set_version: <pending>`}
                 Verify a package
               </button>
               <Link
-                href="/dashboard"
+                href="/evidence-ledger-verification"
                 className="w-full bg-white hover:bg-gray-50 text-[#151B28] border border-gray-300 px-6 py-3 rounded-xl text-xs font-semibold text-center transition-colors shadow-sm"
               >
                 See how evidence is produced
               </Link>
               <Link
-                href="/about"
+                href="/security-trust-center"
                 className="w-full bg-white hover:bg-gray-50 text-[#151B28] border border-gray-300 px-6 py-3 rounded-xl text-xs font-semibold text-center transition-colors shadow-sm"
               >
                 Trust Center
@@ -1238,25 +1238,25 @@ claim_set_version: <pending>`}
             {/* Navigation Link Pills */}
             <div className="flex flex-wrap gap-3">
               <Link
-                href="/dashboard"
+                href="/evidence-ledger-verification"
                 className="px-4 py-2.5 bg-[#EFECE6] hover:bg-gray-200 text-[#151B28] text-xs font-semibold rounded-lg border border-gray-200 transition-colors shadow-sm"
               >
                 Evidence ledger & verification
               </Link>
               <Link
-                href="/services"
+                href="/compliance-control-plane"
                 className="px-4 py-2.5 bg-[#EFECE6] hover:bg-gray-200 text-[#151B28] text-xs font-semibold rounded-lg border border-gray-200 transition-colors shadow-sm"
               >
                 Compliance Control Plane
               </Link>
               <Link
-                href="/about"
+                href="/security-trust-center"
                 className="px-4 py-2.5 bg-[#EFECE6] hover:bg-gray-200 text-[#151B28] text-xs font-semibold rounded-lg border border-gray-200 transition-colors shadow-sm"
               >
                 Trust Center
               </Link>
               <Link
-                href="/contact"
+                href="/developers-documentation"
                 className="px-4 py-2.5 bg-[#EFECE6] hover:bg-gray-200 text-[#151B28] text-xs font-semibold rounded-lg border border-gray-200 transition-colors shadow-sm"
               >
                 Documentation
@@ -1289,15 +1289,15 @@ claim_set_version: <pending>`}
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
-              <button
-                onClick={() => setDemoOpen(true)}
+              <Link
+                href="/book-a-demo"
                 className="px-6 py-3 bg-[#E0533C] hover:bg-[#c94530] text-white font-semibold text-sm rounded-lg transition-all shadow-md flex items-center gap-2"
               >
                 Book a Technical Demo
-              </button>
+              </Link>
 
               <Link
-                href="/dashboard"
+                href="/platform-overview"
                 className="px-6 py-3 bg-[#0B1B26]/80 hover:bg-[#11242C] text-white font-semibold text-sm rounded-lg border border-gray-700/80 hover:border-gray-500 transition-all shadow-sm"
               >
                 Explore the Platform

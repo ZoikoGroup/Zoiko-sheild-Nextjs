@@ -50,7 +50,7 @@ export const FeaturedGuidesSection: React.FC<FeaturedGuidesProps> = ({
   onOpenDemo,
 }) => {
   return (
-    <section id="featured-guides" className="py-14 md:py-20 bg-[#F5F2EB] border-b border-cyan-950/10">
+    <section id="featured-guides" className="scroll-mt-28 sm:scroll-mt-24 py-14 md:py-20 bg-[#F5F2EB] border-b border-cyan-950/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         {/* Section Header with Review Badge */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">

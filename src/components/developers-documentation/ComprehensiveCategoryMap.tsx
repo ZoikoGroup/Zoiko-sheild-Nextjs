@@ -92,7 +92,7 @@ export default function ComprehensiveCategoryMap() {
   };
 
   return (
-    <section className="w-full bg-[#F5F2EB] py-16 sm:py-20 lg:py-24 px-6 md:px-12 lg:px-16 font-sans text-[#111827] border-t border-[#E7E5DF]">
+    <section id="documentation-categories" className="scroll-mt-24 w-full bg-[#F5F2EB] py-16 sm:py-20 lg:py-24 px-6 md:px-12 lg:px-16 font-sans text-[#111827] border-t border-[#E7E5DF]">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="mb-10 sm:mb-12">

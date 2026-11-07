@@ -57,7 +57,7 @@ export const CrosswalkExplorerSection: React.FC = () => {
   );
 
   return (
-    <section id="crosswalk-explorer" className="py-14 md:py-20 bg-[#E6E4DD] border-b border-cyan-950/10">
+    <section id="crosswalk-explorer" className="scroll-mt-28 sm:scroll-mt-24 py-14 md:py-20 bg-[#E6E4DD] border-b border-cyan-950/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         {/* Section Header */}
         <div className="max-w-3xl space-y-2">

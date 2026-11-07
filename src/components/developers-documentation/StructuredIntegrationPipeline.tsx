@@ -135,7 +135,7 @@ export default function StructuredIntegrationPipeline() {
           </div>
 
           <Link
-            href="#custom-integration"
+            href="/request-an-integration"
             className="border border-[#BE3A34] text-[#BE3A34] hover:bg-[#BE3A34]/5 text-[13px] font-semibold px-5 py-2.5 rounded-lg transition-colors duration-150 inline-flex items-center justify-center shrink-0 self-start sm:self-auto"
           >
             Request custom integration

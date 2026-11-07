@@ -1,7 +1,28 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Linkedin, Youtube, Twitter, Facebook } from "lucide-react";
+import { Linkedin, Youtube, Facebook, Instagram } from "lucide-react";
+
+const XIcon = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5" aria-hidden="true">
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+  </svg>
+);
+
+const PinterestIcon = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5" aria-hidden="true">
+    <path d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z" />
+  </svg>
+);
+
+const socialLinks = [
+  { href: "https://www.linkedin.com/company/zoiko-shield/", label: "LinkedIn", icon: <Linkedin className="w-3.5 h-3.5" /> },
+  { href: "https://www.youtube.com/@ZoikoShield", label: "YouTube", icon: <Youtube className="w-3.5 h-3.5" /> },
+  { href: "https://x.com/ZoikoShield", label: "X (Twitter)", icon: <XIcon /> },
+  { href: "https://www.facebook.com/zoikoshield/", label: "Facebook", icon: <Facebook className="w-3.5 h-3.5" /> },
+  { href: "https://www.instagram.com/zoikoshield/", label: "Instagram", icon: <Instagram className="w-3.5 h-3.5" /> },
+  { href: "https://in.pinterest.com/zoikoshield/", label: "Pinterest", icon: <PinterestIcon /> },
+];
 
 export const Footer: React.FC = () => {
   return (
@@ -23,43 +44,19 @@ export const Footer: React.FC = () => {
               Defensible cybersecurity and continuous assurance for modern regulated enterprises.
             </p>
             {/* Social Icons */}
-            <div className="flex items-center gap-2.5 pt-2">
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="LinkedIn"
-                className="w-8 h-8 rounded-full bg-[#122A36] border border-gray-700/60 flex items-center justify-center text-gray-300 hover:text-white hover:border-[#C53B3B] hover:bg-[#C53B3B]/20 transition-all"
-              >
-                <Linkedin className="w-3.5 h-3.5" />
-              </a>
-              <a
-                href="https://youtube.com"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="YouTube"
-                className="w-8 h-8 rounded-full bg-[#122A36] border border-gray-700/60 flex items-center justify-center text-gray-300 hover:text-white hover:border-[#C53B3B] hover:bg-[#C53B3B]/20 transition-all"
-              >
-                <Youtube className="w-3.5 h-3.5" />
-              </a>
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="X Twitter"
-                className="w-8 h-8 rounded-full bg-[#122A36] border border-gray-700/60 flex items-center justify-center text-gray-300 hover:text-white hover:border-[#C53B3B] hover:bg-[#C53B3B]/20 transition-all"
-              >
-                <Twitter className="w-3.5 h-3.5" />
-              </a>
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Facebook"
-                className="w-8 h-8 rounded-full bg-[#122A36] border border-gray-700/60 flex items-center justify-center text-gray-300 hover:text-white hover:border-[#C53B3B] hover:bg-[#C53B3B]/20 transition-all"
-              >
-                <Facebook className="w-3.5 h-3.5" />
-              </a>
+            <div className="flex flex-wrap items-center gap-2.5 pt-2">
+              {socialLinks.map(({ href, label, icon }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className="w-8 h-8 rounded-full bg-[#122A36] border border-gray-700/60 flex items-center justify-center text-gray-300 hover:text-white hover:border-[#C53B3B] hover:bg-[#C53B3B]/20 transition-all"
+                >
+                  {icon}
+                </a>
+              ))}
             </div>
           </div>
 

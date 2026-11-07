@@ -47,7 +47,7 @@ export default function NextStepSection() {
 
         <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:flex-wrap sm:items-center sm:justify-center sm:gap-4">
           <Link
-            href="/contact"
+            href="/book-a-demo"
             className="rounded-[10px] bg-[#C53B3B] px-6 py-3.5 text-center font-manrope text-sm font-bold text-white transition-colors hover:bg-[#a93030]"
           >
             Book a Demo

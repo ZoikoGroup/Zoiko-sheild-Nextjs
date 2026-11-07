@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 interface FrameworkItem {
@@ -52,17 +53,11 @@ const FRAMEWORKS: FrameworkItem[] = [
   },
 ];
 
-interface FrameworkLibraryProps {
-  onSelectFramework?: (id: string) => void;
-}
-
-export const FrameworkLibrarySection: React.FC<FrameworkLibraryProps> = ({
-  onSelectFramework,
-}) => {
+export const FrameworkLibrarySection: React.FC = () => {
   return (
     <section
       id="framework-library"
-      className="py-14 md:py-20 bg-[#E6E4DD] border-b border-cyan-950/10"
+      className="scroll-mt-28 sm:scroll-mt-24 py-14 md:py-20 bg-[#E6E4DD] border-b border-cyan-950/10"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         {/* Section Header */}
@@ -82,7 +77,8 @@ export const FrameworkLibrarySection: React.FC<FrameworkLibraryProps> = ({
           {FRAMEWORKS.map((fw) => (
             <div
               key={fw.id}
-              className="bg-white rounded-2xl p-6 border border-slate-200/90 shadow-sm flex flex-col justify-between hover:border-slate-300 transition-all space-y-6"
+              id={fw.id}
+              className="scroll-mt-32 sm:scroll-mt-28 bg-white rounded-2xl p-6 border border-slate-200/90 shadow-sm flex flex-col justify-between hover:border-slate-300 transition-all space-y-6"
             >
               <div className="space-y-4">
                 <div className="space-y-1">
@@ -118,13 +114,13 @@ export const FrameworkLibrarySection: React.FC<FrameworkLibraryProps> = ({
               </div>
 
               <div className="pt-3 border-t border-slate-100">
-                <button
-                  onClick={() => onSelectFramework?.(fw.id)}
+                <Link
+                  href="/framework-coverage"
                   className="text-xs font-bold text-[#A91D22] hover:text-[#8e171b] inline-flex items-center gap-1.5 transition-colors cursor-pointer"
                 >
                   <span>Explore Framework Details</span>
                   <ArrowRight className="w-3.5 h-3.5" />
-                </button>
+                </Link>
               </div>
             </div>
           ))}

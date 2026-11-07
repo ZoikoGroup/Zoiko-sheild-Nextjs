@@ -5,15 +5,20 @@ import Image from "next/image";
 import Link from "next/link";
 import { Info } from "lucide-react";
 
-interface HeroSectionProps {
-  onExplore?: () => void;
-  onSubscribe?: () => void;
-}
+// Real anchors so the CTAs work even before hydration; when JS is available,
+// scroll smoothly instead of jumping. Offset comes from scroll-mt on targets.
+const handleAnchorClick = (
+  e: React.MouseEvent<HTMLAnchorElement>,
+  id: string
+) => {
+  const el = document.getElementById(id);
+  if (!el) return;
+  e.preventDefault();
+  el.scrollIntoView({ behavior: "smooth", block: "start" });
+  window.history.replaceState(null, "", `#${id}`);
+};
 
-export const HeroSection: React.FC<HeroSectionProps> = ({
-  onExplore,
-  onSubscribe,
-}) => {
+export const HeroSection: React.FC = () => {
   return (
     <section className="relative w-full overflow-hidden bg-stone-100 border-b border-cyan-950/10 py-16 sm:py-20 px-4 sm:px-8 lg:px-28">
       {/* Soft atmospheric gradient radial glows matching the Figma design */}
@@ -57,19 +62,21 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
             {/* Action Buttons Row */}
             <div className="flex flex-wrap items-center gap-4 pt-1">
-              <button
-                onClick={onExplore}
+              <a
+                href="#featured-investigations"
+                onClick={(e) => handleAnchorClick(e, "featured-investigations")}
                 className="px-7 py-4 bg-red-500 hover:bg-red-600 text-white text-base font-bold font-['Manrope'] rounded-[10px] shadow-sm hover:shadow transition-all duration-200 cursor-pointer"
               >
                 Explore Research &amp; Engineering
-              </button>
+              </a>
 
-              <button
-                onClick={onSubscribe}
+              <a
+                href="#subscribe-registry"
+                onClick={(e) => handleAnchorClick(e, "subscribe-registry")}
                 className="px-6 py-4 rounded-[10px] outline outline-1 outline-offset-[-1px] outline-sky-950 hover:bg-black/5 text-sky-950 text-base font-bold font-['Manrope'] transition-colors cursor-pointer"
               >
                 Subscribe to Updates
-              </button>
+              </a>
 
               <Link
                 href="/guides-framework"

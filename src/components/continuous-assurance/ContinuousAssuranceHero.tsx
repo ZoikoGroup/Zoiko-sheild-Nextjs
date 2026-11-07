@@ -33,7 +33,7 @@ export default function ContinuousAssuranceHero() {
 
           <div className="mb-6 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:flex-wrap sm:items-center sm:gap-3.5">
             <Link
-              href="/contact"
+              href="/book-a-demo"
               className="rounded-[10px] bg-[#C53B3B] px-6 py-3.5 text-center font-manrope text-sm font-bold text-white transition-colors hover:bg-[#a93030]"
             >
               Book a Demo

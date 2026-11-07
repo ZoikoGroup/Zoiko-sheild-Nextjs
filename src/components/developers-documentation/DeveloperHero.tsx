@@ -124,7 +124,7 @@ export default function DeveloperHero() {
             {/* Call to Actions (Desktop Only as shown in reference) */}
             <motion.div variants={itemVariants} className="hidden lg:flex flex-wrap items-center gap-3.5 mb-7">
               <Link
-                href="#get-started"
+                href="#quickstarts"
                 className="bg-[#BE3A34] hover:bg-[#A82E29] text-white text-[13.5px] font-semibold px-6 py-2.5 rounded-lg shadow-sm transition-colors duration-150 inline-flex items-center justify-center"
               >
                 Get Started
