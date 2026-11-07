@@ -138,19 +138,22 @@ export default function SecurityPricing() {
   return (
     <section className="relative w-full overflow-hidden bg-[#0a1220] text-white">
       {/* Trusted by */}
-      <div className="border-b border-white/10 px-6 py-4 sm:px-8 lg:px-10">
-        <p className="text-center font-mono text-sm uppercase tracking-[0.18em] text-white/50">
+      <div className="border-b border-white/10 px-4 py-4 sm:px-8 lg:px-10">
+        <p className="text-center font-mono text-xs uppercase tracking-[0.18em] text-white/50 sm:text-sm">
           Trusted by security &amp; compliance teams at regulated enterprises
         </p>
-        <ul className="mt-3 flex flex-wrap items-center justify-center gap-x-8 gap-y-2">
+        <ul className="mt-3 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 sm:gap-x-8">
           {BRANDS.map((brand) => {
             const Icon = brand.icon;
             return (
               <li
                 key={brand.name}
-                className="flex items-center gap-2 text-sm text-white/70"
+                className="flex items-center gap-1.5 text-xs text-white/70 sm:gap-2 sm:text-sm"
               >
-                <Icon className="h-4 w-4" aria-hidden="true" />
+                <Icon
+                  className="h-3.5 w-3.5 sm:h-4 sm:w-4"
+                  aria-hidden="true"
+                />
                 {brand.name}
               </li>
             );
@@ -159,25 +162,28 @@ export default function SecurityPricing() {
       </div>
 
       {/* Pricing */}
-      <div className="relative px-6 pb-20 pt-16 sm:px-8 lg:px-10">
+      <div className="relative px-4 pb-16 pt-12 sm:px-8 sm:pb-20 sm:pt-16 lg:px-10">
         <SaleRibbon className="right-[-30px] top-6 rotate-[18deg]" />
 
         <div className="mx-auto max-w-[1200px]">
           <div className="text-center">
-            <h2 className="mx-auto max-w-[520px] text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl">
+            <h2 className="mx-auto max-w-[520px] text-2xl font-extrabold leading-tight tracking-tight sm:text-4xl">
               Protection that scales with your business.
             </h2>
-            <p className="mx-auto mt-4 max-w-[460px] text-base leading-7 text-white/60">
+            <p className="mx-auto mt-3 max-w-[460px] text-sm leading-6 text-white/60 sm:mt-4 sm:text-base sm:leading-7">
               Transparent tiers for every stage — from your first controls to
               enterprise-wide assurance. Billed annually.
             </p>
-            <p className="mx-auto mt-5 inline-flex items-center gap-2 rounded-full border border-[#d9473f]/50 bg-[#d9473f]/10 px-4 py-1.5 font-mono text-sm text-white/80">
-              <Tag className="h-4 w-4 text-[#f0807a]" aria-hidden="true" />
+            <p className="mx-auto mt-4 inline-flex items-center gap-2 rounded-full border border-[#d9473f]/50 bg-[#d9473f]/10 px-3.5 py-1.5 font-mono text-xs text-white/80 sm:mt-5 sm:px-4 sm:text-sm">
+              <Tag
+                className="h-3.5 w-3.5 text-[#f0807a] sm:h-4 sm:w-4"
+                aria-hidden="true"
+              />
               Black Friday: 20% off year one on eligible tiers*
             </p>
           </div>
 
-          <ul className="mt-10 grid items-stretch gap-5 md:grid-cols-3">
+          <ul className="mt-8 grid items-stretch gap-5 sm:grid-cols-2 md:grid-cols-3 sm:mt-10">
             {TIERS.map((tier) => (
               <li
                 key={tier.name}
@@ -188,7 +194,7 @@ export default function SecurityPricing() {
                 }
               >
                 {tier.featured && (
-                  <span className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#d9473f] px-3 py-1 font-mono text-sm font-bold uppercase tracking-[0.08em]">
+                  <span className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap rounded-full bg-[#d9473f] px-3 py-1 font-mono text-xs font-bold uppercase tracking-[0.08em] sm:text-sm">
                     Most popular
                   </span>
                 )}
@@ -199,10 +205,14 @@ export default function SecurityPricing() {
                 </p>
 
                 <p className="mt-4 flex items-baseline gap-1">
-                  <span className="text-3xl font-extrabold">{tier.price}</span>
-                  <span className="text-sm text-white/60">{tier.unit}</span>
+                  <span className="text-2xl font-extrabold sm:text-3xl">
+                    {tier.price}
+                  </span>
+                  <span className="text-xs text-white/60 sm:text-sm">
+                    {tier.unit}
+                  </span>
                 </p>
-                <p className="mt-1 text-sm text-white/50">
+                <p className="mt-1 text-xs text-white/50 sm:text-sm">
                   {tier.was ? (
                     <>
                       <span className="line-through">{tier.wasStruck}</span>{" "}
@@ -219,8 +229,8 @@ export default function SecurityPricing() {
                   href={tier.href}
                   className={
                     tier.featured
-                      ? "mt-5 inline-flex items-center justify-center gap-2 rounded-lg bg-[#d9473f] px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-[#d9473f]/40"
-                      : "mt-5 inline-flex items-center justify-center gap-2 rounded-lg border border-white/20 bg-white/5 px-4 py-3 text-sm font-semibold text-white"
+                      ? "mt-5 inline-flex items-center justify-center gap-2 rounded-lg bg-[#d9473f] px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-[#d9473f]/40 transition hover:bg-[#c33d36]"
+                      : "mt-5 inline-flex items-center justify-center gap-2 rounded-lg border border-white/20 bg-white/5 px-4 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
                   }
                 >
                   {tier.cta}
@@ -230,14 +240,14 @@ export default function SecurityPricing() {
                 </Link>
 
                 <div className="mt-5 border-t border-white/10 pt-4">
-                  <p className="font-mono text-sm uppercase tracking-[0.1em] text-white/50">
+                  <p className="font-mono text-xs uppercase tracking-[0.1em] text-white/50 sm:text-sm">
                     {tier.includesLabel}
                   </p>
                   <ul className="mt-3 space-y-2.5">
                     {tier.features.map((feature) => (
                       <li
                         key={feature}
-                        className="flex items-start gap-2 text-sm text-white/85"
+                        className="flex items-start gap-2 text-xs text-white/85 sm:text-sm"
                       >
                         <Check
                           className="mt-0.5 h-4 w-4 shrink-0 text-[#4fd1a5]"
@@ -255,22 +265,22 @@ export default function SecurityPricing() {
       </div>
 
       {/* Prove your controls */}
-      <div className="relative px-6 pb-20 pt-10 sm:px-8 lg:px-10">
+      <div className="relative px-4 pb-16 pt-8 sm:px-8 sm:pb-20 sm:pt-10 lg:px-10">
         <SaleRibbon className="left-[-30px] top-0 rotate-[-18deg]" />
 
         <div className="mx-auto max-w-[1200px]">
           <div className="text-center">
-            <h2 className="mx-auto max-w-[540px] text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl">
+            <h2 className="mx-auto max-w-[540px] text-2xl font-extrabold leading-tight tracking-tight sm:text-4xl">
               Prove your controls — don&apos;t just promise them.
             </h2>
-            <p className="mx-auto mt-4 max-w-[520px] text-base leading-7 text-white/60">
+            <p className="mx-auto mt-3 max-w-[520px] text-sm leading-6 text-white/60 sm:mt-4 sm:text-base sm:leading-7">
               Credibility built on evidence, not alarmist claims. A
               comprehensive set of security and compliance tools, designed to
               work with the stack you already run.
             </p>
           </div>
 
-          <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <ul className="mt-8 grid gap-4 sm:grid-cols-2 sm:mt-10 lg:grid-cols-4">
             {PILLARS.map((pillar) => {
               const Icon = pillar.icon;
               return (
@@ -282,7 +292,7 @@ export default function SecurityPricing() {
                     <Icon className="h-4 w-4" aria-hidden="true" />
                   </span>
                   <h3 className="mt-4 text-sm font-bold">{pillar.title}</h3>
-                  <p className="mt-2 text-sm leading-5 text-white/60">
+                  <p className="mt-2 text-xs leading-5 text-white/60 sm:text-sm">
                     {pillar.description}
                   </p>
                 </li>
