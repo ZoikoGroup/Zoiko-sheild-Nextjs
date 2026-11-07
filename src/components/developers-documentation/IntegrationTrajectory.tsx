@@ -32,14 +32,14 @@ const trajectoryCards: TrajectoryCard[] = [
     description:
       "Establish low-latency event listeners for continuous posture conflicts and automated action telemetry.",
     linkText: "Webhooks Catalog",
-    href: "#webhooks",
+    href: "/developers-webhooks",
   },
   {
     title: "Deploy & Operate",
     description:
       "Understand architecture requirements, least-privilege permissions, and self-hosted secure evidence storage options.",
     linkText: "Operations Guide",
-    href: "#operations",
+    href: "/architecture",
   },
   {
     title: "Prove Compliance",

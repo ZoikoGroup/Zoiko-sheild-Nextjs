@@ -18,21 +18,21 @@ const referenceHubs: ReferenceHub[] = [
     description:
       "Detailed endpoint parameters, error matrices, and schema-backed structures for every resource.",
     linkText: "Launch API Specs",
-    href: "#api-specs",
+    href: "#documentation-categories",
   },
   {
     title: "Webhooks Catalog",
     description:
       "Configure listeners for instant posture conflicts, security alerts, and control elevation states.",
     linkText: "View Event Schemas",
-    href: "#webhook-schemas",
+    href: "/developers-webhooks",
   },
   {
     title: "Release Notes",
     description:
       "Follow breaking updates, deprecated parameter schedules, and verified version improvements.",
     linkText: "Browse Version Log",
-    href: "#version-log",
+    href: "/developer-release-notes",
   },
 ];
 
@@ -61,7 +61,7 @@ export default function PrimaryReferenceHubs() {
   };
 
   return (
-    <section className="w-full bg-[#F5F2EB] py-16 sm:py-20 lg:py-24 px-6 md:px-12 lg:px-16 font-sans text-[#111827] border-t border-[#E7E5DF]">
+    <section id="api-reference" className="scroll-mt-24 w-full bg-[#F5F2EB] py-16 sm:py-20 lg:py-24 px-6 md:px-12 lg:px-16 font-sans text-[#111827] border-t border-[#E7E5DF]">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="mb-10 sm:mb-12">

@@ -17,7 +17,7 @@ export const SubscribeRegistrySection: React.FC = () => {
   return (
     <section
       id="subscribe-registry"
-      className="w-full bg-[#F7F5F0] border-b border-cyan-950/10 py-16 sm:py-20 px-4 sm:px-8 lg:px-28"
+      className="scroll-mt-28 sm:scroll-mt-24 w-full bg-[#F7F5F0] border-b border-cyan-950/10 py-16 sm:py-20 px-4 sm:px-8 lg:px-28"
     >
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 lg:gap-10">

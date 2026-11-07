@@ -4,11 +4,11 @@ import React from "react";
 
 export const SpotlightDeepDiveSection: React.FC = () => {
   return (
-    <section id="spotlight-deepdive" className="py-14 md:py-20 bg-[#F5F2EB] border-b border-cyan-950/10">
+    <section id="spotlight-deepdive" className="scroll-mt-28 sm:scroll-mt-24 py-14 md:py-20 bg-[#F5F2EB] border-b border-cyan-950/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Panel 1: NIST SP 800-207 Pattern */}
-          <div className="bg-white rounded-2xl p-7 border border-slate-200/90 shadow-sm flex flex-col justify-between space-y-6">
+          <div id="nist-zero-trust" className="scroll-mt-32 sm:scroll-mt-28 bg-white rounded-2xl p-7 border border-slate-200/90 shadow-sm flex flex-col justify-between space-y-6">
             <div className="space-y-4">
               <div className="flex items-center gap-2">
                 <span className="px-2.5 py-1 bg-teal-50 text-teal-800 border border-teal-200 rounded-full text-xs font-mono font-bold">
@@ -63,7 +63,7 @@ export const SpotlightDeepDiveSection: React.FC = () => {
           </div>
 
           {/* Panel 2: Continuous EDR Guide */}
-          <div className="bg-white rounded-2xl p-7 border border-slate-200/90 shadow-sm flex flex-col justify-between space-y-6">
+          <div id="edr-host-compliance" className="scroll-mt-32 sm:scroll-mt-28 bg-white rounded-2xl p-7 border border-slate-200/90 shadow-sm flex flex-col justify-between space-y-6">
             <div className="space-y-4">
               <div className="flex items-center gap-2">
                 <span className="px-2.5 py-1 bg-amber-50 text-amber-800 border border-amber-200 rounded-full text-xs font-mono font-bold">
