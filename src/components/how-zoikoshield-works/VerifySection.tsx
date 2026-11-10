@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { ShieldHalf, ShieldCheck, FileText, Activity } from "lucide-react";
 
 export function VerifySection() {
@@ -59,24 +60,30 @@ export function VerifySection() {
         
         {/* Verification Routes (Buttons) */}
         <div className="w-full flex flex-col lg:grid lg:grid-cols-3 gap-[12px] lg:gap-[14px]">
-          <div className="bg-white border border-[#123b4c]/12 rounded-[10px] lg:rounded-[14px] p-[16px] lg:p-[18px] flex items-center gap-[12px] cursor-pointer hover:border-[#123b4c]/30 transition-colors">
+          <Link href="/trust-center" className="bg-white border border-[#123b4c]/12 rounded-[10px] lg:rounded-[14px] p-[16px] lg:p-[18px] flex items-center gap-[12px] cursor-pointer hover:border-[#123b4c]/30 transition-colors">
             <ShieldCheck className="w-5 h-5 lg:w-6 lg:h-6 shrink-0 text-[#123b4c]" strokeWidth={1.5} />
             <span className="font-manrope font-[800] text-[#123b4c] text-[14px]">Trust Center &rarr;</span>
-          </div>
-          <div className="bg-white border border-[#123b4c]/12 rounded-[10px] lg:rounded-[14px] p-[16px] lg:p-[18px] flex items-center gap-[12px] cursor-pointer hover:border-[#123b4c]/30 transition-colors">
+          </Link>
+          <Link href="/developers-documentation" className="bg-white border border-[#123b4c]/12 rounded-[10px] lg:rounded-[14px] p-[16px] lg:p-[18px] flex items-center gap-[12px] cursor-pointer hover:border-[#123b4c]/30 transition-colors">
             <FileText className="w-5 h-5 lg:w-6 lg:h-6 shrink-0 text-[#123b4c]" strokeWidth={1.5} />
             <span className="font-manrope font-[800] text-[#123b4c] text-[14px]">Documentation &rarr;</span>
-          </div>
-          <div className="bg-white border border-[#123b4c]/12 rounded-[10px] lg:rounded-[14px] p-[16px] lg:p-[18px] flex items-center gap-[12px] cursor-pointer hover:border-[#123b4c]/30 transition-colors">
+          </Link>
+          <Link href="/system-status" className="bg-white border border-[#123b4c]/12 rounded-[10px] lg:rounded-[14px] p-[16px] lg:p-[18px] flex items-center gap-[12px] cursor-pointer hover:border-[#123b4c]/30 transition-colors">
             <Activity className="w-5 h-5 lg:w-6 lg:h-6 shrink-0 text-[#123b4c]" strokeWidth={1.5} />
             <span className="font-manrope font-[800] text-[#123b4c] text-[14px]">System Status &rarr;</span>
-          </div>
+          </Link>
         </div>
-        
+
         {/* Bottom Link */}
         <div className="mt-2">
-          <span className="font-manrope font-[800] text-[#c44242] lg:text-[#e0402f] text-[14px] cursor-pointer hover:underline">
-            Verify Evidence &rarr;&nbsp;&nbsp;/&nbsp;&nbsp;Trust Center &rarr;
+          <span className="font-manrope font-[800] text-[#c44242] lg:text-[#e0402f] text-[14px]">
+            <Link href="/verify-evidence" className="hover:underline">
+              Verify Evidence &rarr;
+            </Link>
+            &nbsp;&nbsp;/&nbsp;&nbsp;
+            <Link href="/trust-center" className="hover:underline">
+              Trust Center &rarr;
+            </Link>
           </span>
         </div>
 

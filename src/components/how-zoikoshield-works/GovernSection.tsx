@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import Image from "next/image";
 
 export function GovernSection() {
@@ -76,8 +77,14 @@ export function GovernSection() {
 
         {/* Links */}
         <div className="mt-0 lg:mt-[40px]">
-          <span className="font-manrope font-[800] text-[#e0967d] text-[14px] cursor-pointer">
-            Detection &amp; Response &rarr;&nbsp;&nbsp;/&nbsp;&nbsp;Compliance &rarr;
+          <span className="font-manrope font-[800] text-[#e0967d] text-[14px]">
+            <Link href="/detection-and-response" className="hover:underline">
+              Detection &amp; Response &rarr;
+            </Link>
+            &nbsp;&nbsp;/&nbsp;&nbsp;
+            <Link href="/compliance-control-plane" className="hover:underline">
+              Compliance &rarr;
+            </Link>
           </span>
         </div>
 

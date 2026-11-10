@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import Image from "next/image";
 
 export function ConnectSection() {
@@ -47,9 +48,9 @@ export function ConnectSection() {
           </div>
 
           <div className="mt-4">
-            <span className="font-manrope font-[800] text-[#c44242] lg:text-[#e0402f] text-[14px] cursor-pointer">
+            <Link href="/integrations" className="font-manrope font-[800] text-[#c44242] lg:text-[#e0402f] text-[14px] cursor-pointer hover:underline">
               Explore Integrations &rarr;
-            </span>
+            </Link>
           </div>
         </div>
 

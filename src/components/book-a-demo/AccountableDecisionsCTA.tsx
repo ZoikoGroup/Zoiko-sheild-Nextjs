@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export default function AccountableDecisionsCTA() {
   return (
@@ -15,9 +16,12 @@ export default function AccountableDecisionsCTA() {
         </p>
 
         <div className="pt-2">
-          <button className="bg-transparent hover:bg-white/10 text-white text-xs md:text-sm font-semibold px-6 py-3 rounded-lg border border-white/30 transition-colors shadow-sm">
+          <Link
+            href="/trust-center"
+            className="inline-block bg-transparent hover:bg-white/10 text-white text-xs md:text-sm font-semibold px-6 py-3 rounded-lg border border-white/30 transition-colors shadow-sm"
+          >
             Visit the Trust Center
-          </button>
+          </Link>
         </div>
       </div>
     </div>

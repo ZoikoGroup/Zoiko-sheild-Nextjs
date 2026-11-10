@@ -82,8 +82,17 @@ export const TrendingTerminologySection: React.FC<TrendingTerminologyProps> = ({
           {trendingTerms.map((term, idx) => (
             <div
               key={idx}
-              onClick={() => onSelectTerm && onSelectTerm(term.title)}
-              className="p-6 bg-white rounded-xl outline outline-1 outline-offset-[-1px] outline-cyan-950/10 hover:outline-cyan-950/25 shadow-xs hover:shadow-md transition-all flex flex-col justify-between gap-4 cursor-pointer group"
+              role="button"
+              tabIndex={0}
+              onClick={() => onSelectTerm?.(term.title)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  onSelectTerm?.(term.title);
+                }
+              }}
+              aria-label={`View ${term.title} in the terms directory`}
+              className="w-full text-left p-6 bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500 rounded-xl outline outline-1 outline-offset-[-1px] outline-cyan-950/10 hover:outline-cyan-950/25 shadow-xs hover:shadow-md transition-all flex flex-col justify-between gap-4 cursor-pointer group"
             >
               <div className="space-y-3">
                 <div className="flex items-center justify-between gap-2">

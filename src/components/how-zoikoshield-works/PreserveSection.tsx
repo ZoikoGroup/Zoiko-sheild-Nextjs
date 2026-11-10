@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import Image from "next/image";
 
 export function PreserveSection() {
@@ -49,9 +50,9 @@ export function PreserveSection() {
           </div>
 
           <div className="mt-4">
-            <span className="font-manrope lg:font-sans font-[800] text-[#c44242] lg:text-[#e0402f] text-[14px] cursor-pointer">
+            <Link href="/evidence-ledger-verification" className="font-manrope lg:font-sans font-[800] text-[#c44242] lg:text-[#e0402f] text-[14px] cursor-pointer hover:underline">
               Evidence Ledger &amp; Verification &rarr;
-            </span>
+            </Link>
           </div>
         </div>
 

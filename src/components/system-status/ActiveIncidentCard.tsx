@@ -2,7 +2,7 @@ import React from "react";
 
 export default function ActiveIncidentCard() {
   return (
-    <div className="bg-[#F0EDE6] text-[#111827] px-6 py-16 md:px-12 font-sans antialiased flex flex-col items-center justify-center">
+    <div id="active-incident" className="scroll-mt-24 bg-[#F0EDE6] text-[#111827] px-6 py-16 md:px-12 font-sans antialiased flex flex-col items-center justify-center">
       <div className="w-full max-w-6xl">
         {/* Main Incident Card */}
         <div className="bg-white rounded-2xl p-6 md:p-8 shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-[#E5E7EB]">

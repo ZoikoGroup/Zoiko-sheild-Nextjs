@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export function PathwaysSection() {
   return (
@@ -42,9 +43,9 @@ export function PathwaysSection() {
             <p className="font-manrope font-normal text-[14px] text-[#5b6670] leading-[1.55] flex-grow m-0">
               A managed pathway for continuous investigation, governed response and defensible operational evidence.
             </p>
-            <span className="font-manrope font-[800] text-[#c44242] text-[14px] cursor-pointer hover:underline mt-auto">
+            <Link href="/managed-defense" className="font-manrope font-[800] text-[#c44242] text-[14px] cursor-pointer hover:underline mt-auto">
               Explore path &rarr;
-            </span>
+            </Link>
           </div>
 
           {/* Card 2: Continuous Assurance */}
@@ -63,9 +64,9 @@ export function PathwaysSection() {
             <p className="font-manrope font-normal text-[14px] text-white/60 leading-[1.55] flex-grow m-0">
               A peer pathway for control monitoring, evidence readiness and continuous assurance review.
             </p>
-            <span className="font-manrope font-[800] text-[#e0967d] text-[14px] cursor-pointer hover:underline mt-auto">
+            <Link href="/continuous-assurance" className="font-manrope font-[800] text-[#e0967d] text-[14px] cursor-pointer hover:underline mt-auto">
               Explore path &rarr;
-            </span>
+            </Link>
           </div>
 
           {/* Card 3: Compare Starting Paths */}
@@ -84,9 +85,9 @@ export function PathwaysSection() {
             <p className="font-manrope font-normal text-[14px] text-[#5b6670] leading-[1.55] flex-grow m-0">
               Compare operating goals, ownership and handoffs without a preselected choice.
             </p>
-            <span className="font-manrope font-[800] text-[#c44242] text-[14px] cursor-pointer hover:underline mt-auto">
+            <Link href="/compare-starting-paths" className="font-manrope font-[800] text-[#c44242] text-[14px] cursor-pointer hover:underline mt-auto">
               Explore path &rarr;
-            </span>
+            </Link>
           </div>
 
         </div>

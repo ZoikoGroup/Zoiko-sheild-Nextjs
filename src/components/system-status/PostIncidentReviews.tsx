@@ -53,7 +53,7 @@ export default function PostIncidentReviews() {
               Published: Jan 20, 2026 • SHA-256 Verified
             </p>
             <a
-              href="#read"
+              href="#"
               className="font-bold text-[#C53030] hover:text-[#B91C1C] transition-colors whitespace-nowrap"
             >
               Read Complete PIR Document

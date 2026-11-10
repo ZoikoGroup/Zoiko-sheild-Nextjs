@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import Image from "next/image";
 
 export function HeroSection() {
@@ -31,16 +32,16 @@ export function HeroSection() {
           </div>
           
           <div className="flex flex-col sm:flex-row gap-[10px] lg:gap-[12px] items-start pt-[8px] lg:pt-[16.8px] relative w-full">
-            <div className="bg-[#e0402f] flex items-center justify-center px-[18px] lg:px-[22px] py-[14px] lg:py-[11px] rounded-[10px] lg:rounded-[6px] cursor-pointer hover:bg-red-600 transition-colors">
+            <Link href="/book-a-demo" className="bg-[#e0402f] flex items-center justify-center px-[18px] lg:px-[22px] py-[14px] lg:py-[11px] rounded-[10px] lg:rounded-[6px] cursor-pointer hover:bg-red-600 transition-colors">
               <span className="font-manrope font-[700] text-[#FFFFFF] text-[14px] leading-[100%] tracking-[0%] whitespace-nowrap">
                 Book a Demo
               </span>
-            </div>
-            <div className="bg-white border border-[#e1ddd8] flex items-center justify-center px-[18px] lg:px-[22px] py-[14px] lg:py-[11px] rounded-[10px] lg:rounded-[6px] cursor-pointer hover:bg-gray-50 transition-colors">
+            </Link>
+            <Link href="/platform-overview" className="bg-white border border-[#e1ddd8] flex items-center justify-center px-[18px] lg:px-[22px] py-[14px] lg:py-[11px] rounded-[10px] lg:rounded-[6px] cursor-pointer hover:bg-gray-50 transition-colors">
               <span className="font-manrope font-[700] text-[#123B4C] text-[14px] leading-[100%] tracking-[0%] whitespace-nowrap">
                 Explore the Platform
               </span>
-            </div>
+            </Link>
           </div>
         </div>
 

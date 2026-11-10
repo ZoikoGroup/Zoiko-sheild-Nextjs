@@ -50,7 +50,7 @@ export default function UpcomingMaintenanceAndRecentIncidentHistory() {
         </div>
 
         {/* Recent Incident History Section */}
-        <div>
+        <div id="incident-history" className="scroll-mt-24">
           <div className="mb-6">
             <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-[#111827] mb-2">
               Recent Incident History (Last 30 Days)

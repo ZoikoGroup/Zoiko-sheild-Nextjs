@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function PlatformArchitectureHero() {
@@ -76,20 +77,20 @@ export default function PlatformArchitectureHero() {
             className="flex flex-col sm:flex-row items-center gap-4"
           >
             {/* Primary CTA */}
-            <a
-              href="#"
+            <Link
+              href="/book-a-demo"
               className="w-full sm:w-auto px-6 py-3 bg-[#E0402F] hover:bg-[#C83424] text-white text-sm font-semibold rounded-lg transition-colors duration-200 text-center shadow-xs"
             >
               Book a Demo
-            </a>
+            </Link>
 
             {/* Secondary CTA */}
-            <a
-              href="#"
+            <Link
+              href="/platform-overview"
               className="w-full sm:w-auto px-6 py-3 hover:bg-[#E2DFDB] text-[#0B192C] text-sm font-semibold border border-[#E5E7EB] rounded-lg transition-colors duration-200 text-center shadow-xs"
             >
               Explore the Platform
-            </a>
+            </Link>
           </motion.div>
         </div>
 

@@ -21,7 +21,7 @@ import { DemoModal } from "@/components/ui/DemoModal";
 export default function SecurityComplianceGlossaryPage() {
   const [isDemoOpen, setIsDemoOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedLetter, setSelectedLetter] = useState("A");
+  const [selectedLetter, setSelectedLetter] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedFramework, setSelectedFramework] = useState("");
 
@@ -30,6 +30,15 @@ export default function SecurityComplianceGlossaryPage() {
     if (el) {
       el.scrollIntoView({ behavior: "smooth", block: "start" });
     }
+  };
+
+  // A free-text search should not be silently narrowed by stale letter/category/framework filters
+  const runSearch = (query: string) => {
+    setSearchQuery(query);
+    setSelectedLetter("");
+    setSelectedCategory("");
+    setSelectedFramework("");
+    scrollToSection("terms-directory");
   };
 
   const handleResetFilters = () => {
@@ -45,17 +54,14 @@ export default function SecurityComplianceGlossaryPage() {
       <HeroSection
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
-        onSearch={() => scrollToSection("terms-directory")}
+        onSearch={() => runSearch(searchQuery)}
         onBrowseAZ={() => scrollToSection("alphabetical-browser")}
         onBrowseTopics={() => scrollToSection("knowledge-categories")}
       />
 
       {/* 2. Trending Terminology (High-Intent Industry Terms) */}
       <TrendingTerminologySection
-        onSelectTerm={(term) => {
-          setSearchQuery(term);
-          scrollToSection("terms-directory");
-        }}
+        onSelectTerm={(term) => runSearch(term)}
       />
 
       {/* 3. Alphabetical Browser */}
