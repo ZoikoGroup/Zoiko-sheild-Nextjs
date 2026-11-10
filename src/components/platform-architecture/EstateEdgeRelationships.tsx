@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function EstateEdgeRelationships() {
@@ -33,42 +34,42 @@ export default function EstateEdgeRelationships() {
       description:
         "Category-level inbound and outbound relationships only. No connector counts, vendor names, modes, data paths or residency — and no rip-and-replace framing.",
       buttonText: "Integrations →",
-      buttonUrl: "#",
+      buttonUrl: "/integrations",
     },
     {
       title: "Evidence ledger",
       description:
         "Architecture may reference evidence, lineage, completeness, packages and verification — without inventing evidence storage topology.",
       buttonText: "Evidence →",
-      buttonUrl: "#",
+      buttonUrl: "/evidence-ledger-verification",
     },
     {
       title: "Detection & response",
       description:
         "A route relationship, not a claim about exact runtime paths.",
       buttonText: "Detection →",
-      buttonUrl: "#",
+      buttonUrl: "/detection-and-response",
     },
     {
       title: "AI security & governance",
       description:
         "AI is one bounded route among several. There is no assumption that an AI plane or a model sits at the center of the platform, and no hidden-model or autonomous-architecture inference.",
       buttonText: "AI governance →",
-      buttonUrl: "#",
+      buttonUrl: "/ai-security-governance",
     },
     {
       title: "Compliance control plane",
       description:
         "A product destination label. It does not establish the existence, name or responsibility of an architecture plane — the two uses of the word are unrelated.",
       buttonText: "Control plane →",
-      buttonUrl: "#",
+      buttonUrl: "/compliance-control-plane",
     },
     {
       title: "System Status",
       description:
         "Authoritative for live service health. An architecture diagram never implies availability.",
       buttonText: "Status →",
-      buttonUrl: "#",
+      buttonUrl: "/system-status",
     },
   ] as const;
 
@@ -137,12 +138,12 @@ export default function EstateEdgeRelationships() {
 
               {/* Outline Button */}
               <div>
-                <a
+                <Link
                   href={card.buttonUrl}
                   className="inline-flex items-center justify-center px-4 py-2 bg-[#0D2A45]/50 hover:bg-[#13375B] text-white text-xs font-medium border border-[#1E3A5F] rounded-md transition-colors duration-200"
                 >
                   {card.buttonText}
-                </a>
+                </Link>
               </div>
             </div>
           ))}

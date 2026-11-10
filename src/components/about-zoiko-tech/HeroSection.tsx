@@ -6,14 +6,10 @@ import Link from "next/link";
 import { ShieldCheck } from "lucide-react";
 
 interface HeroSectionProps {
-  onOpenDemo?: () => void;
-  onTalkToSecurity?: () => void;
   onViewLeadership?: () => void;
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = ({
-  onOpenDemo,
-  onTalkToSecurity,
   onViewLeadership,
 }) => {
   const scrollToSection = (id: string) => {
@@ -66,13 +62,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 Explore Zoiko Shield
               </Link>
 
-              <button
-                type="button"
-                onClick={onTalkToSecurity || onOpenDemo}
+              <Link
+                href="/contact"
                 className="px-6 py-4 rounded-[10px] outline outline-1 outline-offset-[-1px] outline-sky-950 hover:bg-black/5 text-sky-950 text-base font-bold font-['Manrope'] transition-colors cursor-pointer"
               >
                 Talk to Security
-              </button>
+              </Link>
 
               <button
                 type="button"

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { ChevronDown, Check } from "lucide-react";
 
 
@@ -69,18 +69,32 @@ const CONFIG_STEPS: StepItem[] = [
 export const IndicativeEstimatorSection: React.FC<IndicativeEstimatorSectionProps> = ({
   onOpenDemo,
 }) => {
-  const [selectedOptions, setSelectedOptions] = useState<Record<string, string>>({
-    "01": "Not sure | Default",
-    "02": "Not sure | Default",
-    "03": "Not sure | Default",
-    "04": "Not sure | Default",
-    "05": "Not sure | Default",
-    "06": "Not sure | Default",
-    "07": "Not sure | Default",
-    "08": "Not sure | Default",
-  });
+  // Default must exactly match the first option so the menu shows it as selected
+  const [selectedOptions, setSelectedOptions] = useState<Record<string, string>>(() =>
+    Object.fromEntries(CONFIG_STEPS.map((s) => [s.id, s.options[0] ?? ""]))
+  );
 
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const listRef = useRef<HTMLDivElement>(null);
+
+  // Close the open menu on outside click or Escape
+  useEffect(() => {
+    if (!openDropdown) return;
+    const onPointerDown = (e: PointerEvent) => {
+      if (listRef.current && !listRef.current.contains(e.target as Node)) {
+        setOpenDropdown(null);
+      }
+    };
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpenDropdown(null);
+    };
+    document.addEventListener("pointerdown", onPointerDown);
+    document.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.removeEventListener("pointerdown", onPointerDown);
+      document.removeEventListener("keydown", onKeyDown);
+    };
+  }, [openDropdown]);
 
   const handleSelect = (id: string, opt: string) => {
     setSelectedOptions((prev) => ({ ...prev, [id]: opt }));
@@ -106,9 +120,9 @@ export const IndicativeEstimatorSection: React.FC<IndicativeEstimatorSectionProp
         </div>
 
         {/* 2-Column Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12  gap-8 lg:gap-10 items-start gap-7">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
           {/* Left Column: 8 Rows */}
-          <div className="lg:col-span-7 space-y-3">
+          <div ref={listRef} className="lg:col-span-7 space-y-3">
             <h3 className="text-base font-bold text-slate-900 font-['Hanken_Grotesk'] mb-3">
               8-Step Structural Configuration
             </h3>
@@ -120,7 +134,9 @@ export const IndicativeEstimatorSection: React.FC<IndicativeEstimatorSectionProp
               return (
                 <div
                   key={step.id}
-                  className="bg-[#F0EDE6] backdrop-blur-sm rounded-xl p-3.5 sm:p-4 border border-stone-300/80 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-3 relative hover:border-slate-400 transition-all"
+                  className={`bg-[#F0EDE6] rounded-xl p-3.5 sm:p-4 border border-stone-300/80 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-3 relative hover:border-slate-400 transition-colors ${
+                    isOpen ? "z-30" : "z-0"
+                  }`}
                 >
                   <div className="flex items-center gap-3">
                     <span className="text-red-500 font-['JetBrains_Mono'] text-xs font-bold shrink-0">
@@ -141,18 +157,28 @@ export const IndicativeEstimatorSection: React.FC<IndicativeEstimatorSectionProp
                     <button
                       type="button"
                       onClick={() => setOpenDropdown(isOpen ? null : step.id)}
+                      aria-haspopup="listbox"
+                      aria-expanded={isOpen}
+                      aria-label={`${step.title}: ${val}`}
                       className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-stone-100 hover:bg-stone-200 border border-stone-300/80 text-[11px] font-semibold text-slate-700 font-['JetBrains_Mono'] transition-colors"
                     >
                       <span>{val}</span>
-                      <ChevronDown className="w-3 h-3 text-slate-500" />
+                      <ChevronDown
+                        className={`w-3 h-3 text-slate-500 transition-transform ${isOpen ? "rotate-180" : ""}`}
+                      />
                     </button>
 
                     {isOpen && (
-                      <div className="absolute right-0 top-full mt-1.5 w-60 bg-white rounded-xl shadow-xl border border-stone-200 py-1.5 z-20">
+                      <div
+                        role="listbox"
+                        className="absolute left-0 sm:left-auto sm:right-0 top-full mt-1.5 w-60 max-w-[calc(100vw-2rem)] bg-white rounded-xl shadow-xl border border-stone-200 py-1.5 z-30"
+                      >
                         {step.options.map((opt) => (
                           <button
                             key={opt}
                             type="button"
+                            role="option"
+                            aria-selected={val === opt}
                             onClick={() => handleSelect(step.id, opt)}
                             className={`w-full text-left px-3.5 py-2 text-xs font-['Manrope'] transition-colors flex items-center justify-between ${
                               val === opt

@@ -2,16 +2,9 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
-interface AboutCtaBannerProps {
-  onRequestDemo?: () => void;
-  onTalkToArchitect?: () => void;
-}
-
-export const AboutCtaBannerSection: React.FC<AboutCtaBannerProps> = ({
-  onRequestDemo,
-  onTalkToArchitect,
-}) => {
+export const AboutCtaBannerSection: React.FC = () => {
   return (
     <section className="relative w-full overflow-hidden bg-slate-950 text-white py-20 sm:py-24 px-4 sm:px-8 lg:px-28 min-h-[420px] flex items-center justify-center">
       {/* Background Graphic */}
@@ -52,21 +45,19 @@ export const AboutCtaBannerSection: React.FC<AboutCtaBannerProps> = ({
 
         {/* CTAs */}
         <div className="flex flex-wrap items-center gap-4 pt-2">
-          <button
-            type="button"
-            onClick={onRequestDemo}
+          <Link
+            href="/book-a-demo"
             className="px-7 py-4 bg-red-500 hover:bg-red-600 text-white text-base font-bold font-['Manrope'] rounded-[10px] shadow-sm hover:shadow transition-all duration-200 cursor-pointer"
           >
             Request a Demo
-          </button>
+          </Link>
 
-          <button
-            type="button"
-            onClick={onTalkToArchitect || onRequestDemo}
+          <Link
+            href="/contact"
             className="px-6 py-4 rounded-[10px] outline outline-1 outline-offset-[-1px] outline-white hover:bg-white/10 text-white text-base font-bold font-['Manrope'] transition-colors cursor-pointer"
           >
             Talk to a Security Architect
-          </button>
+          </Link>
         </div>
       </div>
     </section>

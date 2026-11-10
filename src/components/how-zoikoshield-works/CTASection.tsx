@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import Image from "next/image";
 
 export function CTASection() {
@@ -30,11 +31,11 @@ export function CTASection() {
         </p>
 
         {/* Button */}
-        <div className="bg-[#c44242] flex items-center justify-center px-[22px] py-[15px] rounded-[10px] shadow-[0px_8px_28px_0px_rgba(11,37,48,0.08)] cursor-pointer hover:bg-[#a33525] transition-colors mt-[2px]">
+        <Link href="/book-a-demo" className="bg-[#c44242] flex items-center justify-center px-[22px] py-[15px] rounded-[10px] shadow-[0px_8px_28px_0px_rgba(11,37,48,0.08)] cursor-pointer hover:bg-[#a33525] transition-colors mt-[2px]">
           <span className="font-manrope font-bold text-white text-[14px] leading-[normal]">
             Book a Demo
           </span>
-        </div>
+        </Link>
 
       </div>
     </section>

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import {
   HeroSection,
   RegistryDataSection,
@@ -17,11 +17,8 @@ import {
   AboutCtaBannerSection,
   AboutFaqSection,
 } from "@/components/about-zoiko-tech";
-import { DemoModal } from "@/components/ui/DemoModal";
 
 export default function AboutZoikoTechPage() {
-  const [isDemoOpen, setIsDemoOpen] = useState(false);
-
   const scrollToSection = (id: string) => {
     const el = document.getElementById(id);
     if (el) {
@@ -32,11 +29,7 @@ export default function AboutZoikoTechPage() {
   return (
     <main className="w-full min-h-screen bg-stone-100 text-slate-900 antialiased selection:bg-red-500 selection:text-white">
       {/* 1. Hero Section */}
-      <HeroSection
-        onOpenDemo={() => setIsDemoOpen(true)}
-        onTalkToSecurity={() => setIsDemoOpen(true)}
-        onViewLeadership={() => scrollToSection("leadership-section")}
-      />
+      <HeroSection onViewLeadership={() => scrollToSection("leadership-section")} />
 
       {/* 2. Verified Corporate Profile (Registry Data) */}
       <RegistryDataSection />
@@ -72,16 +65,10 @@ export default function AboutZoikoTechPage() {
       <HistoricalLedgerSection />
 
       {/* 13. Conversion CTA Banner */}
-      <AboutCtaBannerSection
-        onRequestDemo={() => setIsDemoOpen(true)}
-        onTalkToArchitect={() => setIsDemoOpen(true)}
-      />
+      <AboutCtaBannerSection />
 
       {/* 14. Architecture & Corporate Facts FAQs */}
       <AboutFaqSection />
-
-      {/* Interactive Demo Modal */}
-      <DemoModal isOpen={isDemoOpen} onClose={() => setIsDemoOpen(false)} />
     </main>
   );
 }

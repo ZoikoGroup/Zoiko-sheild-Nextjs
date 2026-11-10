@@ -91,7 +91,7 @@ export default function CurrentIncidentLogAndTimeline() {
               resolution.
             </p>
             <a
-              href="#track"
+              href="#active-incident"
               className="font-bold text-[#C53030] hover:text-[#B91C1C] transition-colors whitespace-nowrap"
             >
               Track Incident Progress

@@ -153,18 +153,66 @@ export const TermsDirectorySection: React.FC<TermsDirectoryProps> = ({
       lastSync: "Last Sync: 2h ago",
       remediation: "Remediation: TTP Surface Match",
     },
+    {
+      id: "term-9",
+      title: "Principle of Least Privilege",
+      acronym: "PoLP",
+      badge: "ISO/IEC 27001",
+      badgeType: "teal",
+      definition:
+        "Restricting users, service accounts, and processes to only those access rights strictly necessary to execute their explicit business task.",
+      category: "Identity & Access",
+      framework: "ISO/IEC Registry",
+      letter: "P",
+      lastSync: "Last Sync: 30m ago",
+      remediation: "Remediation: Entitlement Review",
+    },
+    {
+      id: "term-10",
+      title: "Systemic Risk",
+      acronym: "SR",
+      badge: "COBIT 2019",
+      badgeType: "amber",
+      definition:
+        "The potential for shared software, network, or structural infrastructure failures to trigger cascading outages across entire sectors.",
+      category: "Governance Risk & Compliance",
+      framework: "ISACA COBIT",
+      letter: "S",
+      lastSync: "Last Sync: 3h ago",
+      remediation: "Remediation: Dependency Mapping",
+    },
+    {
+      id: "term-11",
+      title: "Responsible AI Alignment",
+      acronym: "RAI",
+      badge: "NIST AI RMF",
+      badgeType: "rose",
+      definition:
+        "The governance framework ensuring machine learning system models act in strict compliance with human intent, safety guidelines, and data regulations.",
+      category: "Responsible AI",
+      framework: "NIST Ecosystem",
+      letter: "R",
+      lastSync: "Last Sync: 45m ago",
+      remediation: "Remediation: Model Governance Review",
+    },
   ];
 
   const filteredTerms = useMemo(() => {
     return allTerms.filter((term) => {
       // Search query matching
       if (searchQuery.trim()) {
-        const q = searchQuery.toLowerCase();
-        const matchesTitle = term.title.toLowerCase().includes(q);
-        const matchesDef = term.definition.toLowerCase().includes(q);
-        const matchesBadge = term.badge.toLowerCase().includes(q);
-        const matchesCat = term.category.toLowerCase().includes(q);
-        if (!matchesTitle && !matchesDef && !matchesBadge && !matchesCat) {
+        const q = searchQuery.trim().toLowerCase();
+        const haystack = [
+          term.title,
+          term.acronym ?? "",
+          term.definition,
+          term.badge,
+          term.category,
+          term.framework,
+        ]
+          .join(" ")
+          .toLowerCase();
+        if (!haystack.includes(q)) {
           return false;
         }
       }
@@ -186,7 +234,8 @@ export const TermsDirectorySection: React.FC<TermsDirectoryProps> = ({
 
       return true;
     });
-  }, [allTerms, searchQuery, selectedLetter, selectedCategory, selectedFramework]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps -- allTerms is static data
+  }, [searchQuery, selectedLetter, selectedCategory, selectedFramework]);
 
   const hasActiveFilter =
     Boolean(searchQuery) ||
@@ -197,13 +246,13 @@ export const TermsDirectorySection: React.FC<TermsDirectoryProps> = ({
   return (
     <section
       id="terms-directory"
-      className="w-full bg-stone-100 border-b border-cyan-950/10 py-16 sm:py-20 px-4 sm:px-8 lg:px-28"
+      className="w-full scroll-mt-24 bg-stone-100 border-b border-cyan-950/10 py-16 sm:py-20 px-4 sm:px-8 lg:px-28"
     >
       <div className="max-w-7xl mx-auto space-y-8">
         {/* Top Header Row */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <h2 className="text-slate-900 text-2xl font-extrabold font-['Hanken_Grotesk']">
-            Showing {filteredTerms.length > 0 ? filteredTerms.length : allTerms.length}{" "}
+            Showing {filteredTerms.length}{" "}
             Security &amp; Compliance Terms
           </h2>
 
@@ -352,7 +401,13 @@ export const TermsDirectorySection: React.FC<TermsDirectoryProps> = ({
               </p>
               <button
                 type="button"
-                onClick={onResetFilters}
+                onClick={() => {
+                  onResetFilters();
+                  setActiveFilterSources(true);
+                  setActiveFilterTopic(true);
+                  setActiveFilterFramework(true);
+                  setActiveFilterStatus(true);
+                }}
                 className="mt-2 px-4 py-2 bg-red-500 text-white text-xs font-bold font-['Manrope'] rounded-lg"
               >
                 Reset All Filters

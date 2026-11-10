@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export function CorrelateSection() {
   return (
@@ -25,9 +26,9 @@ export function CorrelateSection() {
             <p className="font-manrope font-[500] text-[16px] leading-[1.55] lg:leading-[24px] mb-0 text-[#5b6670] lg:text-[#5c6b79]">
               Signals become a reviewable correlation record: cited source references, relationship type, time and context scope, quality, completeness and a visible confidence boundary.
             </p>
-            <span className="font-manrope font-[700] text-[#c44242] lg:text-[#e0402f] text-[14px] cursor-pointer hidden lg:block">
+            <Link href="/detection-and-response" className="font-manrope font-[700] text-[#c44242] lg:text-[#e0402f] text-[14px] cursor-pointer hover:underline hidden lg:block">
               Detection &amp; Response &rarr;
-            </span>
+            </Link>
           </div>
         </div>
 

@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function SystemStatus() {
   return (
@@ -57,14 +58,14 @@ export default function SystemStatus() {
             {/* Buttons Container */}
             <div className="flex flex-wrap items-center gap-4 mb-6">
               <a
-                href="#"
+                href="#subscribe-updates"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#C8382C] text-white text-sm font-medium tracking-wide shadow-sm hover:bg-[#b53026] transition-colors"
               >
                 Subscribe to Updates
               </a>
 
               <a
-                href="#"
+                href="#incident-history"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-transparent border border-[#FFFFFF30] text-white text-sm font-medium tracking-wide hover:bg-[#FFFFFF08] transition-colors"
               >
                 View Incident History
@@ -75,12 +76,12 @@ export default function SystemStatus() {
             <div className="pt-4 border-t border-[#FFFFFF10]">
               <span className="text-xs text-[#9BA6AD] font-mono">
                 Still having trouble?{" "}
-                <a
-                  href="#"
+                <Link
+                  href="/contact-support"
                   className="text-white underline hover:text-[#C8382C] transition-colors"
                 >
                   Contact Support
-                </a>
+                </Link>
               </span>
             </div>
           </div>

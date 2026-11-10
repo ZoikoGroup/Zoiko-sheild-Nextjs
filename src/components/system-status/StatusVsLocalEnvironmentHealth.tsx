@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export default function StatusVsLocalEnvironmentHealth() {
   return (
@@ -20,18 +21,20 @@ export default function StatusVsLocalEnvironmentHealth() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 text-xs">
-            <button className="bg-[#F0EDE6] hover:bg-[#E5E7EB] text-[#111827] font-bold px-4 py-2.5 rounded-lg border border-[#E5E7EB] transition-colors shadow-sm">
+            <Link
+              href="/trust-center"
+              className="inline-block bg-[#F0EDE6] hover:bg-[#E5E7EB] text-[#111827] font-bold px-4 py-2.5 rounded-lg border border-[#E5E7EB] transition-colors shadow-sm"
+            >
               Check Authenticated Trust Center
-            </button>
+            </Link>
             <p className="text-[#6B7280]">
               Or, reach our help desk:{" "}
-              <a
-                href="#support"
+              <Link
+                href="/contact-support"
                 className="font-bold text-[#C53030] hover:text-[#B91C1C] transition-colors"
               >
                 Open Support Case
-              </a>
-              
+              </Link>
             </p>
           </div>
         </div>

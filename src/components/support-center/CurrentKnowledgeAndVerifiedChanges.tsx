@@ -1,7 +1,7 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
 
-const knowledgeCards = [
+export const knowledgeCards = [
   {
     category: "Recommended for You",
     badge: "Current",
@@ -48,7 +48,7 @@ const knowledgeCards = [
 
 export default function CurrentKnowledgeAndVerifiedChanges() {
   return (
-    <div className="bg-[#F0EDE6] text-[#111827] px-6 py-16 md:px-12 font-sans antialiased flex flex-col items-center justify-center">
+    <div id="support-knowledge" className="scroll-mt-24 bg-[#F0EDE6] text-[#111827] px-6 py-16 md:px-12 font-sans antialiased flex flex-col items-center justify-center">
       <div className="w-full max-w-6xl">
         {/* Header Section */}
         <div className="max-w-3xl mb-12">

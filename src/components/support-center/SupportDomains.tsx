@@ -10,7 +10,7 @@ import {
   ShieldCheck,
 } from "lucide-react";
 
-const supportDomainCards = [
+export const supportDomainCards = [
   {
     title: "Platform & Account",
     count: "18 verified playbooks",
@@ -55,7 +55,7 @@ const supportDomainCards = [
 
 export default function SupportDomains() {
   return (
-    <div className="bg-[#F0EDE6] text-[#111827] px-6 py-16 md:px-12 font-sans antialiased flex flex-col items-center justify-center">
+    <div id="support-domains" className="scroll-mt-24 bg-[#F0EDE6] text-[#111827] px-6 py-16 md:px-12 font-sans antialiased flex flex-col items-center justify-center">
       <div className="w-full max-w-6xl">
         {/* Header Section */}
         <div className="max-w-4xl mb-12">
