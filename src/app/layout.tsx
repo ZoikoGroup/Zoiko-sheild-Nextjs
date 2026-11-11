@@ -5,6 +5,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { SecurityProvider } from "@/context/SecurityContext";
 import { PublicAssistantMount } from "@/components/public-assistant/PublicAssistantMount";
+import BlackFridayPopup from "@/components/black-friday/BlackFridayPopup";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const ibmPlexMono = IBM_Plex_Mono({ 
@@ -57,6 +58,7 @@ export const metadata: Metadata = {
         
         <Footer />
         <PublicAssistantMount />
+        <BlackFridayPopup />
       </body>
     </html>
   );
