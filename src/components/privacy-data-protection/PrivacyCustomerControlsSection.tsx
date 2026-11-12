@@ -44,7 +44,7 @@ const settingsList: SettingItem[] = [
 
 export default function PrivacyCustomerControlsSection() {
   return (
-    <section className="w-full bg-[#F7F5F0] text-[#0A2029] py-16 sm:py-20 px-6 sm:px-10 lg:px-20 flex justify-center border-b border-[#123B4C]/10">
+    <section id="controls" className="scroll-mt-24 w-full bg-[#F7F5F0] text-[#0A2029] py-16 sm:py-20 px-6 sm:px-10 lg:px-20 flex justify-center border-b border-[#123B4C]/10">
       <div className="max-w-[1240px] w-full flex flex-col gap-10 sm:gap-12">
         {/* Section Header */}
         <motion.div

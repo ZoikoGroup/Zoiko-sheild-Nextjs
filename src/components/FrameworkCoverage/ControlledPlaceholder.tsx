@@ -110,7 +110,7 @@ export default function ControlledPlaceholder() {
             review · Related routes
           </div>
           <a
-            href="#"
+            href="#framework-directory"
             className="text-sm font-semibold text-[#B91C1C] flex items-center gap-1.5 hover:opacity-95"
           >
             Open approved references →

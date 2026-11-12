@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export function CTASection() {
   return (
@@ -23,15 +24,15 @@ export function CTASection() {
       
                   {/* Buttons */}
                   <div className="flex flex-wrap items-center justify-center gap-[16px] mt-4">
-                    <button className="bg-[#e0402f] hover:bg-[#c9392a] text-white font-sans font-semibold text-[15px] px-[28px] py-[14px] rounded-[6px] transition-colors border border-transparent">
+                    <Link href="/book-a-demo" className="bg-[#e0402f] hover:bg-[#c9392a] text-white font-sans font-semibold text-[15px] px-[28px] py-[14px] rounded-[6px] transition-colors border border-transparent">
                       Book a Demo
-                    </button>
-                    <button className="bg-transparent hover:bg-[rgba(255,255,255,0.05)] text-white font-sans font-semibold text-[15px] px-[28px] py-[14px] rounded-[6px] transition-colors border border-[#42566b]">
+                    </Link>
+                    <Link href="/evidence-ledger-verification" className="bg-transparent hover:bg-[rgba(255,255,255,0.05)] text-white font-sans font-semibold text-[15px] px-[28px] py-[14px] rounded-[6px] transition-colors border border-[#42566b]">
                       See how evidence works
-                    </button>
-                    <button className="bg-transparent hover:bg-[rgba(255,255,255,0.05)] text-white font-sans font-semibold text-[15px] px-[28px] py-[14px] rounded-[6px] transition-colors border border-[#42566b]">
+                    </Link>
+                    <Link href="/trust-center" className="bg-transparent hover:bg-[rgba(255,255,255,0.05)] text-white font-sans font-semibold text-[15px] px-[28px] py-[14px] rounded-[6px] transition-colors border border-[#42566b]">
                       Visit the Trust Center
-                    </button>
+                    </Link>
                   </div>
       
                   {/* Subtext */}

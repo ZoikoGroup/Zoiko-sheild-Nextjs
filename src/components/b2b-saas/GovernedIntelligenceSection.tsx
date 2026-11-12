@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 interface TopCard {
@@ -23,6 +24,7 @@ interface BottomCard {
   title: string;
   description: string;
   linkText?: string;
+  href?: string;
 }
 
 const topCards: TopCard[] = [
@@ -74,6 +76,7 @@ const bottomCards: BottomCard[] = [
     description:
       "Source/destination · read/write/action scopes · authentication · schemas · limits · versions · retries",
     linkText: "/integrations →",
+    href: "/integrations",
   },
   {
     id: "5",
@@ -215,11 +218,11 @@ export default function CloudAndIntegrationsSection() {
                   </p>
                 </div>
 
-                {card.linkText && (
+                {card.linkText && card.href && (
                   <div className="mt-4">
-                    <span className="text-xs font-semibold text-[#4ADE80] hover:underline cursor-pointer">
+                    <Link href={card.href} className="text-xs font-semibold text-[#4ADE80] hover:underline">
                       {card.linkText}
-                    </span>
+                    </Link>
                   </div>
                 )}
               </motion.div>

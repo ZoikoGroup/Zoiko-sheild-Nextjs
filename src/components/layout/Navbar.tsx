@@ -382,7 +382,7 @@ export const Navbar: React.FC = () => {
                         </p>
                       </div>
 
-                      <Link href="/services/advisory" onClick={closeMenu}>
+                      <Link href="/vciso-advisory" onClick={closeMenu}>
                         <button className="w-full bg-[#0E2C38] hover:bg-[#153e4f] text-white py-2 px-4 rounded-xl text-xs font-bold transition-colors">
                           Explore vCISO & Advisory
                         </button>
@@ -1081,7 +1081,7 @@ export const Navbar: React.FC = () => {
                     </Link>
 
                     <Link
-                      href="#"
+                      href="/leadership"
                       onClick={closeMenu}
                       className="bg-[#F6F4EE] hover:bg-[#EFECE3] p-3.5 rounded-2xl border border-[#00000000] transition-all flex items-start gap-3 group/item"
                     >

@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ReadyToMakeAiAuthorityExplicit() {
   return (
@@ -31,12 +32,12 @@ export default function ReadyToMakeAiAuthorityExplicit() {
         </p>
 
         {/* Action Button */}
-        <a
-          href="#"
+        <Link
+          href="/book-a-demo"
           className="bg-[#D9534F] hover:bg-[#C53030] text-white font-semibold px-8 py-3.5 rounded-xl text-sm transition-colors shadow-lg inline-block"
         >
           Book a Demo
-        </a>
+        </Link>
       </div>
     </div>
   );

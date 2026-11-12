@@ -47,7 +47,7 @@ export default function RequestClassification() {
   const [selectedId, setSelectedId] = useState<string>("existing_customer");
 
   return (
-    <section className="w-full bg-[#F5F2EB] py-4 sm:py-6 px-5 sm:px-6 md:px-12 lg:px-16 font-sans text-[#111827]">
+    <section id="request-form" className="scroll-mt-24 w-full bg-[#F5F2EB] py-4 sm:py-6 px-5 sm:px-6 md:px-12 lg:px-16 font-sans text-[#111827]">
       <div className="max-w-6xl mx-auto">
         <motion.div
           className="bg-white rounded-3xl p-5 sm:p-8 lg:p-10 border border-[#E7E5DF] shadow-[0_2px_12px_rgba(0,0,0,0.03)]"

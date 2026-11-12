@@ -34,13 +34,13 @@ export default function ProveControlsHero() {
 
             <div className="flex flex-wrap items-center gap-4 pt-2 w-full sm:w-auto">
               <Link
-                href="/contact"
+                href="/book-a-demo"
                 className="inline-flex items-center justify-center rounded-[10px] bg-[#C44242] px-6 py-4 font-manrope text-[15px] font-bold text-white shadow-sm transition-all hover:bg-[#a93030] hover:shadow-md cursor-pointer"
               >
                 See Continuous Assurance in Action
               </Link>
               <Link
-                href="/contact"
+                href="/contact#architecture-vetting"
                 className="inline-flex items-center justify-center rounded-[10px] border border-[#0A2440] px-6 py-4 font-manrope text-[15px] font-bold text-[#0A2440] transition-colors hover:bg-[#0A2440]/5 cursor-pointer"
               >
                 Talk to a Compliance Architect

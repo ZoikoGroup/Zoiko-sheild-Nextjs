@@ -36,7 +36,7 @@ export default function DiscussYourScope() {
 
         {/* Action Button */}
         <a
-          href="#"
+          href="/book-a-demo"
           className="bg-[#D9534F] hover:bg-[#C53030] text-white font-semibold px-8 py-3.5 rounded-xl text-sm transition-colors shadow-lg inline-block"
         >
           Book a Demo

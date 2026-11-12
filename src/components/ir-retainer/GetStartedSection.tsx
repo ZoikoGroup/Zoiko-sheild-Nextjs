@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 
 export default function GetStartedSection() {
   return (
@@ -38,26 +39,26 @@ export default function GetStartedSection() {
 
         {/* Action Buttons */}
         <div className="flex flex-wrap items-center justify-center gap-4">
-          <button
-            type="button"
+          <Link
+            href="/book-a-demo"
             className="px-6 py-3 rounded-xl bg-[#E04F2E] hover:bg-[#c94324] text-white text-xs sm:text-sm font-bold transition-colors shadow-sm"
           >
             Book a Demo
-          </button>
+          </Link>
 
-          <button
-            type="button"
+          <Link
+            href="/incident-readiness-service"
             className="px-6 py-3 rounded-xl hover:bg-[#143454] border border-[#1E3A5F] text-white text-xs sm:text-sm font-bold transition-colors shadow-sm"
           >
             Review Incident Readiness
-          </button>
+          </Link>
 
-          <button
-            type="button"
+          <Link
+            href="/trust-center"
             className="px-6 py-3 rounded-xl hover:bg-[#143454] border border-[#1E3A5F] text-white text-xs sm:text-sm font-bold transition-colors shadow-sm"
           >
             Visit Trust Center
-          </button>
+          </Link>
         </div>
       </div>
     </section>

@@ -8,6 +8,7 @@ const contextCardsData = [
     description:
       "See how a cited reference relates to controls, assessments, or service support. Every mapping retains its source, exact edition, scope, exclusions, and review state.",
     linkText: "Compliance Control Plane →",
+    href: "/compliance-control-plane",
   },
   {
     number: "02",
@@ -15,6 +16,7 @@ const contextCardsData = [
     description:
       "Approved evidence records preserve lineage, verification, completeness boundaries, and package context. Evidence is context—not certification or a compliance verdict.",
     linkText: "Evidence Ledger & Verification →",
+    href: "/evidence-ledger-verification",
   },
 ];
 
@@ -68,7 +70,7 @@ export default function RelationshipContext() {
 
               <div>
                 <a
-                  href="#"
+                  href={card.href}
                   className="text-sm font-semibold text-[#C53030] hover:opacity-80 transition-opacity inline-flex items-center"
                 >
                   {card.linkText}

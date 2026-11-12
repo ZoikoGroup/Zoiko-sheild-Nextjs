@@ -34,13 +34,13 @@ export default function CtaSection() {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 items-center justify-center pt-2 w-full sm:w-auto">
           <a
-            href="/contact"
+            href="/book-a-demo"
             className="inline-flex items-center justify-center px-7 py-[14px] rounded-[8px] bg-[#c44242] hover:bg-[#b23636] transition-colors w-full sm:w-auto"
           >
             <span className="font-manrope font-bold text-[15px] text-white whitespace-nowrap">Request a Demo</span>
           </a>
           <a
-            href="/contact"
+            href="/contact#architecture-vetting"
             className="inline-flex items-center justify-center px-7 py-[14px] rounded-[8px] border border-white/60 hover:bg-white/5 transition-colors w-full sm:w-auto"
           >
             <span className="font-manrope font-bold text-[15px] text-white whitespace-nowrap">

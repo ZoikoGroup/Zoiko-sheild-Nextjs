@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 function ArrowRightIcon() {
@@ -44,17 +45,15 @@ export default function CopyrightSection() {
           including mirroring, caching, or framing, without prior written
           authorization from the Legal Operations Office.
         </p>
-        <a
-          href="https://zoiko.com/terms"
-          target="_blank"
-          rel="noreferrer"
-          className="flex gap-2 items-center"
+        <Link
+          href="/terms-of-service"
+          className="flex gap-2 items-center hover:opacity-80 transition-opacity"
         >
           <span className="font-sans font-bold text-[#c44242] text-[13px] lg:text-[14px]">
             Review terms of licensing and explicit permissions
           </span>
           <ArrowRightIcon />
-        </a>
+        </Link>
       </motion.div>
     </div>
   );

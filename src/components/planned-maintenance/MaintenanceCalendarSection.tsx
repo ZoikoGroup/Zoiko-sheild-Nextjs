@@ -70,7 +70,7 @@ const allEvents: AgendaEvent[] = [
 export default function MaintenanceCalendarSection() {
 
   return (
-    <section id="calendar" className="w-full bg-[#F7F5F0] py-16 sm:py-20 lg:py-24 border-b border-[#123B4C]/10">
+    <section id="calendar" className="scroll-mt-24 w-full bg-[#F7F5F0] py-16 sm:py-20 lg:py-24 border-b border-[#123B4C]/10">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-8">
         {/* Calendar Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-2">

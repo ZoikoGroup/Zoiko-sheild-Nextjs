@@ -53,7 +53,7 @@ const evidenceData: EvidenceRow[] = [
 
 export default function PrivacyEvidenceSection() {
   return (
-    <section className="w-full bg-[#F0EDE6] text-[#0A2029] py-16 sm:py-20 px-6 sm:px-10 lg:px-20 flex justify-center border-b border-[#123B4C]/10">
+    <section id="logging-specs" className="scroll-mt-24 w-full bg-[#F0EDE6] text-[#0A2029] py-16 sm:py-20 px-6 sm:px-10 lg:px-20 flex justify-center border-b border-[#123B4C]/10">
       <div className="max-w-[1240px] w-full flex flex-col gap-10 sm:gap-12">
         {/* Section Header */}
         <motion.div

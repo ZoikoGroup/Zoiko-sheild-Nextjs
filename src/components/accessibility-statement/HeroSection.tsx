@@ -54,18 +54,31 @@ export default function HeroSection() {
           </div>
 
           <div className="flex flex-col lg:flex-row gap-3 lg:gap-3 items-start w-full lg:w-[553px]">
-            <button className="w-full lg:flex-1 flex items-center justify-center bg-[#c44242] px-6 py-[14px] lg:py-[16px] rounded-[10px]">
+            <a
+              href="#feedback-form"
+              className="w-full lg:flex-1 flex items-center justify-center bg-[#c44242] hover:bg-[#a83737] transition-colors px-6 py-[14px] lg:py-[16px] rounded-[10px]"
+            >
               <span className="font-manrope font-bold text-[14px] lg:text-[15px] text-white text-center">
                 <span className="lg:hidden">Report an Accessibility Barrier</span>
                 <span className="hidden lg:inline">Report an Accessibility Issue</span>
               </span>
-            </button>
-            <button className="w-full lg:flex-1 flex items-center justify-center border border-[#123b4c] px-6 py-[14px] lg:py-[16px] rounded-[10px]">
-              <span className="font-manrope font-bold text-[14px] lg:text-[15px] text-[#123b4c] text-center">
-                <span className="lg:hidden">View Conformance Registry</span>
-                <span className="hidden lg:inline">Request Alternative Access</span>
+            </a>
+            <a
+              href="#conformance-status"
+              className="lg:hidden w-full flex items-center justify-center border border-[#123b4c] px-6 py-[14px] rounded-[10px]"
+            >
+              <span className="font-manrope font-bold text-[14px] text-[#123b4c] text-center">
+                View Conformance Registry
               </span>
-            </button>
+            </a>
+            <a
+              href="/contact-support"
+              className="hidden lg:flex lg:flex-1 items-center justify-center border border-[#123b4c] hover:bg-[#123b4c0d] transition-colors px-6 py-[16px] rounded-[10px]"
+            >
+              <span className="font-manrope font-bold text-[15px] text-[#123b4c] text-center">
+                Request Alternative Access
+              </span>
+            </a>
           </div>
         </motion.div>
 

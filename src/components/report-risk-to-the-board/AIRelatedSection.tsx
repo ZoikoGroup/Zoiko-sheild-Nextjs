@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export function AIRelatedSection() {
   return (
@@ -78,7 +79,7 @@ export function AIRelatedSection() {
                         <h3 className="font-sans font-bold text-[#0b2237] text-[18px] m-0 flex items-center gap-[8px]">
                           Evidence ledger 
                           <span className="inline-flex items-center gap-[4px] bg-[#eef7f1] border border-[#d2eadc] rounded-[3px] px-[6px] py-[2px] ml-1">
-                            <span className="font-mono font-bold text-[#20663f] text-[11px] leading-[11px]">â—</span>
+                            <span className="font-mono font-bold text-[#20663f] text-[11px] leading-[11px]">●</span>
                             <span className="font-mono font-semibold text-[#20663f] text-[10.5px] tracking-[0.945px]">Active</span>
                           </span>
                         </h3>
@@ -86,11 +87,11 @@ export function AIRelatedSection() {
                           Where the drill-down lands. Integrity and lineage within a stated scope.
                         </p>
                       </div>
-                      <div className="mt-4 border border-[#e1ddd8] inline-flex items-center justify-center px-[22px] py-[11px] rounded-[6px] cursor-pointer hover:bg-gray-50 transition-colors self-start">
+                      <Link href="/evidence-ledger-verification" aria-label="Open Evidence ledger" className="mt-4 border border-[#e1ddd8] inline-flex items-center justify-center px-[22px] py-[11px] rounded-[6px] hover:bg-gray-50 transition-colors self-start">
                         <span className="font-sans font-semibold text-[#0b2237] text-[14px] leading-[22.4px] whitespace-nowrap">
                           Open &rarr;
                         </span>
-                      </div>
+                      </Link>
                     </div>
       
                     <div className="bg-[#fcfbfa] border border-[#e1ddd8] rounded-[6px] p-[27px] flex flex-col justify-between min-h-[224px]">
@@ -98,7 +99,7 @@ export function AIRelatedSection() {
                         <h3 className="font-sans font-bold text-[#0b2237] text-[18px] m-0 flex items-start flex-col gap-[8px]">
                           Executive Risk Intelligence
                           <span className="inline-flex items-center gap-[4px] bg-[#f1f4f7] border border-[#cfd8e0] rounded-[3px] px-[6px] py-[2px]">
-                            <span className="font-mono font-bold text-[#42566b] text-[11px] leading-[11px]">â—</span>
+                            <span className="font-mono font-bold text-[#42566b] text-[11px] leading-[11px]">◐</span>
                             <span className="font-mono font-semibold text-[#42566b] text-[10.5px] uppercase tracking-[0.945px]">When public</span>
                           </span>
                         </h3>
@@ -113,7 +114,7 @@ export function AIRelatedSection() {
                         <h3 className="font-sans font-bold text-[#0b2237] text-[18px] m-0 flex items-start flex-col gap-[8px]">
                           vCISO &amp; Advisory 
                           <span className="inline-flex items-center gap-[4px] bg-[#f1f4f7] border border-[#cfd8e0] rounded-[3px] px-[6px] py-[2px]">
-                            <span className="font-mono font-bold text-[#42566b] text-[11px] leading-[11px]">â—</span>
+                            <span className="font-mono font-bold text-[#42566b] text-[11px] leading-[11px]">◐</span>
                             <span className="font-mono font-semibold text-[#42566b] text-[10.5px] uppercase tracking-[0.945px]">When public</span>
                           </span>
                         </h3>

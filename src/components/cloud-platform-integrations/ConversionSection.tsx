@@ -40,7 +40,7 @@ export default function ConversionSection() {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 items-center justify-center pt-3 w-full sm:w-auto">
           <a
-            href="#"
+            href="/book-a-demo"
             className="inline-flex items-center justify-center px-6 py-[14px] rounded-[10px] bg-[#c44242] shadow-[0px_4px_6px_rgba(196,66,66,0.2)] hover:bg-[#b23636] transition-colors w-full sm:w-auto"
           >
             <span className="font-manrope font-bold text-[15px] text-white whitespace-nowrap">
@@ -48,7 +48,7 @@ export default function ConversionSection() {
             </span>
           </a>
           <a
-            href="#"
+            href="/platform-overview"
             className="inline-flex items-center justify-center px-6 py-[14px] rounded-[10px] border-[1.5px] border-[rgba(255,255,255,0.35)] hover:bg-white/5 transition-colors w-full sm:w-auto"
           >
             <span className="font-manrope font-bold text-[15px] text-white whitespace-nowrap">

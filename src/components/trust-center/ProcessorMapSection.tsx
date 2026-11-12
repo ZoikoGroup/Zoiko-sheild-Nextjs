@@ -17,7 +17,7 @@ const flow = [
 
 export default function ProcessorMapSection() {
   return (
-    <Section tone="light">
+    <Section tone="light" id="subprocessors">
       <SectionHeader eyebrow="Processor Map" title="Transparent data lineage and subprocessors" />
 
       <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 w-full">

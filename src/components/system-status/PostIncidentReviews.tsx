@@ -52,11 +52,16 @@ export default function PostIncidentReviews() {
             <p className="text-[#6B7280]">
               Published: Jan 20, 2026 • SHA-256 Verified
             </p>
+            {/* TODO: point this at the published PIR document once one is hosted. Until then it requests a copy. */}
             <a
-              href="#"
-              className="font-bold text-[#C53030] hover:text-[#B91C1C] transition-colors whitespace-nowrap"
+              href={`mailto:security@zoikoshield.com?subject=${encodeURIComponent(
+                "Request: Complete PIR Document (PIR-2026-02)"
+              )}&body=${encodeURIComponent(
+                "Hello,\n\nPlease send me the complete Post-Incident Review document for PIR-2026-02: CrowdStrike Sensor Telemetry Mapping Failure.\n\nThank you."
+              )}`}
+              className="font-bold text-[#C53030] hover:text-[#B91C1C] hover:underline transition-colors whitespace-nowrap"
             >
-              Read Complete PIR Document
+              Read Complete PIR Document &rarr;
             </a>
           </div>
         </div>

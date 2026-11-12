@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 
 const entries = [
@@ -50,9 +50,74 @@ const entries = [
   },
 ];
 
-export default function TechnologyRegistrySection() {
+type Entry = (typeof entries)[number];
+
+const durationKind = (e: Entry) => (e.duration.startsWith("Session") ? "Session" : "Persistent");
+const partyKind = (e: Entry) => (e.durationShort.includes("Third Party") ? "Third Party" : "First Party");
+
+const categoryOptions = ["All", ...Array.from(new Set(entries.map((e) => e.category)))];
+const durationOptions = ["All", "Session", "Persistent"];
+const typeOptions = ["All", "First Party", "Third Party"];
+
+function FilterSelect({
+  label,
+  value,
+  onChange,
+  options,
+}: {
+  label: string;
+  value: string;
+  onChange: (v: string) => void;
+  options: string[];
+}) {
   return (
-    <section className="bg-[#f0ede6] w-full">
+    <label className="relative border border-[rgba(18,59,76,0.1)] focus-within:border-[#4e668a] flex gap-[6px] items-center pl-3 pr-2 py-2 rounded-[6px] cursor-pointer">
+      <span className="font-sans font-normal text-[#5b6670] text-[13px] whitespace-nowrap">{label}:</span>
+      <select
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        className="appearance-none bg-transparent outline-none font-sans font-normal text-[#0a2029] text-[13px] pr-4 cursor-pointer"
+      >
+        {options.map((o) => (
+          <option key={o} value={o}>
+            {o}
+          </option>
+        ))}
+      </select>
+      <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden className="pointer-events-none absolute right-2">
+        <path d="M2 3.5L5 6.5L8 3.5" stroke="#5b6670" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    </label>
+  );
+}
+
+export default function TechnologyRegistrySection() {
+  const [query, setQuery] = useState("");
+  const [category, setCategory] = useState("All");
+  const [duration, setDuration] = useState("All");
+  const [type, setType] = useState("All");
+
+  const filtered = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    return entries.filter(
+      (e) =>
+        (category === "All" || e.category === category) &&
+        (duration === "All" || durationKind(e) === duration) &&
+        (type === "All" || partyKind(e) === type) &&
+        (!q || [e.id, e.name, e.domain, e.category, e.desc].some((f) => f.toLowerCase().includes(q)))
+    );
+  }, [query, category, duration, type]);
+
+  const isFiltered = query !== "" || category !== "All" || duration !== "All" || type !== "All";
+  const reset = () => {
+    setQuery("");
+    setCategory("All");
+    setDuration("All");
+    setType("All");
+  };
+
+  return (
+    <section id="technology-registry" className="scroll-mt-24 bg-[#f0ede6] w-full">
       <div className="flex flex-col gap-6 lg:gap-8 mx-auto max-w-[1440px] px-4 py-6 lg:px-[108px] lg:py-[60px]">
         <div className="flex flex-col gap-2 lg:gap-3 items-start">
           <div className="flex gap-2 lg:gap-3 items-center">
@@ -73,32 +138,53 @@ export default function TechnologyRegistrySection() {
 
         {/* Search bar */}
         <div className="bg-white flex flex-col lg:flex-row gap-3 lg:gap-4 items-stretch lg:items-center p-3 lg:p-[12px] rounded-[8px] w-full">
-          <div className="border border-[rgba(18,59,76,0.1)] flex flex-1 lg:max-w-[320px] gap-2 items-center px-3 py-2 rounded-[6px]">
+          <label className="border border-[rgba(18,59,76,0.1)] focus-within:border-[#4e668a] flex flex-1 lg:max-w-[320px] gap-2 items-center px-3 py-2 rounded-[6px]">
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="shrink-0" aria-hidden>
               <circle cx="6" cy="6" r="4.5" stroke="#5b6670" strokeWidth="1.2" />
               <path d="M9.5 9.5L12.5 12.5" stroke="#5b6670" strokeWidth="1.2" strokeLinecap="round" />
             </svg>
-            <p className="font-manrope lg:font-sans font-normal text-[#5b6670] text-[13px] m-0">
-              Search technologies...
-            </p>
-          </div>
-          <div className="hidden lg:flex gap-2 items-start">
-            {["Category: All", "Duration: All", "Type: First Party"].map((label) => (
-              <div
-                key={label}
-                className="border border-[rgba(18,59,76,0.1)] flex gap-[6px] items-center px-3 py-2 rounded-[6px]"
-              >
-                <p className="font-sans font-normal text-[#0a2029] text-[13px] m-0">{label}</p>
-                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden>
-                  <path d="M2 3.5L5 6.5L8 3.5" stroke="#5b6670" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </div>
-            ))}
+            <span className="sr-only">Search technologies</span>
+            <input
+              type="search"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="Search technologies..."
+              className="flex-1 min-w-0 bg-transparent outline-none font-manrope lg:font-sans font-normal text-[#0a2029] placeholder:text-[#5b6670] text-[13px]"
+            />
+          </label>
+          <div className="flex flex-wrap gap-2 items-start">
+            <FilterSelect label="Category" value={category} onChange={setCategory} options={categoryOptions} />
+            <FilterSelect label="Duration" value={duration} onChange={setDuration} options={durationOptions} />
+            <FilterSelect label="Type" value={type} onChange={setType} options={typeOptions} />
           </div>
         </div>
 
+        <p role="status" aria-live="polite" className="font-manrope lg:font-sans text-[12px] text-[#5b6670] -mt-3 lg:-mt-5 m-0">
+          Showing {filtered.length} of {entries.length} technologies
+          {isFiltered && (
+            <>
+              {" · "}
+              <button
+                type="button"
+                onClick={reset}
+                className="font-bold text-[#c44242] underline hover:opacity-80"
+              >
+                Clear filters
+              </button>
+            </>
+          )}
+        </p>
+
+        {filtered.length === 0 && (
+          <div className="bg-white border border-[rgba(18,59,76,0.1)] rounded-[12px] p-6 w-full text-center">
+            <p className="font-sans font-semibold text-[#0a2029] text-[14px] m-0">
+              No technologies match these filters.
+            </p>
+          </div>
+        )}
+
         {/* Desktop table */}
-        <div className="hidden lg:flex bg-white border border-[rgba(18,59,76,0.1)] flex-col items-start overflow-hidden rounded-[12px] w-full">
+        <div className={`${filtered.length ? "hidden lg:flex" : "hidden"} bg-white border border-[rgba(18,59,76,0.1)] flex-col items-start overflow-hidden rounded-[12px] w-full`}>
           <div className="bg-[#f7f5f0] flex items-start px-6 py-4 w-full text-[#0a2029] text-[12px] font-bold font-sans">
             <p className="w-[120px] m-0">ID</p>
             <p className="w-[180px] m-0">NAME</p>
@@ -107,7 +193,7 @@ export default function TechnologyRegistrySection() {
             <p className="w-[140px] m-0">DURATION</p>
             <p className="flex-1 m-0">SPECIFIC PURPOSE</p>
           </div>
-          {entries.map((e) => (
+          {filtered.map((e) => (
             <div
               key={e.id}
               className="border-b border-[rgba(18,59,76,0.1)] flex items-center px-6 py-4 w-full last:border-b-0"
@@ -130,7 +216,7 @@ export default function TechnologyRegistrySection() {
 
         {/* Mobile cards */}
         <div className="lg:hidden flex flex-col gap-3 w-full">
-          {entries.map((e, i) => (
+          {filtered.map((e, i) => (
             <motion.div
               key={e.id}
               initial={{ opacity: 0, y: 12 }}

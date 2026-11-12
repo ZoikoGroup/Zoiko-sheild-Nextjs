@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function ScopeInventorySection() {
   return (
-    <section className="bg-[#F5F2EB] px-5 py-14 sm:px-6 sm:py-16 md:px-12 lg:px-24 lg:py-20">
+    <section id="testing-scope" className="scroll-mt-24 bg-[#F5F2EB] px-5 py-14 sm:px-6 sm:py-16 md:px-12 lg:px-24 lg:py-20">
       <div className="mx-auto w-full max-w-7xl">
         <div className="mb-4 flex items-center gap-3">
           <span className="h-px w-5 shrink-0 bg-[#E0402F]" aria-hidden="true" />

@@ -181,7 +181,7 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-2 text-gray-300/80">
               <li><Link href="/developers-documentation" className="hover:text-white transition-colors">Documentation</Link></li>
-              <li><Link href="/developers-documentation" className="hover:text-white transition-colors">API reference</Link></li>
+              <li><Link href="/developers-documentation#api-reference" className="hover:text-white transition-colors">API reference</Link></li>
               <li><Link href="/developers-webhooks" className="hover:text-white transition-colors">Webhooks</Link></li>
               <li><Link href="/developer-release-notes" className="hover:text-white transition-colors">Release notes</Link></li>
             </ul>
@@ -211,7 +211,7 @@ export const Footer: React.FC = () => {
               TRUST & SECURITY
             </h4>
             <ul className="space-y-2 text-gray-300/80">
-              <li><Link href="/security-trust-center" className="hover:text-white transition-colors">Trust Center</Link></li>
+              <li><Link href="/trust-center" className="hover:text-white transition-colors">Trust Center</Link></li>
               <li><Link href="/security-trust-center" className="hover:text-white transition-colors">Security practices</Link></li>
               <li><Link href="/responsible-ai" className="hover:text-white transition-colors">Responsible AI</Link></li>
               <li><Link href="/privacy-data-protection" className="hover:text-white transition-colors">Privacy & data protection</Link></li>
@@ -239,7 +239,7 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-2 text-gray-300/80">
               <li><Link href="/about-zoiko-tech" className="hover:text-white transition-colors">About Zoiko Tech</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Leadership</Link></li>
+              <li><Link href="/leadership" className="hover:text-white transition-colors">Leadership</Link></li>
               <li><Link href="/partners" className="hover:text-white transition-colors">Partners</Link></li>
               <li><Link href="/contact" className="hover:text-white transition-colors">Contact</Link></li>
             </ul>

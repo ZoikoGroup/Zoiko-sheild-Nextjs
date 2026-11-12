@@ -49,11 +49,14 @@ const relationshipsData: RelationshipCard[] = [
     boundaryText: "Boundary: connection does not prove source truth.",
   },
   {
+    // Previously an accidental duplicate of the Integrations card.
+    // Copy mirrors the "evidence is not a compliance verdict" boundary used on
+    // Framework Coverage — content owners should confirm before publishing.
     id: "6",
-    href: "/integration-catalog",
-    title: "Integrations",
-    allowedText: "Allowed: source authority and ingestion state.",
-    boundaryText: "Boundary: connection does not prove source truth.",
+    href: "/compliance-control-plane",
+    title: "Compliance Control Plane",
+    allowedText: "Allowed: control, test, assessment and exception evidence.",
+    boundaryText: "Boundary: linked evidence is not a compliance verdict.",
   },
 ];
 

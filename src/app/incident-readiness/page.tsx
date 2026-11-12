@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 // import { Navbar } from "@/components/layout/Navbar";
 // import { Footer } from "@/components/layout/Footer";
-import { DemoModal } from "@/components/ui/DemoModal";
 
 // 6 Stages Data
 const OPERATING_STAGES = [
@@ -267,7 +266,6 @@ const INCIDENT_FAQS = [
 ];
 
 export default function IncidentReadinessPage() {
-  const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   return (
@@ -285,8 +283,8 @@ export default function IncidentReadinessPage() {
               <strong className="text-white font-bold">Dealing with an incident right now?</strong> Don't use this page. Go to the approved activation route &mdash; a demo form is not an incident channel.
             </p>
             <div className="flex items-center gap-4 font-mono text-[11px] font-bold text-[#E0533C]">
-              <a href="#routing" className="hover:underline">Get Support &rarr;</a>
-              <a href="#routing" className="hover:underline">System Status &rarr;</a>
+              <Link href="/contact-support" className="hover:underline">Get Support &rarr;</Link>
+              <Link href="/system-status" className="hover:underline">System Status &rarr;</Link>
             </div>
           </div>
 
@@ -332,12 +330,12 @@ export default function IncidentReadinessPage() {
 
               {/* Action Buttons */}
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-1 sm:pt-2">
-                <button
-                  onClick={() => setIsDemoModalOpen(true)}
+                <Link
+                  href="/book-a-demo"
                   className="px-6 py-3.5 bg-[#E0533C] hover:bg-[#c94530] text-white font-bold text-sm rounded-lg transition-all shadow-md text-center"
                 >
                   Book a Demo
-                </button>
+                </Link>
                 <a
                   href="#operating-model"
                   className="px-5 py-3.5 bg-[#EFECE6] hover:bg-gray-200 text-[#151B28] font-semibold text-sm rounded-lg border border-gray-300/80 transition-all shadow-sm text-center"
@@ -345,7 +343,7 @@ export default function IncidentReadinessPage() {
                   Explore Incident Readiness
                 </a>
                 <Link
-                  href="/services"
+                  href="/managed-defense"
                   className="px-5 py-3.5 bg-[#EFECE6] hover:bg-gray-200 text-[#151B28] font-semibold text-sm rounded-lg border border-gray-300/80 transition-all shadow-sm text-center"
                 >
                   Explore Managed Defense
@@ -1329,25 +1327,25 @@ export default function IncidentReadinessPage() {
             {/* 4 White Pill Navigation Buttons */}
             <div className="flex flex-wrap items-center gap-3">
               <Link
-                href="/incident-readiness"
+                href="/incident-readiness-service"
                 className="px-5 py-2.5 rounded-full bg-white hover:bg-gray-50 text-[#151B28] font-bold text-xs border border-gray-300 shadow-sm transition-all"
               >
                 Incident Readiness
               </Link>
               <Link
-                href="/services"
+                href="/ir-retainer"
                 className="px-5 py-2.5 rounded-full bg-white hover:bg-gray-50 text-[#151B28] font-bold text-xs border border-gray-300 shadow-sm transition-all"
               >
                 IR Retainer
               </Link>
               <Link
-                href="/services"
+                href="/managed-defense"
                 className="px-5 py-2.5 rounded-full bg-white hover:bg-gray-50 text-[#151B28] font-bold text-xs border border-gray-300 shadow-sm transition-all"
               >
                 Managed Defense
               </Link>
               <Link
-                href="/services"
+                href="/governed-response"
                 className="px-5 py-2.5 rounded-full bg-white hover:bg-gray-50 text-[#151B28] font-bold text-xs border border-gray-300 shadow-sm transition-all"
               >
                 Governed Response
@@ -1501,9 +1499,9 @@ export default function IncidentReadinessPage() {
                 Approved activation route first. Minimum safe facts, verified identity, secure channel.
               </div>
               <div className="sm:w-1/5 text-left sm:text-right">
-                <a href="#routing" className="text-[#E0533C] font-mono text-xs font-bold hover:underline">
+                <Link href="/contact-support" className="text-[#E0533C] font-mono text-xs font-bold hover:underline">
                   Get Support &rarr;
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -1516,9 +1514,9 @@ export default function IncidentReadinessPage() {
                 Share declared readiness needs — nothing confidential.
               </div>
               <div className="sm:w-1/5 text-left sm:text-right">
-                <button onClick={() => setIsDemoModalOpen(true)} className="text-[#E0533C] font-mono text-xs font-bold hover:underline">
+                <Link href="/book-a-demo" className="text-[#E0533C] font-mono text-xs font-bold hover:underline">
                   Book a Demo &rarr;
-                </button>
+                </Link>
               </div>
             </div>
 
@@ -1531,9 +1529,9 @@ export default function IncidentReadinessPage() {
                 Authenticated support and account route, with your context preserved.
               </div>
               <div className="sm:w-1/5 text-left sm:text-right">
-                <a href="#routing" className="text-[#E0533C] font-mono text-xs font-bold hover:underline">
+                <Link href="/contact-support" className="text-[#E0533C] font-mono text-xs font-bold hover:underline">
                   Contact Support &rarr;
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -1546,7 +1544,7 @@ export default function IncidentReadinessPage() {
                 A separate commercial service path, qualified when delivery-ready.
               </div>
               <div className="sm:w-1/5 text-left sm:text-right">
-                <Link href="/services" className="text-[#E0533C] font-mono text-xs font-bold hover:underline">
+                <Link href="/ir-retainer" className="text-[#E0533C] font-mono text-xs font-bold hover:underline">
                   IR Retainer &rarr;
                 </Link>
               </div>
@@ -1561,9 +1559,9 @@ export default function IncidentReadinessPage() {
                 This page does not invent live service health.
               </div>
               <div className="sm:w-1/5 text-left sm:text-right">
-                <a href="#routing" className="text-[#E0533C] font-mono text-xs font-bold hover:underline">
+                <Link href="/system-status" className="text-[#E0533C] font-mono text-xs font-bold hover:underline">
                   System Status &rarr;
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -1576,9 +1574,9 @@ export default function IncidentReadinessPage() {
                 Coordinated disclosure, kept separate from the customer incident flow.
               </div>
               <div className="sm:w-1/5 text-left sm:text-right">
-                <a href="#routing" className="text-[#E0533C] font-mono text-xs font-bold hover:underline">
+                <Link href="/vulnerability-disclosure" className="text-[#E0533C] font-mono text-xs font-bold hover:underline">
                   Vulnerability disclosure &rarr;
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -1591,9 +1589,9 @@ export default function IncidentReadinessPage() {
                 Purpose-specific handling through the privacy and trust route.
               </div>
               <div className="sm:w-1/5 text-left sm:text-right">
-                <a href="#routing" className="text-[#E0533C] font-mono text-xs font-bold hover:underline">
+                <Link href="/privacy-data-protection" className="text-[#E0533C] font-mono text-xs font-bold hover:underline">
                   Privacy & Trust &rarr;
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -1667,20 +1665,20 @@ export default function IncidentReadinessPage() {
 
             {/* Action Buttons Stack */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 max-w-xs sm:max-w-none mx-auto w-full pt-4">
-              <button
-                onClick={() => setIsDemoModalOpen(true)}
+              <Link
+                href="/book-a-demo"
                 className="w-full sm:w-auto px-6 py-3 sm:py-3.5 bg-[#E0533C] hover:bg-[#c94530] text-white font-bold text-sm rounded-lg transition-all shadow-md text-center"
               >
                 Book a Demo
-              </button>
-              <a
-                href="#operating-model"
+              </Link>
+              <Link
+                href="/incident-readiness-service"
                 className="w-full sm:w-auto px-6 py-3 sm:py-3.5 bg-[#16202A] hover:bg-[#1E2B38] text-white font-semibold text-sm rounded-lg border border-gray-700 transition-all shadow-sm text-center"
               >
                 Explore Incident Readiness
-              </a>
+              </Link>
               <Link
-                href="/about"
+                href="/trust-center"
                 className="w-full sm:w-auto px-6 py-3 sm:py-3.5 bg-[#16202A] hover:bg-[#1E2B38] text-white font-semibold text-sm rounded-lg border border-gray-700 transition-all shadow-sm text-center"
               >
                 Visit Trust Center
@@ -1690,7 +1688,7 @@ export default function IncidentReadinessPage() {
             {/* Mobile Warning Box: Before you fill in a form (Mobile only) */}
             <div className="block sm:hidden border-2 border-dashed border-gray-700 rounded-xl p-4 bg-[#11202D]/60 text-xs text-gray-300 space-y-1 text-left mt-6 max-w-md mx-auto">
               <p className="leading-relaxed">
-                <strong className="text-white font-bold">Before you fill in a form:</strong> do not submit active incident details, indicators, credentials, evidence, or confidential architecture through a demo request. If something is happening now, use <a href="#routing" className="text-white underline font-semibold">Get Support</a> instead.
+                <strong className="text-white font-bold">Before you fill in a form:</strong> do not submit active incident details, indicators, credentials, evidence, or confidential architecture through a demo request. If something is happening now, use <Link href="/contact-support" className="text-white underline font-semibold">Get Support</Link> instead.
               </p>
             </div>
 
@@ -1703,9 +1701,6 @@ export default function IncidentReadinessPage() {
       </main>
 
       {/* <Footer /> */}
-
-      {/* Demo Modal */}
-      <DemoModal isOpen={isDemoModalOpen} onClose={() => setIsDemoModalOpen(false)} />
     </div>
   );
 }

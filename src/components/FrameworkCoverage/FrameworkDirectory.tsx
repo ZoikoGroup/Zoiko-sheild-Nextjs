@@ -3,7 +3,7 @@ import { ChevronDown, Search } from "lucide-react";
 
 export default function FrameworkDirectory() {
   return (
-    <div className="min-h-screen bg-[#F7F5F0] text-[#111827] px-6 py-12 md:px-12 font-sans antialiased flex justify-center">
+    <div id="framework-directory" className="scroll-mt-24 min-h-screen bg-[#F7F5F0] text-[#111827] px-6 py-12 md:px-12 font-sans antialiased flex justify-center">
       {/* Top header & title section */}
       <div className="w-full max-w-6xl">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">

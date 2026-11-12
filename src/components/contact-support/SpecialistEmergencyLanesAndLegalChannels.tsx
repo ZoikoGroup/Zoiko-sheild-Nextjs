@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const channels = [
   {
@@ -6,18 +7,21 @@ const channels = [
     description:
       "Submit discovered system loopholes securely using PGP encryption guidelines.",
     linkText: "Access PGP Keys",
+    href: "/vulnerability-disclosure#pgp-keys",
   },
   {
     title: "Privacy & Data Rights",
     description:
       "Initiate tenant deletion, data portability, or export parameters under CCPA/GDPR.",
     linkText: "Data Request Portal",
+    href: "/privacy-notice#privacy-rights-desk",
   },
   {
     title: "Legal & Compliance Notices",
     description:
       "Submit regulatory requests, board certifications, or official policy notices.",
     linkText: "Submit Official Notice",
+    href: "/legal-notices#service-contact",
   },
 ];
 
@@ -57,12 +61,12 @@ export default function SpecialistEmergencyLanesAndLegalChannels() {
               </div>
 
               <div>
-                <a
-                  href="#action"
-                  className="text-xs font-bold text-[#C53030] hover:text-[#B91C1C] transition-colors inline-block"
+                <Link
+                  href={channel.href}
+                  className="text-xs font-bold text-[#C53030] hover:text-[#B91C1C] hover:underline transition-colors inline-block"
                 >
-                  {channel.linkText}
-                </a>
+                  {channel.linkText} &rarr;
+                </Link>
               </div>
             </div>
           ))}

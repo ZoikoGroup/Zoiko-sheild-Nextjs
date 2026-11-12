@@ -1,7 +1,9 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
+import { describeConsent, useCookieConsent } from "./useCookieConsent";
 
 const desktopStates = [
   {
@@ -78,6 +80,8 @@ const mobileStates = [
 ];
 
 export default function BannerPreviewSection() {
+  const { consent, save } = useCookieConsent();
+
   return (
     <section className="bg-[#f0ede6] w-full">
       <div className="flex flex-col gap-5 lg:gap-6 mx-auto max-w-[1440px] px-4 py-6 lg:px-[108px] lg:py-[40px]">
@@ -126,13 +130,13 @@ export default function BannerPreviewSection() {
                   We never sell or share your data, and optional trackers
                   remain gated until you consent. You may close this banner
                   to proceed with essential cookies only. Read our{" "}
-                  <span className="text-[#c44242] underline">
+                  <Link href="/privacy-notice" className="text-[#c44242] underline hover:opacity-80">
                     Privacy Policy
-                  </span>{" "}
+                  </Link>{" "}
                   and{" "}
-                  <span className="text-[#c44242] underline">
+                  <a href="#technology-registry" className="text-[#c44242] underline hover:opacity-80">
                     Cookie Notice
-                  </span>{" "}
+                  </a>{" "}
                   for details.
                 </span>
               </p>
@@ -157,20 +161,38 @@ export default function BannerPreviewSection() {
             </p>
           </div>
 
-          <div className="flex flex-col lg:flex-row gap-2 lg:gap-3 items-start w-full lg:justify-end">
-            <button className="w-full lg:w-auto flex items-center justify-center border border-[#0a2029] px-5 py-[10px] lg:py-[12px] rounded-[6px]">
+          <div className="flex flex-col lg:flex-row gap-2 lg:gap-3 items-start lg:items-center w-full lg:justify-end">
+            <p
+              role="status"
+              aria-live="polite"
+              className="font-manrope lg:font-sans font-semibold text-[#5b6670] text-[11px] lg:text-[12px] m-0 lg:mr-auto"
+            >
+              Current choice: <span className="text-[#0a2029]">{describeConsent(consent)}</span>
+            </p>
+            <button
+              type="button"
+              onClick={() => save({ analytics: false, support: false })}
+              className="w-full lg:w-auto flex items-center justify-center border border-[#0a2029] hover:bg-[#0a20290d] transition-colors px-5 py-[10px] lg:py-[12px] rounded-[6px]"
+            >
               <span className="font-manrope lg:font-sans font-bold text-[#0a2029] text-[12px] lg:text-[13px]">
                 <span className="lg:hidden">Reject all</span>
                 <span className="hidden lg:inline">Reject optional</span>
               </span>
             </button>
-            <button className="w-full lg:w-auto flex items-center justify-center border border-[#0a2029] px-5 py-[10px] lg:py-[12px] rounded-[6px]">
+            <a
+              href="#preference-center"
+              className="w-full lg:w-auto flex items-center justify-center border border-[#0a2029] hover:bg-[#0a20290d] transition-colors px-5 py-[10px] lg:py-[12px] rounded-[6px]"
+            >
               <span className="font-manrope lg:font-sans font-bold text-[#0a2029] text-[12px] lg:text-[13px]">
                 <span className="lg:hidden">Manage</span>
                 <span className="hidden lg:inline">Manage preferences</span>
               </span>
-            </button>
-            <button className="w-full lg:w-auto flex items-center justify-center bg-[#c44242] px-6 py-3 rounded-[6px]">
+            </a>
+            <button
+              type="button"
+              onClick={() => save({ analytics: true, support: true })}
+              className="w-full lg:w-auto flex items-center justify-center bg-[#c44242] hover:bg-[#b23636] transition-colors px-6 py-3 rounded-[6px]"
+            >
               <span className="font-manrope lg:font-sans font-bold text-white text-[13px]">
                 Accept all optional
               </span>
