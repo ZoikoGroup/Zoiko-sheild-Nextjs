@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function PlannedMaintenanceHero() {
   return (
@@ -32,12 +33,12 @@ export default function PlannedMaintenanceHero() {
 
             {/* CTAs */}
             <div className="flex flex-wrap items-center gap-4 pt-2">
-              <a
-                href="#subscribe"
+              <Link
+                href="/system-status#subscribe-updates"
                 className="inline-flex items-center justify-center px-7 py-3.5 rounded-[10px] bg-[#C44242] text-white font-manrope font-bold text-[15px] shadow-sm hover:bg-[#b03939] transition-all hover:shadow-md cursor-pointer"
               >
                 Subscribe to Maintenance Updates
-              </a>
+              </Link>
               <a
                 href="#calendar"
                 className="inline-flex items-center justify-center px-6 py-3.5 rounded-[10px] border border-[#0A2440] text-[#0A2440] font-manrope font-bold text-[15px] hover:bg-[#0A2440]/5 transition-colors cursor-pointer"

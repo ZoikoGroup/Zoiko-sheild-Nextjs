@@ -102,7 +102,7 @@ export default function PrivacySecurityIntegritySection() {
                 Logging Specs
               </Link>
               <Link
-                href="#resilience-logs"
+                href="/trust-center#resilience"
                 className="text-[#C44242] hover:opacity-85 underline underline-offset-2"
               >
                 Backup & Resilience Logs

@@ -1,6 +1,10 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 
 export function FAQSection() {
+  const [open, setOpen] = useState<number | null>(0);
+
   return (
     <>
               <section className="bg-[#fcfbfa] w-full py-[60px] md:py-[84px] relative border-b border-[#e1ddd8]">
@@ -73,23 +77,37 @@ export function FAQSection() {
                         q: "Does this replace our enterprise risk policy or our auditors?",
                         a: "No. This solution owns how risk truth is understood and used for executive reporting, while Risk Intelligence owns risk-method truth."
                       }
-                    ].map((faq, index) => (
-                      <div key={index} className="py-[24px] border-b border-[#e1ddd8] last:border-b-0 flex flex-col gap-[16px]">
-                        <div className="flex justify-between items-center cursor-pointer">
-                          <h4 className="font-sans font-bold text-[#0b2237] text-[16px] leading-[24px] m-0 pr-[20px]">
-                            {faq.q}
+                    ].map((faq, index) => {
+                      const isOpen = open === index;
+                      const buttonId = `board-faq-button-${index}`;
+                      const panelId = `board-faq-panel-${index}`;
+                      return (
+                        <div key={index} className="border-b border-[#e1ddd8] last:border-b-0 flex flex-col">
+                          <h4 className="m-0">
+                            <button
+                              id={buttonId}
+                              type="button"
+                              aria-expanded={isOpen}
+                              aria-controls={panelId}
+                              onClick={() => setOpen(isOpen ? null : index)}
+                              className="w-full py-[24px] flex justify-between items-center gap-4 text-left hover:bg-gray-50 transition-colors"
+                            >
+                              <span className="font-sans font-bold text-[#0b2237] text-[16px] leading-[24px] pr-[20px]">
+                                {faq.q}
+                              </span>
+                              <span aria-hidden className="text-[#e0402f] text-[20px] font-light leading-none shrink-0">
+                                {isOpen ? "−" : "+"}
+                              </span>
+                            </button>
                           </h4>
-                          <span className="text-[#e0402f] text-[20px] font-light leading-none">
-                            {index === 0 ? "âˆ’" : "+"}
-                          </span>
+                          <div id={panelId} role="region" aria-labelledby={buttonId} hidden={!isOpen} className="pb-[24px]">
+                            <p className="font-sans font-normal text-[#5c6b79] text-[15px] leading-[24px] m-0 pr-[40px]">
+                              {faq.a}
+                            </p>
+                          </div>
                         </div>
-                        {index === 0 && (
-                          <p className="font-sans font-normal text-[#5c6b79] text-[15px] leading-[24px] m-0 pr-[40px]">
-                            {faq.a}
-                          </p>
-                        )}
-                      </div>
-                    ))}
+                      );
+                    })}
                   </div>
                   </div>
                 </div>

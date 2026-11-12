@@ -2,11 +2,12 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { CircleX } from "lucide-react";
 
 export const FeaturedConnectorDetailSection: React.FC = () => {
   return (
-    <section className="w-full bg-[#0B181E] text-white py-16 lg:py-20 border-b border-gray-800 relative overflow-hidden">
+    <section id="connector-detail" className="scroll-mt-24 w-full bg-[#0B181E] text-white py-16 lg:py-20 border-b border-gray-800 relative overflow-hidden">
       {/* Background Graphic Overlay */}
        <Image
               src="/images/integration-catalog/DetailDrawer-Section.png"
@@ -149,12 +150,18 @@ export const FeaturedConnectorDetailSection: React.FC = () => {
 
             {/* Action Buttons */}
             <div className="space-y-3 pt-4 border-t border-white/10">
-              <button className="w-full py-3.5 bg-red-500 hover:bg-[#A91D22] text-white font-bold text-sm rounded-lg transition-colors shadow-md">
+              <Link
+                href="/sign-in"
+                className="block w-full py-3.5 bg-red-500 hover:bg-[#A91D22] text-white font-bold text-sm rounded-lg transition-colors shadow-md text-center"
+              >
                 Authenticate Connection
-              </button>
-              <button className="w-full py-3.5 bg-transparent hover:bg-white/10 text-white font-bold text-sm rounded-lg border border-white transition-colors">
+              </Link>
+              <Link
+                href="/developers-documentation"
+                className="block w-full py-3.5 bg-transparent hover:bg-white/10 text-white font-bold text-sm rounded-lg border border-white transition-colors text-center"
+              >
                 View Integration Docs
-              </button>
+              </Link>
             </div>
           </div>
         </div>

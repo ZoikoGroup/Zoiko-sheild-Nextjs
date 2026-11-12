@@ -31,13 +31,13 @@ export default function DefensibleComplianceCtaSection() {
 
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-4">
           <Link
-            href="/contact"
+            href="/book-a-demo"
             className="inline-flex items-center justify-center rounded-[10px] bg-[#C44242] px-7 py-4 font-manrope text-[15px] font-bold text-white shadow-lg transition-all hover:bg-[#a93030] hover:shadow-xl"
           >
             See Continuous Assurance in Action
           </Link>
           <Link
-            href="/contact"
+            href="/contact#architecture-vetting"
             className="inline-flex items-center justify-center rounded-[10px] border border-white px-6 py-4 font-manrope text-[15px] font-bold text-white transition-colors hover:bg-white/10"
           >
             Talk with a Compliance Architect

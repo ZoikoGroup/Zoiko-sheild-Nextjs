@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export function IndependenceSection() {
   return (
@@ -70,8 +71,8 @@ export function IndependenceSection() {
                       Where AI assists, it retrieves, summarizes and drafts from cited authorized records. There is no anonymous &ldquo;AI approved&rdquo;, and human or external authority remains responsible for every consequential conclusion.
                     </p>
                     <div className="flex flex-wrap gap-[12px] pt-[10px]">
-                      <span className="font-sans font-semibold text-[14px] text-[#0b2237] border border-[#e1ddd8] px-[22px] py-[11px] rounded-[6px] cursor-pointer hover:bg-gray-50 transition-colors">AI decision rights</span>
-                      <span className="font-sans font-semibold text-[14px] text-[#0b2237] border border-[#e1ddd8] px-[22px] py-[11px] rounded-[6px] cursor-pointer hover:bg-gray-50 transition-colors">Responsible AI</span>
+                      <Link href="/ai-decision-rights" className="font-sans font-semibold text-[14px] text-[#0b2237] border border-[#e1ddd8] px-[22px] py-[11px] rounded-[6px] hover:bg-gray-50 transition-colors">AI decision rights</Link>
+                      <Link href="/responsible-ai" className="font-sans font-semibold text-[14px] text-[#0b2237] border border-[#e1ddd8] px-[22px] py-[11px] rounded-[6px] hover:bg-gray-50 transition-colors">Responsible AI</Link>
                     </div>
                   </div>
                 </div>

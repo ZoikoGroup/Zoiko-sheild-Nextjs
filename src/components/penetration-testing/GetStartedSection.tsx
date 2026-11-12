@@ -33,13 +33,13 @@ export default function GetStartedSection() {
 
         <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:flex-wrap sm:items-center sm:justify-center sm:gap-4">
           <Link
-            href="/contact"
+            href="/book-a-demo"
             className="rounded-lg bg-[#E0402F] px-6 py-3.5 text-center text-sm font-semibold text-white shadow-sm transition-colors hover:bg-[#c43722]"
           >
             Book a Demo
           </Link>
           <a
-            href="#"
+            href="/trust-center"
             className="rounded-lg border border-white/20 px-6 py-3.5 text-center text-sm font-semibold text-white transition-colors hover:bg-white/10"
           >
             Visit Trust Center

@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ContactSupport() {
   return (
@@ -62,18 +63,18 @@ export default function ContactSupport() {
           {/* Buttons Container */}
           <div className="flex flex-wrap items-center gap-4 mb-6">
             <a
-              href="#"
+              href="#pre-flight"
               className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#C8382C] text-white text-sm font-medium tracking-wide shadow-sm hover:bg-[#b53026] transition-colors"
             >
               Create Support Request
             </a>
 
-            <a
-              href="#"
+            <Link
+              href="/system-status"
               className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-transparent border border-[#111A1E30] text-[#111A1E] text-sm font-medium tracking-wide hover:bg-[#111A1E08] transition-colors"
             >
               Check Live Status
-            </a>
+            </Link>
           </div>
 
           {/* Footer Subtext */}

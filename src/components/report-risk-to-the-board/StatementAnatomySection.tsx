@@ -39,10 +39,10 @@ export function StatementAnatomySection() {
                     <div className="bg-[#eeebe7] border-b border-[#e1ddd8] border-solid p-[26px] flex flex-col gap-[13.2px]">
                       <div className="flex flex-wrap justify-between items-start w-full">
                         <span className="font-mono font-normal text-[#6b7c8c] text-[10.5px] tracking-[1.05px] leading-[16.8px]">
-                          statement_id Â· ST-2214 Â· report R-2026Q3 Â· v3 (synthetic)
+                          statement_id · ST-2214 · report R-2026Q3 · v3 (synthetic)
                         </span>
                         <span className="font-mono font-normal text-[#6b7c8c] text-[10.5px] tracking-[1.05px] leading-[16.8px]">
-                          as-of 04 Aug 2026 Â· period 01 May â€“ 31 Jul 2026 Â· UTC
+                          as-of 04 Aug 2026 · period 01 May – 31 Jul 2026 · UTC
                         </span>
                       </div>
                       
@@ -131,7 +131,7 @@ export function StatementAnatomySection() {
                               <span className="text-[#5c6b79]">outside the method&apos;s freshness window.</span>
                             </p>
                             <span className="inline-flex mt-1 items-center gap-[4px] bg-[#fcf6ea] border border-[#e8d6b4] rounded-[3px] px-[6px] py-[2px]">
-                              <span className="font-mono font-bold text-[#95610f] text-[11px] leading-[11px]">â—</span>
+                              <span className="font-mono font-bold text-[#95610f] text-[11px] leading-[11px]">◐</span>
                               <span className="font-mono font-semibold text-[#95610f] text-[10.5px] uppercase tracking-[0.945px]">Stale</span>
                             </span>
                           </li>
@@ -152,7 +152,7 @@ export function StatementAnatomySection() {
                               <span className="text-[#5c6b79]"> &mdash; two current sources disagree on</span><br />
                               <span className="text-[#5c6b79]">role membership.</span>
                               <span className="inline-flex ml-2 items-center gap-[4px] bg-[#fdf2f0] border border-[#f0ccc5] rounded-[3px] px-[6px] py-[2px]">
-                                <span className="font-mono font-semibold text-[#a63220] text-[11px] leading-[11px]">âœ•</span>
+                                <span className="font-mono font-semibold text-[#a63220] text-[11px] leading-[11px]">✕</span>
                                 <span className="font-mono font-semibold text-[#a63220] text-[10.5px] uppercase tracking-[0.945px]">Conflict</span>
                               </span>
                             </p>
@@ -163,7 +163,7 @@ export function StatementAnatomySection() {
                               <span className="text-[#5c6b79]"> &mdash; a third-party listing supports the</span><br />
                               <span className="text-[#5c6b79]">view without being exposed.</span>
                               <span className="inline-flex ml-2 items-center gap-[4px] bg-[#f1f4f7] border border-[#cfd8e0] rounded-[3px] px-[6px] py-[2px]">
-                                <span className="font-mono font-bold text-[#42566b] text-[11px] leading-[11px]">â—‘</span>
+                                <span className="font-mono font-bold text-[#42566b] text-[11px] leading-[11px]">◑</span>
                                 <span className="font-mono font-semibold text-[#42566b] text-[10.5px] uppercase tracking-[0.945px]">Restricted</span>
                               </span>
                             </p>
@@ -194,7 +194,7 @@ export function StatementAnatomySection() {
                             <p className="font-sans text-[13.5px] leading-[20.25px] m-0">
                               <span className="font-semibold text-[#0b2237]">Options</span>
                               <span className="text-[#5c6b79]"> &mdash; accept with the two open items</span><br />
-                              <span className="text-[#5c6b79]">recorded Â· hold pending conflict resolution Â·</span><br />
+                              <span className="text-[#5c6b79]">recorded · hold pending conflict resolution ·</span><br />
                               <span className="text-[#5c6b79]">request an interim attestation. No option is pre-</span><br />
                               <span className="text-[#5c6b79]">selected.</span>
                             </p>

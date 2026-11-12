@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 function ArrowRightIcon() {
@@ -82,22 +83,31 @@ export default function HeroSection() {
           </p>
 
           <div className="flex flex-col lg:flex-row gap-3 lg:gap-4 items-start pt-1 lg:pt-3 w-full">
-            <button className="w-full lg:w-auto flex items-center justify-center bg-[#c44242] px-6 py-3 rounded-[8px]">
+            <a
+              href="#privacy-rights-desk"
+              className="w-full lg:w-auto flex items-center justify-center bg-[#c44242] hover:bg-[#b23636] transition-colors px-6 py-3 rounded-[8px]"
+            >
               <span className="font-manrope font-bold text-white text-[14px] whitespace-nowrap">
                 Exercise Privacy Rights
               </span>
-            </button>
-            <button className="w-full lg:w-auto flex items-center justify-center border border-[#0a2440] px-6 py-3 rounded-[8px]">
+            </a>
+            <Link
+              href="/cookie-notice#preference-center"
+              className="w-full lg:w-auto flex items-center justify-center border border-[#0a2440] hover:bg-[#0a24400d] transition-colors px-6 py-3 rounded-[8px]"
+            >
               <span className="font-manrope font-bold text-[#0a2440] text-[14px] whitespace-nowrap">
                 Manage Cookie Choices
               </span>
-            </button>
-            <a href="#" className="hidden lg:flex gap-1 items-center px-[18px] py-3 rounded-[8px]">
+            </Link>
+            <Link
+              href="/trust-center"
+              className="hidden lg:flex gap-1 items-center px-[18px] py-3 rounded-[8px] hover:bg-[#0a24400d] transition-colors"
+            >
               <span className="font-manrope font-semibold text-[#5b6670] text-[14px] whitespace-nowrap">
                 View Trust Center
               </span>
               <ArrowRightIcon />
-            </a>
+            </Link>
           </div>
         </motion.div>
 

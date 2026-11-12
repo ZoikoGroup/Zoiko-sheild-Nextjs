@@ -4,36 +4,43 @@ const handoffsData = [
   {
     title: "Trust Center",
     description: "ZoikoShield assurance and certification status.",
+    href: "/trust-center",
     isDark: true,
   },
   {
     title: "Compliance Control Plane",
     description: "Control relationships and mapping context.",
+    href: "/compliance-control-plane",
     isDark: false,
   },
   {
     title: "Evidence Ledger & Verification",
     description: "Evidence lineage, verification, and packages.",
+    href: "/evidence-ledger-verification",
     isDark: false,
   },
   {
     title: "Continuous Assurance",
     description: "Ongoing control and evidence monitoring context.",
+    href: "/continuous-assurance",
     isDark: false,
   },
   {
     title: "Services comparison",
     description: "Defined service models and responsibility boundaries.",
+    href: "/compare-starting-paths",
     isDark: false,
   },
   {
     title: "Risk Intelligence",
     description: "Risk context with its own methods and scope.",
+    href: "/risk-intelligence",
     isDark: false,
   },
   {
     title: "Docs",
     description: "Technical implementation references.",
+    href: "/developers-documentation",
     isDark: false,
   },
 ];
@@ -79,7 +86,7 @@ export default function TrustAndServiceHandoffs() {
                   {item.description}
                 </p>
                 <a
-                  href="#"
+                  href={item.href}
                   className={`text-sm font-semibold inline-flex items-center hover:opacity-80 transition-opacity ${
                     item.isDark ? "text-[#F87171]" : "text-[#C53030]"
                   }`}

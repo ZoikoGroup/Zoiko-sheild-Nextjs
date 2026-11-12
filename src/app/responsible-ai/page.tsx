@@ -420,7 +420,7 @@ export default function ResponsibleAIPage() {
               <a href="#concerns" className="text-cyan-400 font-bold hover:underline">
                 Report an AI Concern &rarr;
               </a>
-              <a href="#concerns" className="text-cyan-400 font-bold hover:underline">
+              <a href="/vulnerability-disclosure" className="text-cyan-400 font-bold hover:underline">
                 Vulnerability Disclosure &rarr;
               </a>
             </div>
@@ -961,13 +961,13 @@ export default function ResponsibleAIPage() {
 
               <div className="space-y-2 pt-2">
                 <a
-                  href="/privacy"
+                  href="/privacy-notice"
                   className="w-full text-center px-4 py-2.5 bg-white hover:bg-gray-50 text-[#151B28] text-xs font-bold rounded-lg border border-gray-300 shadow-sm transition-all block"
                 >
                   Privacy Notice
                 </a>
                 <a
-                  href="/privacy"
+                  href="/trust-center#subprocessors"
                   className="w-full text-center px-4 py-2.5 bg-white hover:bg-gray-50 text-[#151B28] text-xs font-bold rounded-lg border border-gray-300 shadow-sm transition-all block"
                 >
                   Subprocessors
@@ -1208,7 +1208,7 @@ export default function ResponsibleAIPage() {
 
                 <div className="pt-4">
                   <a
-                    href="#authority"
+                    href="/ai-decision-rights"
                     className="px-4 py-2.5 bg-[#16242F] hover:bg-[#1E303D] text-white text-xs font-bold rounded-lg border border-gray-700 shadow-sm transition-all inline-block"
                   >
                     AI decision rights
@@ -1487,7 +1487,7 @@ export default function ResponsibleAIPage() {
                 Coordinated disclosure. Please don't include public exploit detail in an open channel.
               </div>
               <div className="sm:w-1/5 text-left sm:text-right">
-                <a href="#concerns" className="text-[#E0533C] font-mono text-xs font-bold hover:underline">
+                <a href="/vulnerability-disclosure" className="text-[#E0533C] font-mono text-xs font-bold hover:underline">
                   Vulnerability Disclosure &rarr;
                 </a>
               </div>
@@ -1502,7 +1502,7 @@ export default function ResponsibleAIPage() {
                 Goes to AI governance and safety. The affected capability can be contained if required.
               </div>
               <div className="sm:w-1/5 text-left sm:text-right">
-                <a href="#concerns" className="text-[#E0533C] font-mono text-xs font-bold hover:underline">
+                <a href="/contact#fallback-inquiry" className="text-[#E0533C] font-mono text-xs font-bold hover:underline">
                   Report a safety concern &rarr;
                 </a>
               </div>
@@ -1517,7 +1517,7 @@ export default function ResponsibleAIPage() {
                 Product and quality review. Source, version and context are preserved, and affected records are corrected where material.
               </div>
               <div className="sm:w-1/5 text-left sm:text-right">
-                <a href="#concerns" className="text-[#E0533C] font-mono text-xs font-bold hover:underline">
+                <a href="/contact#fallback-inquiry" className="text-[#E0533C] font-mono text-xs font-bold hover:underline">
                   Report an accuracy concern &rarr;
                 </a>
               </div>
@@ -1532,7 +1532,7 @@ export default function ResponsibleAIPage() {
                 Responsible AI review, with accessibility, privacy or legal involvement depending on the context.
               </div>
               <div className="sm:w-1/5 text-left sm:text-right">
-                <a href="#concerns" className="text-[#E0533C] font-mono text-xs font-bold hover:underline">
+                <a href="/contact#fallback-inquiry" className="text-[#E0533C] font-mono text-xs font-bold hover:underline">
                   Report an impact concern &rarr;
                 </a>
               </div>
@@ -1547,7 +1547,7 @@ export default function ResponsibleAIPage() {
                 Privacy and Security incident process. Rights and notification depend on verified facts and applicable law.
               </div>
               <div className="sm:w-1/5 text-left sm:text-right">
-                <a href="#concerns" className="text-[#E0533C] font-mono text-xs font-bold hover:underline">
+                <a href="/contact#privacy-rights" className="text-[#E0533C] font-mono text-xs font-bold hover:underline">
                   Privacy contact &rarr;
                 </a>
               </div>
@@ -1562,7 +1562,7 @@ export default function ResponsibleAIPage() {
                 Security and governance review. The action path is contained and approval evidence is preserved.
               </div>
               <div className="sm:w-1/5 text-left sm:text-right">
-                <a href="#concerns" className="text-[#E0533C] font-mono text-xs font-bold hover:underline">
+                <a href="/contact#fallback-inquiry" className="text-[#E0533C] font-mono text-xs font-bold hover:underline">
                   Report an authority concern &rarr;
                 </a>
               </div>
@@ -1577,7 +1577,7 @@ export default function ResponsibleAIPage() {
                 Public transparency corrections go through content, governance and legal review, with the correction history kept.
               </div>
               <div className="sm:w-1/5 text-left sm:text-right">
-                <a href="#concerns" className="text-[#E0533C] font-mono text-xs font-bold hover:underline">
+                <a href="/contact#fallback-inquiry" className="text-[#E0533C] font-mono text-xs font-bold hover:underline">
                   Report a disclosure error &rarr;
                 </a>
               </div>
@@ -1707,13 +1707,13 @@ export default function ResponsibleAIPage() {
               <div className="space-y-2 pt-3">
                 <div className="flex flex-wrap items-center gap-2">
                   <a
-                    href="/about"
+                    href="/trust-center"
                     className="px-5 py-2.5 bg-white hover:bg-gray-50 text-[#151B28] text-xs font-bold rounded-lg border border-gray-300 shadow-sm transition-all inline-block"
                   >
                     Trust Center
                   </a>
                   <a
-                    href="/security"
+                    href="/security-trust-center"
                     className="px-5 py-2.5 bg-white hover:bg-gray-50 text-[#151B28] text-xs font-bold rounded-lg border border-gray-300 shadow-sm transition-all inline-block"
                   >
                     Security Practices
@@ -1813,7 +1813,7 @@ export default function ResponsibleAIPage() {
                 Report an AI Concern
               </a>
               <a
-                href="/about"
+                href="/trust-center"
                 className="w-full sm:w-auto px-6 py-3.5 bg-[#16202A] hover:bg-[#1E2B38] text-white font-semibold text-sm rounded-lg border border-gray-700 transition-all shadow-sm text-center"
               >
                 Visit the Trust Center

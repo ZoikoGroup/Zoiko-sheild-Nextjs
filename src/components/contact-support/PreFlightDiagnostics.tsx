@@ -36,7 +36,7 @@ const diagnosticCards = [
 
 export default function PreFlightDiagnostics() {
   return (
-    <div className="bg-[#F0EDE6] text-[#111827] px-6 py-16 md:px-12 font-sans antialiased flex flex-col items-center justify-center">
+    <div id="pre-flight" className="scroll-mt-24 bg-[#F0EDE6] text-[#111827] px-6 py-16 md:px-12 font-sans antialiased flex flex-col items-center justify-center">
       <div className="w-full max-w-6xl">
         {/* Header Section */}
         <div className="mb-6">

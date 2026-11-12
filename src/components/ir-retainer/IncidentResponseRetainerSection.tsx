@@ -41,19 +41,19 @@ export default function IncidentResponseRetainer() {
           {/* Action Buttons */}
           <div className="flex flex-wrap items-center gap-4">
             <a
-              href="#"
+              href="/book-a-demo"
               className="bg-[#E05236] hover:bg-[#c9452b] text-white font-medium text-sm px-6 py-3.5 rounded-lg transition-colors shadow-sm"
             >
               Book a Demo
             </a>
             <a
-              href="#"
+              href="/incident-readiness-service"
               className="bg-transparent hover:bg-black/5 text-[#111827] font-medium text-sm px-6 py-3.5 rounded-lg border border-[#D1D5DB] transition-colors"
             >
               Review Incident Readiness
             </a>
             <a
-              href="#"
+              href="/trust-center"
               className="bg-transparent hover:bg-black/5 text-[#111827] font-medium text-sm px-6 py-3.5 rounded-lg border border-[#D1D5DB] transition-colors"
             >
               Visit Trust Center

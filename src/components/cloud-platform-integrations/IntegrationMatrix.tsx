@@ -148,7 +148,7 @@ function StatusBadge({ status }: { status: Row["status"] }) {
 
 export default function IntegrationMatrix() {
   return (
-    <section className="bg-[#f7f5f0] w-full">
+    <section id="integration-matrix" className="scroll-mt-24 bg-[#f7f5f0] w-full">
       <div className="flex flex-col gap-10 mx-auto max-w-[1440px] px-[22px] lg:px-[108px] py-14 lg:py-[80px]">
         <motion.div
           initial={{ opacity: 0, y: 16 }}

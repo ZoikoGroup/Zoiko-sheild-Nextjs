@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export default function VerifyTelemetryDataPackageBeforeDispatch() {
   return (
@@ -58,9 +59,12 @@ export default function VerifyTelemetryDataPackageBeforeDispatch() {
             <button className="bg-[#C53030] hover:bg-[#B91C1C] text-white text-xs font-bold px-6 py-3.5 rounded-xl transition-colors shadow-sm">
               Confirm &amp; Dispatch Request
             </button>
-            <button className="bg-white hover:bg-[#F9FAFB] text-[#111827] border border-[#D1D5DB] text-xs font-bold px-6 py-3.5 rounded-xl transition-colors shadow-sm">
+            <Link
+              href="/dashboard"
+              className="bg-white hover:bg-[#F9FAFB] text-[#111827] border border-[#D1D5DB] text-xs font-bold px-6 py-3.5 rounded-xl transition-colors shadow-sm"
+            >
               Back to Workspace
-            </button>
+            </Link>
           </div>
         </div>
       </div>

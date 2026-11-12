@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import Image from "next/image";
 // import { Navbar } from "@/components/layout/Navbar";
 // import { Footer } from "@/components/layout/Footer";
-import { DemoModal } from "@/components/ui/DemoModal";
 
 // 5 Concepts Data
 const FIVE_CONCEPTS = [
@@ -13,35 +12,35 @@ const FIVE_CONCEPTS = [
     title: "Rules",
     desc: "What a method is looking for, who owns it, which version is current, and what it can't see.",
     linkText: "Inspect the rule contract →",
-    href: "#concepts",
+    href: "rules",
   },
   {
     num: "02",
     title: "Correlation",
     desc: "How two observations were related, on what basis, and what contradicts the relationship.",
     linkText: "Inspect a relationship →",
-    href: "#concepts",
+    href: "correlation",
   },
   {
     num: "03",
     title: "Context",
     desc: "Which enrichment was applied, from which authority, how fresh it was, and what was missing.",
     linkText: "See provenance and gaps →",
-    href: "#concepts",
+    href: "context",
   },
   {
     num: "04",
     title: "Replay",
     desc: "Versioned re-evaluation against a later method — and an honest account of what changed.",
     linkText: "Compare original vs replay →",
-    href: "#concepts",
+    href: "replay",
   },
   {
     num: "05",
     title: "Prioritization",
     desc: "Inputs, method version, rationale, uncertainty, override and history. Not a badge.",
     linkText: "Inspect a priority basis →",
-    href: "#concepts",
+    href: "prioritization",
   },
 ];
 
@@ -368,7 +367,6 @@ const SECURITY_ANALYTICS_FAQS = [
 ];
 
 export default function SecurityAnalyticsPage() {
-  const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
 
   const toggleFaq = (index: number) => {
@@ -392,7 +390,7 @@ export default function SecurityAnalyticsPage() {
               <strong className="text-white font-bold">This destination is conditional.</strong> It explains five approved concepts. It does not describe a shipped engine, and it publishes no performance, coverage or availability claim.
             </p>
             <a
-              href="#concepts"
+              href="/detection-and-response"
               className="font-mono text-xs font-bold text-[#EAB308] hover:underline block pt-1"
             >
               Detection &amp; Response in active &rarr;
@@ -442,21 +440,21 @@ export default function SecurityAnalyticsPage() {
           {/* Action Buttons Stack */}
           <div className="space-y-2.5 pt-2">
             <div className="grid grid-cols-2 gap-2.5">
-              <button
-                onClick={() => setIsDemoModalOpen(true)}
-                className="w-full py-3 bg-[#E0533C] hover:bg-[#c94530] text-white font-bold text-xs rounded-lg transition-all shadow-md text-center"
+              <a
+                href="/book-a-demo"
+                className="w-full py-3 bg-[#E0533C] hover:bg-[#c94530] text-white font-bold text-xs rounded-lg transition-all shadow-md text-center flex items-center justify-center"
               >
                 Book a Demo
-              </button>
+              </a>
               <a
-                href="#concepts"
+                href="/detection-and-response"
                 className="w-full py-3 bg-[#EFECE6] hover:bg-gray-200 text-[#151B28] font-semibold text-xs rounded-lg border border-gray-300 transition-all shadow-sm text-center flex items-center justify-center"
               >
                 Detection &amp; Response
               </a>
             </div>
             <a
-              href="/services"
+              href="/platform-overview"
               className="w-full py-3 bg-[#EFECE6] hover:bg-gray-200 text-[#151B28] font-semibold text-xs rounded-lg border border-gray-300 transition-all shadow-sm text-center block"
             >
               Explore the Platform
@@ -585,20 +583,20 @@ export default function SecurityAnalyticsPage() {
 
               {/* Action Buttons */}
               <div className="flex flex-wrap items-center gap-3 pt-2">
-                <button
-                  onClick={() => setIsDemoModalOpen(true)}
+                <a
+                  href="/book-a-demo"
                   className="px-6 py-3 bg-[#E0533C] hover:bg-[#c94530] text-white font-bold text-sm rounded-lg transition-all shadow-md"
                 >
                   Book a Demo
-                </button>
+                </a>
                 <a
-                  href="#concepts"
+                  href="/detection-and-response"
                   className="px-5 py-3 bg-[#EFECE6] hover:bg-gray-200 text-[#151B28] font-semibold text-sm rounded-lg border border-gray-300/80 transition-all shadow-sm"
                 >
                   Detection &amp; Response
                 </a>
                 <a
-                  href="/services"
+                  href="/platform-overview"
                   className="px-5 py-3 bg-[#EFECE6] hover:bg-gray-200 text-[#151B28] font-semibold text-sm rounded-lg border border-gray-300/80 transition-all shadow-sm"
                 >
                   Explore the Platform
@@ -663,7 +661,7 @@ export default function SecurityAnalyticsPage() {
                 </p>
                 <div className="pt-1">
                   <a
-                    href={item.href}
+                    href={`#${item.href}-mobile`}
                     className="font-mono text-[10px] text-[#E0533C] font-bold hover:underline block"
                   >
                     {item.linkText}
@@ -734,7 +732,7 @@ export default function SecurityAnalyticsPage() {
 
                 <div className="pt-2">
                   <a
-                    href={item.href}
+                    href={`#${item.href}`}
                     className="font-mono text-[10px] text-[#E0533C] font-bold hover:underline block"
                   >
                     {item.linkText}
@@ -772,7 +770,7 @@ export default function SecurityAnalyticsPage() {
         {/* ========================================================================= */}
 
         {/* MOBILE SECTION 3 (block sm:hidden) */}
-        <section id="rules-mobile" className="block sm:hidden max-w-7xl mx-auto px-4 py-8 border-t border-gray-200/70">
+        <section id="rules-mobile" className="scroll-mt-24 block sm:hidden max-w-7xl mx-auto px-4 py-8 border-t border-gray-200/70">
           <div className="space-y-3 mb-6">
             <div className="flex items-center gap-2">
               <span className="h-[1.5px] w-5 bg-[#E0533C]" />
@@ -915,7 +913,7 @@ export default function SecurityAnalyticsPage() {
         </section>
 
         {/* DESKTOP SECTION 3 (hidden sm:block) */}
-        <section id="rules" className="hidden sm:block max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 border-t border-gray-200/70">
+        <section id="rules" className="scroll-mt-24 hidden sm:block max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 border-t border-gray-200/70">
           <div className="space-y-3 mb-10">
             <div className="flex items-center gap-2">
               <span className="h-[1.5px] w-5 bg-[#E0533C]" />
@@ -1068,7 +1066,7 @@ export default function SecurityAnalyticsPage() {
         {/* ========================================================================= */}
 
         {/* MOBILE SECTION 4 (block sm:hidden) */}
-        <section id="correlation-mobile" className="block sm:hidden bg-[#EFECE6] py-8 border-t border-gray-300/60">
+        <section id="correlation-mobile" className="scroll-mt-24 block sm:hidden bg-[#EFECE6] py-8 border-t border-gray-300/60">
           <div className="max-w-7xl mx-auto px-4">
             <div className="space-y-3 mb-6">
               <div className="flex items-center gap-2">
@@ -1188,7 +1186,7 @@ export default function SecurityAnalyticsPage() {
         </section>
 
         {/* DESKTOP SECTION 4 (hidden sm:block) */}
-        <section id="correlation" className="hidden sm:block bg-[#EFECE6] py-14 sm:py-16 border-t border-gray-300/60">
+        <section id="correlation" className="scroll-mt-24 hidden sm:block bg-[#EFECE6] py-14 sm:py-16 border-t border-gray-300/60">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="space-y-3 mb-10">
               <div className="flex items-center gap-2">
@@ -1312,7 +1310,7 @@ export default function SecurityAnalyticsPage() {
         {/* ========================================================================= */}
 
         {/* MOBILE SECTION 5 (block sm:hidden) */}
-        <section id="context-mobile" className="block sm:hidden bg-[#EFECE6] py-8 border-t border-gray-300/60">
+        <section id="context-mobile" className="scroll-mt-24 block sm:hidden bg-[#EFECE6] py-8 border-t border-gray-300/60">
           <div className="max-w-7xl mx-auto px-4 space-y-6">
             <div className="space-y-3">
               <div className="flex items-center gap-2">
@@ -1421,7 +1419,7 @@ export default function SecurityAnalyticsPage() {
 
                 <div className="pt-2">
                   <a
-                    href="/services"
+                    href="/integrations"
                     className="px-4 py-2 bg-white hover:bg-gray-50 text-[#151B28] text-xs font-bold rounded-lg border border-gray-300 shadow-sm transition-all inline-block"
                   >
                     Explore Integrations
@@ -1433,7 +1431,7 @@ export default function SecurityAnalyticsPage() {
         </section>
 
         {/* DESKTOP SECTION 5 (hidden sm:block) */}
-        <section id="context" className="hidden sm:block bg-[#EFECE6] py-14 sm:py-16 border-t border-gray-300/60">
+        <section id="context" className="scroll-mt-24 hidden sm:block bg-[#EFECE6] py-14 sm:py-16 border-t border-gray-300/60">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="space-y-3 mb-10">
               <div className="flex items-center gap-2">
@@ -1551,7 +1549,7 @@ export default function SecurityAnalyticsPage() {
 
                 <div className="pt-3">
                   <a
-                    href="/services"
+                    href="/integrations"
                     className="px-4 py-2.5 bg-white hover:bg-gray-50 text-[#151B28] text-xs font-bold rounded-lg border border-gray-300 shadow-sm transition-all inline-block"
                   >
                     Explore Integrations
@@ -1567,7 +1565,7 @@ export default function SecurityAnalyticsPage() {
         {/* ========================================================================= */}
 
         {/* MOBILE SECTION 6 (block sm:hidden) */}
-        <section id="replay-mobile" className="block sm:hidden max-w-7xl mx-auto px-4 py-8 border-t border-gray-200/70">
+        <section id="replay-mobile" className="scroll-mt-24 block sm:hidden max-w-7xl mx-auto px-4 py-8 border-t border-gray-200/70">
           <div className="space-y-3 mb-6">
             <div className="flex items-center gap-2">
               <span className="h-[1.5px] w-5 bg-[#E0533C]" />
@@ -1652,7 +1650,7 @@ export default function SecurityAnalyticsPage() {
         </section>
 
         {/* DESKTOP SECTION 6 (hidden sm:block) */}
-        <section id="replay" className="hidden sm:block max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 border-t border-gray-200/70">
+        <section id="replay" className="scroll-mt-24 hidden sm:block max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 border-t border-gray-200/70">
           <div className="space-y-3 mb-10">
             <div className="flex items-center gap-2">
               <span className="h-[1.5px] w-5 bg-[#E0533C]" />
@@ -1761,7 +1759,7 @@ export default function SecurityAnalyticsPage() {
         {/* ========================================================================= */}
 
         {/* MOBILE SECTION 7 (block sm:hidden) */}
-        <section id="prioritization-mobile" className="block sm:hidden bg-[#0B1B26] text-white py-8 border-t border-gray-800 my-6">
+        <section id="prioritization-mobile" className="scroll-mt-24 block sm:hidden bg-[#0B1B26] text-white py-8 border-t border-gray-800 my-6">
           <div className="max-w-7xl mx-auto px-4">
             <div className="space-y-3 mb-6">
               <div className="flex items-center gap-2">
@@ -1892,7 +1890,7 @@ export default function SecurityAnalyticsPage() {
         </section>
 
         {/* DESKTOP SECTION 7 (hidden sm:block) */}
-        <section id="prioritization" className="hidden sm:block bg-[#0B1B26] text-white py-14 sm:py-16 my-8">
+        <section id="prioritization" className="scroll-mt-24 hidden sm:block bg-[#0B1B26] text-white py-14 sm:py-16 my-8">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
             <div className="space-y-3">
               <div className="flex items-center gap-2">
@@ -2120,7 +2118,7 @@ export default function SecurityAnalyticsPage() {
               </p>
               <div className="pt-1">
                 <a
-                  href="#hero"
+                  href="/detection-and-response"
                   className="px-4 py-2 bg-white hover:bg-gray-50 text-[#151B28] text-xs font-bold rounded-lg border border-gray-300 shadow-sm transition-all inline-block"
                 >
                   Open &rarr;
@@ -2231,7 +2229,7 @@ export default function SecurityAnalyticsPage() {
               </div>
               <div className="pt-2">
                 <a
-                  href="#hero"
+                  href="/detection-and-response"
                   className="px-4 py-2 bg-white hover:bg-gray-50 text-[#151B28] text-xs font-bold rounded-lg border border-gray-300 shadow-sm transition-all inline-block"
                 >
                   Open &rarr;
@@ -2651,14 +2649,14 @@ export default function SecurityAnalyticsPage() {
             {/* Action Buttons Stack matching screenshot */}
             <div className="space-y-3 pt-2">
               <div className="grid grid-cols-2 gap-3">
-                <button
-                  onClick={() => setIsDemoModalOpen(true)}
+                <a
+                  href="/book-a-demo"
                   className="px-4 py-3 bg-[#E0533C] hover:bg-[#c94530] text-white font-bold text-xs rounded-lg transition-all shadow-md text-center"
                 >
                   Book a Demo
-                </button>
+                </a>
                 <a
-                  href="#hero"
+                  href="/detection-and-response"
                   className="px-4 py-3 bg-white/5 border border-white/20 hover:bg-white/10 text-white font-semibold text-xs rounded-lg transition-all text-center"
                 >
                   Detection &amp; Response
@@ -2702,14 +2700,14 @@ export default function SecurityAnalyticsPage() {
 
             {/* Action Buttons Stack */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 max-w-xs sm:max-w-none mx-auto w-full pt-4">
-              <button
-                onClick={() => setIsDemoModalOpen(true)}
+              <a
+                href="/book-a-demo"
                 className="w-full sm:w-auto px-6 py-3.5 bg-[#E0533C] hover:bg-[#c94530] text-white font-bold text-sm rounded-lg transition-all shadow-md text-center"
               >
                 Book a Demo
-              </button>
+              </a>
               <a
-                href="#hero"
+                href="/detection-and-response"
                 className="w-full sm:w-auto px-6 py-3.5 bg-[#16202A] hover:bg-[#1E2B38] text-white font-semibold text-sm rounded-lg border border-gray-700 transition-all shadow-sm text-center"
               >
                 Detection &amp; Response
@@ -2733,7 +2731,6 @@ export default function SecurityAnalyticsPage() {
       {/* <Footer /> */}
 
       {/* Demo Modal */}
-      <DemoModal isOpen={isDemoModalOpen} onClose={() => setIsDemoModalOpen(false)} />
     </div>
   );
 }

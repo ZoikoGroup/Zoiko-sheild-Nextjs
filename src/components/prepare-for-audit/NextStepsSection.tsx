@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export function NextStepsSection() {
   return (
@@ -25,12 +26,12 @@ export function NextStepsSection() {
       
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-[22px] w-full">
                     {[
-                      { title: "Compliance Control Plane", desc: "The product authority for controls, mappings, tests, assessments, exceptions and the audit workspace itself. This page summarizes; that route defines." },
-                      { title: "Evidence Ledger & Verification", desc: "Evidence identity, lineage, completeness, verification and packages. Where the drill-down lands, and whose vocabulary this page uses without broadening it." },
-                      { title: "Continuous Assurance", desc: "An independent service that can support ongoing control and evidence assurance, including audit readiness. It is not a prerequisite for anything on this page.", isDev: true },
-                      { title: "vCISO & Advisory", desc: "Governance support and evidence-linked advisory within the advisory role. An advisor does not become a statutory auditor or your legal adviser by implication.", isBeta: true },
-                      { title: "Framework Coverage", desc: "The authority for which program alignments are current. Framework questions route there rather than being answered with a logo here.", isConditional: true },
-                      { title: "Trust Center", desc: "Current security, privacy, subprocessor and entity truth for your own diligence. Marketing never overrides what those disclosures say." }
+                      { title: "Compliance Control Plane", href: "/compliance-control-plane", desc: "The product authority for controls, mappings, tests, assessments, exceptions and the audit workspace itself. This page summarizes; that route defines." },
+                      { title: "Evidence Ledger & Verification", href: "/evidence-ledger-verification", desc: "Evidence identity, lineage, completeness, verification and packages. Where the drill-down lands, and whose vocabulary this page uses without broadening it." },
+                      { title: "Continuous Assurance", href: "/continuous-assurance", desc: "An independent service that can support ongoing control and evidence assurance, including audit readiness. It is not a prerequisite for anything on this page.", isDev: true },
+                      { title: "vCISO & Advisory", href: "/vciso-advisory", desc: "Governance support and evidence-linked advisory within the advisory role. An advisor does not become a statutory auditor or your legal adviser by implication.", isBeta: true },
+                      { title: "Framework Coverage", href: "/framework-coverage", desc: "The authority for which program alignments are current. Framework questions route there rather than being answered with a logo here.", isConditional: true },
+                      { title: "Trust Center", href: "/trust-center", desc: "Current security, privacy, subprocessor and entity truth for your own diligence. Marketing never overrides what those disclosures say." }
                     ].map((item, i) => (
                       <div key={i} className="bg-[#0b1b26] border border-[#1a2f42] rounded-[6px] p-[32px] flex flex-col justify-between items-start transition-colors hover:bg-[#132838]">
                         <div className="flex flex-col gap-[12px] mb-[32px] w-full">
@@ -42,9 +43,13 @@ export function NextStepsSection() {
                           </div>
                           <p className="font-sans font-normal text-[#8a98a5] text-[14px] leading-[22px] m-0">{item.desc}</p>
                         </div>
-                        <button className="bg-transparent border border-white/20 text-white font-mono text-[13px] px-[16px] py-[8px] rounded-[4px] hover:bg-white/5 transition-colors">
+                        <Link
+                          href={item.href}
+                          aria-label={`Open ${item.title}`}
+                          className="bg-transparent border border-white/20 text-white font-mono text-[13px] px-[16px] py-[8px] rounded-[4px] hover:bg-white/5 transition-colors"
+                        >
                           Open →
-                        </button>
+                        </Link>
                       </div>
                     ))}
                   </div>

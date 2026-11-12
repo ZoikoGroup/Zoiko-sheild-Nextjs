@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function HeroSection() {
@@ -84,21 +85,30 @@ export default function HeroSection() {
           </div>
 
           <div className="hidden lg:flex gap-4 items-center pt-0">
-            <button className="inline-flex items-center justify-center px-[28px] py-[16px] rounded-[10px] bg-[#c44242] hover:bg-[#b23636] transition-colors">
+            <a
+              href="#preference-center"
+              className="inline-flex items-center justify-center px-[28px] py-[16px] rounded-[10px] bg-[#c44242] hover:bg-[#b23636] transition-colors"
+            >
               <span className="font-sans font-bold text-[15px] text-white whitespace-nowrap">
                 Manage Cookie Preferences
               </span>
-            </button>
-            <button className="inline-flex items-center justify-center px-[24px] py-[16px] rounded-[10px] border border-[#4e668a] hover:bg-[#4e668a0d] transition-colors">
+            </a>
+            <a
+              href="#technology-registry"
+              className="inline-flex items-center justify-center px-[24px] py-[16px] rounded-[10px] border border-[#4e668a] hover:bg-[#4e668a0d] transition-colors"
+            >
               <span className="font-sans font-bold text-[15px] text-[#4e668a] whitespace-nowrap">
                 View Technology Registry
               </span>
-            </button>
-            <button className="inline-flex items-center justify-center px-[12px] py-[16px]">
+            </a>
+            <Link
+              href="/privacy-notice"
+              className="inline-flex items-center justify-center px-[12px] py-[16px] hover:opacity-80 transition-opacity"
+            >
               <span className="font-sans font-bold text-[15px] text-[#5b6670] underline whitespace-nowrap">
                 Privacy Notice
               </span>
-            </button>
+            </Link>
           </div>
 
           <div className="hidden lg:flex gap-2 items-center w-full">

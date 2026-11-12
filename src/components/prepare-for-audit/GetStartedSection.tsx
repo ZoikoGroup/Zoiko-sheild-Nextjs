@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export function GetStartedSection() {
   return (
@@ -22,15 +23,15 @@ export function GetStartedSection() {
                   </p>
                   
                   <div className="flex flex-wrap justify-center gap-[12px] sm:gap-[16px] mt-[16px]">
-                    <button className="bg-[#e0402f] text-white font-mono font-semibold text-[13px] px-[24px] py-[12px] rounded-[4px] hover:bg-[#c83526] transition-colors">
+                    <Link href="/book-a-demo" className="bg-[#e0402f] text-white font-mono font-semibold text-[13px] px-[24px] py-[12px] rounded-[4px] hover:bg-[#c83526] transition-colors">
                       Book a Demo
-                    </button>
-                    <button className="bg-transparent border border-white/20 text-white font-mono text-[13px] px-[24px] py-[12px] rounded-[4px] hover:bg-white/5 transition-colors">
+                    </Link>
+                    <Link href="/compliance-control-plane" className="bg-transparent border border-white/20 text-white font-mono text-[13px] px-[24px] py-[12px] rounded-[4px] hover:bg-white/5 transition-colors">
                       Compliance Control Plane
-                    </button>
-                    <button className="bg-transparent border border-white/20 text-white font-mono text-[13px] px-[24px] py-[12px] rounded-[4px] hover:bg-white/5 transition-colors">
+                    </Link>
+                    <Link href="/trust-center" className="bg-transparent border border-white/20 text-white font-mono text-[13px] px-[24px] py-[12px] rounded-[4px] hover:bg-white/5 transition-colors">
                       Visit Trust Center
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </section>

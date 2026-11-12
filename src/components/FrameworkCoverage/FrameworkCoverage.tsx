@@ -49,14 +49,14 @@ export default function FrameworkCoverage() {
           {/* Buttons Container */}
           <div className="flex flex-wrap items-center gap-4">
             <a
-              href="#"
+              href="#framework-directory"
               className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#C8382C] text-white text-sm font-medium tracking-wide shadow-sm hover:bg-[#b53026] transition-colors"
             >
               Browse approved references
             </a>
 
             <a
-              href="#"
+              href="/evidence-ledger-verification"
               className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-transparent border border-[#111A1E30] text-[#111A1E] text-sm font-medium tracking-wide hover:bg-[#111A1E08] transition-colors"
             >
               How evidence works

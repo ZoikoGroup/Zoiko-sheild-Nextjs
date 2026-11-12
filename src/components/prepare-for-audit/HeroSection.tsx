@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export function HeroSection() {
   return (
@@ -32,21 +33,21 @@ export function HeroSection() {
                     
                     {/* Buttons Row */}
                     <div className="flex flex-wrap gap-[12px] items-start pt-[16.8px] relative w-full">
-                      <div className="bg-[#e0402f] flex items-center justify-center px-[22px] py-[11px] rounded-[6px] cursor-pointer hover:bg-red-600 transition-colors">
+                      <Link href="/book-a-demo" className="bg-[#e0402f] flex items-center justify-center px-[22px] py-[11px] rounded-[6px] hover:bg-red-600 transition-colors">
                         <span className="font-sans font-semibold text-white text-[14px] leading-[22.4px] whitespace-nowrap">
                           Book a Demo
                         </span>
-                      </div>
-                      <div className="border border-[#e1ddd8] bg-transparent flex items-center justify-center px-[22px] py-[11px] rounded-[6px] cursor-pointer hover:bg-gray-50 transition-colors">
+                      </Link>
+                      <Link href="/compliance-control-plane" className="border border-[#e1ddd8] bg-transparent flex items-center justify-center px-[22px] py-[11px] rounded-[6px] hover:bg-gray-50 transition-colors">
                         <span className="font-sans font-semibold text-[#0b2237] text-[14px] leading-[22.4px] whitespace-nowrap">
                           Explore Compliance Control Plane
                         </span>
-                      </div>
-                      <div className="border border-[#e1ddd8] bg-transparent flex items-center justify-center px-[22px] py-[11px] rounded-[6px] cursor-pointer hover:bg-gray-50 transition-colors">
+                      </Link>
+                      <Link href="/evidence-ledger-verification" className="border border-[#e1ddd8] bg-transparent flex items-center justify-center px-[22px] py-[11px] rounded-[6px] hover:bg-gray-50 transition-colors">
                         <span className="font-sans font-semibold text-[#0b2237] text-[14px] leading-[22.4px] whitespace-nowrap">
                           See how Evidence works
                         </span>
-                      </div>
+                      </Link>
                     </div>
                     
                     <div className="mt-6 pt-4 border-t border-[#e1ddd8] max-w-[585px]">

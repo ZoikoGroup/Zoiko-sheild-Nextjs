@@ -26,7 +26,7 @@ export function TrendBenchmarkSection() {
                   {/* Lede */}
                   <div className="flex flex-col font-sans font-normal justify-center max-w-[686.375px] relative">
                     <p className="text-[17px] leading-[27.2px] mb-0 text-[#5c6b79]">
-                      Definitions, populations, periods and methods must be comparable \u2014 or the differences must be disclosed prominently enough that nobody reads the movement as real.
+                      Definitions, populations, periods and methods must be comparable &mdash; or the differences must be disclosed prominently enough that nobody reads the movement as real.
                     </p>
                   </div>
       
@@ -36,7 +36,7 @@ export function TrendBenchmarkSection() {
                     {/* Card 1 */}
                     <div className="bg-white border border-[#e1ddd8] rounded-[6px] flex flex-col p-[27px] gap-[16px]">
                       <div className="w-[32px] h-[32px] flex items-center justify-center bg-[#f4f5f7] rounded-[6px] text-[#5c6b79] text-[18px]">
-                        â—
+                        ◐
                       </div>
                       <h3 className="font-sans font-bold text-[#0b2237] text-[18px] m-0">What gets checked first</h3>
                       <ul className="flex flex-col gap-[12px] m-0 p-0 list-none mt-2">
@@ -84,7 +84,7 @@ export function TrendBenchmarkSection() {
                     {/* Card 2 */}
                     <div className="bg-white border-[1.5px] border-[#e0402f] rounded-[6px] p-[27px] flex flex-col gap-[16px]">
                       <div className="w-[32px] h-[32px] flex items-center justify-center bg-[#f4f5f7] rounded-[6px] text-[#5c6b79] text-[18px]">
-                        â¦€
+                        ⦀
                       </div>
                       <h3 className="font-sans font-bold text-[#0b2237] text-[18px] m-0">On peer benchmarks</h3>
                       <p className="font-sans font-normal text-[#5c6b79] text-[14px] leading-[22px] m-0">

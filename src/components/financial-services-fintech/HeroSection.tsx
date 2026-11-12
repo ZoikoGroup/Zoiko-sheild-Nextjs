@@ -2,16 +2,10 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { REQUEST_REVIEW_HREF, TALK_TO_ARCHITECT_HREF } from "./ctaLinks";
 
-interface HeroSectionProps {
-  onRequestReview?: () => void;
-  onTalkToArchitect?: () => void;
-}
-
-export const HeroSection: React.FC<HeroSectionProps> = ({
-  onRequestReview,
-  onTalkToArchitect,
-}) => {
+export const HeroSection: React.FC = () => {
   return (
     <section className="relative w-full overflow-hidden bg-slate-950 text-white py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-28 border-b border-cyan-950/20">
       {/* Radial atmospheric glows */}
@@ -47,21 +41,19 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
             {/* Action Buttons */}
             <div className="flex flex-col  items-stretch sm:items-start gap-4 pt-2 w-full sm:w-auto">
-              <button
-                type="button"
-                onClick={onRequestReview}
-                className="px-6 py-4 bg-red-500 hover:bg-red-600 text-white text-sm sm:text-base font-bold font-['Manrope'] rounded-lg shadow-sm hover:shadow transition-all duration-200 cursor-pointer text-center"
+              <Link
+                href={REQUEST_REVIEW_HREF}
+                className="px-6 py-4 bg-red-500 hover:bg-red-600 text-white text-sm sm:text-base font-bold font-['Manrope'] rounded-lg shadow-sm hover:shadow transition-all duration-200 text-center"
               >
                 Request a Financial Services Security Review
-              </button>
+              </Link>
 
-              <button
-                type="button"
-                onClick={onTalkToArchitect || onRequestReview}
-                className="px-5 py-4 rounded-lg outline outline-1 outline-offset-[-1px] outline-white/40 hover:bg-white/10 text-white text-sm sm:text-base font-bold font-['Manrope'] transition-colors cursor-pointer text-center"
+              <Link
+                href={TALK_TO_ARCHITECT_HREF}
+                className="px-5 py-4 rounded-lg outline outline-1 outline-offset-[-1px] outline-white/40 hover:bg-white/10 text-white text-sm sm:text-base font-bold font-['Manrope'] transition-colors text-center"
               >
                 Talk to a Compliance Architect
-              </button>
+              </Link>
             </div>
           </div>
 

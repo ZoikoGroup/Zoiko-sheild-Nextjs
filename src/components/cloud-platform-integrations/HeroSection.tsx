@@ -46,7 +46,7 @@ export default function HeroSection() {
 
             <div className="flex flex-wrap gap-4 items-center pt-3">
               <a
-                href="#"
+                href="#integration-matrix"
                 className="inline-flex items-center justify-center px-6 py-[14px] rounded-[10px] bg-[#c44242] shadow-[0px_4px_6px_rgba(196,66,66,0.2)] hover:bg-[#b23636] transition-colors"
               >
                 <span className="font-manrope font-bold text-[15px] text-white whitespace-nowrap">
@@ -54,7 +54,7 @@ export default function HeroSection() {
                 </span>
               </a>
               <a
-                href="#"
+                href="/book-a-demo"
                 className="inline-flex items-center justify-center px-6 py-[14px] rounded-[10px] border-[1.5px] border-[#123b4c] hover:bg-[#123b4c0d] transition-colors"
               >
                 <span className="font-manrope font-bold text-[15px] text-[#123b4c] whitespace-nowrap">

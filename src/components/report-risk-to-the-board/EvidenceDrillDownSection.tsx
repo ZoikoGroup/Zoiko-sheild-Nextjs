@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export function EvidenceDrillDownSection() {
   return (
@@ -123,7 +124,7 @@ export function EvidenceDrillDownSection() {
                     {/* Denied */}
                     <div className="grid grid-cols-[48px_minmax(0,1.15fr)_minmax(0,1.2fr)] w-full relative">
                       <div className="flex flex-col pt-[24px] pl-[20px]">
-                        <p className="font-mono font-semibold text-[#a63220] text-[11px] leading-[17.6px] m-0">âœ•</p>
+                        <p className="font-mono font-semibold text-[#a63220] text-[11px] leading-[17.6px] m-0">✕</p>
                       </div>
                       <div className="flex flex-col pt-[22px] pb-[24px] pr-[40px] gap-[4px]">
                         <h4 className="font-sans font-bold text-[#0b2237] text-[15px] m-0">When access is denied</h4>
@@ -150,11 +151,11 @@ export function EvidenceDrillDownSection() {
                       <p className="font-sans font-normal text-[#5c6b79] text-[14px] leading-[24px] m-0">
                         The evidence ledger can establish that a record is intact and consistent within its stated scope. It cannot establish that the risk conclusion drawn from that record is correct. Those are separate questions with separate owners, and collapsing them is the most common way evidence-linked reporting goes wrong.
                       </p>
-                      <div className="mt-4 border border-[#e1ddd8] inline-flex items-center justify-center px-[22px] py-[11px] rounded-[6px] cursor-pointer hover:bg-gray-50 transition-colors self-start">
+                      <Link href="/evidence-ledger-verification" className="mt-4 border border-[#e1ddd8] inline-flex items-center justify-center px-[22px] py-[11px] rounded-[6px] hover:bg-gray-50 transition-colors self-start">
                         <span className="font-sans font-semibold text-[#0b2237] text-[14px] leading-[22.4px] whitespace-nowrap">
                           Evidence ledger &rarr;
                         </span>
-                      </div>
+                      </Link>
                     </div>
                     
                     <div className="bg-white border border-[#e1ddd8] rounded-[6px] p-[27px] flex flex-col gap-[16px]">
@@ -165,11 +166,11 @@ export function EvidenceDrillDownSection() {
                       <p className="font-sans font-normal text-[#5c6b79] text-[14px] leading-[24px] m-0">
                         Risk Intelligence owns risk-method truth. This solution owns how that truth is understood and used for executive reporting. A statement here may summarize an approved risk statement with its scope and time basis &mdash; but never rewrite it in a way that increases certainty.
                       </p>
-                      <div className="mt-4 border border-[#e1ddd8] inline-flex items-center justify-center px-[22px] py-[11px] rounded-[6px] cursor-pointer hover:bg-gray-50 transition-colors self-start">
+                      <Link href="/risk-intelligence" className="mt-4 border border-[#e1ddd8] inline-flex items-center justify-center px-[22px] py-[11px] rounded-[6px] hover:bg-gray-50 transition-colors self-start">
                         <span className="font-sans font-semibold text-[#0b2237] text-[14px] leading-[22.4px] whitespace-nowrap">
                           Risk intelligence &rarr;
                         </span>
-                      </div>
+                      </Link>
                     </div>
                   </div>
       

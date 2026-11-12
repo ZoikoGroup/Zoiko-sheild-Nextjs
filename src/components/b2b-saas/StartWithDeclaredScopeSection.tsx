@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function StartWithDeclaredScopeSection() {
   return (
@@ -42,30 +43,34 @@ export default function StartWithDeclaredScopeSection() {
 
           {/* Category Links Inline */}
           <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4 text-xs font-mono text-[#4ADE80] mb-10">
-            <span className="hover:underline cursor-pointer">Platform</span>
-            <span className="text-[#56687A]">·</span>
-            <span className="hover:underline cursor-pointer">
+            <Link href="/platform-overview" className="hover:underline">Platform</Link>
+            <span className="text-[#56687A]" aria-hidden="true">·</span>
+            <Link href="/ai-security-governance" className="hover:underline">
               AI governance
-            </span>
-            <span className="text-[#56687A]">·</span>
-            <span className="hover:underline cursor-pointer">Evidence</span>
-            <span className="text-[#56687A]">·</span>
-            <span className="hover:underline cursor-pointer">Compliance</span>
-            <span className="text-[#56687A]">·</span>
-            <span className="hover:underline cursor-pointer">Services</span>
+            </Link>
+            <span className="text-[#56687A]" aria-hidden="true">·</span>
+            <Link href="/evidence-ledger-verification" className="hover:underline">Evidence</Link>
+            <span className="text-[#56687A]" aria-hidden="true">·</span>
+            <Link href="/compliance-control-plane" className="hover:underline">Compliance</Link>
+            <span className="text-[#56687A]" aria-hidden="true">·</span>
+            <Link href="/compare-starting-paths" className="hover:underline">Services</Link>
           </div>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
-            <button
+            <Link
+              href="/book-a-demo"
               style={{ backgroundColor: "#C8382C" }}
-              className="w-full sm:w-auto px-7 py-3.5 rounded-xl text-white font-medium text-sm tracking-wide shadow-lg hover:opacity-95 transition-opacity cursor-pointer"
+              className="w-full sm:w-auto px-7 py-3.5 rounded-xl text-white font-medium text-sm tracking-wide shadow-lg hover:opacity-95 transition-opacity text-center"
             >
               Book a Demo
-            </button>
-            <button className="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-white text-[#0A1116] font-medium text-sm tracking-wide shadow-lg hover:bg-gray-100 transition-colors cursor-pointer">
+            </Link>
+            <Link
+              href="/platform-overview"
+              className="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-white text-[#0A1116] font-medium text-sm tracking-wide shadow-lg hover:bg-gray-100 transition-colors text-center"
+            >
               Explore the platform
-            </button>
+            </Link>
           </div>
         </div>
       </div>

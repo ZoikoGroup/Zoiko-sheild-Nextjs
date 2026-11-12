@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 interface BigCard {
@@ -9,12 +10,14 @@ interface BigCard {
   title: string;
   description: string;
   linkText: string;
+  href: string;
 }
 
 interface BottomBar {
   id: string;
   leftText: string;
   rightText?: string;
+  href?: string;
 }
 
 const bigCards: BigCard[] = [
@@ -24,6 +27,7 @@ const bigCards: BigCard[] = [
     description:
       "Identity/source · lineage · freshness · completeness: complete/partial/missing/unknown · verification method/version/result · access authority · package scope/exclusions · correction/withdrawal",
     linkText: "/platform/evidence →",
+    href: "/evidence-ledger-verification",
   },
   {
     id: "2",
@@ -31,6 +35,7 @@ const bigCards: BigCard[] = [
     description:
       "Control · framework mapping · test · assessment · exception · remediation · SaaS/cloud context · AI context",
     linkText: "/platform/compliance →",
+    href: "/compliance-control-plane",
   },
   {
     id: "3",
@@ -38,6 +43,7 @@ const bigCards: BigCard[] = [
     description:
       "Current evidence/control review · customer security review · audit preparation · assessor independence · controlled questionnaire answers · permission-aware packages · authoritative cadence only",
     linkText: "/continuous-assurance →",
+    href: "/continuous-assurance",
   },
 ];
 
@@ -46,11 +52,13 @@ const bottomBars: BottomBar[] = [
     id: "4",
     leftText: "EVIDENCE RECORD",
     rightText: "→",
+    href: "/evidence-ledger-verification",
   },
   {
     id: "5",
     leftText: "CONTROL / TEST",
     rightText: "→",
+    href: "/compliance-control-plane",
   },
   {
     id: "6",
@@ -132,9 +140,9 @@ export default function ReviewableAssuranceSection() {
                 </div>
 
                 <div className="mt-6">
-                  <span className="text-xs font-mono font-medium text-[#4ADE80] hover:underline cursor-pointer">
+                  <Link href={card.href} className="text-xs font-mono font-medium text-[#4ADE80] hover:underline">
                     {card.linkText}
-                  </span>
+                  </Link>
                 </div>
               </motion.div>
             ))}
@@ -156,15 +164,28 @@ export default function ReviewableAssuranceSection() {
                   backgroundColor: "#FFFFFF0D",
                   borderColor: "#FFFFFF24",
                 }}
-                className="rounded-2xl px-6 py-5 border flex items-center justify-between shadow-lg backdrop-blur-sm"
+                className="rounded-2xl border shadow-lg backdrop-blur-sm"
               >
-                <span className="text-xs font-mono tracking-wider font-semibold text-[#8AE9C1]">
-                  {bar.leftText}
-                </span>
-                {bar.rightText && (
-                  <span className="text-xs font-mono text-[#8AE9C1]">
-                    {bar.rightText}
-                  </span>
+                {bar.href ? (
+                  <Link
+                    href={bar.href}
+                    className="px-6 py-5 flex items-center justify-between rounded-2xl hover:bg-white/5 transition-colors"
+                  >
+                    <span className="text-xs font-mono tracking-wider font-semibold text-[#8AE9C1]">
+                      {bar.leftText}
+                    </span>
+                    {bar.rightText && (
+                      <span aria-hidden="true" className="text-xs font-mono text-[#8AE9C1]">
+                        {bar.rightText}
+                      </span>
+                    )}
+                  </Link>
+                ) : (
+                  <div className="px-6 py-5 flex items-center justify-between">
+                    <span className="text-xs font-mono tracking-wider font-semibold text-[#8AE9C1]">
+                      {bar.leftText}
+                    </span>
+                  </div>
                 )}
               </motion.div>
             ))}

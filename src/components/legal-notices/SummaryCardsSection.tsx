@@ -2,22 +2,14 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import { LEGAL_OUTLINE } from "./outline";
+import { scrollToSection, useActiveSection } from "@/hooks/useActiveSection";
 
-const tocItems = [
-  "01. Legal Entity & Publisher",
-  "02. Copyright & Rights",
-  "03. Trademarks & Brand",
-  "04. Third-Party Rights",
-  "05. Software & Docs",
-  "06. External Linking",
-  "07. Jurisdiction Scope",
-  "08. Service & Contact",
-  "09. Related Governance",
-  "10. Version History",
-  "11. Interpretive FAQ",
-];
+const OUTLINE_IDS = LEGAL_OUTLINE.map((o) => o.id);
 
 export default function SummaryCardsSection() {
+  const [active, setActive] = useActiveSection(OUTLINE_IDS);
+
   return (
     <section className="bg-[#f7f5f0] w-full">
       <div className="mx-auto max-w-[1440px] px-4 pb-6 lg:px-[80px] lg:pb-[40px]">
@@ -33,18 +25,28 @@ export default function SummaryCardsSection() {
             <p className="font-hanken font-extrabold text-[#0a2029] text-[13px] lg:text-[14px] tracking-[0.5px] uppercase m-0">
               Navigation Outline
             </p>
-            <div className="flex flex-col gap-2 items-start w-full">
-              {tocItems.map((item, i) => (
-                <p
-                  key={item}
-                  className={`font-sans text-[13px] m-0 w-full ${
-                    i === 0 ? "font-bold text-[#c44242]" : "font-normal text-[#5b6670]"
-                  }`}
-                >
-                  {item}
-                </p>
-              ))}
-            </div>
+            <nav aria-label="Navigation outline" className="flex flex-col gap-2 items-start w-full">
+              {LEGAL_OUTLINE.map((item) => {
+                const isActive = item.id === active;
+                return (
+                  <a
+                    key={item.id}
+                    href={`#${item.id}`}
+                    aria-current={isActive ? "location" : undefined}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setActive(item.id);
+                      scrollToSection(item.id);
+                    }}
+                    className={`font-sans text-[13px] w-full transition-colors hover:text-[#c44242] ${
+                      isActive ? "font-bold text-[#c44242]" : "font-normal text-[#5b6670]"
+                    }`}
+                  >
+                    {item.label}
+                  </a>
+                );
+              })}
+            </nav>
           </div>
 
           {/* Sovereign governance card */}

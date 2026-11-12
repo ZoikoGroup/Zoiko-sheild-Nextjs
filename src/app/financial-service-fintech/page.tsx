@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import {
   HeroSection,
   SectorSnapshotSection,
@@ -16,18 +16,12 @@ import {
   EvidenceTraceableSection,
   FinancialCtaSection,
 } from "@/components/financial-services-fintech";
-import { DemoModal } from "@/components/ui/DemoModal";
 
 export default function FinancialServiceFintechPage() {
-  const [isDemoOpen, setIsDemoOpen] = useState(false);
-
   return (
     <main className="w-full min-h-screen bg-stone-100 text-slate-900 antialiased selection:bg-red-500 selection:text-white">
       {/* 1. Hero Section */}
-      <HeroSection
-        onRequestReview={() => setIsDemoOpen(true)}
-        onTalkToArchitect={() => setIsDemoOpen(true)}
-      />
+      <HeroSection />
 
       {/* 2. Sector Snapshot (5 Cards Grid) */}
       <SectorSnapshotSection />
@@ -63,13 +57,7 @@ export default function FinancialServiceFintechPage() {
       <EvidenceTraceableSection />
 
       {/* 13. Conversion CTA Banner */}
-      <FinancialCtaSection
-        onRequestReview={() => setIsDemoOpen(true)}
-        onTalkToArchitect={() => setIsDemoOpen(true)}
-      />
-
-      {/* Interactive Demo / Review Modal */}
-      <DemoModal isOpen={isDemoOpen} onClose={() => setIsDemoOpen(false)} />
+      <FinancialCtaSection />
     </main>
   );
 }

@@ -11,24 +11,27 @@ interface DueDiligenceDoc {
   href: string;
 }
 
+// Documents are requested through the Trust Center's review-request form, the
+// same route the Trust Center's own "Request Artifact" links use.
+// Swap `href` for the file URL once a document is published.
 const dueDocs: DueDiligenceDoc[] = [
   {
     title: "Privacy Architecture",
     description: "Download full structural database separation specs.",
     actionText: "Request Document",
-    href: "#contact",
+    href: "/trust-center#request-review",
   },
   {
     title: "Standard DPA Template",
     description: "Pre-signed standard contract clauses matching EU SCCs.",
     actionText: "Request Document",
-    href: "#contact",
+    href: "/trust-center#request-review",
   },
   {
     title: "Data-Flow Questionnaire",
     description: "NIST-aligned self-assessment details, fully populated.",
     actionText: "Request Document",
-    href: "#contact",
+    href: "/trust-center#request-review",
   },
 ];
 

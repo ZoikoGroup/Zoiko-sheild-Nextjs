@@ -154,11 +154,11 @@ export default function SecurityOperations() {
                 issues use Status—never Book a Demo.
               </p>
               <div className="flex items-center gap-4 text-xs font-bold text-[#C53030]">
-                <a href="#" className="hover:underline flex items-center gap-1">
+                <a href="/support-center" className="hover:underline flex items-center gap-1">
                   Support
                 </a>
                 <span>·</span>
-                <a href="#" className="hover:underline flex items-center gap-1">
+                <a href="/system-status" className="hover:underline flex items-center gap-1">
                   Status <span aria-hidden="true">→</span>
                 </a>
               </div>

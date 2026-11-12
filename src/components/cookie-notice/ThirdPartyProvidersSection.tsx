@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 const providers = [
@@ -9,18 +10,21 @@ const providers = [
     badge: "Internal Guardrail",
     desc: "Allows real-time access to our secure client advisors. Scripts do not load until you explicitly launch the help widget.",
     link: "View Transfer / Residency Link",
+    href: "/privacy-data-protection",
   },
   {
     title: "Host Metrics Mapping",
     badge: "Anonymized",
     desc: "Aggregated latency analysis strictly bound to compliance controls. No cross-site profiling is technically possible.",
     link: "Vendor Compliance File",
+    href: "/trust-center",
   },
   {
     title: "Identity Federation",
     badge: "Registry Approved",
     desc: "Secure SSO and directory handshakes. Strictly permission-scoped within current browser sandboxing rules.",
     link: "SSO Posture Document",
+    href: "/endpoint-identity-integrations",
   },
 ];
 
@@ -57,9 +61,12 @@ export default function ThirdPartyProvidersSection() {
                 </div>
               </div>
               <p className="font-sans font-normal text-[#5b6670] text-[13px] m-0 w-full">{p.desc}</p>
-              <p className="font-sans font-semibold text-[#4e668a] text-[11px] underline m-0 w-full">
+              <Link
+                href={p.href}
+                className="font-sans font-semibold text-[#4e668a] text-[11px] underline m-0 hover:text-[#0a2029] transition-colors"
+              >
                 {p.link}
-              </p>
+              </Link>
             </motion.div>
           ))}
         </div>

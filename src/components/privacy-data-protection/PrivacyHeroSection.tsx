@@ -45,7 +45,7 @@ export default function PrivacyHeroSection() {
               Review Privacy Controls
             </Link>
             <Link
-              href="#notice"
+              href="/privacy-notice"
               className="inline-flex items-center justify-center px-6 py-3.5 sm:py-4 rounded-[10px] bg-transparent hover:bg-[#0A2440]/5 text-[#0A2440] font-bold text-[15px] border border-[#0A2440] transition-all active:scale-[0.98]"
             >
               View Privacy Notice

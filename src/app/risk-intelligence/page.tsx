@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import Image from "next/image";
 // import { Navbar } from "@/components/layout/Navbar";
 // import { Footer } from "@/components/layout/Footer";
-import { DemoModal } from "@/components/ui/DemoModal";
 
 // Surface Doctrine 8 Cards Data
 const SURFACE_DOCTRINES = [
@@ -67,7 +66,6 @@ const NEVER_INFERRED_WORDS = [
 ];
 
 export default function RiskIntelligencePage() {
-  const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
 
   return (
@@ -136,14 +134,14 @@ export default function RiskIntelligencePage() {
             {/* Action Buttons Grid */}
             <div className="space-y-2 pt-2">
               <div className="grid grid-cols-2 gap-2">
-                <button
-                  onClick={() => setIsDemoModalOpen(true)}
+                <a
+                  href="/book-a-demo"
                   className="px-4 py-3 bg-[#E0533C] text-white font-bold text-xs rounded-lg text-center shadow-sm"
                 >
                   Book a Demo
-                </button>
+                </a>
                 <a
-                  href="#doctrine"
+                  href="/platform-overview"
                   className="px-4 py-3 bg-[#EFECE6] text-[#151B28] font-semibold text-xs rounded-lg border border-gray-300/80 text-center shadow-sm"
                 >
                   Explore the Platform
@@ -799,14 +797,14 @@ export default function RiskIntelligencePage() {
 
               {/* Action Buttons */}
               <div className="flex flex-wrap items-center gap-3 pt-2">
-                <button
-                  onClick={() => setIsDemoModalOpen(true)}
+                <a
+                  href="/book-a-demo"
                   className="px-6 py-3 bg-[#E0533C] hover:bg-[#c94530] text-white font-bold text-sm rounded-lg transition-all shadow-md"
                 >
                   Book a Demo
-                </button>
+                </a>
                 <a
-                  href="#doctrine"
+                  href="/platform-overview"
                   className="px-5 py-3 bg-[#EFECE6] hover:bg-gray-200 text-[#151B28] font-semibold text-sm rounded-lg border border-gray-300/80 transition-all shadow-sm"
                 >
                   Explore the Platform
@@ -1458,7 +1456,7 @@ export default function RiskIntelligencePage() {
 
               <div className="pt-3">
                 <a
-                  href="/services"
+                  href="/compliance-control-plane"
                   className="px-4 py-2.5 bg-white hover:bg-gray-50 text-[#151B28] text-xs font-bold rounded-lg border border-gray-300 shadow-sm transition-all inline-block"
                 >
                   Compliance Control Plane &rarr;
@@ -1919,7 +1917,7 @@ export default function RiskIntelligencePage() {
                 </div>
                 <div className="pt-2">
                   <a
-                    href="/incident-readiness"
+                    href="/detection-and-response"
                     className="px-4 py-2 bg-white/5 hover:bg-white/10 text-white font-mono text-xs font-bold rounded-lg border border-white/20 transition-all inline-block"
                   >
                     Open &rarr;
@@ -1942,7 +1940,7 @@ export default function RiskIntelligencePage() {
                 </div>
                 <div className="pt-2">
                   <a
-                    href="/responsible-ai"
+                    href="/ai-security-governance"
                     className="px-4 py-2 bg-white/5 hover:bg-white/10 text-white font-mono text-xs font-bold rounded-lg border border-white/20 transition-all inline-block"
                   >
                     Open &rarr;
@@ -2114,20 +2112,20 @@ export default function RiskIntelligencePage() {
 
             {/* Action Buttons */}
             <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
-              <button
-                onClick={() => setIsDemoModalOpen(true)}
+              <a
+                href="/book-a-demo"
                 className="px-6 py-3 bg-[#E0533C] hover:bg-[#c94530] text-white font-bold text-sm rounded-lg transition-all shadow-md"
               >
                 Book a Demo
-              </button>
+              </a>
               <a
-                href="#hero"
+                href="/platform-overview"
                 className="px-5 py-3 bg-white/5 hover:bg-white/10 text-white font-semibold text-sm rounded-lg border border-white/20 transition-all shadow-sm"
               >
                 Explore the Platform
               </a>
               <a
-                href="/about"
+                href="/trust-center"
                 className="px-5 py-3 bg-white/5 hover:bg-white/10 text-white font-semibold text-sm rounded-lg border border-white/20 transition-all shadow-sm"
               >
                 Visit the Trust Center
@@ -2145,7 +2143,6 @@ export default function RiskIntelligencePage() {
       {/* <Footer /> */}
 
       {/* Demo Modal */}
-      <DemoModal isOpen={isDemoModalOpen} onClose={() => setIsDemoModalOpen(false)} />
     </div>
   );
 }

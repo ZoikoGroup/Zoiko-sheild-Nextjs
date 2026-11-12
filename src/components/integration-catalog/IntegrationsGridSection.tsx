@@ -1,15 +1,29 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
+import Link from "next/link";
 import { ArrowUpRight, ShieldCheck } from "lucide-react";
 
-interface IntegrationsGridSectionProps {
-  onSelectConnector?: (connectorId: string) => void;
-}
+const PAGE_SIZE = 6;
 
-export const IntegrationsGridSection: React.FC<IntegrationsGridSectionProps> = ({
-  onSelectConnector,
-}) => {
+// Where each card's "View integration" link goes. CrowdStrike has a full detail
+// panel on this page; others go to their ecosystem page where one exists, or to
+// the request route for planned / requestable connectors.
+const DETAIL_HREF: Record<string, string> = {
+  sentinel: "/microsoft-ecosystem",
+  aws: "/cloud-platform-integrations",
+  gcp: "/cloud-platform-integrations",
+  crowdstrike: "#connector-detail",
+  okta: "/endpoint-identity-integrations",
+  jira: "/integrations",
+  slack: "/integrations",
+  github: "/request-an-integration",
+  vault: "/request-an-integration",
+};
+
+export const IntegrationsGridSection: React.FC = () => {
+  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
+
   const connectors = [
     {
       id: "sentinel",
@@ -103,6 +117,9 @@ export const IntegrationsGridSection: React.FC<IntegrationsGridSectionProps> = (
     },
   ];
 
+  const shown = connectors.slice(0, visibleCount);
+  const hasMore = visibleCount < connectors.length;
+
   return (
     <section id="catalog-grid" className="w-full bg-white py-12 border-b border-zoiko-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
@@ -111,12 +128,14 @@ export const IntegrationsGridSection: React.FC<IntegrationsGridSectionProps> = (
           <h2 className="text-2xl font-extrabold text-slate-900 tracking-tight font-sans">
             All Integrations
           </h2>
-          <span className="text-sm text-gray-500 font-sans">Showing 1-9 of 42</span>
+          <span className="text-sm text-gray-500 font-sans" aria-live="polite">
+            Showing 1-{shown.length} of {connectors.length}
+          </span>
         </div>
 
         {/* 3x3 Grid Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {connectors.map((item) => (
+          {shown.map((item) => (
             <div
               key={item.id}
               className="p-6 bg-white rounded-2xl border border-cyan-950/10 shadow-sm space-y-4 flex flex-col justify-between hover:shadow-md hover:border-cyan-950/30 transition-all"
@@ -168,13 +187,14 @@ export const IntegrationsGridSection: React.FC<IntegrationsGridSectionProps> = (
                     <span className="text-xs font-semibold text-gray-500">Compare</span>
                   </label>
 
-                  <button
-                    onClick={() => onSelectConnector && onSelectConnector(item.id)}
+                  <Link
+                    href={DETAIL_HREF[item.id] ?? "/integrations"}
+                    aria-label={`View integration: ${item.name}`}
                     className="text-xs font-bold text-red-500 hover:text-red-600 transition-colors flex items-center gap-1"
                   >
                     <span>View integration</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -182,11 +202,17 @@ export const IntegrationsGridSection: React.FC<IntegrationsGridSectionProps> = (
         </div>
 
         {/* Load More Button */}
-        <div className="pt-4 flex justify-center">
-          <button className="px-6 py-3 rounded-lg border-[1.5px] border-cyan-950 text-cyan-950 font-bold text-sm hover:bg-stone-100 transition-colors">
-            Load More Connectors
-          </button>
-        </div>
+        {hasMore && (
+          <div className="pt-4 flex justify-center">
+            <button
+              type="button"
+              onClick={() => setVisibleCount((n) => n + PAGE_SIZE)}
+              className="px-6 py-3 rounded-lg border-[1.5px] border-cyan-950 text-cyan-950 font-bold text-sm hover:bg-stone-100 transition-colors"
+            >
+              Load More Connectors
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );

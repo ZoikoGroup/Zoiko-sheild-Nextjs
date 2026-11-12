@@ -15,7 +15,7 @@ function AlertTriangleIcon() {
 
 export default function ConformanceStatusSection() {
   return (
-    <section className="bg-[#f7f5f0] w-full">
+    <section id="conformance-status" className="scroll-mt-24 bg-[#f7f5f0] w-full">
       <div className="flex flex-col gap-6 lg:gap-8 mx-auto max-w-[1440px] px-4 py-8 lg:px-[108px] lg:py-[60px]">
         <div className="flex flex-col gap-3 lg:gap-4 items-start w-full">
           <div className="flex gap-2 lg:gap-3 items-center w-full">
