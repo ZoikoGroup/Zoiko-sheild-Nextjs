@@ -1,4 +1,7 @@
-# Place at: Zoiko-sheild-Nextjs/.github/workflows/deploy.yml   (REPLACES the existing file: old paths/PM2 name no longer exist)
+# Place at: Zoiko-sheild-Nextjs/.github/workflows/deploy.yml   (REPLACES the current deploy.yml)
+# Why changed: the previous version's 25-minute limit also covered the wait for the shared deploy lock on the VM,
+# so a long platform build made this job time out mid type-check (Nov 12). Now: bounded lock wait with a clear message,
+# a realistic limit, a free-disk guard, and timestamps on every phase.
 name: Deploy Zoiko Shield Website
 
 concurrency:
@@ -16,7 +19,7 @@ permissions:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 60
     steps:
       - name: SSH and deploy
         uses: appleboy/ssh-action@v1.0.3
@@ -24,28 +27,46 @@ jobs:
           host: ${{ secrets.GCP_SSH_HOST }}
           username: ${{ secrets.GCP_SSH_USER }}
           key: ${{ secrets.GCP_SSH_KEY }}
-          command_timeout: 25m
+          command_timeout: 50m
           script: |
             set -Eeuo pipefail
-            # same lock as the platform deploy: never build both at once on the 4 GB VM
+            log() { echo "[$(date -u +%H:%M:%S)] $*"; }
+            APP=/var/www/zoikoshield-website/app
+            cd "$APP"
+
+            FREE_MB=$(df -Pm "$APP" | awk 'NR==2{print $4}')
+            if [ "$FREE_MB" -lt 2000 ]; then log "ABORT: only ${FREE_MB} MB free (need 2000). Nothing was changed."; exit 1; fi
+
+            # Same lock as the platform deploy: never build both at once on the 4 GB VM.
             exec 9>/tmp/zoikoshield-deploy.lock
-            flock -w 2400 9
-            cd /var/www/zoikoshield-website/app
+            log "waiting for the deploy lock (a platform deploy may be running)..."
+            if ! flock -w 1500 9; then
+              log "ABORT: another deploy held the lock for 25 minutes. Nothing was changed. Re-run this job later."
+              exit 1
+            fi
+            log "lock acquired"
+
+            OLD=$(git rev-parse --short HEAD)
             git fetch --quiet origin main
             git reset --hard origin/main
+            log "deploying ${OLD} -> $(git rev-parse --short HEAD): $(git log -1 --pretty=%s)"
+
             rm -rf .next.prev; [ -d .next ] && cp -a .next .next.prev || true
+            log "npm install"
             npm install --no-audit --no-fund
-            if NODE_OPTIONS="--max-old-space-size=1536" npm run build; then
+            log "next build"
+            if NODE_OPTIONS="--max-old-space-size=1536" NEXT_TELEMETRY_DISABLED=1 npm run build; then
+              log "build done; restarting"
               pm2 restart zoikoshield-website --update-env
               pm2 save
               for i in 1 2 3 4 5 6; do
                 code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 10 http://127.0.0.1:3000/ || true)
-                case "$code" in 2??|3??) echo "website up (HTTP $code)"; rm -rf .next.prev; exit 0;; esac
+                case "$code" in 2??|3??) log "website up (HTTP $code)"; rm -rf .next.prev; exit 0;; esac
                 sleep 5
               done
-              echo "website not answering after restart (HTTP $code)"; exit 1
+              log "website not answering after restart (HTTP $code)"; exit 1
             else
-              echo "BUILD FAILED: restoring previous .next"
+              log "BUILD FAILED: restoring previous .next; the site keeps running the old version"
               rm -rf .next; [ -d .next.prev ] && mv .next.prev .next
               exit 1
             fi
