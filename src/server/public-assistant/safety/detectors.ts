@@ -16,6 +16,8 @@ const SECRET_PATTERNS: [string, RegExp][] = [
   ["github_token", /\bgh[pousr]_[A-Za-z0-9]{30,}\b/],
   ["slack_token", /\bxox[abprs]-[A-Za-z0-9-]{10,}\b/],
   ["google_api_key", /\bAIza[0-9A-Za-z_-]{35}\b/],
+  ["api_key_sk", /\bsk-[A-Za-z0-9_-]{20,}\b/],
+  ["us_ssn", /\b\d{3}-\d{2}-\d{4}\b/],
   ["stripe_key", /\b[sr]k_(?:live|test)_[0-9A-Za-z]{16,}\b/],
   ["jwt", /\beyJ[A-Za-z0-9_-]{8,}\.eyJ[A-Za-z0-9_-]{8,}\.[A-Za-z0-9_-]{8,}\b/],
   ["bearer_token", /\bbearer\s+[A-Za-z0-9._~+/-]{20,}=*/i],

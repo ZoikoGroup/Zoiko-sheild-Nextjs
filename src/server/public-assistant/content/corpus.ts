@@ -315,6 +315,52 @@ export const corpus: Corpus = {
       keywords: ["ai", "responsible ai", "human oversight", "automation", "decision rights", "model"],
     },
 
+    {
+      ...common(), id: "help-privacy-notice", kind: "HELP_ARTICLE",
+      topic_id: "trust-security",
+      title: "Privacy Notice: personal data, GDPR basis and your rights",
+      canonical_url: "/privacy-notice", claim_type: "privacy", owner: "trust",
+      summary:
+        "The Privacy Notice lists the personal data ZoikoShield handles, the legal bases (including a GDPR basis), retention, international transfers and how to make a rights request.",
+      body: p(
+        "The Privacy Notice explains how ZoikoShield handles personal data. It covers the categories of data handled, the legal basis for each (including a GDPR basis), who receives the data, how long it is kept, international transfers and data residency, and your rights.",
+        "Categories of personal data listed in the notice:",
+        "- Account and identity data: name, business email, address, company affiliation, API tokens and SAML credentials.\n- Telemetry and technical data: host device identifiers, sensor IP addresses, sensor alerts and integration handshake metadata.\n- Billing data: billing contacts, payment history and invoice records (card details are kept as partials).\n- Third-party data: external identity directories, public threat indexes and compliance audit logs from partners and integrations.",
+        "Retention periods differ by category; for example, account profile data is kept for the active subscription plus 120 days after termination, platform logs are rotated or archived after 90 days of inactivity, and billing history is kept for seven years. Privacy rights requests (such as access, correction or deletion) go through the privacy rights request process so identity can be verified.",
+        "The Privacy Notice is the site's privacy policy. It also has a Data Protection Officer section and lists EU and UK representatives; to reach them or to exercise a right, use the privacy rights request process rather than this chat.",
+        "The notice describes legal bases and rights; it is not a statement that ZoikoShield or its customers are certified or guaranteed compliant with GDPR or any other law. Questions about a specific regulation or contract go to the privacy and trust team."
+      ),
+      keywords: ["gdpr", "privacy", "privacy policy", "data protection officer", "dpo", "sell personal data", "personal data", "data collected", "data collection", "legal basis", "retention", "data rights", "ccpa", "dpo", "transfers"],
+    },
+    {
+      ...common(), id: "help-cookies", kind: "HELP_ARTICLE",
+      topic_id: "trust-security",
+      title: "Cookies and tracking choices",
+      canonical_url: "/cookie-notice", claim_type: "privacy", owner: "trust",
+      summary:
+        "The Cookie Notice explains the essential, preference and analytical cookies in use and where to manage or opt out of non-essential ones.",
+      body: p(
+        "The site uses essential, preference and analytical cookies. Essential cookies support security and system integrity; preference and analytical cookies are configurable.",
+        "You can change your choices, including opting out of non-essential cookies and secondary analytics, in the cookie preference center linked from the Cookie Notice. The notice says declining is as easy as accepting, and it also describes how a browser Global Privacy Control signal is handled.",
+        "Cookie choices are separate from a data rights request; for deletion or access to personal data, use the privacy rights request process."
+      ),
+      keywords: ["cookies", "cookie", "opt out", "tracking", "analytics cookies", "preferences", "global privacy control", "gpc", "consent"],
+    },
+    {
+      ...common(), id: "help-contact-sales", kind: "HELP_ARTICLE",
+      topic_id: "getting-started",
+      title: "Contacting sales or the team",
+      canonical_url: "/book-a-demo", claim_type: "general", owner: "web",
+      summary:
+        "To talk to sales, request a demo on the Book a Demo page or use the Contact page; commercial terms are confirmed in a written quote.",
+      body: p(
+        "To talk to the sales or commercial team, request a demo on the Book a Demo page: it is a scheduled, consultative meeting with security specialists. You can also reach the team through the Contact page.",
+        "For pricing, the commercial team confirms scope and terms in a written quote after your scope is validated; this chat can pass on a request but can't book a meeting or promise a time.",
+        "Urgent security matters, vulnerability reports, privacy requests and support cases use their own dedicated routes rather than sales."
+      ),
+      keywords: ["contact sales", "talk to sales", "speak to sales", "sales team", "reach sales", "commercial team", "contact", "get in touch"],
+    },
+
     // Glossary: definitions paraphrased from /security-compliance-glossary. Product-specific
     // statements on that page (sync status, remediation modes, connector examples) are left out.
     {

@@ -41,7 +41,7 @@ const num = (name: string, fallback: number) => {
   const v = Number(process.env[name]);
   return Number.isFinite(v) && v > 0 ? v : fallback;
 };
-const DEADLINE_MS = () => num("PUBLIC_ASSISTANT_MODEL_DEADLINE_MS", 20_000);
+const DEADLINE_MS = () => num("PUBLIC_ASSISTANT_MODEL_DEADLINE_MS", 15_000);
 const SESSION_MESSAGES_PER_HOUR = () => num("PUBLIC_ASSISTANT_SESSION_MESSAGES_PER_HOUR", 40);
 const TOKEN_BUDGET_PER_HOUR = () => num("PUBLIC_ASSISTANT_TOKEN_BUDGET_PER_HOUR", 400_000);
 const BREAKER_THRESHOLD = 3;
