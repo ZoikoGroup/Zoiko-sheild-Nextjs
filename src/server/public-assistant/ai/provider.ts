@@ -101,7 +101,7 @@ export class ProviderHttpError extends Error {
  * Google Gemini API (generativelanguage.googleapis.com). Output is still untrusted:
  * the pipeline validates citations, links and restricted claims before showing it.
  */
-const CALL_TIMEOUT_MS = Number(process.env.PUBLIC_ASSISTANT_MODEL_CALL_TIMEOUT_MS ?? 5000);
+const CALL_TIMEOUT_MS = Number(process.env.PUBLIC_ASSISTANT_MODEL_CALL_TIMEOUT_MS ?? 8000);
 
 export class GeminiProvider implements ModelProvider {
   readonly name = "gemini";

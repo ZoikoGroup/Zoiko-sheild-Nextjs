@@ -108,7 +108,7 @@ export function urlAllowlist(): Set<string> {
 // eligibility filter runs per query, so withdrawal needs no reindex.
 
 const STOPWORDS = new Set(
-  "a about an and are as at be by can could do does for from has have hello hey hi how i in is it its know like me my of on or our please so tell thank thanks that the their this to us want was we what whats wat wht when where which who why will with would you your".split(" "),
+  "a about an and are as at be by can could do does for from has have hello hey hi how i in is it its know like me my of on or our please so tell thank thanks that the their this to us want was we what whats wat wht when where which who why will with would you your into".split(" "),
 );
 
 export function tokenize(text: string): string[] {
@@ -124,7 +124,7 @@ const EXPANSIONS: [RegExp, string][] = [
   [/\b(?:plans?|tiers?|packages?|editions?|licen[cs]\w*|subscriptions?)\b/i, "pricing commercial scope quote"],
   [/\b(?:eu|europe\w*|regions?|resid\w+|stored|storage|locations?|data cent(?:re|er)s?|hosted|hosting)\b/i, "production data regions standby replicas backups availability"],
   [/\b(?:audit (?:package|pack|bundle)|evidence (?:package|pack|bundle)|tamper)\b/i, "evidence ledger evidence packages verification"],
-  [/\b(?:use cases?|who (?:is|are) (?:it|you|this) for|built for|industries|audience)\b/i, "capabilities managed defense continuous assurance security operations compliance"],
+  [/\b(?:use cases?|who (?:is|are) (?:it|you|this|zoiko ?shield) for|who (?:should|can|would) (?:use|buy|benefit)|built for|industries|audience)\b/i, "capabilities managed defense continuous assurance security operations compliance"],
   [/\b(?:soc|analysts?|security operations)\b(?! ?2)/i, "detection response investigation cases managed defense"],
   [/\bencrypt\w*/i, "encryption transit rest"],
   [/\b(?:detect\w*|threats?|alerts?)\b/i, "detection response investigation correlation cases signals"],
